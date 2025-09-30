@@ -377,3 +377,55 @@ body{
 @media (prefers-reduced-motion: reduce){
   .leaf{ animation: none; }
 }
+
+
+/* ===== BASELINE STABILIZER (put at the very end) ===== */
+
+/* 0) Temporarily disable the edge flip strips so nothing changes off-turn */
+.flips { display: none !important; }
+
+/* 1) Use a single, smooth visible page (your existing page #3 + the back panel) */
+.page:nth-child(3){
+  /* smooth, graceful turn loop */
+  transform: rotateX(var(--book-angle)) rotateY(6deg);
+  animation: nextPage var(--cycle) linear infinite !important;
+  /* change image at the mid-point of each 5s turn (2.5s) */
+  animation-delay: calc(var(--cycle) * -0.90) !important; /* -22.5s when cycle=25s */
+  background-size: 420px 300px;
+  background-position: -2px -2px;
+}
+
+.page:nth-child(6){
+  transform: rotateX(var(--book-angle)) rotateY(174deg);
+  overflow: hidden;
+}
+.page:nth-child(6)::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform-origin: center;
+  transform: rotateY(180deg);
+  background-size: 420px 300px;
+  background-position: 100% -2px;
+  animation: nextPage var(--cycle) linear infinite !important;
+  /* back face is always one image ahead of the front, so delay by +5s */
+  animation-delay: calc(var(--cycle) * -0.70) !important; /* -17.5s */
+}
+
+/* 2) Image sequence: only swap when the page is actually turning (mid-flip) */
+@keyframes nextPage{
+  0%   { background-image: url("https://picsum.photos/420/300?random=1"); }
+  10%  { background-image: url("https://picsum.photos/420/300?random=2"); } /* mid of flip #1 */
+  30%  { background-image: url("https://picsum.photos/420/300?random=3"); } /* mid of flip #2 */
+  50%  { background-image: url("https://picsum.photos/420/300?random=4"); } /* mid of flip #3 */
+  70%  { background-image: url("https://picsum.photos/420/300?random=5"); } /* mid of flip #4 */
+  90%  { background-image: url("https://picsum.photos/420/300?random=1"); } /* mid of flip #5 (wrap) */
+  100% { background-image: url("https://picsum.photos/420/300?random=1"); }
+}
+
+/* 3) Slightly wider arc = gentler look on the main “flip” */
+@keyframes flip1{
+  0%,20%   { transform: rotateX(var(--book-angle)) rotateY(6deg); }
+  50%      { transform: rotateX(var(--book-angle)) rotateY(174deg); }
+  80%,100% { transform: rotateX(var(--book-angle)) rotateY(6deg); }
+}
