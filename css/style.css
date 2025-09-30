@@ -1,39 +1,50 @@
 @import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Fascinate+Inline&display=swap");
 
-/* ---- Sudowrite-style gradient background ---- */
+/* === Sudowrite-like soft pastel background === */
 :root{
-  /* tweak these if you want it warmer/cooler */
-  --sw-lavender: #b8a6ff;   /* soft purple */
-  --sw-cyan:     #7cf7e3;   /* minty cyan */
-  --sw-pink:     #ff9ae6;   /* candy pink */
-  --sw-white:    #ffffff;   /* blend base */
+  --peach:   #ffe9d6; /* warm top-left */
+  --pink:    #ffd6ec; /* mid pink */
+  --lav:     #eadfff; /* lilac */
+  --periw:   #dfe2ff; /* cool bottom-right */
 }
 
-/* Full-page gradient */
+/* let the gradient fill the viewport */
 html, body { height: 100%; }
 
+/* Base gradient: very light + low saturation */
 body{
-  /* fallback color */
-  background-color: var(--sw-white);
-
-  /* multi-stop linear gradient */
-  background-image:
-    linear-gradient(
-      135deg,
-      var(--sw-lavender) 0%,
-      #c7b6ff 18%,
-      var(--sw-cyan) 48%,
-      #9eeadf 62%,
-      var(--sw-pink) 85%,
-      #ffd1f4 100%
-    );
-
-  /* make it feel soft & roomy */
+  /* three layers: peach corner, cool corner, gentle sweep */
+  background:
+    radial-gradient(120% 110% at 8% 0%,
+      rgba(255,233,214,0.85) 0%,
+      rgba(255,233,214,0.55) 28%,
+      rgba(255,233,214,0.00) 60%),
+    radial-gradient(110% 120% at 92% 88%,
+      rgba(223,226,255,0.85) 0%,
+      rgba(223,226,255,0.50) 30%,
+      rgba(223,226,255,0.00) 62%),
+    linear-gradient(135deg,
+      var(--peach) 0%,
+      var(--pink) 46%,
+      var(--lav) 72%,
+      var(--periw) 100%);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
+  color: #222; /* keep text readable */
 }
+
+/* Soft white veil to lower intensity a bit more */
+body::after{
+  content:"";
+  position: fixed; inset: 0; pointer-events: none; z-index: -1;
+  background: linear-gradient(135deg,
+    rgba(255,255,255,0.50) 0%,
+    rgba(255,255,255,0.35) 40%,
+    rgba(255,255,255,0.15) 100%);
+}
+
 
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 
