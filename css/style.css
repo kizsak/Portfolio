@@ -30,7 +30,7 @@ body {
 
 @keyframes preLoad {
   0% {
-    background-image: url("https://picsum.photos/420/300?random=1");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/AsakusaPastels.png");
   }
   10% {
     background-image: url("https://picsum.photos/420/300?random=2");
