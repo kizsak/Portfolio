@@ -46,249 +46,177 @@ body::after{
 }
 
 
-@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+/* -----------------------------------------------------------
+   Fonts (must be first)
+----------------------------------------------------------- */
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fascinate+Inline&display=swap");
 
-* {
-    padding: 0;
-    margin: 0 auto;
-    box-sizing: border-box;
+/* -----------------------------------------------------------
+   Theme variables (pure CSS, not Sass)
+----------------------------------------------------------- */
+:root{
+  /* Gradient palette */
+  --peach:  #ffe9d6;
+  --pink:   #ffd6ec;
+  --lav:    #eadfff;
+  --periw:  #dfe2ff;
+
+  /* Flipbook settings */
+  --book-angle: 60deg;
+  --speed: 5s;
+  --border: #555;
 }
 
-body {
-    font-family: 'Indie Flower', cursive;
-    background-color: #eee;
-    color: #555;
-    text-align: center;
-    padding: 4em 0;
+/* Let gradient fill page */
+html, body { height: 100%; }
+
+/* -----------------------------------------------------------
+   Base + soft pastel background
+----------------------------------------------------------- */
+body{
+  position: relative; /* keeps ::after behind content */
+  font-family: 'Indie Flower', cursive;
+  color: #555;
+  text-align: center;
+  padding: 4em 0;
+
+  /* three gentle layers + sweep */
+  background:
+    radial-gradient(120% 110% at 8% 0%,
+      rgba(255,233,214,0.85) 0%,
+      rgba(255,233,214,0.55) 28%,
+      rgba(255,233,214,0.00) 60%),
+    radial-gradient(110% 120% at 92% 88%,
+      rgba(223,226,255,0.85) 0%,
+      rgba(223,226,255,0.50) 30%,
+      rgba(223,226,255,0.00) 62%),
+    linear-gradient(135deg,
+      var(--peach) 0%,
+      var(--pink) 46%,
+      var(--lav) 72%,
+      var(--periw) 100%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-$bookAngle: 60deg;
-$speed: 5s;
-$borderColor: #555;
+/* Soft white veil to lower intensity */
+body::after{
+  content:"";
+  position: fixed; inset: 0; pointer-events: none;
+  z-index: -1;
+  background: linear-gradient(135deg,
+    rgba(255,255,255,0.50) 0%,
+    rgba(255,255,255,0.35) 40%,
+    rgba(255,255,255,0.15) 100%);
+}
 
-$images:
-    url('https://picsum.photos/420/300?random=1'),
-    url('https://picsum.photos/420/300?random=2'),
-    url('https://picsum.photos/420/300?random=3'),
-    url('https://picsum.photos/420/300?random=4'),
-    url('https://picsum.photos/420/300?random=5'), 
-    url('https://picsum.photos/420/300?random=1');
+/* Optional title font */
+.title { font-family: "Fascinate Inline", system-ui, sans-serif; }
 
-// Preload to images
+/* -----------------------------------------------------------
+   Flipbook
+   (Pure CSS—no Sass $vars, loops, or nesting)
+----------------------------------------------------------- */
+
+/* Change these URLs to your own later if you want */
+@keyframes preLoad {
+  0%  { background-image: url("https://picsum.photos/420/300?random=1"); }
+  10% { background-image: url("https://picsum.photos/420/300?random=2"); }
+  20% { background-image: url("https://picsum.photos/420/300?random=3"); }
+  30% { background-image: url("https://picsum.photos/420/300?random=4"); }
+  40% { background-image: url("https://picsum.photos/420/300?random=5"); }
+  100%{ display: none; }
+}
+
 .imgLoader {
-    position: fixed;
-    animation: preLoad 1s steps(1);
-    width: 1px;
-    height: 1px;
-
-    @keyframes preLoad {
-        @for $i from 0 through 4 {
-            #{$i * 10}% { background-image: nth($images, ($i + 1)); }
-        }
-        100% { display: none; }
-    }
+  position: fixed;
+  animation: preLoad 1s steps(1);
+  width: 1px; height: 1px;
 }
+
+* { box-sizing: border-box; margin: 0 auto; padding: 0; }
 
 .container {
-    position: relative;
-    width: 420px;
-    border: #fff solid 2px;
-    border-radius: 4px;
-    height: 420px;
+  position: relative;
+  width: 420px; height: 420px;
+  border: #fff solid 2px; border-radius: 4px;
 }
 
 .title {
-    position: absolute;
-    top: 45px; left: 0;
-    width: 100%;
-    font-size: 2em;
-    font-weight: normal;
-    line-height: 1;
+  position: absolute; top: 45px; left: 0; width: 100%;
+  font-size: 2em; font-weight: normal; line-height: 1;
 }
 
 .credit {
-    position: absolute;
-    top: 100%; left: 0;
-    font-size: 0.9em;
-    text-align: left;
-
+  position: absolute; top: 100%; left: 0;
+  font-size: 0.9em; text-align: left;
 }
 
 .book {
-    position: relative;
-    perspective: 630px;
-    perspective-origin: center 50px; 
-    transform: scale(1.2);
-    filter: drop-shadow(0px 10px 5px rgba(0,0,0,0.25));
+  position: relative;
+  perspective: 630px; perspective-origin: center 50px;
+  transform: scale(1.2);
+  filter: drop-shadow(0 10px 5px rgba(0,0,0,0.25));
 }
 
 .page {
-    width: 210px;
-    height: 300px;
-    background-color: #bbb;
-    position: absolute;
-    top: 0px; right: 50%;
-    transform-origin: 100% 100%;
-    border: solid $borderColor 2px;
-    background-size: 420px 300px;
-    background-position: center;
-    transform-style: preserve-3d;
-
-    &:nth-child(1) {transform: rotateX($bookAngle) rotateY(3deg); }
-    &:nth-child(2) { transform: rotateX($bookAngle) rotateY(4.5deg); }
-    &:nth-child(3) {
-        transform: rotateX($bookAngle) rotateY(6deg);
-        animation: nextPage $speed*5 infinite $speed*-4.8 steps(1);
-        background-size: 420px 300px;
-        background-position: -2px -2px;
-    }
-
-    &:nth-child(4) { transform: rotateX($bookAngle) rotateY(177deg); }
-    &:nth-child(5) { transform: rotateX($bookAngle) rotateY(175.5deg); }
-    &:nth-child(6) {
-        transform: rotateX($bookAngle) rotateY(174deg);
-        overflow: hidden;
-
-        &::after {
-            content: '';
-            width: 210px;
-            height: 300px;
-            position: absolute;
-            top: 0px; right: 0%;
-            transform-origin: center;
-            transform: rotateY(180deg);
-            animation: nextPage $speed*5 $speed*-4 infinite steps(1);
-            background-size: 420px 300px;
-            background-position: 100% -2px;
-        }
-    }
-
-    @keyframes nextPage {
-        @for $i from 0 through 4 {
-            #{$i * 20}% { background-image: nth($images, ($i + 1)); }
-        }
-    }
-}
-
-.gap {
-    width: 10px;
-    height: 300px;
-    background: none;
-    transform: rotateX($bookAngle);
-    transform-origin: bottom;
-    position: absolute;
-    top: 0px; left: calc(50% - 5px);
-
-    &::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translate(-50%, 50%);
-        background-color: $borderColor;
-        width: 10px;
-        height: 5px;
-        border-radius: 50%;
-    }
-}
-
-.pages, .flips {
+  width: 210px; height: 300px;
+  background-color: #bbb;
+  position: absolute; top: 0; right: 50%;
+  transform-origin: 100% 100%;
+  border: solid var(--border) 2px;
+  background-size: 420px 300px;
+  background-position: center;
   transform-style: preserve-3d;
 }
 
+/* Page stack angles */
+.page:nth-child(1) { transform: rotateX(var(--book-angle)) rotateY(3deg); }
+.page:nth-child(2) { transform: rotateX(var(--book-angle)) rotateY(4.5deg); }
+.page:nth-child(3) {
+  transform: rotateX(var(--book-angle)) rotateY(6deg);
+  animation: nextPage calc(var(--speed) * 5) infinite calc(var(--speed) * -4.8) steps(1);
+  background-size: 420px 300px; background-position: -2px -2px;
+}
+.page:nth-child(4) { transform: rotateX(var(--book-angle)) rotateY(177deg); }
+.page:nth-child(5) { transform: rotateX(var(--book-angle)) rotateY(175.5deg); }
+.page:nth-child(6) {
+  transform: rotateX(var(--book-angle)) rotateY(174deg);
+  overflow: hidden;
+}
+.page:nth-child(6)::after {
+  content: "";
+  width: 210px; height: 300px;
+  position: absolute; top: 0; right: 0%;
+  transform-origin: center; transform: rotateY(180deg);
+  animation: nextPage calc(var(--speed) * 5) calc(var(--speed) * -4) infinite steps(1);
+  background-size: 420px 300px; background-position: 100% -2px;
+}
+
+/* The images that flip across pages */
+@keyframes nextPage {
+  0%  { background-image: url("https://picsum.photos/420/300?random=1"); }
+  20% { background-image: url("https://picsum.photos/420/300?random=2"); }
+  40% { background-image: url("https://picsum.photos/420/300?random=3"); }
+  60% { background-image: url("https://picsum.photos/420/300?random=4"); }
+  80% { background-image: url("https://picsum.photos/420/300?random=5"); }
+}
+
+.gap {
+  width: 10px; height: 300px; background: none;
+  transform: rotateX(var(--book-angle)); transform-origin: bottom;
+  position: absolute; top: 0; left: calc(50% - 5px);
+}
+.gap::after {
+  content: ""; position: absolute; bottom: 0; left: 50%;
+  transform: translate(-50%, 50%);
+  background-color: var(--border);
+  width: 10px; height: 5px; border-radius: 50%;
+}
+
+.pages, .flips { transform-style: preserve-3d; }
+
 .flip {
-    width: 32px;
-    height: 300px;
-    position: absolute;
-    top: 0px;
-    transform-origin: 100% 100%;
-    right: 100%;
-    border: solid $borderColor;
-    border-width: 2px 0px;
-    perspective: 4200px;
-    perspective-origin: center; 
-    transform-style: preserve-3d;
-    background-size: 420px 300px;
-
-    &::after {
-        content: '';
-        position: absolute;
-        top: 0px; right: 0%;
-        width: 100%; height: 100%;
-        transform-origin: center;
-        background-size: 420px 300px;
-    }
-
-    &.flip1 {
-        right: 50%;
-        animation: flip1 $speed infinite ease-in-out;
-        border-width: 2px 2px 2px 0;
-
-        &::after {
-            animation: nextFlip1 $speed*5 $speed*-4 infinite steps(1);
-        }
-    }
-
-    &:not(.flip1) {
-        right: calc(100% - 2px);
-        top: -2px;
-        transform-origin: right;
-        animation: flip2 $speed ease-in-out infinite;
-    }
-
-    @for $i from 2 through 7 {
-        &.flip#{$i}::after { animation: nextFlip#{$i} $speed*5 $speed*-4 infinite steps(1); }
-    }
-    
-    &.flip7 {
-        width: 30px;
-        border-width: 2px 0px 2px 2px;
-        &::after { animation: nextFlip7 $speed*5 $speed*-4 infinite steps(1); }
-    }
-
-    @keyframes flip1 {
-        0%, 20% { transform: rotateX($bookAngle) rotateY(6deg); }
-        80%, 100% { transform: rotateX($bookAngle) rotateY(174deg); }
-    }
-
-    @keyframes flip2 {
-        0%, 20% { transform: rotateY(0deg) translateY(0px); }
-        50% { transform: rotateY(-15deg) translateY(0px); }
-    }
-}
-
-@keyframes nextFlip1 {
-    @for $i from 0 through 4 {
-        #{$i * 20}% { background-image: nth($images, ($i + 1)); background-position: -178px -2px; transform: rotateY(0deg); }
-        #{10 + ($i * 20)}% { background-image: nth($images, ($i + 2)); background-position: -210px -2px; transform: rotateY(180deg); }
-    }
-}
-
-@for $i from 2 through 6 {
-    @keyframes nextFlip#{$i} {
-        @for $j from 0 through 4 {
-            #{$j * 20}% { background-image: nth($images, ($j + 1)); background-position: #{-148 + (($i - 2) * 30)}px -2px; transform: rotateY(0deg); }
-            #{((10 + ($j * 20)) + (($i - 1) * 0.5))}% { background-image: nth($images, ($j + 2)); background-position: #{-238 - (($i - 2) * 30)}px -2px; transform: rotateY(180deg); }
-        }
-    }
-}
-
-@keyframes nextFlip7 {
-    @for $i from 0 through 4 {
-        #{$i * 20}% { background-image: nth($images, ($i + 1)); background-position: -2px -2px; transform: rotateY(0deg); }
-        #{13 + ($i * 20)}% { background-image: nth($images, ($i + 2)); background-position: -388px -2px; transform: rotateY(180deg); }
-    }
-}
-
-.twitterLink {
-  position: fixed;
-  bottom: 0.5em; right: 0.5em;
-  & img {
-    width: 2em;
-    filter: grayscale(100%);
-    transition: filter 0.25s;
-    &:hover {
-      filter: grayscale(0%);
-    }
-  }
-}
+  width: 32px; height: 300px; position: absolute
