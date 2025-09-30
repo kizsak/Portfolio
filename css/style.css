@@ -258,3 +258,30 @@ body{
  73%{background-image:url("https://picsum.photos/420/300?random=5"); background-position:-388px -2px; transform:rotateY(180deg); }
  80%{background-image:url("https://picsum.photos/420/300?random=5"); background-position:-2px -2px; transform:rotateY(0); }
  93%{background-image:url("https://picsum.photos/420/300?random=1"); background-position:-388px -2px; transform:rotateY(180deg); } }
+
+/* ===== OVERRIDE PATCH (put at the very end of the file) ===== */
+
+/* 1) Re-time the image sequence to swap at the midpoint of each 5s flip.
+   The 25s cycle changes at 10%, 30%, 50%, 70%, 90%. */
+@keyframes nextPage{
+  0%   { background-image: url("https://picsum.photos/420/300?random=1"); }
+  10%  { background-image: url("https://picsum.photos/420/300?random=2"); }
+  30%  { background-image: url("https://picsum.photos/420/300?random=3"); }
+  50%  { background-image: url("https://picsum.photos/420/300?random=4"); }
+  70%  { background-image: url("https://picsum.photos/420/300?random=5"); }
+  90%  { background-image: url("https://picsum.photos/420/300?random=1"); }
+  100% { background-image: url("https://picsum.photos/420/300?random=1"); }
+}
+
+/* 2) Force the two visible page surfaces to use that timing and line up
+   so the image only changes while a page is actually turning. */
+.page:nth-child(3){
+  animation: nextPage var(--cycle) linear infinite !important;
+  /* -0.90 * 25s = -22.5s: image change lands mid-flip */
+  animation-delay: calc(var(--cycle) * -0.90) !important;
+}
+.page:nth-child(6)::after{
+  animation: nextPage var(--cycle) linear infinite !important;
+  /* -0.70 * 25s = -17.5s: back-face stays in sync with the turn */
+  animation-delay: calc(var(--cycle) * -0.70) !important;
+}
