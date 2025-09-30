@@ -57,7 +57,7 @@ body {
 }
 @-webkit-keyframes preLoad {
   0% {
-    background-image: url("https://picsum.photos/420/300?random=1");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/Freddie.png");
   }
   10% {
     background-image: url("https://picsum.photos/420/300?random=2");
@@ -77,7 +77,7 @@ body {
 }
 @keyframes preLoad {
   0% {
-    background-image: url("https://picsum.photos/420/300?random=1");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/Freddie.png");
   }
   10% {
     background-image: url("https://picsum.photos/420/300?random=2");
@@ -182,7 +182,7 @@ body {
 }
 @-webkit-keyframes nextPage {
   0% {
-    background-image: url("https://picsum.photos/420/300?random=1");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/Freddie.png");
   }
   20% {
     background-image: url("https://picsum.photos/420/300?random=2");
@@ -199,7 +199,7 @@ body {
 }
 @keyframes nextPage {
   0% {
-    background-image: url("https://picsum.photos/420/300?random=1");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/Freddie.png");
   }
   20% {
     background-image: url("https://picsum.photos/420/300?random=2");
@@ -349,7 +349,7 @@ body {
 
 @-webkit-keyframes nextFlip1 {
   0% {
-    background-image: url("https://picsum.photos/420/300?random=1");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/Freddie.png");
     background-position: -178px -2px;
     transform: rotateY(0deg);
   }
@@ -394,7 +394,7 @@ body {
     transform: rotateY(0deg);
   }
   90% {
-    background-image: url("https://picsum.photos/420/300?random=1");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/Freddie.png");
     background-position: -210px -2px;
     transform: rotateY(180deg);
   }
@@ -402,7 +402,7 @@ body {
 
 @keyframes nextFlip1 {
   0% {
-    background-image: url("https://picsum.photos/420/300?random=1");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/Freddie.png");
     background-position: -178px -2px;
     transform: rotateY(0deg);
   }
@@ -447,14 +447,14 @@ body {
     transform: rotateY(0deg);
   }
   90% {
-    background-image: url("https://picsum.photos/420/300?random=1");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/Freddie.png");
     background-position: -210px -2px;
     transform: rotateY(180deg);
   }
 }
 @-webkit-keyframes nextFlip2 {
   0% {
-    background-image: url("https://picsum.photos/420/300?random=1");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/Freddie.png");
     background-position: -148px -2px;
     transform: rotateY(0deg);
   }
@@ -499,14 +499,14 @@ body {
     transform: rotateY(0deg);
   }
   90.5% {
-    background-image: url("https://picsum.photos/420/300?random=1");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/Freddie.png");
     background-position: -238px -2px;
     transform: rotateY(180deg);
   }
 }
 @keyframes nextFlip2 {
   0% {
-    background-image: url("https://picsum.photos/420/300?random=1");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/Freddie.png");
     background-position: -148px -2px;
     transform: rotateY(0deg);
   }
@@ -551,14 +551,14 @@ body {
     transform: rotateY(0deg);
   }
   90.5% {
-    background-image: url("https://picsum.photos/420/300?random=1");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/Freddie.png");
     background-position: -238px -2px;
     transform: rotateY(180deg);
   }
 }
 @-webkit-keyframes nextFlip3 {
   0% {
-    background-image: url("https://picsum.photos/420/300?random=1");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/Freddie.png");
     background-position: -118px -2px;
     transform: rotateY(0deg);
   }
@@ -610,7 +610,7 @@ body {
 }
 @keyframes nextFlip3 {
   0% {
-    background-image: url("https://picsum.photos/420/300?random=1");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/Freddie.png");
     background-position: -118px -2px;
     transform: rotateY(0deg);
   }
@@ -655,14 +655,14 @@ body {
     transform: rotateY(0deg);
   }
   91% {
-    background-image: url("https://picsum.photos/420/300?random=1");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/Freddie.png");
     background-position: -268px -2px;
     transform: rotateY(180deg);
   }
 }
 @-webkit-keyframes nextFlip4 {
   0% {
-    background-image: url("https://picsum.photos/420/300?random=1");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/Freddie.png");
     background-position: -88px -2px;
     transform: rotateY(0deg);
   }
@@ -707,14 +707,14 @@ body {
     transform: rotateY(0deg);
   }
   91.5% {
-    background-image: url("https://picsum.photos/420/300?random=1");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/Freddie.png");
     background-position: -298px -2px;
     transform: rotateY(180deg);
   }
 }
 @keyframes nextFlip4 {
   0% {
-    background-image: url("https://picsum.photos/420/300?random=1");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/Freddie.png");
     background-position: -88px -2px;
     transform: rotateY(0deg);
   }
@@ -766,7 +766,7 @@ body {
 }
 @-webkit-keyframes nextFlip5 {
   0% {
-    background-image: url("https://picsum.photos/420/300?random=1");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/Freddie.png");
     background-position: -58px -2px;
     transform: rotateY(0deg);
   }
@@ -811,14 +811,14 @@ body {
     transform: rotateY(0deg);
   }
   92% {
-    background-image: url("https://picsum.photos/420/300?random=1");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/Freddie.png");
     background-position: -328px -2px;
     transform: rotateY(180deg);
   }
 }
 @keyframes nextFlip5 {
   0% {
-    background-image: url("https://picsum.photos/420/300?random=1");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/Freddie.png");
     background-position: -58px -2px;
     transform: rotateY(0deg);
   }
@@ -863,14 +863,14 @@ body {
     transform: rotateY(0deg);
   }
   92% {
-    background-image: url("https://picsum.photos/420/300?random=1");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/Freddie.png");
     background-position: -328px -2px;
     transform: rotateY(180deg);
   }
 }
 @-webkit-keyframes nextFlip6 {
   0% {
-    background-image: url("https://picsum.photos/420/300?random=1");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/Freddie.png");
     background-position: -28px -2px;
     transform: rotateY(0deg);
   }
@@ -915,14 +915,14 @@ body {
     transform: rotateY(0deg);
   }
   92.5% {
-    background-image: url("https://picsum.photos/420/300?random=1");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/Freddie.png");
     background-position: -358px -2px;
     transform: rotateY(180deg);
   }
 }
 @keyframes nextFlip6 {
   0% {
-    background-image: url("https://picsum.photos/420/300?random=1");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/Freddie.png");
     background-position: -28px -2px;
     transform: rotateY(0deg);
   }
@@ -967,14 +967,14 @@ body {
     transform: rotateY(0deg);
   }
   92.5% {
-    background-image: url("https://picsum.photos/420/300?random=1");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/Freddie.png");
     background-position: -358px -2px;
     transform: rotateY(180deg);
   }
 }
 @-webkit-keyframes nextFlip7 {
   0% {
-    background-image: url("https://picsum.photos/420/300?random=1");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/Freddie.png");
     background-position: -2px -2px;
     transform: rotateY(0deg);
   }
@@ -1019,7 +1019,7 @@ body {
     transform: rotateY(0deg);
   }
   93% {
-    background-image: url("https://picsum.photos/420/300?random=1");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/Freddie.png");
     background-position: -388px -2px;
     transform: rotateY(180deg);
   }
@@ -1071,21 +1071,9 @@ body {
     transform: rotateY(0deg);
   }
   93% {
-    background-image: url("https://picsum.photos/420/300?random=1");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/Freddie.png");
     background-position: -388px -2px;
     transform: rotateY(180deg);
   }
 }
-.twitterLink {
-  position: fixed;
-  bottom: 0.5em;
-  right: 0.5em;
-}
-.twitterLink img {
-  width: 2em;
-  filter: grayscale(100%);
-  transition: filter 0.25s;
-}
-.twitterLink img:hover {
-  filter: grayscale(0%);
-}
+
