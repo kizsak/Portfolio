@@ -285,3 +285,95 @@ body{
   /* -0.70 * 25s = -17.5s: back-face stays in sync with the turn */
   animation-delay: calc(var(--cycle) * -0.70) !important;
 }
+
+/* ===== Simple, synced flipbook (graceful turn) ===== */
+:root{
+  --w: 420px;        /* book width */
+  --h: 300px;        /* page height */
+  --leaf: calc(var(--w) / 2);    /* half width */
+  --angle: 60deg;    /* book tilt */
+  --speed: 5s;       /* one page turn */
+  --cycle: calc(5 * var(--speed)); /* 25s image cycle */
+  --border: #555;
+}
+
+/* Book container (same size you already use) */
+.book{
+  position: relative;
+  width: var(--w); height: var(--h);
+  margin: 0 auto;
+  perspective: 630px;
+  perspective-origin: center 50px;
+  transform: scale(1.2);
+  filter: drop-shadow(0 10px 5px rgba(0,0,0,.25));
+}
+
+/* One turning leaf with two faces */
+.leaf{
+  position: absolute;
+  top: 0; right: 50%; /* hinge at spine */
+  width: var(--leaf); height: var(--h);
+  transform-style: preserve-3d;
+  transform-origin: 100% 100%;
+  animation: turn var(--speed) ease-in-out infinite;
+  will-change: transform;
+}
+
+.face{
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border: 2px solid var(--border);
+  background-size: var(--w) var(--h);
+  background-position: center;
+  will-change: background-image;
+}
+
+/* FRONT shows image N; BACK shows image N+1 */
+.front{
+  transform: rotateX(var(--angle)) rotateY(6deg);
+  background-position: -2px -2px;
+  animation: images var(--cycle) steps(1) infinite;         /* N */
+}
+.back{
+  transform: rotateX(var(--angle)) rotateY(186deg); /* 6deg + 180 */
+  background-position: calc(var(--w) - var(--leaf) - 2px) -2px;
+  animation: images var(--cycle) steps(1) infinite;         /* N+1 */
+  animation-delay: var(--speed); /* 5s ahead */
+}
+
+/* Graceful page turn: flat → flip → flat */
+@keyframes turn{
+  0%,20%   { transform: rotateX(var(--angle)) rotateY(6deg); }
+  50%      { transform: rotateX(var(--angle)) rotateY(174deg); }
+  80%,100% { transform: rotateX(var(--angle)) rotateY(6deg); }
+}
+
+/* Image sequence changes every 5s; swap happens mid-turn */
+@keyframes images{
+  0%   { background-image: url("https://picsum.photos/420/300?random=1"); }
+  20%  { background-image: url("https://picsum.photos/420/300?random=2"); }
+  40%  { background-image: url("https://picsum.photos/420/300?random=3"); }
+  60%  { background-image: url("https://picsum.photos/420/300?random=4"); }
+  80%  { background-image: url("https://picsum.photos/420/300?random=5"); }
+  100% { background-image: url("https://picsum.photos/420/300?random=1"); }
+}
+
+/* Optional: preload the 5 images quietly */
+.imgLoader{
+  position: fixed; width: 1px; height: 1px;
+  animation: preload 1s steps(1);
+}
+@keyframes preload{
+  0%  { background-image: url("https://picsum.photos/420/300?random=1"); }
+  10% { background-image: url("https://picsum.photos/420/300?random=2"); }
+  20% { background-image: url("https://picsum.photos/420/300?random=3"); }
+  30% { background-image: url("https://picsum.photos/420/300?random=4"); }
+  40% { background-image: url("https://picsum.photos/420/300?random=5"); }
+  100%{ display: none; }
+}
+
+/* Accessibility: reduce motion if requested */
+@media (prefers-reduced-motion: reduce){
+  .leaf{ animation: none; }
+}
