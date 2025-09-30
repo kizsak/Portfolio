@@ -1,4 +1,39 @@
 @import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+
+/* === Sudowrite-like soft pastel background === */
+:root{
+  --peach:   #ffe9d6; /* warm top-left */
+  --pink:    #ffd6ec; /* mid pink */
+  --lav:     #eadfff; /* lilac */
+  --periw:   #dfe2ff; /* cool bottom-right */
+}
+
+/* let the gradient fill the viewport */
+html, body { height: 100%; }
+
+/* Base gradient: very light + low saturation */
+body{
+  /* three layers: peach corner, cool corner, gentle sweep */
+  background:
+    radial-gradient(120% 110% at 8% 0%,
+      rgba(255,233,214,0.85) 0%,
+      rgba(255,233,214,0.55) 28%,
+      rgba(255,233,214,0.00) 60%),
+    radial-gradient(110% 120% at 92% 88%,
+      rgba(223,226,255,0.85) 0%,
+      rgba(223,226,255,0.50) 30%,
+      rgba(223,226,255,0.00) 62%),
+    linear-gradient(135deg,
+      var(--peach) 0%,
+      var(--pink) 46%,
+      var(--lav) 72%,
+      var(--periw) 100%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #222; /* keep text readable */
+}
+
 * {
   padding: 0;
   margin: 0 auto;
