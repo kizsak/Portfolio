@@ -511,3 +511,50 @@ figure.snip1384.hover i {
   line-height: 1.3;
 }
 
+/* --- Gallery layout --- */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;     /* allows multiple rows */
+  gap: 20px;           /* spacing between cards */
+  justify-content: center;
+}
+
+/* Reset figure styling */
+.gallery figure {
+  position: relative;
+  overflow: hidden;
+  flex: 1 1 250px;
+  max-width: 320px;
+  margin: 0;
+  border-radius: 10px;
+  background: #fff;
+}
+
+/* Make captions overlay but hidden initially */
+.gallery figure figcaption {
+  position: absolute;
+  inset: 0; /* shorthand for top:0; right:0; bottom:0; left:0 */
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  text-align: center;
+  padding: 1em;
+}
+
+/* Show text only on hover */
+.gallery figure:hover figcaption {
+  opacity: 1;
+}
+
+/* Make sure images fill their container */
+.gallery figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
