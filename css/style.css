@@ -425,6 +425,62 @@ body::before, body::after, html::before, html::after {
   display: block; /* remove inline spacing */
 }
 
+/* --- Gallery: size cards to image only; no extra white blocks --- */
+.gallery .card {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 12px;
+  background: transparent;
+}
+
+/* Nuke any fixed/min heights coming from earlier rules */
+.gallery .card,
+.gallery .card > * {
+  height: auto !important;
+  min-height: 0 !important;
+}
+
+/* If you used aspect-ratio/padding hacks earlier, disable them */
+.gallery .card::before,
+.gallery .thumb::before {
+  content: none !important;
+  display: none !important;
+  padding-bottom: 0 !important;
+}
+
+/* Keep images at natural proportions */
+.gallery .card img,
+.gallery .thumb img {
+  display: block;
+  width: 100%;
+  height: auto !important;  /* natural aspect */
+}
+
+/* If there’s a blank text/caption area, don’t reserve space */
+.gallery .card .content:empty,
+.gallery .card .caption:empty {
+  display: none !important;
+}
+
+/* Make hover text an overlay so it doesn't take layout space */
+.gallery .card .caption,
+.gallery .card .overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  padding: 12px;
+  color: #fff;
+  background: linear-gradient(to top, rgba(0,0,0,.45), rgba(0,0,0,0));
+  opacity: 0;
+  transition: opacity .2s ease;
+  pointer-events: none;
+}
+.gallery .card:hover .caption,
+.gallery .card:hover .overlay {
+  opacity: 1;
+}
 
 
 
