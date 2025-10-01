@@ -314,3 +314,26 @@ body {
   80% { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/BrusselsPastels2.png"); background-position: -2px -2px; transform: rotateY(0deg); }
   93% { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/Freddie.png"); background-position: -388px -2px; transform: rotateY(180deg); }
 }
+
+/* ---- Lock the site background (put this LAST in style.css) ---- */
+html, body {
+  background:
+    radial-gradient(120% 110% at 8% 0%,
+      rgba(255,233,214,0.85) 0%,
+      rgba(255,233,214,0.55) 28%,
+      rgba(255,233,214,0.00) 60%),
+    radial-gradient(110% 120% at 92% 88%,
+      rgba(223,226,255,0.85) 0%,
+      rgba(223,226,255,0.50) 30%,
+      rgba(223,226,255,0.00) 62%),
+    linear-gradient(135deg, #ffe9d6 0%, #ffd6ec 46%, #eadfff 72%, #dfe2ff 100%) !important;
+  background-attachment: fixed !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+}
+
+/* If some element is painting a full-screen image, nuke it: */
+body::before, body::after, html::before, html::after {
+  background-image: none !important;
+  content: none !important;
+}
