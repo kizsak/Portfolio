@@ -466,3 +466,48 @@ figure.snip1384.hover i {
   flex: 1 1 250px;  /* each figure grows/shrinks, min width ~250px */
   max-width: 300px; /* prevent them from getting too big */
 }
+
+/* --- Gallery layout --- */
+.gallery {
+  display: flex;
+  gap: 20px;              /* space between figures */
+  justify-content: center;
+  flex-wrap: wrap;        /* wrap on small screens */
+  padding: 16px;
+}
+
+.gallery figure {
+  flex: 1 1 250px;        /* each card can shrink/grow, base ~250px */
+  max-width: 320px;       /* don’t let them get huge */
+  margin: 0;              /* override browser default figure margin */
+  background: rgba(255,255,255,0.5);
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.7);
+}
+
+/* Image sizing */
+.gallery figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Caption styling (tweak to taste) */
+.gallery figure figcaption {
+  padding: 10px 12px;
+  text-align: left;
+}
+
+.gallery figure h3 {
+  font-weight: 600;
+  margin-bottom: 6px;
+  font-size: 1.1rem;
+}
+
+.gallery figure p {
+  margin: 0;
+  opacity: 0.85;
+  line-height: 1.3;
+}
+
