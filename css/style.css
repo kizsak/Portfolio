@@ -411,6 +411,23 @@ body::before, body::after, html::before, html::after {
   display: block;
 }
 
+/* --- Fix gallery card sizing to keep images natural --- */
+.card {
+  overflow: hidden;
+  border-radius: 10px;
+  background: #fff;
+  display: inline-block; /* shrink-wrap height to the image */
+}
+
+.card img {
+  width: 100%;
+  height: auto;   /* keep natural proportions */
+  display: block; /* remove inline spacing */
+}
+
+
+
+
 /* ========== GRADIENT BUTTONS ========= */
 
 * {
