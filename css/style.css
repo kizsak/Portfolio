@@ -138,7 +138,7 @@ body {
 @keyframes nextPage {
   0%   { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/Freddie.png"); }
   20%  { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/YoelDemonAcrylics.jpg"); }
-  40%  { background-image: url("https://github.com/kizsak/Portfolio/raw/main/AsakusaPastels.png"); }
+  40%  { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/AsakusaPastels.png"); }
   60%  { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/WaterlilyPastels1.png"); }
   80%  { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/BrusselsPastels2.png"); }
 }
