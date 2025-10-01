@@ -454,3 +454,15 @@ figure.snip1384.hover i {
   opacity: 1;
 }
 
+
+.gallery {
+  display: flex;
+  gap: 20px;        /* space between figures */
+  justify-content: center; /* center them on the page */
+  flex-wrap: wrap;  /* let them wrap on small screens */
+}
+
+.gallery figure {
+  flex: 1 1 250px;  /* each figure grows/shrinks, min width ~250px */
+  max-width: 300px; /* prevent them from getting too big */
+}
