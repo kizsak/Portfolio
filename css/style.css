@@ -60,16 +60,16 @@ body {
     background-image: url("https://github.com/kizsak/Portfolio/raw/main/Freddie.png");
   }
   10% {
-    background-image: url("https://picsum.photos/420/300?random=2");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/YoelDemonAcrylics.jpg");
   }
   20% {
-    background-image: url("https://picsum.photos/420/300?random=3");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/StockholmPastels.png");
   }
   30% {
-    background-image: url("https://picsum.photos/420/300?random=4");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/WaterlilyPastels1.png");
   }
   40% {
-    background-image: url("https://picsum.photos/420/300?random=5");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/BrusselsPastels2.png");
   }
   100% {
     display: none;
@@ -80,16 +80,16 @@ body {
     background-image: url("https://github.com/kizsak/Portfolio/raw/main/Freddie.png");
   }
   10% {
-    background-image: url("https://picsum.photos/420/300?random=2");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/YoelDemonAcrylics.jpg");
   }
   20% {
-    background-image: url("https://picsum.photos/420/300?random=3");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/StockholmPastels.png");
   }
   30% {
-    background-image: url("https://picsum.photos/420/300?random=4");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/WaterlilyPastels1.png");
   }
   40% {
-    background-image: url("https://picsum.photos/420/300?random=5");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/BrusselsPastels2.png");
   }
   100% {
     display: none;
@@ -185,16 +185,16 @@ body {
     background-image: url("https://github.com/kizsak/Portfolio/raw/main/Freddie.png");
   }
   20% {
-    background-image: url("https://picsum.photos/420/300?random=2");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/YoelDemonAcrylics.jpg");
   }
   40% {
-    background-image: url("https://picsum.photos/420/300?random=3");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/StockholmPastels.png");
   }
   60% {
-    background-image: url("https://picsum.photos/420/300?random=4");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/WaterlilyPastels1.png");
   }
   80% {
-    background-image: url("https://picsum.photos/420/300?random=5");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/BrusselsPastels2.png");
   }
 }
 @keyframes nextPage {
@@ -202,16 +202,16 @@ body {
     background-image: url("https://github.com/kizsak/Portfolio/raw/main/Freddie.png");
   }
   20% {
-    background-image: url("https://picsum.photos/420/300?random=2");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/YoelDemonAcrylics.jpg");
   }
   40% {
-    background-image: url("https://picsum.photos/420/300?random=3");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/StockholmPastels.png");
   }
   60% {
-    background-image: url("https://picsum.photos/420/300?random=4");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/WaterlilyPastels1.png");
   }
   80% {
-    background-image: url("https://picsum.photos/420/300?random=5");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/BrusselsPastels2.png");
   }
 }
 
@@ -354,42 +354,42 @@ body {
     transform: rotateY(0deg);
   }
   10% {
-    background-image: url("https://picsum.photos/420/300?random=2");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/YoelDemonAcrylics.jpg");
     background-position: -210px -2px;
     transform: rotateY(180deg);
   }
   20% {
-    background-image: url("https://picsum.photos/420/300?random=2");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/YoelDemonAcrylics.jpg");
     background-position: -178px -2px;
     transform: rotateY(0deg);
   }
   30% {
-    background-image: url("https://picsum.photos/420/300?random=3");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/StockholmPastels.png");
     background-position: -210px -2px;
     transform: rotateY(180deg);
   }
   40% {
-    background-image: url("https://picsum.photos/420/300?random=3");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/StockholmPastels.png");
     background-position: -178px -2px;
     transform: rotateY(0deg);
   }
   50% {
-    background-image: url("https://picsum.photos/420/300?random=4");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/WaterlilyPastels1.png");
     background-position: -210px -2px;
     transform: rotateY(180deg);
   }
   60% {
-    background-image: url("https://picsum.photos/420/300?random=4");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/WaterlilyPastels1.png");
     background-position: -178px -2px;
     transform: rotateY(0deg);
   }
   70% {
-    background-image: url("https://picsum.photos/420/300?random=5");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/BrusselsPastels2.png");
     background-position: -210px -2px;
     transform: rotateY(180deg);
   }
   80% {
-    background-image: url("https://picsum.photos/420/300?random=5");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/BrusselsPastels2.png");
     background-position: -178px -2px;
     transform: rotateY(0deg);
   }
@@ -407,42 +407,42 @@ body {
     transform: rotateY(0deg);
   }
   10% {
-    background-image: url("https://picsum.photos/420/300?random=2");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/YoelDemonAcrylics.jpg");
     background-position: -210px -2px;
     transform: rotateY(180deg);
   }
   20% {
-    background-image: url("https://picsum.photos/420/300?random=2");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/YoelDemonAcrylics.jpg");
     background-position: -178px -2px;
     transform: rotateY(0deg);
   }
   30% {
-    background-image: url("https://picsum.photos/420/300?random=3");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/StockholmPastels.png");
     background-position: -210px -2px;
     transform: rotateY(180deg);
   }
   40% {
-    background-image: url("https://picsum.photos/420/300?random=3");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/StockholmPastels.png");
     background-position: -178px -2px;
     transform: rotateY(0deg);
   }
   50% {
-    background-image: url("https://picsum.photos/420/300?random=4");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/WaterlilyPastels1.png");
     background-position: -210px -2px;
     transform: rotateY(180deg);
   }
   60% {
-    background-image: url("https://picsum.photos/420/300?random=4");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/WaterlilyPastels1.png");
     background-position: -178px -2px;
     transform: rotateY(0deg);
   }
   70% {
-    background-image: url("https://picsum.photos/420/300?random=5");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/BrusselsPastels2.png");
     background-position: -210px -2px;
     transform: rotateY(180deg);
   }
   80% {
-    background-image: url("https://picsum.photos/420/300?random=5");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/BrusselsPastels2.png");
     background-position: -178px -2px;
     transform: rotateY(0deg);
   }
@@ -459,42 +459,42 @@ body {
     transform: rotateY(0deg);
   }
   10.5% {
-    background-image: url("https://picsum.photos/420/300?random=2");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/YoelDemonAcrylics.jpg");
     background-position: -238px -2px;
     transform: rotateY(180deg);
   }
   20% {
-    background-image: url("https://picsum.photos/420/300?random=2");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/YoelDemonAcrylics.jpg");
     background-position: -148px -2px;
     transform: rotateY(0deg);
   }
   30.5% {
-    background-image: url("https://picsum.photos/420/300?random=3");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/StockholmPastels.png");
     background-position: -238px -2px;
     transform: rotateY(180deg);
   }
   40% {
-    background-image: url("https://picsum.photos/420/300?random=3");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/StockholmPastels.png");
     background-position: -148px -2px;
     transform: rotateY(0deg);
   }
   50.5% {
-    background-image: url("https://picsum.photos/420/300?random=4");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/WaterlilyPastels1.png");
     background-position: -238px -2px;
     transform: rotateY(180deg);
   }
   60% {
-    background-image: url("https://picsum.photos/420/300?random=4");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/WaterlilyPastels1.png");
     background-position: -148px -2px;
     transform: rotateY(0deg);
   }
   70.5% {
-    background-image: url("https://picsum.photos/420/300?random=5");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/BrusselsPastels2.png");
     background-position: -238px -2px;
     transform: rotateY(180deg);
   }
   80% {
-    background-image: url("https://picsum.photos/420/300?random=5");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/BrusselsPastels2.png");
     background-position: -148px -2px;
     transform: rotateY(0deg);
   }
@@ -511,42 +511,42 @@ body {
     transform: rotateY(0deg);
   }
   10.5% {
-    background-image: url("https://picsum.photos/420/300?random=2");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/YoelDemonAcrylics.jpg");
     background-position: -238px -2px;
     transform: rotateY(180deg);
   }
   20% {
-    background-image: url("https://picsum.photos/420/300?random=2");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/YoelDemonAcrylics.jpg");
     background-position: -148px -2px;
     transform: rotateY(0deg);
   }
   30.5% {
-    background-image: url("https://picsum.photos/420/300?random=3");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/StockholmPastels.png");
     background-position: -238px -2px;
     transform: rotateY(180deg);
   }
   40% {
-    background-image: url("https://picsum.photos/420/300?random=3");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/StockholmPastels.png");
     background-position: -148px -2px;
     transform: rotateY(0deg);
   }
   50.5% {
-    background-image: url("https://picsum.photos/420/300?random=4");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/WaterlilyPastels1.png");
     background-position: -238px -2px;
     transform: rotateY(180deg);
   }
   60% {
-    background-image: url("https://picsum.photos/420/300?random=4");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/WaterlilyPastels1.png");
     background-position: -148px -2px;
     transform: rotateY(0deg);
   }
   70.5% {
-    background-image: url("https://picsum.photos/420/300?random=5");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/BrusselsPastels2.png");
     background-position: -238px -2px;
     transform: rotateY(180deg);
   }
   80% {
-    background-image: url("https://picsum.photos/420/300?random=5");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/BrusselsPastels2.png");
     background-position: -148px -2px;
     transform: rotateY(0deg);
   }
@@ -563,47 +563,47 @@ body {
     transform: rotateY(0deg);
   }
   11% {
-    background-image: url("https://picsum.photos/420/300?random=2");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/YoelDemonAcrylics.jpg");
     background-position: -268px -2px;
     transform: rotateY(180deg);
   }
   20% {
-    background-image: url("https://picsum.photos/420/300?random=2");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/YoelDemonAcrylics.jpg");
     background-position: -118px -2px;
     transform: rotateY(0deg);
   }
   31% {
-    background-image: url("https://picsum.photos/420/300?random=3");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/StockholmPastels.png");
     background-position: -268px -2px;
     transform: rotateY(180deg);
   }
   40% {
-    background-image: url("https://picsum.photos/420/300?random=3");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/StockholmPastels.png");
     background-position: -118px -2px;
     transform: rotateY(0deg);
   }
   51% {
-    background-image: url("https://picsum.photos/420/300?random=4");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/WaterlilyPastels1.png");
     background-position: -268px -2px;
     transform: rotateY(180deg);
   }
   60% {
-    background-image: url("https://picsum.photos/420/300?random=4");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/WaterlilyPastels1.png");
     background-position: -118px -2px;
     transform: rotateY(0deg);
   }
   71% {
-    background-image: url("https://picsum.photos/420/300?random=5");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/BrusselsPastels2.png");
     background-position: -268px -2px;
     transform: rotateY(180deg);
   }
   80% {
-    background-image: url("https://picsum.photos/420/300?random=5");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/BrusselsPastels2.png");
     background-position: -118px -2px;
     transform: rotateY(0deg);
   }
   91% {
-    background-image: url("https://picsum.photos/420/300?random=1");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/Freddie.png");
     background-position: -268px -2px;
     transform: rotateY(180deg);
   }
@@ -615,42 +615,42 @@ body {
     transform: rotateY(0deg);
   }
   11% {
-    background-image: url("https://picsum.photos/420/300?random=2");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/YoelDemonAcrylics.jpg");
     background-position: -268px -2px;
     transform: rotateY(180deg);
   }
   20% {
-    background-image: url("https://picsum.photos/420/300?random=2");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/YoelDemonAcrylics.jpg");
     background-position: -118px -2px;
     transform: rotateY(0deg);
   }
   31% {
-    background-image: url("https://picsum.photos/420/300?random=3");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/StockholmPastels.png");
     background-position: -268px -2px;
     transform: rotateY(180deg);
   }
   40% {
-    background-image: url("https://picsum.photos/420/300?random=3");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/StockholmPastels.png");
     background-position: -118px -2px;
     transform: rotateY(0deg);
   }
   51% {
-    background-image: url("https://picsum.photos/420/300?random=4");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/WaterlilyPastels1.png");
     background-position: -268px -2px;
     transform: rotateY(180deg);
   }
   60% {
-    background-image: url("https://picsum.photos/420/300?random=4");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/WaterlilyPastels1.png");
     background-position: -118px -2px;
     transform: rotateY(0deg);
   }
   71% {
-    background-image: url("https://picsum.photos/420/300?random=5");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/BrusselsPastels2.png");
     background-position: -268px -2px;
     transform: rotateY(180deg);
   }
   80% {
-    background-image: url("https://picsum.photos/420/300?random=5");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/BrusselsPastels2.png");
     background-position: -118px -2px;
     transform: rotateY(0deg);
   }
@@ -667,42 +667,42 @@ body {
     transform: rotateY(0deg);
   }
   11.5% {
-    background-image: url("https://picsum.photos/420/300?random=2");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/YoelDemonAcrylics.jpg");
     background-position: -298px -2px;
     transform: rotateY(180deg);
   }
   20% {
-    background-image: url("https://picsum.photos/420/300?random=2");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/YoelDemonAcrylics.jpg");
     background-position: -88px -2px;
     transform: rotateY(0deg);
   }
   31.5% {
-    background-image: url("https://picsum.photos/420/300?random=3");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/StockholmPastels.png);
     background-position: -298px -2px;
     transform: rotateY(180deg);
   }
   40% {
-    background-image: url("https://picsum.photos/420/300?random=3");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/StockholmPastels.png");
     background-position: -88px -2px;
     transform: rotateY(0deg);
   }
   51.5% {
-    background-image: url("https://picsum.photos/420/300?random=4");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/WaterlilyPastels1.png");
     background-position: -298px -2px;
     transform: rotateY(180deg);
   }
   60% {
-    background-image: url("https://picsum.photos/420/300?random=4");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/WaterlilyPastels1.png");
     background-position: -88px -2px;
     transform: rotateY(0deg);
   }
   71.5% {
-    background-image: url("https://picsum.photos/420/300?random=5");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/BrusselsPastels2.png");
     background-position: -298px -2px;
     transform: rotateY(180deg);
   }
   80% {
-    background-image: url("https://picsum.photos/420/300?random=5");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/BrusselsPastels2.png");
     background-position: -88px -2px;
     transform: rotateY(0deg);
   }
@@ -719,47 +719,47 @@ body {
     transform: rotateY(0deg);
   }
   11.5% {
-    background-image: url("https://picsum.photos/420/300?random=2");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/YoelDemonAcrylics.jpg");
     background-position: -298px -2px;
     transform: rotateY(180deg);
   }
   20% {
-    background-image: url("https://picsum.photos/420/300?random=2");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/YoelDemonAcrylics.jpg;
     background-position: -88px -2px;
     transform: rotateY(0deg);
   }
   31.5% {
-    background-image: url("https://picsum.photos/420/300?random=3");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/StockholmPastels.png");
     background-position: -298px -2px;
     transform: rotateY(180deg);
   }
   40% {
-    background-image: url("https://picsum.photos/420/300?random=3");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/StockholmPastels.png");
     background-position: -88px -2px;
     transform: rotateY(0deg);
   }
   51.5% {
-    background-image: url("https://picsum.photos/420/300?random=4");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/WaterlilyPastels1.png");
     background-position: -298px -2px;
     transform: rotateY(180deg);
   }
   60% {
-    background-image: url("https://picsum.photos/420/300?random=4");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/WaterlilyPastels1.png");
     background-position: -88px -2px;
     transform: rotateY(0deg);
   }
   71.5% {
-    background-image: url("https://picsum.photos/420/300?random=5");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/BrusselsPastels2.png");
     background-position: -298px -2px;
     transform: rotateY(180deg);
   }
   80% {
-    background-image: url("https://picsum.photos/420/300?random=5");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/BrusselsPastels2.png");
     background-position: -88px -2px;
     transform: rotateY(0deg);
   }
   91.5% {
-    background-image: url("https://picsum.photos/420/300?random=1");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/Freddie.png");
     background-position: -298px -2px;
     transform: rotateY(180deg);
   }
@@ -771,42 +771,42 @@ body {
     transform: rotateY(0deg);
   }
   12% {
-    background-image: url("https://picsum.photos/420/300?random=2");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/YoelDemonAcrylics.jpg");
     background-position: -328px -2px;
     transform: rotateY(180deg);
   }
   20% {
-    background-image: url("https://picsum.photos/420/300?random=2");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/YoelDemonAcrylics.jpg");
     background-position: -58px -2px;
     transform: rotateY(0deg);
   }
   32% {
-    background-image: url("https://picsum.photos/420/300?random=3");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/StockholmPastels.png");
     background-position: -328px -2px;
     transform: rotateY(180deg);
   }
   40% {
-    background-image: url("https://picsum.photos/420/300?random=3");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/StockholmPastels.png");
     background-position: -58px -2px;
     transform: rotateY(0deg);
   }
   52% {
-    background-image: url("https://picsum.photos/420/300?random=4");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/WaterlilyPastels1.png");
     background-position: -328px -2px;
     transform: rotateY(180deg);
   }
   60% {
-    background-image: url("https://picsum.photos/420/300?random=4");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/WaterlilyPastels1.png");
     background-position: -58px -2px;
     transform: rotateY(0deg);
   }
   72% {
-    background-image: url("https://picsum.photos/420/300?random=5");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/BrusselsPastels2.png");
     background-position: -328px -2px;
     transform: rotateY(180deg);
   }
   80% {
-    background-image: url("https://picsum.photos/420/300?random=5");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/BrusselsPastels2.png");
     background-position: -58px -2px;
     transform: rotateY(0deg);
   }
@@ -823,43 +823,42 @@ body {
     transform: rotateY(0deg);
   }
   12% {
-    background-image: url("https://picsum.photos/420/300?random=2");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/YoelDemonAcrylics.jpg");
     background-position: -328px -2px;
     transform: rotateY(180deg);
   }
   20% {
-    background-image: url("https://picsum.photos/420/300?random=2");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/YoelDemonAcrylics.jpg");
     background-position: -58px -2px;
     transform: rotateY(0deg);
   }
   32% {
-    background-image: url("https://picsum.photos/420/300?random=3");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/StockholmPastels.png");
     background-position: -328px -2px;
     transform: rotateY(180deg);
   }
   40% {
-    background-image: url("https://picsum.photos/420/300?random=3");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/StockholmPastels.png");
     background-position: -58px -2px;
     transform: rotateY(0deg);
   }
   52% {
-    background-image: url("https://picsum.photos/420/300?random=4");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/WaterlilyPastels1.png");
     background-position: -328px -2px;
     transform: rotateY(180deg);
   }
   60% {
-    background-image: url("https://picsum.photos/420/300?random=4");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/WaterlilyPastels1.png");
     background-position: -58px -2px;
     transform: rotateY(0deg);
   }
   72% {
-    background-image: url("https://picsum.photos/420/300?random=5");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/BrusselsPastels2.png");
     background-position: -328px -2px;
     transform: rotateY(180deg);
   }
   80% {
-    background-image: url("https://picsum.photos/420/300?random=5");
-    background-position: -58px -2px;
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/BrusselsPastels2.png
     transform: rotateY(0deg);
   }
   92% {
@@ -875,42 +874,42 @@ body {
     transform: rotateY(0deg);
   }
   12.5% {
-    background-image: url("https://picsum.photos/420/300?random=2");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/YoelDemonAcrylics.jpg");
     background-position: -358px -2px;
     transform: rotateY(180deg);
   }
   20% {
-    background-image: url("https://picsum.photos/420/300?random=2");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/YoelDemonAcrylics.jpg;
     background-position: -28px -2px;
     transform: rotateY(0deg);
   }
   32.5% {
-    background-image: url("https://picsum.photos/420/300?random=3");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/StockholmPastels.png");
     background-position: -358px -2px;
     transform: rotateY(180deg);
   }
   40% {
-    background-image: url("https://picsum.photos/420/300?random=3");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/StockholmPastels.png");
     background-position: -28px -2px;
     transform: rotateY(0deg);
   }
   52.5% {
-    background-image: url("https://picsum.photos/420/300?random=4");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/WaterlilyPastels1.png");
     background-position: -358px -2px;
     transform: rotateY(180deg);
   }
   60% {
-    background-image: url("https://picsum.photos/420/300?random=4");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/WaterlilyPastels1.png;
     background-position: -28px -2px;
     transform: rotateY(0deg);
   }
   72.5% {
-    background-image: url("https://picsum.photos/420/300?random=5");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/BrusselsPastels2.png");
     background-position: -358px -2px;
     transform: rotateY(180deg);
   }
   80% {
-    background-image: url("https://picsum.photos/420/300?random=5");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/BrusselsPastels2.png");
     background-position: -28px -2px;
     transform: rotateY(0deg);
   }
@@ -927,42 +926,42 @@ body {
     transform: rotateY(0deg);
   }
   12.5% {
-    background-image: url("https://picsum.photos/420/300?random=2");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/YoelDemonAcrylics.jpg");
     background-position: -358px -2px;
     transform: rotateY(180deg);
   }
   20% {
-    background-image: url("https://picsum.photos/420/300?random=2");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/YoelDemonAcrylics.jpg");
     background-position: -28px -2px;
     transform: rotateY(0deg);
   }
   32.5% {
-    background-image: url("https://picsum.photos/420/300?random=3");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/StockholmPastels.png");
     background-position: -358px -2px;
     transform: rotateY(180deg);
   }
   40% {
-    background-image: url("https://picsum.photos/420/300?random=3");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/StockholmPastels.png");
     background-position: -28px -2px;
     transform: rotateY(0deg);
   }
   52.5% {
-    background-image: url("https://picsum.photos/420/300?random=4");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/WaterlilyPastels1.png");
     background-position: -358px -2px;
     transform: rotateY(180deg);
   }
   60% {
-    background-image: url("https://picsum.photos/420/300?random=4");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/WaterlilyPastels1.png");
     background-position: -28px -2px;
     transform: rotateY(0deg);
   }
   72.5% {
-    background-image: url("https://picsum.photos/420/300?random=5");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/BrusselsPastels2.png");
     background-position: -358px -2px;
     transform: rotateY(180deg);
   }
   80% {
-    background-image: url("https://picsum.photos/420/300?random=5");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/BrusselsPastels2.png");
     background-position: -28px -2px;
     transform: rotateY(0deg);
   }
@@ -979,42 +978,42 @@ body {
     transform: rotateY(0deg);
   }
   13% {
-    background-image: url("https://picsum.photos/420/300?random=2");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/YoelDemonAcrylics.jpg");
     background-position: -388px -2px;
     transform: rotateY(180deg);
   }
   20% {
-    background-image: url("https://picsum.photos/420/300?random=2");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/YoelDemonAcrylics.jpg
     background-position: -2px -2px;
     transform: rotateY(0deg);
   }
   33% {
-    background-image: url("https://picsum.photos/420/300?random=3");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/StockholmPastels.png");
     background-position: -388px -2px;
     transform: rotateY(180deg);
   }
   40% {
-    background-image: url("https://picsum.photos/420/300?random=3");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/StockholmPastels.png");
     background-position: -2px -2px;
     transform: rotateY(0deg);
   }
   53% {
-    background-image: url("https://picsum.photos/420/300?random=4");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/WaterlilyPastels1.png");
     background-position: -388px -2px;
     transform: rotateY(180deg);
   }
   60% {
-    background-image: url("https://picsum.photos/420/300?random=4");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/WaterlilyPastels1.png");
     background-position: -2px -2px;
     transform: rotateY(0deg);
   }
   73% {
-    background-image: url("https://picsum.photos/420/300?random=5");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/BrusselsPastels2.png");
     background-position: -388px -2px;
     transform: rotateY(180deg);
   }
   80% {
-    background-image: url("https://picsum.photos/420/300?random=5");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/BrusselsPastels2.png");
     background-position: -2px -2px;
     transform: rotateY(0deg);
   }
@@ -1026,47 +1025,47 @@ body {
 }
 @keyframes nextFlip7 {
   0% {
-    background-image: url("https://picsum.photos/420/300?random=1");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/Freddie.png");
     background-position: -2px -2px;
     transform: rotateY(0deg);
   }
   13% {
-    background-image: url("https://picsum.photos/420/300?random=2");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/YoelDemonAcrylics.jpg");
     background-position: -388px -2px;
     transform: rotateY(180deg);
   }
   20% {
-    background-image: url("https://picsum.photos/420/300?random=2");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/YoelDemonAcrylics.jpg");
     background-position: -2px -2px;
     transform: rotateY(0deg);
   }
   33% {
-    background-image: url("https://picsum.photos/420/300?random=3");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/StockholmPastels.png");
     background-position: -388px -2px;
     transform: rotateY(180deg);
   }
   40% {
-    background-image: url("https://picsum.photos/420/300?random=3");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/StockholmPastels.png");
     background-position: -2px -2px;
     transform: rotateY(0deg);
   }
   53% {
-    background-image: url("https://picsum.photos/420/300?random=4");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/WaterlilyPastels1.png");
     background-position: -388px -2px;
     transform: rotateY(180deg);
   }
   60% {
-    background-image: url("https://picsum.photos/420/300?random=4");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/WaterlilyPastels1.png");
     background-position: -2px -2px;
     transform: rotateY(0deg);
   }
   73% {
-    background-image: url("https://picsum.photos/420/300?random=5");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/BrusselsPastels2.png");
     background-position: -388px -2px;
     transform: rotateY(180deg);
   }
   80% {
-    background-image: url("https://picsum.photos/420/300?random=5");
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/BrusselsPastels2.png");
     background-position: -2px -2px;
     transform: rotateY(0deg);
   }
@@ -1075,55 +1074,4 @@ body {
     background-position: -388px -2px;
     transform: rotateY(180deg);
   }
-}
-
-
-
-.containerbutton {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  flex-wrap: wrap;
-  width: 80vw;
-  margin: 0 auto;
-  min-height: 100vh;
-}
-.btn {
-  flex: 1 1 auto;
-  margin: 10px;
-  padding: 30px;
-  text-align: center;
-  text-transform: uppercase;
-  transition: 0.5s;
-  background-size: 200% auto;
-  color: white;
- /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
-  box-shadow: 0 0 20px #eee;
-  border-radius: 10px;
- }
-
-
-.btn:hover {
-  background-position: right center; /* change the direction of the change here */
-}
-
-.btn-1 {
-  background-image: linear-gradient(to right, #f6d365 0%, #fda085 51%, #f6d365 100%);
-}
-
-.btn-2 {
-  background-image: linear-gradient(to right, #fbc2eb 0%, #a6c1ee 51%, #fbc2eb 100%);
-}
-
-.btn-3 {
-  background-image: linear-gradient(to right, #84fab0 0%, #8fd3f4 51%, #84fab0 100%);
-}
-
-.btn-4 {
-  background-image: linear-gradient(to right, #a1c4fd 0%, #c2e9fb 51%, #a1c4fd 100%);
-}
-
-.btn-5 {
-  background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 51%, #ffecd2 100%);
 }
