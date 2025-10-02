@@ -532,4 +532,117 @@ body::before, body::after, html::before, html::after {
 
 
 
+/* =========================
+   Tacked-up Gallery (no animation)
+   Namespaced to avoid conflicts
+   ========================= */
+.tack-gallery {
+  --card-width: 220px;     /* size of each photo card */
+  --gap: 22px;             /* space between cards */
+  --max-cols: 8;           /* cap columns on huge screens */
+
+  display: grid;
+  gap: var(--gap);
+  grid-template-columns: repeat(auto-fit, minmax(var(--card-width), 1fr));
+  width: 100%;
+  max-width: calc(var(--max-cols) * var(--card-width) + (var(--max-cols) - 1) * var(--gap));
+  margin: 2rem auto;
+  padding: var(--gap);
+  justify-items: center;
+}
+
+/* Each card is a link so the whole thing is clickable */
+.tack-gallery .tack-card {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: 320px;        /* cards don’t get too wide */
+  text-decoration: none;   /* remove link underline */
+  color: inherit;          /* caption color follows your theme */
+  border-radius: 10px;
+  padding: 12px 12px 14px; /* white border pad look */
+  background: #fff;
+  box-shadow: 0 7px 8px rgba(0,0,0,.25);
+  transform-origin: center top;
+}
+
+/* “Pin” at the top center */
+.tack-gallery .tack-card::before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #ff8ab8 0%, #ff4ea1 60%, #d31b78 100%);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.6) inset,
+    0 2px 3px rgba(0,0,0,0.35);
+  z-index: 2;
+}
+
+/* Little paper “notch” under the pin for realism */
+.tack-gallery .tack-card::after {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  width: 44%;
+  height: 8px;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.12);
+  filter: blur(3px);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Image styling (square cards by default) */
+.tack-gallery .tack-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;       /* remove if you want natural aspect ratios */
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+  position: relative;
+  z-index: 3;
+}
+
+/* Caption below the photo */
+.tack-gallery .tack-card figcaption {
+  margin-top: 8px;
+  text-align: center;
+  font-size: 0.95rem;
+  line-height: 1.35;
+  opacity: 0.95;
+}
+
+/* Subtle hover lift (no animation keyframes) */
+.tack-gallery .tack-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 9px 12px rgba(0,0,0,.28);
+}
+
+/* Optional: give each card a tiny static tilt so they look casually pinned */
+.tack-gallery .tack-card:nth-child(6n+1) { transform: rotate(-1.8deg); }
+.tack-gallery .tack-card:nth-child(6n+2) { transform: rotate( 1.2deg); }
+.tack-gallery .tack-card:nth-child(6n+3) { transform: rotate(-0.8deg); }
+.tack-gallery .tack-card:nth-child(6n+4) { transform: rotate( 1.6deg); }
+.tack-gallery .tack-card:nth-child(6n+5) { transform: rotate(-1.2deg); }
+.tack-gallery .tack-card:nth-child(6n+6) { transform: rotate( 0.6deg); }
+
+/* Keep hover lift even with the tilt */
+.tack-gallery .tack-card:nth-child(n):hover {
+  transform: translateY(-3px) rotate(0deg);
+}
+
+/* Responsive helpers: drop to 2 and 1 column on narrower screens if needed */
+@media (max-width: 900px)  {
+  .tack-gallery { grid-template-columns: repeat(2, minmax(var(--card-width), 1fr)); }
+}
+@media (max-width: 560px)  {
+  .tack-gallery { grid-template-columns: 1fr; }
+}
+
 
