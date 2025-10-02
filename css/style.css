@@ -531,94 +531,82 @@ body::before, body::after, html::before, html::after {
 .gallery .card:hover .caption { opacity: 1; }
 
 
-
-/* ========== GRADIENT BUTTONS ========= */
-
-* {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+/* Reuse your page gradient colors (change these to match your bg if needed) */
+:root{
+  --bg-start: #ffd4c2;   /* start color of your page gradient */
+  --bg-end:   #d7c6ff;   /* end color of your page gradient */
+  --bg-angle: 135deg;    /* angle of your page gradient */
 }
 
-.buttons {
-    margin: 10%;
-    text-align: center;
+/* Fancy gradient/glass button that harmonizes with the background */
+.hero-btn{
+  --radius: 18px;
+  --border: 2px;
+
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  padding: .9rem 1.25rem;
+  border-radius: calc(var(--radius) + var(--border));
+  font-weight: 700;
+  letter-spacing: .2px;
+  text-decoration: none;
+  color: #1e1e1e;
+
+  /* Gradient border that uses the same colors as the page */
+  border: var(--border) solid transparent;
+  background:
+    linear-gradient(#ffffffcc, #ffffffcc) padding-box,                 /* frosted fill */
+    linear-gradient(var(--bg-angle), var(--bg-start), var(--bg-end)) border-box; /* border */
+
+  /* soft glow that also keys off the page gradient */
+  box-shadow:
+    0 10px 28px color-mix(in srgb, var(--bg-end) 35%, transparent),
+    inset 0 1px 0 #ffffff80;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: transform .18s ease, box-shadow .18s ease, background-position .3s ease;
+  position: relative;
+  isolation: isolate;
 }
 
-.btn-hover {
-    width: 200px;
-    font-size: 16px;
-    font-weight: 600;
-    color: #fff;
-    cursor: pointer;
-    margin: 20px;
-    height: 55px;
-    text-align:center;
-    border: none;
-    background-size: 300% 100%;
-
-    border-radius: 50px;
-    moz-transition: all .4s ease-in-out;
-    -o-transition: all .4s ease-in-out;
-    -webkit-transition: all .4s ease-in-out;
-    transition: all .4s ease-in-out;
+/* subtle highlight sheen */
+.hero-btn::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background:
+    radial-gradient(130% 100% at 50% -20%, #fff6 0 35%, transparent 55%),
+    linear-gradient(var(--bg-angle),
+      color-mix(in srgb, var(--bg-start) 55%, white 45%),
+      color-mix(in srgb, var(--bg-end)   55%, white 45%));
+  opacity: .0;
+  transition: opacity .2s ease;
+  z-index: -1;
 }
 
-.btn-hover:hover {
-    background-position: 100% 0;
-    moz-transition: all .4s ease-in-out;
-    -o-transition: all .4s ease-in-out;
-    -webkit-transition: all .4s ease-in-out;
-    transition: all .4s ease-in-out;
+.hero-btn:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 16px 40px color-mix(in srgb, var(--bg-end) 45%, transparent),
+              inset 0 1px 0 #ffffffa0;
+}
+.hero-btn:hover::after{ opacity: .5; }
+
+.hero-btn:active{ transform: translateY(0); }
+
+.hero-btn:focus-visible{
+  outline: none;
+  box-shadow:
+    0 0 0 3px #fff,
+    0 0 0 6px color-mix(in srgb, var(--bg-end) 65%, var(--bg-start) 35%);
 }
 
-.btn-hover:focus {
-    outline: none;
+/* Motion-safe */
+@media (prefers-reduced-motion: reduce){
+  .hero-btn, .hero-btn::after{ transition: none; }
 }
 
-.btn-hover.color-1 {
-    background-image: linear-gradient(to right, #25aae1, #40e495, #30dd8a, #2bb673);
-    box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
-}
-.btn-hover.color-2 {
-    background-image: linear-gradient(to right, #f5ce62, #e43603, #fa7199, #e85a19);
-    box-shadow: 0 4px 15px 0 rgba(229, 66, 10, 0.75);
-}
-.btn-hover.color-3 {
-    background-image: linear-gradient(to right, #667eea, #764ba2, #6B8DD6, #8E37D7);
-    box-shadow: 0 4px 15px 0 rgba(116, 79, 168, 0.75);
-}
-.btn-hover.color-4 {
-    background-image: linear-gradient(to right, #fc6076, #ff9a44, #ef9d43, #e75516);
-    box-shadow: 0 4px 15px 0 rgba(252, 104, 110, 0.75);
-}
-.btn-hover.color-5 {
-    background-image: linear-gradient(to right, #0ba360, #3cba92, #30dd8a, #2bb673);
-    box-shadow: 0 4px 15px 0 rgba(23, 168, 108, 0.75);
-}
-.btn-hover.color-6 {
-    background-image: linear-gradient(to right, #009245, #FCEE21, #00A8C5, #D9E021);
-    box-shadow: 0 4px 15px 0 rgba(83, 176, 57, 0.75);
-}
-.btn-hover.color-7 {
-    background-image: linear-gradient(to right, #6253e1, #852D91, #A3A1FF, #F24645);
-    box-shadow: 0 4px 15px 0 rgba(126, 52, 161, 0.75);
-}
-.btn-hover.color-8 {
-    background-image: linear-gradient(to right, #29323c, #485563, #2b5876, #4e4376);
-    box-shadow: 0 4px 15px 0 rgba(45, 54, 65, 0.75);
-}
-.btn-hover.color-9 {
-    background-image: linear-gradient(to right, #25aae1, #4481eb, #04befe, #3f86ed);
-    box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
-}
-.btn-hover.color-10 {
-        background-image: linear-gradient(to right, #ed6ea0, #ec8c69, #f7186a , #FBB03B);
-    box-shadow: 0 4px 15px 0 rgba(236, 116, 149, 0.75);
-}
-.btn-hover.color-11 {
-       background-image: linear-gradient(to right, #eb3941, #f15e64, #e14e53, #e2373f);  box-shadow: 0 5px 15px rgba(242, 97, 103, .4);
-}
-
-
-
+/* Optional: a tiny arrow */
+.hero-btn .arrow{ font-size: 1.1em; line-height: 1; margin-top: 1px; }
