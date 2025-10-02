@@ -649,6 +649,63 @@ a.hero-btn{
   transition: transform .18s ease, box-shadow .18s ease;
 }
 
+/* ---- Gradient hero button that beats strong global styles ---- */
+:is(a,button).hero-btn,
+:is(a,button).hero-btn:link,
+:is(a,button).hero-btn:visited,
+:is(a,button).hero-btn:hover,
+:is(a,button).hero-btn:active{
+  text-decoration: none !important;
+  border: 0 !important;
+  color: #1e1e1e !important;
+}
+
+:is(a,button).hero-btn{
+  /* if your body already sets these, they’ll be used automatically */
+  --bg-start: var(--bg-start, #ffd4c2);
+  --bg-end:   var(--bg-end,   #d7c6ff);
+  --bg-angle: var(--bg-angle, 135deg);
+
+  display: inline-flex !important;
+  align-items: center;
+  gap: .6rem;
+  padding: .9rem 1.25rem !important;
+  border-radius: 18px !important;
+  font-weight: 700;
+  letter-spacing: .2px;
+  box-sizing: border-box;
+  cursor: pointer;
+
+  border: 2px solid transparent !important;
+  background:
+    linear-gradient(#ffffffcc, #ffffffcc) padding-box,
+    linear-gradient(var(--bg-angle), var(--bg-start), var(--bg-end)) border-box !important;
+
+  box-shadow:
+    0 10px 28px color-mix(in srgb, var(--bg-end) 35%, transparent),
+    inset 0 1px 0 #ffffff80;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.hero-btn .arrow{ font-size: 1.1em; line-height: 1; margin-top: 1px; }
+.hero-btn:hover{ transform: translateY(-2px); }
+.hero-btn:active{ transform: translateY(0); }
+.hero-btn:focus-visible{
+  outline: none;
+  box-shadow:
+    0 0 0 3px #fff,
+    0 0 0 6px color-mix(in srgb, var(--bg-end) 65%, var(--bg-start) 35%);
+}
+
+/* Filled version, if you want a solid gradient pill */
+.hero-btn.filled{
+  background: linear-gradient(var(--bg-angle), var(--bg-start), var(--bg-end)) !important;
+  color: #111 !important;
+}
+
+
 a.hero-btn .arrow{ font-size: 1.1em; line-height: 1; margin-top: 1px; }
 a.hero-btn:hover{ transform: translateY(-2px); }
 a.hero-btn:active{ transform: translateY(0); }
