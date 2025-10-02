@@ -483,6 +483,54 @@ body::before, body::after, html::before, html::after {
 }
 
 
+/* --- Gallery: let each card keep its own height --- */
+
+/* If the gallery uses FLEXBOX */
+.gallery {
+  align-items: flex-start !important;   /* stop items from stretching to tallest row-mate */
+}
+
+/* If the gallery uses GRID */
+.gallery {
+  grid-auto-rows: auto !important;      /* rows sized by content, not a fixed track */
+  align-items: start !important;
+}
+.gallery > * { 
+  grid-row: auto !important;            /* cancel any row-span tricks */
+}
+
+/* Card + image: no reserved space, natural aspect */
+.gallery .card {
+  background: transparent;              /* remove white fill that makes 'white blocks' visible */
+  overflow: hidden;
+  border-radius: 12px;
+}
+.gallery .card img {
+  display: block;
+  width: 100%;
+  height: auto !important;              /* keep natural proportions */
+}
+
+/* Nuke any forced heights anywhere inside cards */
+.gallery .card, 
+.gallery .card * {
+  height: auto !important;
+  min-height: 0 !important;
+  aspect-ratio: auto !important;
+}
+
+/* If you have hover captions, make them overlays so they don't take layout space */
+.gallery .card .caption:empty { display: none !important; }
+.gallery .card .caption {
+  position: absolute; inset: 0; 
+  display: flex; align-items: flex-end; 
+  padding: 12px; color: #fff;
+  background: linear-gradient(to top, rgba(0,0,0,.45), transparent);
+  opacity: 0; transition: opacity .2s ease; pointer-events: none;
+}
+.gallery .card:hover .caption { opacity: 1; }
+
+
 
 /* ========== GRADIENT BUTTONS ========= */
 
