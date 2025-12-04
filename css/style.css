@@ -701,3 +701,81 @@ body::before, body::after, html::before, html::after {
 
   z-index: 5 !important;
 }
+
+/* ============================================
+   SUPER 3D RED PUSHPINS — OVERRIDE VERSION
+   ============================================ */
+
+.tack-gallery .tack-card {
+  position: relative !important;
+}
+
+/* 3D pushpin head */
+.tack-gallery .tack-card::before {
+  content: "" !important;
+  position: absolute !important;
+  top: -14px !important;          /* slightly higher above the card */
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 22px !important;
+  height: 22px !important;
+  border-radius: 50% !important;
+
+  /* deeper spherical shading */
+  background: radial-gradient(circle at 28% 25%,
+              #ffb3b3 0%,        /* bright highlight */
+              #ff4b4b 35%,
+              #c00000 70%,
+              #6f0000 100%) !important;
+
+  /* stronger bevel + long cast shadow */
+  box-shadow:
+    0 6px 10px rgba(0,0,0,0.45),              /* drop shadow on card */
+    0 1px 1px rgba(255,255,255,0.7) inset,    /* top highlight */
+    -1px -2px 4px rgba(0,0,0,0.55) inset !important;
+
+  z-index: 10 !important;
+}
+
+/* tiny specular glint for extra 3D pop */
+.tack-gallery .tack-card::before {
+  position: absolute !important;
+}
+.tack-gallery .tack-card::before,
+.tack-gallery .tack-card::after {
+  pointer-events: none !important;
+}
+
+/* Use an extra pseudo-element via box-shadow trick for the glint */
+.tack-gallery .tack-card::before {
+  box-shadow:
+    0 6px 10px rgba(0,0,0,0.45),
+    0 1px 1px rgba(255,255,255,0.7) inset,
+    -1px -2px 4px rgba(0,0,0,0.55) inset,
+    4px 4px 0 0 rgba(255,255,255,0.45);      /* tiny glossy glint */
+}
+
+/* 3D pin stem */
+.tack-gallery .tack-card::after {
+  content: "" !important;
+  position: absolute !important;
+  top: 4px !important;              /* just under the head */
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 3px !important;
+  height: 22px !important;
+  border-radius: 999px !important;
+
+  /* subtle cylindrical gradient */
+  background: linear-gradient(
+    to bottom,
+    #7b0000 0%,
+    #c40000 45%,
+    #5b0000 100%
+  ) !important;
+
+  box-shadow:
+    0 2px 3px rgba(0,0,0,0.4) !important;
+
+  z-index: 5 !important;
+}
