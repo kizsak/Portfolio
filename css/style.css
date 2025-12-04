@@ -566,38 +566,6 @@ body::before, body::after, html::before, html::after {
   transform-origin: center top;
 }
 
-/* “Pin” at the top center */
-.tack-gallery .tack-card::before {
-  content: "";
-  position: absolute;
-  top: 6px;
-  left: 50%;
-  width: 12px;
-  height: 12px;
-  transform: translateX(-50%);
-  border-radius: 50%;
-  background: radial-gradient(circle at 35% 35%, #ff8ab8 0%, #ff4ea1 60%, #d31b78 100%);
-  box-shadow:
-    0 1px 0 rgba(255,255,255,0.6) inset,
-    0 2px 3px rgba(0,0,0,0.35);
-  z-index: 2;
-}
-
-/* Little paper “notch” under the pin for realism */
-.tack-gallery .tack-card::after {
-  content: "";
-  position: absolute;
-  top: 12px;
-  left: 50%;
-  width: 44%;
-  height: 8px;
-  transform: translateX(-50%);
-  background: rgba(0,0,0,0.12);
-  filter: blur(3px);
-  border-radius: 50%;
-  z-index: 1;
-}
-
 /* Image styling (square cards by default) */
 .tack-gallery .tack-card img {
   width: 100%;
@@ -646,14 +614,14 @@ body::before, body::after, html::before, html::after {
 }
 
 /* ---- Realistic Pushpin Effect ---- */
-.tack-card {
+.tack-gallery .tack-card {
   position: relative;
 }
 
-.tack-card::before {
+.tack-gallery .tack-card::before {
   content: "";
   position: absolute;
-  top: -15px;
+  top: -10px;              /* adjust if it overlaps the card */
   left: 50%;
   transform: translateX(-50%);
   width: 18px;
@@ -665,25 +633,24 @@ body::before, body::after, html::before, html::after {
 
   /* subtle bevel highlight */
   box-shadow:
-    0 2px 4px rgba(0,0,0,0.35),       /* drop shadow */
-    inset 1px 1px 2px rgba(255,255,255,0.6), /* top-left highlight */
-    inset -2px -2px 4px rgba(0,0,0,0.4);     /* bottom-right shading */
+    0 2px 4px rgba(0,0,0,0.35),             /* drop shadow */
+    inset 1px 1px 2px rgba(255,255,255,0.6),/* top-left highlight */
+    inset -2px -2px 4px rgba(0,0,0,0.4);    /* bottom-right shading */
 
   z-index: 10;
 }
 
-/* Optional: add a "pin stem" for extra realism */
-.tack-card::after {
+/* Pin stem */
+.tack-gallery .tack-card::after {
   content: "";
   position: absolute;
-  top: -3px;
+  top: 4px;                 /* just below the head */
   left: 50%;
   transform: translateX(-50%);
   width: 2px;
-  height: 12px;
+  height: 14px;
   background: #7c0000;
   border-radius: 2px;
   box-shadow: 0 1px 2px rgba(0,0,0,0.4);
   z-index: 5;
 }
-
