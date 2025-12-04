@@ -333,7 +333,6 @@ html, body {
   background-size: cover !important;
 }
 
-
 body::before, body::after, html::before, html::after {
   background-image: none !important;
   content: none !important;
@@ -482,7 +481,6 @@ body::before, body::after, html::before, html::after {
   opacity: 1;
 }
 
-
 /* --- Gallery: let each card keep its own height --- */
 
 /* If the gallery uses FLEXBOX */
@@ -537,9 +535,9 @@ body::before, body::after, html::before, html::after {
    Namespaced to avoid conflicts
    ========================= */
 .tack-gallery {
-  --card-width: 220px;     /* size of each photo card */
-  --gap: 22px;             /* space between cards */
-  --max-cols: 8;           /* cap columns on huge screens */
+  --card-width: 220px;
+  --gap: 22px;
+  --max-cols: 8;
 
   display: grid;
   gap: var(--gap);
@@ -556,226 +554,104 @@ body::before, body::after, html::before, html::after {
   position: relative;
   display: block;
   width: 100%;
-  max-width: 320px;        /* cards don’t get too wide */
-  text-decoration: none;   /* remove link underline */
-  color: inherit;          /* caption color follows your theme */
-  border-radius: 10px;
-  padding: 12px 12px 14px; /* white border pad look */
+  max-width: 320px;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 14px;
+  padding: 16px 16px 18px;
   background: #fff;
-  box-shadow: 0 7px 8px rgba(0,0,0,.25);
+  box-shadow: 0 10px 14px rgba(0,0,0,0.25);
   transform-origin: center top;
+}
+
+/* ---------- SUPER 3D PUSH PIN ---------- */
+/* Head */
+.tack-gallery .tack-card::before {
+  content: "";
+  position: absolute;
+  top: -14px;          /* above the white border */
+  left: 50%;
+  transform: translateX(-50%) scaleX(1.25) scaleY(0.9); /* slight ellipse for perspective */
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+
+  /* very strong spherical shading */
+  background:
+    radial-gradient(circle at 30% 25%, #ffe0e0 0%, #ff9c9c 28%, transparent 40%),
+    radial-gradient(circle at 32% 32%, #ff5b5b 0%, #cf0000 55%, #5a0000 100%);
+  border: 1px solid #5a0000;
+
+  box-shadow:
+    0 8px 10px rgba(0,0,0,0.45),      /* heavy drop shadow on card */
+    inset 1px 1px 2px rgba(255,255,255,0.9),
+    inset -2px -3px 5px rgba(0,0,0,0.6);
+
+  z-index: 10;
+}
+
+/* Stem */
+.tack-gallery .tack-card::after {
+  content: "";
+  position: absolute;
+  top: 4px;            /* just under the head */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 26px;
+  border-radius: 999px;
+  background: linear-gradient(
+    to bottom,
+    #6b0000 0%,
+    #d10000 40%,
+    #4a0000 100%
+  );
+  box-shadow: 0 2px 3px rgba(0,0,0,0.4);
+  z-index: 5;
 }
 
 /* Image styling (square cards by default) */
 .tack-gallery .tack-card img {
   width: 100%;
-  aspect-ratio: 1 / 1;       /* remove if you want natural aspect ratios */
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   display: block;
-  border-radius: 8px;
+  border-radius: 10px;
   position: relative;
   z-index: 3;
 }
 
 /* Caption below the photo */
 .tack-gallery .tack-card figcaption {
-  margin-top: 8px;
+  margin-top: 10px;
   text-align: center;
-  font-size: 0.95rem;
-  line-height: 1.35;
+  font-size: 1rem;
+  line-height: 1.4;
   opacity: 0.95;
 }
 
-/* Subtle hover lift (no animation keyframes) */
+/* subtle hover lift */
 .tack-gallery .tack-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 9px 12px rgba(0,0,0,.28);
+  transform: translateY(-4px);
+  box-shadow: 0 14px 18px rgba(0,0,0,0.30);
 }
 
-/* Optional: give each card a tiny static tilt so they look casually pinned */
+/* playful static tilts */
 .tack-gallery .tack-card:nth-child(6n+1) { transform: rotate(-1.8deg); }
-.tack-gallery .tack-card:nth-child(6n+2) { transform: rotate( 1.2deg); }
-.tack-gallery .tack-card:nth-child(6n+3) { transform: rotate(-0.8deg); }
-.tack-gallery .tack-card:nth-child(6n+4) { transform: rotate( 1.6deg); }
+.tack-gallery .tack-card:nth-child(6n+2) { transform: rotate( 1.3deg); }
+.tack-gallery .tack-card:nth-child(6n+3) { transform: rotate(-0.9deg); }
+.tack-gallery .tack-card:nth-child(6n+4) { transform: rotate( 1.8deg); }
 .tack-gallery .tack-card:nth-child(6n+5) { transform: rotate(-1.2deg); }
-.tack-gallery .tack-card:nth-child(6n+6) { transform: rotate( 0.6deg); }
+.tack-gallery .tack-card:nth-child(6n+6) { transform: rotate( 0.7deg); }
 
-/* Keep hover lift even with the tilt */
 .tack-gallery .tack-card:nth-child(n):hover {
-  transform: translateY(-3px) rotate(0deg);
+  transform: translateY(-4px) rotate(0deg);
 }
 
-/* Responsive helpers: drop to 2 and 1 column on narrower screens if needed */
+/* responsive columns */
 @media (max-width: 900px)  {
   .tack-gallery { grid-template-columns: repeat(2, minmax(var(--card-width), 1fr)); }
 }
 @media (max-width: 560px)  {
   .tack-gallery { grid-template-columns: 1fr; }
-}
-
-/* ---- Realistic Pushpin Effect ---- */
-.tack-gallery .tack-card {
-  position: relative;
-}
-
-.tack-gallery .tack-card::before {
-  content: "";
-  position: absolute;
-  top: -10px;              /* adjust if it overlaps the card */
-  left: 50%;
-  transform: translateX(-50%);
-  width: 18px;
-  height: 18px;
-
-  /* circular pin head */
-  background: radial-gradient(circle at 30% 30%, #ff7b7b, #c30000 70%);
-  border-radius: 50%;
-
-  /* subtle bevel highlight */
-  box-shadow:
-    0 2px 4px rgba(0,0,0,0.35),             /* drop shadow */
-    inset 1px 1px 2px rgba(255,255,255,0.6),/* top-left highlight */
-    inset -2px -2px 4px rgba(0,0,0,0.4);    /* bottom-right shading */
-
-  z-index: 10;
-}
-
-/* Pin stem */
-.tack-gallery .tack-card::after {
-  content: "";
-  position: absolute;
-  top: 4px;                 /* just below the head */
-  left: 50%;
-  transform: translateX(-50%);
-  width: 2px;
-  height: 14px;
-  background: #7c0000;
-  border-radius: 2px;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.4);
-  z-index: 5;
-}
-
-/* ============================================
-   REALISTIC RED PUSHPINS — OVERRIDE VERSION
-   No deletion required — forces override
-   ============================================ */
-
-.tack-gallery .tack-card {
-  position: relative !important;
-}
-
-/* Pushpin head */
-.tack-gallery .tack-card::before {
-  content: "" !important;
-  position: absolute !important;
-  top: -12px !important;
-  left: 50% !important;
-  transform: translateX(-50%) !important;
-  width: 18px !important;
-  height: 18px !important;
-
-  background: radial-gradient(circle at 30% 30%, #ff7b7b 0%, #c30000 70%) !important;
-  border-radius: 50% !important;
-
-  box-shadow:
-    0 2px 4px rgba(0,0,0,0.35) !important,
-    inset 1px 1px 2px rgba(255,255,255,0.6) !important,
-    inset -2px -2px 4px rgba(0,0,0,0.4) !important;
-
-  z-index: 10 !important;
-}
-
-/* Pushpin stem */
-.tack-gallery .tack-card::after {
-  content: "" !important;
-  position: absolute !important;
-  top: 4px !important;
-  left: 50% !important;
-  transform: translateX(-50%) !important;
-  width: 2px !important;
-  height: 14px !important;
-
-  background: #7c0000 !important;
-  border-radius: 2px !important;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.4) !important;
-
-  z-index: 5 !important;
-}
-
-/* ============================================
-   SUPER 3D RED PUSHPINS — OVERRIDE VERSION
-   ============================================ */
-
-.tack-gallery .tack-card {
-  position: relative !important;
-}
-
-/* 3D pushpin head */
-.tack-gallery .tack-card::before {
-  content: "" !important;
-  position: absolute !important;
-  top: -14px !important;          /* slightly higher above the card */
-  left: 50% !important;
-  transform: translateX(-50%) !important;
-  width: 22px !important;
-  height: 22px !important;
-  border-radius: 50% !important;
-
-  /* deeper spherical shading */
-  background: radial-gradient(circle at 28% 25%,
-              #ffb3b3 0%,        /* bright highlight */
-              #ff4b4b 35%,
-              #c00000 70%,
-              #6f0000 100%) !important;
-
-  /* stronger bevel + long cast shadow */
-  box-shadow:
-    0 6px 10px rgba(0,0,0,0.45),              /* drop shadow on card */
-    0 1px 1px rgba(255,255,255,0.7) inset,    /* top highlight */
-    -1px -2px 4px rgba(0,0,0,0.55) inset !important;
-
-  z-index: 10 !important;
-}
-
-/* tiny specular glint for extra 3D pop */
-.tack-gallery .tack-card::before {
-  position: absolute !important;
-}
-.tack-gallery .tack-card::before,
-.tack-gallery .tack-card::after {
-  pointer-events: none !important;
-}
-
-/* Use an extra pseudo-element via box-shadow trick for the glint */
-.tack-gallery .tack-card::before {
-  box-shadow:
-    0 6px 10px rgba(0,0,0,0.45),
-    0 1px 1px rgba(255,255,255,0.7) inset,
-    -1px -2px 4px rgba(0,0,0,0.55) inset,
-    4px 4px 0 0 rgba(255,255,255,0.45);      /* tiny glossy glint */
-}
-
-/* 3D pin stem */
-.tack-gallery .tack-card::after {
-  content: "" !important;
-  position: absolute !important;
-  top: 4px !important;              /* just under the head */
-  left: 50% !important;
-  transform: translateX(-50%) !important;
-  width: 3px !important;
-  height: 22px !important;
-  border-radius: 999px !important;
-
-  /* subtle cylindrical gradient */
-  background: linear-gradient(
-    to bottom,
-    #7b0000 0%,
-    #c40000 45%,
-    #5b0000 100%
-  ) !important;
-
-  box-shadow:
-    0 2px 3px rgba(0,0,0,0.4) !important;
-
-  z-index: 5 !important;
 }
