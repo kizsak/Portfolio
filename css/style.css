@@ -528,7 +528,6 @@ body::before, body::after, html::before, html::after {
 }
 .gallery .card:hover .caption { opacity: 1; }
 
-
 /* =========================
    Tacked-up Gallery (no animation)
    Namespaced to avoid conflicts
@@ -557,40 +556,40 @@ body::before, body::after, html::before, html::after {
   text-decoration: none;
   color: inherit;
   border-radius: 14px;
-  padding: 24px 16px 18px; /* a bit more top padding to make room for the pin */
+  padding: 24px 16px 18px; /* extra top padding for the pin */
   background: #fff;
   box-shadow: 0 10px 14px rgba(0,0,0,0.25);
   transform-origin: center top;
 }
 
-/* --------- CodePen-style 3D push pin --------- */
+/* --------- Smaller CodePen-style 3D push pin --------- */
 
 .tack-gallery .pin {
   position: absolute;
-  top: -30px;                  /* vertical position above the card */
+  top: -18px;                        /* keeps pin fully visible above card */
   left: 50%;
-  transform: translateX(-50%) rotate(-10deg);
-  width: 80px;                 /* overall pin size */
-  height: 80px;
-  pointer-events: none;        /* clicks go through to the card */
+  transform: translateX(-50%) rotate(-6deg);
+  width: 48px;                       /* overall pin size */
+  height: 48px;
+  pointer-events: none;              /* clicks still hit the link */
 }
 
 /* silver tip */
 .tack-gallery .pin .tip {
-  width: 5px;
-  height: 50px;
+  width: 3px;
+  height: 28px;
   background-image: linear-gradient(to right, #eee, #aaa);
   position: absolute;
-  margin: 60px;                /* keeps relative geometry from original pen */
+  margin: 34px;
 }
 
 /* bottom “base” of head */
 .tack-gallery .pin .base {
-  width: 70px;
-  height: 30px;
+  width: 40px;
+  height: 18px;
   background-image: radial-gradient(maroon, red);
   border-radius: 50%;
-  margin: 40px 30px;
+  margin: 22px 16px;
   position: absolute;
 }
 
@@ -599,48 +598,48 @@ body::before, body::after, html::before, html::after {
   background: transparent;
   border-radius: 27px;
   border-style: solid;
-  border-width: 0 16px 45px 16px;
+  border-width: 0 10px 25px 10px;
   border-color: transparent transparent #a40000 transparent;
-  width: 20px;
-  height: 5px;
-  margin: 10px 40px;
+  width: 10px;
+  height: 3px;
+  margin: 4px 18px;
   position: absolute;
 }
 
 /* top of the pin head */
 .tack-gallery .pin .top {
-  width: 50px;
-  height: 25px;
+  width: 30px;
+  height: 15px;
   background-image: radial-gradient(maroon, red);
   border-radius: 50%;
-  margin: 0px 40px;
+  margin: 0px 18px;
   position: absolute;
 }
 
 /* shadow group */
 .tack-gallery .pin .shadow {
-  transform: rotate(-30deg) skew(20deg);
+  transform: rotate(-25deg) skew(20deg);
   opacity: 0.8;
-  filter: blur(8px);
-  left: -90px;
-  top: 50px;
+  filter: blur(6px);
+  left: -50px;
+  top: 22px;
   position: absolute;
 }
 
 .tack-gallery .pin .shadow .tip {
-  width: 5px;
-  height: 50px;
+  width: 3px;
+  height: 28px;
   background-image: linear-gradient(to right, #111, #777);
   position: absolute;
-  margin: 60px;
+  margin: 34px;
 }
 
 .tack-gallery .pin .shadow .base {
-  width: 70px;
-  height: 30px;
+  width: 40px;
+  height: 18px;
   background-image: radial-gradient(#111, #777);
   border-radius: 50%;
-  margin: 40px 30px;
+  margin: 22px 16px;
   position: absolute;
 }
 
@@ -648,20 +647,20 @@ body::before, body::after, html::before, html::after {
   background: transparent;
   border-radius: 27px;
   border-style: solid;
-  border-width: 0 16px 45px 16px;
+  border-width: 0 10px 25px 10px;
   border-color: transparent transparent #111 transparent;
-  width: 20px;
-  height: 5px;
-  margin: 10px 40px;
+  width: 10px;
+  height: 3px;
+  margin: 4px 18px;
   position: absolute;
 }
 
 .tack-gallery .pin .shadow .top {
-  width: 50px;
-  height: 25px;
+  width: 30px;
+  height: 15px;
   background-image: radial-gradient(#111, #777);
   border-radius: 50%;
-  margin: 0px 40px;
+  margin: 0px 18px;
   position: absolute;
 }
 
@@ -710,3 +709,6 @@ body::before, body::after, html::before, html::after {
 @media (max-width: 560px)  {
   .tack-gallery { grid-template-columns: 1fr; }
 }
+
+
+
