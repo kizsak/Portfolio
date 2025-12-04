@@ -562,106 +562,85 @@ body::before, body::after, html::before, html::after {
   transform-origin: center top;
 }
 
-/* --------- Smaller CodePen-style 3D push pin --------- */
+/* --------- Compact 3D push pin (simplified) --------- */
 
 .tack-gallery .pin {
   position: absolute;
-  top: -18px;                        /* keeps pin fully visible above card */
+  top: -14px;                       /* sits just above card edge */
   left: 50%;
   transform: translateX(-50%) rotate(-6deg);
-  width: 48px;                       /* overall pin size */
-  height: 48px;
-  pointer-events: none;              /* clicks still hit the link */
+  width: 32px;                      /* overall pin size */
+  height: 40px;
+  pointer-events: none;
 }
 
-/* silver tip */
-.tack-gallery .pin .tip {
-  width: 3px;
-  height: 28px;
-  background-image: linear-gradient(to right, #eee, #aaa);
+/* shadow ellipse behind the head */
+.tack-gallery .pin::before {
+  content: "";
   position: absolute;
-  margin: 34px;
-}
-
-/* bottom “base” of head */
-.tack-gallery .pin .base {
-  width: 40px;
-  height: 18px;
-  background-image: radial-gradient(maroon, red);
-  border-radius: 50%;
-  margin: 22px 16px;
-  position: absolute;
-}
-
-/* conical stem under the head */
-.tack-gallery .pin .stem {
-  background: transparent;
-  border-radius: 27px;
-  border-style: solid;
-  border-width: 0 10px 25px 10px;
-  border-color: transparent transparent #a40000 transparent;
-  width: 10px;
-  height: 3px;
-  margin: 4px 18px;
-  position: absolute;
-}
-
-/* top of the pin head */
-.tack-gallery .pin .top {
-  width: 30px;
-  height: 15px;
-  background-image: radial-gradient(maroon, red);
-  border-radius: 50%;
-  margin: 0px 18px;
-  position: absolute;
-}
-
-/* shadow group */
-.tack-gallery .pin .shadow {
-  transform: rotate(-25deg) skew(20deg);
-  opacity: 0.8;
-  filter: blur(6px);
-  left: -50px;
   top: 22px;
-  position: absolute;
-}
-
-.tack-gallery .pin .shadow .tip {
-  width: 3px;
-  height: 28px;
-  background-image: linear-gradient(to right, #111, #777);
-  position: absolute;
-  margin: 34px;
-}
-
-.tack-gallery .pin .shadow .base {
-  width: 40px;
-  height: 18px;
-  background-image: radial-gradient(#111, #777);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 36px;
+  height: 14px;
   border-radius: 50%;
-  margin: 22px 16px;
-  position: absolute;
+  background: rgba(0,0,0,0.25);
+  filter: blur(4px);
 }
 
-.tack-gallery .pin .shadow .stem {
-  background: transparent;
-  border-radius: 27px;
+/* top of the pin head (ellipse) */
+.tack-gallery .pin .top {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 28px;
+  height: 16px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #ffe0e0, #ff3434 55%, #a00000 100%);
+}
+
+/* cylindrical neck just under the top */
+.tack-gallery .pin .base {
+  position: absolute;
+  left: 50%;
+  top: 10px;
+  transform: translateX(-50%);
+  width: 22px;
+  height: 14px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #ff5b5b, #b00000);
+}
+
+/* conical stem */
+.tack-gallery .pin .stem {
+  position: absolute;
+  left: 50%;
+  top: 18px;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
   border-style: solid;
-  border-width: 0 10px 25px 10px;
-  border-color: transparent transparent #111 transparent;
-  width: 10px;
-  height: 3px;
-  margin: 4px 18px;
-  position: absolute;
+  border-width: 0 8px 16px 8px;
+  border-color: transparent transparent #a00000 transparent;
 }
 
-.tack-gallery .pin .shadow .top {
-  width: 30px;
-  height: 15px;
-  background-image: radial-gradient(#111, #777);
-  border-radius: 50%;
-  margin: 0px 18px;
+/* metal tip */
+.tack-gallery .pin .tip {
   position: absolute;
+  left: 50%;
+  top: 32px;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 3px 8px 3px;
+  border-color: transparent transparent #cccccc transparent;
+}
+
+/* we don't need a separate .shadow structure any more */
+.tack-gallery .pin .shadow {
+  display: none;
 }
 
 /* ---------- Card contents ---------- */
@@ -709,6 +688,3 @@ body::before, body::after, html::before, html::after {
 @media (max-width: 560px)  {
   .tack-gallery { grid-template-columns: 1fr; }
 }
-
-
-
