@@ -529,7 +529,6 @@ body::before, body::after, html::before, html::after {
 .gallery .card:hover .caption { opacity: 1; }
 
 
-
 /* =========================
    Tacked-up Gallery (no animation)
    Namespaced to avoid conflicts
@@ -558,59 +557,116 @@ body::before, body::after, html::before, html::after {
   text-decoration: none;
   color: inherit;
   border-radius: 14px;
-  padding: 16px 16px 18px;
+  padding: 24px 16px 18px; /* a bit more top padding to make room for the pin */
   background: #fff;
   box-shadow: 0 10px 14px rgba(0,0,0,0.25);
   transform-origin: center top;
 }
 
-/* ---------- SUPER 3D PUSH PIN ---------- */
-/* Head */
-.tack-gallery .tack-card::before {
-  content: "";
+/* --------- CodePen-style 3D push pin --------- */
+
+.tack-gallery .pin {
   position: absolute;
-  top: -14px;          /* above the white border */
+  top: -30px;                  /* vertical position above the card */
   left: 50%;
-  transform: translateX(-50%) scaleX(1.25) scaleY(0.9); /* slight ellipse for perspective */
-  width: 26px;
-  height: 26px;
+  transform: translateX(-50%) rotate(-10deg);
+  width: 80px;                 /* overall pin size */
+  height: 80px;
+  pointer-events: none;        /* clicks go through to the card */
+}
+
+/* silver tip */
+.tack-gallery .pin .tip {
+  width: 5px;
+  height: 50px;
+  background-image: linear-gradient(to right, #eee, #aaa);
+  position: absolute;
+  margin: 60px;                /* keeps relative geometry from original pen */
+}
+
+/* bottom “base” of head */
+.tack-gallery .pin .base {
+  width: 70px;
+  height: 30px;
+  background-image: radial-gradient(maroon, red);
   border-radius: 50%;
-
-  /* very strong spherical shading */
-  background:
-    radial-gradient(circle at 30% 25%, #ffe0e0 0%, #ff9c9c 28%, transparent 40%),
-    radial-gradient(circle at 32% 32%, #ff5b5b 0%, #cf0000 55%, #5a0000 100%);
-  border: 1px solid #5a0000;
-
-  box-shadow:
-    0 8px 10px rgba(0,0,0,0.45),      /* heavy drop shadow on card */
-    inset 1px 1px 2px rgba(255,255,255,0.9),
-    inset -2px -3px 5px rgba(0,0,0,0.6);
-
-  z-index: 10;
-}
-
-/* Stem */
-.tack-gallery .tack-card::after {
-  content: "";
+  margin: 40px 30px;
   position: absolute;
-  top: 4px;            /* just under the head */
-  left: 50%;
-  transform: translateX(-50%);
-  width: 3px;
-  height: 26px;
-  border-radius: 999px;
-  background: linear-gradient(
-    to bottom,
-    #6b0000 0%,
-    #d10000 40%,
-    #4a0000 100%
-  );
-  box-shadow: 0 2px 3px rgba(0,0,0,0.4);
-  z-index: 5;
 }
 
-/* Image styling (square cards by default) */
+/* conical stem under the head */
+.tack-gallery .pin .stem {
+  background: transparent;
+  border-radius: 27px;
+  border-style: solid;
+  border-width: 0 16px 45px 16px;
+  border-color: transparent transparent #a40000 transparent;
+  width: 20px;
+  height: 5px;
+  margin: 10px 40px;
+  position: absolute;
+}
+
+/* top of the pin head */
+.tack-gallery .pin .top {
+  width: 50px;
+  height: 25px;
+  background-image: radial-gradient(maroon, red);
+  border-radius: 50%;
+  margin: 0px 40px;
+  position: absolute;
+}
+
+/* shadow group */
+.tack-gallery .pin .shadow {
+  transform: rotate(-30deg) skew(20deg);
+  opacity: 0.8;
+  filter: blur(8px);
+  left: -90px;
+  top: 50px;
+  position: absolute;
+}
+
+.tack-gallery .pin .shadow .tip {
+  width: 5px;
+  height: 50px;
+  background-image: linear-gradient(to right, #111, #777);
+  position: absolute;
+  margin: 60px;
+}
+
+.tack-gallery .pin .shadow .base {
+  width: 70px;
+  height: 30px;
+  background-image: radial-gradient(#111, #777);
+  border-radius: 50%;
+  margin: 40px 30px;
+  position: absolute;
+}
+
+.tack-gallery .pin .shadow .stem {
+  background: transparent;
+  border-radius: 27px;
+  border-style: solid;
+  border-width: 0 16px 45px 16px;
+  border-color: transparent transparent #111 transparent;
+  width: 20px;
+  height: 5px;
+  margin: 10px 40px;
+  position: absolute;
+}
+
+.tack-gallery .pin .shadow .top {
+  width: 50px;
+  height: 25px;
+  background-image: radial-gradient(#111, #777);
+  border-radius: 50%;
+  margin: 0px 40px;
+  position: absolute;
+}
+
+/* ---------- Card contents ---------- */
+
 .tack-gallery .tack-card img {
   width: 100%;
   aspect-ratio: 1 / 1;
@@ -621,7 +677,6 @@ body::before, body::after, html::before, html::after {
   z-index: 3;
 }
 
-/* Caption below the photo */
 .tack-gallery .tack-card figcaption {
   margin-top: 10px;
   text-align: center;
