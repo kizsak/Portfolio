@@ -645,4 +645,45 @@ body::before, body::after, html::before, html::after {
   .tack-gallery { grid-template-columns: 1fr; }
 }
 
+/* ---- Realistic Pushpin Effect ---- */
+.tack-card {
+  position: relative;
+}
+
+.tack-card::before {
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 18px;
+  height: 18px;
+
+  /* circular pin head */
+  background: radial-gradient(circle at 30% 30%, #ff7b7b, #c30000 70%);
+  border-radius: 50%;
+
+  /* subtle bevel highlight */
+  box-shadow:
+    0 2px 4px rgba(0,0,0,0.35),       /* drop shadow */
+    inset 1px 1px 2px rgba(255,255,255,0.6), /* top-left highlight */
+    inset -2px -2px 4px rgba(0,0,0,0.4);     /* bottom-right shading */
+
+  z-index: 10;
+}
+
+/* Optional: add a "pin stem" for extra realism */
+.tack-card::after {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 12px;
+  background: #7c0000;
+  border-radius: 2px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.4);
+  z-index: 5;
+}
 
