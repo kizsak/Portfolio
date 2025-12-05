@@ -562,29 +562,29 @@ body::before, body::after, html::before, html::after {
   transform-origin: center top;
 }
 
-/* --------- Compact 3D push pin (simplified) --------- */
+/* --------- Compact 3D push pin (clean version, no triangle stem) --------- */
 
 .tack-gallery .pin {
   position: absolute;
-  top: -14px;                       /* sits just above card edge */
+  top: -14px;
   left: 50%;
   transform: translateX(-50%) rotate(-6deg);
-  width: 32px;                      /* overall pin size */
-  height: 40px;
+  width: 32px;
+  height: 34px;
   pointer-events: none;
 }
 
-/* shadow ellipse behind the head */
+/* shadow ellipse */
 .tack-gallery .pin::before {
   content: "";
   position: absolute;
   top: 22px;
   left: 50%;
   transform: translateX(-50%);
-  width: 36px;
-  height: 14px;
+  width: 34px;
+  height: 12px;
   border-radius: 50%;
-  background: rgba(0,0,0,0.25);
+  background: rgba(0, 0, 0, 0.25);
   filter: blur(4px);
 }
 
@@ -594,48 +594,47 @@ body::before, body::after, html::before, html::after {
   left: 50%;
   top: 0;
   transform: translateX(-50%);
-  width: 28px;
-  height: 16px;
+  width: 26px;
+  height: 14px;
   border-radius: 50%;
   background: radial-gradient(circle at 30% 30%, #ffe0e0, #ff3434 55%, #a00000 100%);
 }
 
-/* cylindrical neck just under the top */
+/* smooth cylindrical neck */
 .tack-gallery .pin .base {
   position: absolute;
   left: 50%;
   top: 10px;
   transform: translateX(-50%);
-  width: 22px;
-  height: 14px;
+  width: 18px;
+  height: 10px;
   border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, #ff5b5b, #b00000);
+  background: radial-gradient(circle at 30% 30%, #ff6b6b, #b00000);
 }
 
-/* conical stem */
+/* short vertical neck instead of triangle */
 .tack-gallery .pin .stem {
   position: absolute;
   left: 50%;
-  top: 18px;
+  top: 16px;
   transform: translateX(-50%);
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 0 8px 16px 8px;
-  border-color: transparent transparent #a00000 transparent;
+  width: 4px;
+  height: 10px;
+  border-radius: 2px;
+  background: linear-gradient(to bottom, #b00000, #700000);
 }
 
 /* metal tip */
 .tack-gallery .pin .tip {
   position: absolute;
   left: 50%;
-  top: 32px;
+  top: 24px;
   transform: translateX(-50%);
   width: 0;
   height: 0;
   border-style: solid;
-  border-width: 0 3px 8px 3px;
-  border-color: transparent transparent #cccccc transparent;
+  border-width: 0 2px 6px 2px;
+  border-color: transparent transparent #d0d0d0 transparent;
 }
 
 /* we don't need a separate .shadow structure any more */
