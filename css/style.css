@@ -1,69 +1,23 @@
-/* ========== GLOBAL RESET ========== */
-* { 
-  padding: 0; 
-  margin: 0; 
-  box-sizing: border-box; 
+/* ========== BOOK CONTAINER (RESPONSIVE) ========== */
+
+/* max size the book is allowed to grow to */
+:root {
+  --book-max-width: 700px;
 }
 
-html, body { height: 100%; }
-
-/* ========== PAGE BACKGROUND & TYPOGRAPHY ========== */
-body {
-  font-family: "Indie Flower", cursive;
-  color: #222;
-
-  /* Pastel gradient */
-  background:
-    radial-gradient(120% 110% at 8% 0%,
-      rgba(255,233,214,0.85) 0%,
-      rgba(255,233,214,0.55) 28%,
-      rgba(255,233,214,0.00) 60%),
-    radial-gradient(110% 120% at 92% 88%,
-      rgba(223,226,255,0.85) 0%,
-      rgba(223,226,255,0.50) 30%,
-      rgba(223,226,255,0.00) 62%),
-    linear-gradient(135deg,
-      #ffe9d6 0%,
-      #ffd6ec 46%,
-      #eadfff 72%,
-      #dfe2ff 100%);
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
-
-  display: grid;
-  place-items: center;
-  min-height: 100vh;
-  text-align: center;
-}
-
-/* ========== PRELOADER (warms cache) ========== */
-.imgLoader {
-  position: fixed;
-  animation: preLoad 1s steps(1);
-  width: 1px;
-  height: 1px;
-}
-@keyframes preLoad {
-  0%   { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/Freddie.png"); }
-  10%  { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/YoelDemonAcrylics.jpg"); }
-  20%  { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/AsakusaPastels.png"); }
-  30%  { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/WaterlilyPastels1.png"); }
-  40%  { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/BrusselsPastels2.png"); }
-  100% { display: none; }
-}
-
-/* ========== CARD CONTAINER ========== */
+/* Outer frame that holds title + book */
 .container {
   position: relative;
-  width: 420px;
-  height: 420px;
+  width: min(90vw, var(--book-max-width));
+  /* a little taller than wide to account for perspective */
+  height: calc(min(90vw, var(--book-max-width)) * 0.9);
   border: #fff solid 2px;
   border-radius: 4px;
   margin: 2rem auto;
   background: transparent;
 }
 
+/* Title stays the same, just centered inside container */
 .title {
   position: absolute;
   top: 18px;
@@ -74,41 +28,37 @@ body {
   line-height: 1;
 }
 
-.credit {
-  position: absolute;
-  top: calc(100% + 8px);
-  left: 0;
-  width: 100%;
-  font-size: 0.95em;
-  text-align: left;
-  padding-left: 8px;
-}
+/* ========== BOOK / PAGES (RESPONSIVE) ========== */
 
-/* ========== BOOK / PAGES ========== */
 .book {
   position: relative;
   margin: 0 auto;
   width: 100%;
+  /* leave some space at top for title */
   height: calc(100% - 64px);
   perspective: 630px;
   perspective-origin: center 50px;
-  transform: scale(1.2);
+  transform: scale(1.05);
   filter: drop-shadow(0px 10px 5px rgba(0, 0, 0, 0.25));
 }
 
+/* Each page is half the book width */
 .page {
-  width: 210px;
-  height: 300px;
+  width: calc(min(90vw, var(--book-max-width)) / 2);
+  height: calc(min(90vw, var(--book-max-width)) * 0.7);
   background-color: #bbb;
   position: absolute;
-  top: 0px;
+  top: 0;
   right: 50%;
   transform-origin: 100% 100%;
   border: solid #555 2px;
-  background-size: 420px 300px;
+  background-size: min(90vw, var(--book-max-width))
+                   calc(min(90vw, var(--book-max-width)) * 0.7);
   background-position: center;
   transform-style: preserve-3d;
 }
+
+/* keep your existing rotations/animations */
 .page:nth-child(1) { transform: rotateX(60deg) rotateY(3deg); }
 .page:nth-child(2) { transform: rotateX(60deg) rotateY(4.5deg); }
 .page:nth-child(3) {
@@ -124,34 +74,29 @@ body {
 }
 .page:nth-child(6)::after {
   content: "";
-  width: 210px;
-  height: 300px;
+  width: calc(min(90vw, var(--book-max-width)) / 2);
+  height: calc(min(90vw, var(--book-max-width)) * 0.7);
   position: absolute;
-  top: 0px;
-  right: 0%;
+  top: 0;
+  right: 0;
   transform-origin: center;
   transform: rotateY(180deg);
   animation: nextPage 25s -20s infinite steps(1);
-  background-size: 420px 300px;
+  background-size: min(90vw, var(--book-max-width))
+                   calc(min(90vw, var(--book-max-width)) * 0.7);
   background-position: 100% -2px;
 }
-@keyframes nextPage {
-  0%   { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/Freddie.png"); }
-  20%  { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/YoelDemonAcrylics.jpg"); }
-  40%  { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/AsakusaPastels.png"); }
-  60%  { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/WaterlilyPastels1.png"); }
-  80%  { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/BrusselsPastels2.png"); }
-}
 
-/* ========== SPINE GAP ========== */
+/* ========== SPINE GAP (RESPONSIVE HEIGHT) ========== */
+
 .gap {
   width: 10px;
-  height: 300px;
+  height: calc(min(90vw, var(--book-max-width)) * 0.7);
   background: none;
   transform: rotateX(60deg);
   transform-origin: bottom;
   position: absolute;
-  top: 0px;
+  top: 0;
   left: calc(50% - 5px);
 }
 .gap::after {
@@ -166,33 +111,40 @@ body {
   border-radius: 50%;
 }
 
-.pages, .flips { transform-style: preserve-3d; }
+.pages, .flips {
+  transform-style: preserve-3d;
+}
 
-/* ========== FLIPS ========== */
+/* ========== FLIPS (RESPONSIVE) ========== */
+
 .flip {
-  width: 32px;
-  height: 300px;
+  width: calc(min(90vw, var(--book-max-width)) / 2);
+  height: calc(min(90vw, var(--book-max-width)) * 0.7);
   position: absolute;
-  top: 0px;
+  top: 0;
   transform-origin: 100% 100%;
   right: 100%;
   border: solid #555;
-  border-width: 2px 0px;
+  border-width: 2px 0;
   perspective: 4200px;
   perspective-origin: center;
   transform-style: preserve-3d;
-  background-size: 420px 300px;
+  background-size: min(90vw, var(--book-max-width))
+                   calc(min(90vw, var(--book-max-width)) * 0.7);
 }
 .flip::after {
   content: "";
   position: absolute;
-  top: 0px;
-  right: 0%;
+  top: 0;
+  right: 0;
   width: 100%;
   height: 100%;
   transform-origin: center;
-  background-size: 420px 300px;
+  background-size: min(90vw, var(--book-max-width))
+                   calc(min(90vw, var(--book-max-width)) * 0.7);
 }
+
+/* keep your existing flip animations exactly as they were */
 .flip.flip1 {
   right: 50%;
   animation: flip1 5s infinite ease-in-out;
@@ -210,480 +162,8 @@ body {
 .flip.flip4::after { animation: nextFlip4 25s -20s infinite steps(1); }
 .flip.flip5::after { animation: nextFlip5 25s -20s infinite steps(1); }
 .flip.flip6::after { animation: nextFlip6 25s -20s infinite steps(1); }
-.flip.flip7 { width: 30px; border-width: 2px 0px 2px 2px; }
+.flip.flip7 {
+  width: calc(min(90vw, var(--book-max-width)) / 2 - 2px);
+  border-width: 2px 0 2px 2px;
+}
 .flip.flip7::after { animation: nextFlip7 25s -20s infinite steps(1); }
-
-/* ========== FLIP ANIMATIONS ========== */
-@keyframes flip1 {
-  0%,20%   { transform: rotateX(60deg) rotateY(6deg); }
-  80%,100% { transform: rotateX(60deg) rotateY(174deg); }
-}
-@keyframes flip2 {
-  0%,20% { transform: rotateY(0deg) translateY(0px); }
-  50%    { transform: rotateY(-15deg) translateY(0px); }
-}
-
-/* ========== IMAGE SEQUENCES (nextFlip1–7) ========== */
-@keyframes nextFlip1 {
-  0%  { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/Freddie.png"); background-position: -178px -2px; transform: rotateY(0deg); }
-  10% { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/YoelDemonAcrylics.jpg"); background-position: -210px -2px; transform: rotateY(180deg); }
-  20% { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/YoelDemonAcrylics.jpg"); background-position: -178px -2px; transform: rotateY(0deg); }
-  30% { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/AsakusaPastels.png"); background-position: -210px -2px; transform: rotateY(180deg); }
-  40% { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/AsakusaPastels.png"); background-position: -178px -2px; transform: rotateY(0deg); }
-  50% { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/WaterlilyPastels1.png"); background-position: -210px -2px; transform: rotateY(180deg); }
-  60% { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/WaterlilyPastels1.png"); background-position: -178px -2px; transform: rotateY(0deg); }
-  70% { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/BrusselsPastels2.png"); background-position: -210px -2px; transform: rotateY(180deg); }
-  80% { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/BrusselsPastels2.png"); background-position: -178px -2px; transform: rotateY(0deg); }
-  90% { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/Freddie.png"); background-position: -210px -2px; transform: rotateY(180deg); }
-}
-
-@keyframes nextFlip2 {
-  0%   { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/Freddie.png"); background-position: -148px -2px; transform: rotateY(0deg); }
-  10%  { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/YoelDemonAcrylics.jpg"); background-position: -238px -2px; transform: rotateY(180deg); }
-  20%  { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/YoelDemonAcrylics.jpg"); background-position: -148px -2px; transform: rotateY(0deg); }
-  30%  { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/AsakusaPastels.png"); background-position: -238px -2px; transform: rotateY(180deg); }
-  40%  { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/AsakusaPastels.png"); background-position: -148px -2px; transform: rotateY(0deg); }
-  50%  { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/WaterlilyPastels1.png"); background-position: -238px -2px; transform: rotateY(180deg); }
-  60%  { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/WaterlilyPastels1.png"); background-position: -148px -2px; transform: rotateY(0deg); }
-  70%  { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/BrusselsPastels2.png"); background-position: -238px -2px; transform: rotateY(180deg); }
-  80%  { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/BrusselsPastels2.png"); background-position: -148px -2px; transform: rotateY(0deg); }
-  90%  { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/Freddie.png"); background-position: -238px -2px; transform: rotateY(180deg); }
-}
-
-@keyframes nextFlip3 {
-  0%  { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/Freddie.png"); background-position: -118px -2px; transform: rotateY(0deg); }
-  11% { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/YoelDemonAcrylics.jpg"); background-position: -268px -2px; transform: rotateY(180deg); }
-  20% { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/YoelDemonAcrylics.jpg"); background-position: -118px -2px; transform: rotateY(0deg); }
-  31% { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/AsakusaPastels.png"); background-position: -268px -2px; transform: rotateY(180deg); }
-  40% { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/AsakusaPastels.png"); background-position: -118px -2px; transform: rotateY(0deg); }
-  51% { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/WaterlilyPastels1.png"); background-position: -268px -2px; transform: rotateY(180deg); }
-  60% { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/WaterlilyPastels1.png"); background-position: -118px -2px; transform: rotateY(0deg); }
-  71% { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/BrusselsPastels2.png"); background-position: -268px -2px; transform: rotateY(180deg); }
-  80% { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/BrusselsPastels2.png"); background-position: -118px -2px; transform: rotateY(0deg); }
-  91% { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/Freddie.png"); background-position: -268px -2px; transform: rotateY(180deg); }
-}
-
-@keyframes nextFlip4 {
-  0%  { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/Freddie.png"); background-position: -88px -2px; transform: rotateY(0deg); }
-  12% { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/YoelDemonAcrylics.jpg"); background-position: -298px -2px; transform: rotateY(180deg); }
-  20% { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/YoelDemonAcrylics.jpg"); background-position: -88px -2px; transform: rotateY(0deg); }
-  32% { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/AsakusaPastels.png"); background-position: -298px -2px; transform: rotateY(180deg); }
-  40% { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/AsakusaPastels.png"); background-position: -88px -2px; transform: rotateY(0deg); }
-  52% { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/WaterlilyPastels1.png"); background-position: -298px -2px; transform: rotateY(180deg); }
-  60% { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/WaterlilyPastels1.png"); background-position: -88px -2px; transform: rotateY(0deg); }
-  72% { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/BrusselsPastels2.png"); background-position: -298px -2px; transform: rotateY(180deg); }
-  80% { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/BrusselsPastels2.png"); background-position: -88px -2px; transform: rotateY(0deg); }
-  92% { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/Freddie.png"); background-position: -298px -2px; transform: rotateY(180deg); }
-}
-
-@keyframes nextFlip5 {
-  0%  { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/Freddie.png"); background-position: -58px -2px; transform: rotateY(0deg); }
-  12% { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/YoelDemonAcrylics.jpg"); background-position: -328px -2px; transform: rotateY(180deg); }
-  20% { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/YoelDemonAcrylics.jpg"); background-position: -58px -2px; transform: rotateY(0deg); }
-  32% { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/AsakusaPastels.png"); background-position: -328px -2px; transform: rotateY(180deg); }
-  40% { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/AsakusaPastels.png"); background-position: -58px -2px; transform: rotateY(0deg); }
-  52% { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/WaterlilyPastels1.png"); background-position: -328px -2px; transform: rotateY(180deg); }
-  60% { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/WaterlilyPastels1.png"); background-position: -58px -2px; transform: rotateY(0deg); }
-  72% { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/BrusselsPastels2.png"); background-position: -328px -2px; transform: rotateY(180deg); }
-  80% { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/BrusselsPastels2.png"); background-position: -58px -2px; transform: rotateY(0deg); }
-  92% { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/Freddie.png"); background-position: -328px -2px; transform: rotateY(180deg); }
-}
-
-@keyframes nextFlip6 {
-  0%  { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/Freddie.png"); background-position: -28px -2px; transform: rotateY(0deg); }
-  12% { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/YoelDemonAcrylics.jpg"); background-position: -358px -2px; transform: rotateY(180deg); }
-  20% { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/YoelDemonAcrylics.jpg"); background-position: -28px -2px; transform: rotateY(0deg); }
-  32% { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/AsakusaPastels.png"); background-position: -358px -2px; transform: rotateY(180deg); }
-  40% { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/AsakusaPastels.png"); background-position: -28px -2px; transform: rotateY(0deg); }
-  52% { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/WaterlilyPastels1.png"); background-position: -358px -2px; transform: rotateY(180deg); }
-  60% { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/WaterlilyPastels1.png"); background-position: -28px -2px; transform: rotateY(0deg); }
-  72% { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/BrusselsPastels2.png"); background-position: -358px -2px; transform: rotateY(180deg); }
-  80% { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/BrusselsPastels2.png"); background-position: -28px -2px; transform: rotateY(0deg); }
-  92% { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/Freddie.png"); background-position: -358px -2px; transform: rotateY(180deg); }
-}
-
-@keyframes nextFlip7 {
-  0%  { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/Freddie.png"); background-position: -2px -2px; transform: rotateY(0deg); }
-  13% { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/YoelDemonAcrylics.jpg"); background-position: -388px -2px; transform: rotateY(180deg); }
-  20% { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/YoelDemonAcrylics.jpg"); background-position: -2px -2px; transform: rotateY(0deg); }
-  33% { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/AsakusaPastels.png"); background-position: -388px -2px; transform: rotateY(180deg); }
-  40% { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/AsakusaPastels.png"); background-position: -2px -2px; transform: rotateY(0deg); }
-  53% { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/WaterlilyPastels1.png"); background-position: -388px -2px; transform: rotateY(180deg); }
-  60% { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/WaterlilyPastels1.png"); background-position: -2px -2px; transform: rotateY(0deg); }
-  73% { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/BrusselsPastels2.png"); background-position: -388px -2px; transform: rotateY(180deg); }
-  80% { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/BrusselsPastels2.png"); background-position: -2px -2px; transform: rotateY(0deg); }
-  93% { background-image: url("https://raw.githubusercontent.com/kizsak/Portfolio/main/Freddie.png"); background-position: -388px -2px; transform: rotateY(180deg); }
-}
-
-/* ========== BACKGROUND PATCH ========== */
-
-html, body {
-  background:
-    radial-gradient(120% 110% at 8% 0%,
-      rgba(255,233,214,0.85) 0%,
-      rgba(255,233,214,0.55) 28%,
-      rgba(255,233,214,0.00) 60%),
-    radial-gradient(110% 120% at 92% 88%,
-      rgba(223,226,255,0.85) 0%,
-      rgba(223,226,255,0.50) 30%,
-      rgba(223,226,255,0.00) 62%),
-    linear-gradient(135deg, #ffe9d6 0%, #ffd6ec 46%, #eadfff 72%, #dfe2ff 100%) !important;
-  background-attachment: fixed !important;
-  background-repeat: no-repeat !important;
-  background-size: cover !important;
-}
-
-body::before, body::after, html::before, html::after {
-  background-image: none !important;
-  content: none !important;
-}
-
-
-/* ========== NEW GALLERY STYLES (GRID + HOVER) ========= */
-
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* always 3 columns */
-  gap: 20px;
-  justify-items: center;
-  margin: 2rem auto;
-  width: 100%;
-  max-width: 1200px; /* keep gallery from stretching too wide */
-}
-
-/* Reset figure styling */
-.gallery figure {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  max-width: 320px;
-  margin: 0;
-  border-radius: 10px;
-  background: #fff;
-  cursor: pointer;
-}
-
-/* Captions hidden by default, shown on hover */
-.gallery figure figcaption {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.5);
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-  text-align: center;
-  padding: 1em;
-}
-
-.gallery figure:hover figcaption {
-  opacity: 1;
-}
-
-/* Image styling */
-.gallery figure img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
-}
-
-.card {
-  overflow: hidden;
-  border-radius: 10px;
-  background: #fff;
-}
-
-.card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* makes the image fill its container without distortion */
-  display: block;
-}
-
-/* --- Fix gallery card sizing to keep images natural --- */
-.card {
-  overflow: hidden;
-  border-radius: 10px;
-  background: #fff;
-  display: inline-block; /* shrink-wrap height to the image */
-}
-
-.card img {
-  width: 100%;
-  height: auto;   /* keep natural proportions */
-  display: block; /* remove inline spacing */
-}
-
-/* --- Gallery: size cards to image only; no extra white blocks --- */
-.gallery .card {
-  position: relative;
-  display: block;
-  overflow: hidden;
-  border-radius: 12px;
-  background: transparent;
-}
-
-/* Nuke any fixed/min heights coming from earlier rules */
-.gallery .card,
-.gallery .card > * {
-  height: auto !important;
-  min-height: 0 !important;
-}
-
-/* If you used aspect-ratio/padding hacks earlier, disable them */
-.gallery .card::before,
-.gallery .thumb::before {
-  content: none !important;
-  display: none !important;
-  padding-bottom: 0 !important;
-}
-
-/* Keep images at natural proportions */
-.gallery .card img,
-.gallery .thumb img {
-  display: block;
-  width: 100%;
-  height: auto !important;  /* natural aspect */
-}
-
-/* If there’s a blank text/caption area, don’t reserve space */
-.gallery .card .content:empty,
-.gallery .card .caption:empty {
-  display: none !important;
-}
-
-/* Make hover text an overlay so it doesn't take layout space */
-.gallery .card .caption,
-.gallery .card .overlay {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: flex-end;
-  padding: 12px;
-  color: #fff;
-  background: linear-gradient(to top, rgba(0,0,0,.45), rgba(0,0,0,0));
-  opacity: 0;
-  transition: opacity .2s ease;
-  pointer-events: none;
-}
-.gallery .card:hover .caption,
-.gallery .card:hover .overlay {
-  opacity: 1;
-}
-
-/* --- Gallery: let each card keep its own height --- */
-
-/* If the gallery uses FLEXBOX */
-.gallery {
-  align-items: flex-start !important;   /* stop items from stretching to tallest row-mate */
-}
-
-/* If the gallery uses GRID */
-.gallery {
-  grid-auto-rows: auto !important;      /* rows sized by content, not a fixed track */
-  align-items: start !important;
-}
-.gallery > * { 
-  grid-row: auto !important;            /* cancel any row-span tricks */
-}
-
-/* Card + image: no reserved space, natural aspect */
-.gallery .card {
-  background: transparent;              /* remove white fill that makes 'white blocks' visible */
-  overflow: hidden;
-  border-radius: 12px;
-}
-.gallery .card img {
-  display: block;
-  width: 100%;
-  height: auto !important;              /* keep natural proportions */
-}
-
-/* Nuke any forced heights anywhere inside cards */
-.gallery .card, 
-.gallery .card * {
-  height: auto !important;
-  min-height: 0 !important;
-  aspect-ratio: auto !important;
-}
-
-/* If you have hover captions, make them overlays so they don't take layout space */
-.gallery .card .caption:empty { display: none !important; }
-.gallery .card .caption {
-  position: absolute; inset: 0; 
-  display: flex; align-items: flex-end; 
-  padding: 12px; color: #fff;
-  background: linear-gradient(to top, rgba(0,0,0,.45), transparent);
-  opacity: 0; transition: opacity .2s ease; pointer-events: none;
-}
-.gallery .card:hover .caption { opacity: 1; }
-
-/* =========================
-   Tacked-up Gallery (no animation)
-   Namespaced to avoid conflicts
-   ========================= */
-.tack-gallery {
-  --card-width: 220px;
-  --gap: 22px;
-  --max-cols: 8;
-
-  display: grid;
-  gap: var(--gap);
-  grid-template-columns: repeat(auto-fit, minmax(var(--card-width), 1fr));
-  width: 100%;
-  max-width: calc(var(--max-cols) * var(--card-width) + (var(--max-cols) - 1) * var(--gap));
-  margin: 2rem auto;
-  padding: var(--gap);
-  justify-items: center;
-}
-
-/* Each card is a link so the whole thing is clickable */
-.tack-gallery .tack-card {
-  position: relative;
-  display: block;
-  width: 100%;
-  max-width: 320px;
-  text-decoration: none;
-  color: inherit;
-  border-radius: 14px;
-  padding: 24px 16px 18px; /* extra top padding for the pin */
-  background: #fff;
-  box-shadow: 0 10px 14px rgba(0,0,0,0.25);
-  transform-origin: center top;
-}
-
-/* --------- Compact 3D push pin (clean version, no triangle stem) --------- */
-
-.tack-gallery .pin {
-  position: absolute;
-  top: -14px;
-  left: 50%;
-  transform: translateX(-50%) rotate(-6deg);
-  width: 32px;
-  height: 34px;
-  pointer-events: none;
-}
-
-/* shadow ellipse */
-.tack-gallery .pin::before {
-  content: "";
-  position: absolute;
-  top: 22px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 34px;
-  height: 12px;
-  border-radius: 50%;
-  background: rgba(0, 0, 0, 0.25);
-  filter: blur(4px);
-}
-
-/* top of the pin head (ellipse) */
-.tack-gallery .pin .top {
-  position: absolute;
-  left: 50%;
-  top: 0;
-  transform: translateX(-50%);
-  width: 26px;
-  height: 14px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, #ffe0e0, #ff3434 55%, #a00000 100%);
-}
-
-/* smooth cylindrical neck */
-.tack-gallery .pin .base {
-  position: absolute;
-  left: 50%;
-  top: 10px;
-  transform: translateX(-50%);
-  width: 18px;
-  height: 10px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, #ff6b6b, #b00000);
-}
-
-/* short vertical neck instead of triangle */
-.tack-gallery .pin .stem {
-  position: absolute;
-  left: 50%;
-  top: 16px;
-  transform: translateX(-50%);
-  width: 4px;
-  height: 10px;
-  border-radius: 2px;
-  background: linear-gradient(to bottom, #b00000, #700000);
-}
-
-/* metal tip */
-.tack-gallery .pin .tip {
-  position: absolute;
-  left: 50%;
-  top: 24px;
-  transform: translateX(-50%);
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 0 2px 6px 2px;
-  border-color: transparent transparent #d0d0d0 transparent;
-}
-
-/* we don't need a separate .shadow structure any more */
-.tack-gallery .pin .shadow {
-  display: none;
-}
-
-/* ---------- Card contents ---------- */
-
-.tack-gallery .tack-card img {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  display: block;
-  border-radius: 10px;
-  position: relative;
-  z-index: 3;
-}
-
-.tack-gallery .tack-card figcaption {
-  margin-top: 10px;
-  text-align: center;
-  font-size: 1rem;
-  line-height: 1.4;
-  opacity: 0.95;
-}
-
-/* subtle hover lift */
-.tack-gallery .tack-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 14px 18px rgba(0,0,0,0.30);
-}
-
-/* playful static tilts */
-.tack-gallery .tack-card:nth-child(6n+1) { transform: rotate(-1.8deg); }
-.tack-gallery .tack-card:nth-child(6n+2) { transform: rotate( 1.3deg); }
-.tack-gallery .tack-card:nth-child(6n+3) { transform: rotate(-0.9deg); }
-.tack-gallery .tack-card:nth-child(6n+4) { transform: rotate( 1.8deg); }
-.tack-gallery .tack-card:nth-child(6n+5) { transform: rotate(-1.2deg); }
-.tack-gallery .tack-card:nth-child(6n+6) { transform: rotate( 0.7deg); }
-
-.tack-gallery .tack-card:nth-child(n):hover {
-  transform: translateY(-4px) rotate(0deg);
-}
-
-/* responsive columns */
-@media (max-width: 900px)  {
-  .tack-gallery { grid-template-columns: repeat(2, minmax(var(--card-width), 1fr)); }
-}
-@media (max-width: 560px)  {
-  .tack-gallery { grid-template-columns: 1fr; }
-}
