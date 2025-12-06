@@ -1,9 +1,14 @@
-background: #e1ff00;
-background: linear-gradient(283deg, 
-			rgba(225, 255, 0, 1) 0%, 
-            rgba(213, 202, 45, 1) 15%, 
-            rgba(208, 188, 128, 1) 30%, 
-            rgba(230, 103, 129, 1) 50%, 
-            rgba(247, 146, 5, 1) 70%, 
-            rgba(252, 185, 134, 1) 85%, 
-            rgba(221, 255, 87, 1) 100%);
+body {
+    height: 100vh;
+    margin: 0;
+
+    background: #e1ff00;
+    background: linear-gradient(283deg, 
+                rgba(225, 255, 0, 1) 0%, 
+                rgba(213, 202, 45, 1) 15%, 
+                rgba(208, 188, 128, 1) 30%, 
+                rgba(230, 103, 129, 1) 50%, 
+                rgba(247, 146, 5, 1) 70%, 
+                rgba(252, 185, 134, 1) 85%, 
+                rgba(221, 255, 87, 1) 100%);
+}
