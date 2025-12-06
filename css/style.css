@@ -2,8 +2,8 @@ body {
     margin: 0;
     height: 100vh;
 
-    background-image: url("images/background.jpg");
-    background-size: cover;       /* scale to fill screen */
-    background-position: center;  /* keep the important part centered */
-    background-repeat: no-repeat; /* no tiling */
+    background-image: url("https://github.com/kizsak/Portfolio/raw/main/LightBleedCompressed.png");
+    background-size: cover;       
+    background-position: center;  
+    background-repeat: no-repeat; 
 }
