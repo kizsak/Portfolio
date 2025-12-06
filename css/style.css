@@ -149,6 +149,11 @@ body {
   text-transform: uppercase;
 }
 
+.card.tall-image .card__background {
+  background-size: 120% auto; /* increase until the borders disappear */
+}
+
+
 .card__heading {
   color: var(--text-lighter);
   font-size: 1.9rem;
