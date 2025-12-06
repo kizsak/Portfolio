@@ -1,23 +1,30 @@
-@import url('https://fonts.googleapis.com/css2?family=Limelight&display=swap');
+/* Base font */
+html {
+  height: 100%;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+}
 
-body {
+* {
   margin: 0;
-  height: 100vh;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+/* Your background image */
+body {
+  min-height: 100vh;
   background-image: url("https://github.com/kizsak/Portfolio/raw/main/LightBleedCompressed.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+
+  display: flex;
+  flex-direction: column;
 }
 
-.neon {
-  color: #d8ffff; 
-  text-shadow: 0 0 2px #d8ffff; 
-  filter:
-    drop-shadow(0 0 6px  #00eaff)
-    drop-shadow(0 0 12px #00eaff)
-    drop-shadow(0 0 24px #00eaff)
-    drop-shadow(0 0 48px #00eaff);
-}
+/* Neon headings */
 
 .limelight-regular {
   font-family: "Limelight", sans-serif;
@@ -25,7 +32,37 @@ body {
   font-style: normal;
 }
 
+.neon {
+  color: #d8ffff;
+  text-align: center;
+  text-shadow: 0 0 2px #d8ffff;
+  filter:
+    drop-shadow(0 0 6px  #00eaff)
+    drop-shadow(0 0 12px #00eaff)
+    drop-shadow(0 0 24px #00eaff)
+    drop-shadow(0 0 48px #00eaff);
+}
 
+/* Position top and bottom headings nicely */
+.page-header,
+.page-footer {
+  padding: 2rem 1rem;
+}
+
+/* Let the hero-section expand between the headings */
+.hero-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Optional: slight dark overlay to help cards stand out */
+  background: radial-gradient(circle at center,
+      rgba(0, 0, 0, 0.0) 0%,
+      rgba(0, 0, 0, 0.4) 80%);
+}
+
+/* Card grid from CodePen */
 
 :root {
   --background-dark: #2d3548;
@@ -39,32 +76,6 @@ body {
   --width-container: 1200px;
 }
 
-* {
-  border: 0;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  height: 100%;
-  font-family: "Montserrat", sans-serif;
-  font-size: 14px;
-}
-
-body {
-  height: 100%;
-}
-
-.hero-section {
-  align-items: flex-start;
-  background-image: linear-gradient(15deg, #0f4667 0%, #2a6973 150%);
-  display: flex;
-  min-height: 100%;
-  justify-content: center;
-  padding: var(--spacing-xxl) var(--spacing-l);
-}
-
 .card-grid {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
@@ -72,6 +83,8 @@ body {
   grid-row-gap: var(--spacing-l);
   max-width: var(--width-container);
   width: 100%;
+  padding: 0 var(--spacing-l);
+  list-style: none;
 }
 
 @media (min-width: 540px) {
@@ -87,11 +100,10 @@ body {
 }
 
 .card {
-  list-style: none;
   position: relative;
 }
 
-.card:before {
+.card::before {
   content: "";
   display: block;
   padding-bottom: 150%;
@@ -109,8 +121,10 @@ body {
   right: 0;
   top: 0;
   transform-origin: center;
-  trsnsform: scale(1) translateZ(0);
-  transition: filter 200ms linear, transform 200ms linear;
+  transform: scale(1) translateZ(0);
+  transition:
+    filter 200ms linear,
+    transform 200ms linear;
 }
 
 .card:hover .card__background {
@@ -122,10 +136,10 @@ body {
 }
 
 .card__content {
-  left: 0;
-  padding: var(--spacing-l);
   position: absolute;
   top: 0;
+  left: 0;
+  padding: var(--spacing-l);
 }
 
 .card__category {
@@ -138,7 +152,7 @@ body {
 .card__heading {
   color: var(--text-lighter);
   font-size: 1.9rem;
-  text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
   line-height: 1.4;
-  word-spacing: 100vw;
+  text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
+  word-spacing: 100vw; /* from the original pen */
 }
