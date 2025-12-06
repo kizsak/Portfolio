@@ -10,16 +10,13 @@ body {
 }
 
 .neon {
-  color: #fff;
-  text-shadow:
-    0 0 5px #fff,
-    0 0 10px #fff,
-    0 0 20px #fff,
-    0 0 40px #0ff,
-    0 0 80px #0ff,
-    0 0 90px #0ff,
-    0 0 100px #0ff,
-    0 0 150px #0ff;
+  color: #d8ffff; 
+  text-shadow: 0 0 2px #d8ffff; 
+  filter:
+    drop-shadow(0 0 6px  #00eaff)
+    drop-shadow(0 0 12px #00eaff)
+    drop-shadow(0 0 24px #00eaff)
+    drop-shadow(0 0 48px #00eaff);
 }
 
 .limelight-regular {
