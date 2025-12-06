@@ -1,11 +1,10 @@
 body {
-    margin: 0;
-    height: 100vh;
-
-    background-image: url("https://github.com/kizsak/Portfolio/raw/main/LightBleedCompressed.png");
-    background-size: cover;       
-    background-position: center;  
-    background-repeat: no-repeat; 
+  margin: 0;
+  height: 100vh;
+  background-image: url("https://github.com/kizsak/Portfolio/raw/main/LightBleedCompressed.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .neon {
@@ -20,4 +19,3 @@ body {
     0 0 100px #0ff,
     0 0 150px #0ff;
 }
-
