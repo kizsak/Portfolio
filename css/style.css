@@ -271,3 +271,9 @@ body {
     inset 0 0 10px rgba(140, 255, 255, 0.35);
   transform: translateY(-2px);
 }
+
+.svg-icon {
+  width: 1.6rem;
+  height: 1.6rem;
+  fill: #e9fcff; /* same neon-ish white-blue as your other icons */
+}
