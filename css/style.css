@@ -141,10 +141,12 @@ body.page-home {
 -------------------------- */
 
 .hero-section {
-  flex: 1;
+  /* no flex: 1; — let height follow the cards */
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+
+  padding: 1.5rem 0 1.5rem;
 
   /* Dark vignette overlay behind cards */
   background: radial-gradient(
