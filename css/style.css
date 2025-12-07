@@ -1,7 +1,7 @@
 /* Base font */
 html {
   height: 100%;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Oxanium", sans-serif;
   font-size: 14px;
 }
 
@@ -12,7 +12,7 @@ html {
   box-sizing: border-box;
 }
 
-/* Your background image */
+/* Background Image */
 body {
   min-height: 100vh;
   background-image: url("https://github.com/kizsak/Portfolio/raw/main/LightBleedCompressed.png");
@@ -24,15 +24,12 @@ body {
   flex-direction: column;
 }
 
-/* Neon headings */
-
-.limelight-regular {
+/* Neon Headings */
+.neon {
   font-family: "Limelight", sans-serif;
   font-weight: 400;
   font-style: normal;
-}
 
-.neon {
   color: #d8ffff;
   text-align: center;
   text-shadow: 0 0 2px #d8ffff;
@@ -49,21 +46,19 @@ body {
   padding: 2rem 1rem;
 }
 
-/* Let the hero-section expand between the headings */
 .hero-section {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
 
-  /* Optional: slight dark overlay to help cards stand out */
+  /* Dark Overlay */
   background: radial-gradient(circle at center,
       rgba(0, 0, 0, 0.0) 0%,
       rgba(0, 0, 0, 0.4) 80%);
 }
 
-/* Card grid from CodePen */
-
+/* Card Grid */
 :root {
   --background-dark: #2d3548;
   --text-light: rgba(255, 255, 255, 0.6);
@@ -148,11 +143,6 @@ body {
   margin-bottom: var(--spacing-s);
   text-transform: uppercase;
 }
-
-.card.tall-image .card__background {
-  background-size: 120% auto; /* increase until the borders disappear */
-}
-
 
 .card__heading {
   color: var(--text-lighter);
