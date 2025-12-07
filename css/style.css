@@ -271,3 +271,22 @@ body.page-home {
   height: 1.6rem;
   fill: #e9fcff; /* 
 }
+
+/* Make homepage gradient cover the full screen */
+body.page-home {
+  min-height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+/* Reduce extra space below the cards */
+.page-home .card-grid {
+  margin-bottom: 1.5rem;  /* you can lower this further if needed */
+}
+
+/* Slightly tighten footer spacing so it doesn't push content down too far */
+.page-footer {
+  margin-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
