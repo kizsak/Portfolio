@@ -19,45 +19,73 @@
   </div>
   </header>
 
-    <div class="gallery">
-      <figure class="snip1384">
-        <img src="https://github.com/kizsak/Portfolio/raw/main/AsakusaPastels.png" alt="Digital pastel painting of the Asakusa Market" />
-        <figcaption>
-          <h3>“Asakusa”</h3> 
-          <p>Digital pastels, 2024</p>
-        </figcaption>
-      </figure>
+<main class="gallery-layout">
+  <!-- LEFT: caption + description (these will be filled by JS) -->
+  <section class="gallery-text">
+    <h2 class="gallery-title" id="gallery-title">Land- and City-Scapes</h2>
+    <p class="gallery-caption" id="image-caption"></p>
+    <p class="gallery-description" id="image-description"></p>
+  </section>
 
-      <figure class="snip1384">
-        <img src="https://github.com/kizsak/Portfolio/raw/main/AssateaguePastels.jpg" alt="Digital pastel painting of a marsh in Assateague" />
-        <figcaption>
-          <h3>"Assateague"</h3>
-          <p>Digital pastels, 2024</p>
-        </figcaption>
-      </figure>
+  <!-- RIGHT: image carousel -->
+  <section class="gallery-carousel">
+    <div class="carousel-window">
+      <img
+        src="https://github.com/kizsak/Portfolio/raw/main/AsakusaPastels.png" 
+        alt="Digital pastel painting of the Asakusa Market"
+        class="carousel-image active"
+        data-caption="Asakusa, digital pastels, 2024"
+        data-description="Asakusa<br>Digital pastels, 2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy 9+, S-Creator Pen">
 
-      <figure class="snip1384">
-        <img src="https://github.com/kizsak/Portfolio/raw/main/WaterlilyPastels1.png" alt="Digital acrylic painting of a tropical fucshia water lily" />
-        <figcaption>
-          <h3>"Water Lily I"</h3>
-          <p>Digital acrylics, 2024</p>
-        </figcaption>
-      </figure>
+      <img
+        src="https://github.com/kizsak/Portfolio/raw/main/AssateaguePastels.jpg" 
+        alt="Digital pastel painting of a marsh in Assateague"
+        class="carousel-image"
+        data-caption="Assateaugue Island, digital pastels, 2024"
+        data-description="Assateauge<br>Digital pastels, 2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy 9+<br>S-Pen Creator Edition"
+        
+        Assateaugue Island, digital pastels, 2024">
+      
+      <img
+        src="https://github.com/kizsak/Portfolio/raw/main/WaterlilyPastels1.png" 
+        alt="Digital acrylic painting of a tropical fucshia water lily"
+        class="carousel-image"
+        data-caption="Waterlily I"
+        data-description="'Waterlily I', Digital pastels, 2024">
 
-          <figure class="snip1384">
-        <img src="https://github.com/kizsak/Portfolio/raw/main/BrusselsPastels2.png" alt="Digital acrylic painting of a street in Brussels lit up with Christmas lights" />
-        <figcaption>
-          <h3>"Brussels I"</h3>
-          <p>Digital acrylics, 2024</p>
-        </figcaption>
-      </figure>
+      <img
+        src="https://github.com/kizsak/Portfolio/raw/main/WaterlilyPastels2.png" 
+        alt="Digital acrylic painting of a tropical fucshia water lily"
+        class="carousel-image"
+        data-caption="Waterlily II"
+        data-description="'Waterlily I1', Digital pastels, 2024">
+      
+      <img
+        src="https://github.com/kizsak/Portfolio/raw/main/BrusselsPastels1.png" 
+        alt="Digital acrylic painting of a street in Brussels lit up with Christmas lights"
+        class="carousel-image"
+        data-caption="Brussels, I"
+        data-description="'Brussels, I', Digital pastels, 2024">
 
-            <figure class="snip1384">
-        <img src="https://github.com/kizsak/Portfolio/raw/main/SingaporePastels.png" alt="Digital acrylic painting of a mosque in Singapore" />
-        <figcaption>
-          <h3>"Singapore Mosque"</h3>
-          <p>Digital pastels, 2024</p>
-        </figcaption>
-      </figure>
+      <img
+        src="https://github.com/kizsak/Portfolio/raw/main/BrusselsPastels2.png" 
+        alt="Digital acrylic painting of a street in Brussels lit up with Christmas lights"
+        class="carousel-image"
+        data-caption="Brussels, II"
+        data-description="'Brussels, II', Digital pastels, 2024">
 
+      <img
+        src="https://github.com/kizsak/Portfolio/raw/main/SingaporePastels.png" 
+        alt="Digital acrylic painting of a mosque in Singapore"
+        class="carousel-image"
+        data-caption="Singapore Mosque"
+        data-description="'Singapore Mosque', Digital pastels, 2024">
     </div>
+    
+    <div class="carousel-controls">
+      <button class="carousel-btn prev">‹</button>
+      <button class="carousel-btn next">›</button>
+    </div>
+  </section>
+</main>
+
