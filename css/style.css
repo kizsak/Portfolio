@@ -20,9 +20,20 @@ body {
   display: flex;
   flex-direction: column;
 
- /* Page-specific backgrounds */
+  /* Shared background behavior */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* -------------------------
+   Page-specific backgrounds
+   (These apply when you put
+   class="page-..." on <body>)
+-------------------------- */
+
 .page-home {
-  background-image: url("https://github.com/kizsak/Portfolio/blob/raw/LightBleedCompressed.png");
+  background-image: url("https://github.com/kizsak/Portfolio/raw/main/LightBleedCompressed.png");
 }
 
 .page-digital-painting {
@@ -45,8 +56,6 @@ body {
   background-image: url("https://github.com/kizsak/Portfolio/raw/main/LightBleedPinkPurpleBlackCompressed.png");
 }
 
-
-
 .page-image-design {
   background-image: url("https://github.com/kizsak/Portfolio/raw/main/LightBleedSquigglesCompressed.png");
 }
@@ -59,30 +68,30 @@ body {
   background-image: url("https://github.com/kizsak/Portfolio/raw/main/LightBleedFilmEdgeCompressed.png");
 }
 
-.page-.page-image-design-css {
+.page-image-design-css {
   background-image: url("https://github.com/kizsak/Portfolio/raw/main/LightBleedGreenRedBlackCompressed.png");
 }
 
-.page-.page-image-design-algorithmic {
+.page-image-design-algorithmic {
   background-image: url("https://github.com/kizsak/Portfolio/raw/main/LightBleedPinkPurpleBlackCompressed.png");
 }
-
-
 
 .page-IF {
   background-image: url("https://github.com/kizsak/Portfolio/raw/main/LightBleedYellowPinkCompressed.png");
 }
-
 
 .page-graphic-design {
   background-image: url("https://github.com/kizsak/Portfolio/raw/main/LightBleedPurpleWhiteCompressed.png");
 }
 
 .page-contact {
-background-image: url("https://github.com/kizsak/Portfolio/raw/main/LightBleedOrangeGreenCompressed.png");
+  background-image: url("https://github.com/kizsak/Portfolio/raw/main/LightBleedOrangeGreenCompressed.png");
 }
 
-/* Top + bottom neon headings */
+/* -------------------------
+   Neon headings
+-------------------------- */
+
 .page-header,
 .page-footer {
   padding: 2rem 1rem;
@@ -103,7 +112,10 @@ background-image: url("https://github.com/kizsak/Portfolio/raw/main/LightBleedOr
     drop-shadow(0 0 48px #00eaff);
 }
 
-/* Hero section */
+/* -------------------------
+   Hero section
+-------------------------- */
+
 .hero-section {
   flex: 1;
   display: flex;
@@ -116,7 +128,10 @@ background-image: url("https://github.com/kizsak/Portfolio/raw/main/LightBleedOr
     rgba(0, 0, 0, 0.4) 80%);
 }
 
-/* Card grid */
+/* -------------------------
+   Card grid
+-------------------------- */
+
 :root {
   --background-dark: #2d3548;
   --text-light: rgba(255, 255, 255, 0.6);
