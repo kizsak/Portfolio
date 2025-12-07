@@ -3,6 +3,8 @@
 -------------------------- */
 @import url("https://fonts.googleapis.com/css2?family=Limelight&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Oxanium&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&display=swap");
+
 
 * {
   margin: 0;
@@ -104,27 +106,30 @@ body {
 /* -------------------------
    Neon headings
 -------------------------- */
-
 .page-header,
 .page-footer {
   padding: 2rem 1rem;
 }
 
 .neon {
-  font-family: "Limelight", sans-serif;
+  font-family: "Audiowide", sans-serif;
   font-weight: 400;
-  font-style: normal;
-
-  color: #d8ffff;
+  color: #c9f8ff; /* softer cyan */
   text-align: center;
-  text-shadow: 0 0 2px #d8ffff;
-  filter:
-    drop-shadow(0 0 6px  #00eaff)
-    drop-shadow(0 0 12px #00eaff)
-    drop-shadow(0 0 24px #00eaff)
-    drop-shadow(0 0 48px #00eaff);
-}
 
+  /* SUBTLE neon glow — not overwhelming */
+  text-shadow:
+    0 0 4px #c9f8ff,
+    0 0 8px rgba(0, 234, 255, 0.6),
+    0 0 12px rgba(0, 234, 255, 0.4);
+
+  /* Optional: remove heavy drop-shadows */
+  filter: none;
+
+  /* Bigger font size */
+  font-size: 3.2rem;
+  letter-spacing: 1px;
+}
 
 /* -------------------------
    Hero section
