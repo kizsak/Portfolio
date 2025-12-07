@@ -147,9 +147,7 @@ body {
     rgba(0, 0, 0, 0.4) 80%);
 }
 
-/* -------------------------
-   Card grid
--------------------------- */
+ /* Card grid */
 
 :root {
   --background-dark: #2d3548;
@@ -242,5 +240,52 @@ body {
   font-size: 1.9rem;
   line-height: 1.4;
   text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
-  word-spacing: 100vw; /* from original pen */
+  word-spacing: 100vw; 
+}
+
+ /* Home button */
+.home-btn {
+  display: inline-block;
+  padding: 12px 28px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(#62d600, #378600);
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0 4px 0 #2a6b00;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* glossy sheen */
+.home-btn:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: radial-gradient(
+    circle at 50% -50%,
+    rgba(255,255,255,0.45),
+    transparent 70%
+  );
+  transform: rotate(12deg);
+  transition: left 0.4s ease;
+}
+
+.home-btn:hover:before {
+  left: -20%;
+}
+
+.home-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 #2a6b00;
+}
+
+.home-btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #2a6b00;
 }
