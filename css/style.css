@@ -295,3 +295,25 @@ body.page-home {
   height: 1.6rem;
   fill: #e9fcff;
 }
+
+/* --- Card tweaks to restore rounded look --- */
+/* Make the card itself rounded and clip its contents */
+.card {
+  position: relative;
+  border-radius: var(--spacing-l);
+  overflow: hidden;
+}
+
+/* If your <a> wraps the inside of the card, make it fill and inherit color */
+.card__link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Ensure headings on cards are bright, not browser-blue */
+.card__heading {
+  color: var(--text-lighter); /* from your :root, this is near-white */
+}
