@@ -1,9 +1,8 @@
 /* -------------------------
    Base + Layout
 -------------------------- */
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Limelight&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?familyy=Oxanium&display=swap" rel="stylesheet">
+@import url("https://fonts.googleapis.com/css2?family=Limelight&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oxanium&display=swap");
 
 * {
   margin: 0;
@@ -17,7 +16,6 @@ html {
   font-family: "Oxanium", sans-serif;
   font-size: 14px;
 }
-
 
 /* Fade-in animation */
 body {
@@ -38,10 +36,13 @@ body {
   to   { opacity: 1; }
 }
 
+@keyframes fadebg {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
 /* -------------------------
    Page-specific backgrounds
-   (These apply when you put
-   class="page-..." on <body>)
 -------------------------- */
 
 .page-home {
