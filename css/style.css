@@ -4,7 +4,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Oxanium&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Audiowide&display=swap");
 
-
 * {
   margin: 0;
   padding: 0;
@@ -37,10 +36,9 @@ body {
   to   { opacity: 1; }
 }
 
-@keyframes fadebg {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
+/* -------------------------
+   Page Backgrounds
+-------------------------- */
 
 .page-home {
   background-image: url("https://github.com/kizsak/Portfolio/raw/main/LightBleedCompressed.png");
@@ -98,13 +96,18 @@ body {
   background-image: url("https://github.com/kizsak/Portfolio/raw/main/LightBleedOrangeGreenCompressed.png");
 }
 
+/* Ensure homepage background fully covers the viewport */
 body.page-home {
-  min-height: 100vh;           
-  background-size: cover;      
+  min-height: 100vh;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+}
 
-  /* Neon headings */
+/* -------------------------
+   Header + Footer Neon Titles
+-------------------------- */
+
 .page-header,
 .page-footer {
   padding: 2rem 1rem;
@@ -113,7 +116,7 @@ body.page-home {
 .neon {
   font-family: "Audiowide", sans-serif;
   font-weight: 400;
-  color: #c9f8ff; 
+  color: #c9f8ff;
   text-align: center;
 
   text-shadow:
@@ -127,7 +130,16 @@ body.page-home {
   letter-spacing: 1px;
 }
 
-  /* Hero sections */   
+/* Slightly tighten footer spacing so it doesn't push content down too far */
+.page-footer {
+  margin-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+/* -------------------------
+   Hero Section
+-------------------------- */
+
 .hero-section {
   flex: 1;
   display: flex;
@@ -135,12 +147,17 @@ body.page-home {
   align-items: center;
 
   /* Dark vignette overlay behind cards */
-  background: radial-gradient(circle at center,
+  background: radial-gradient(
+    circle at center,
     rgba(0, 0, 0, 0.0) 0%,
-    rgba(0, 0, 0, 0.4) 80%);
+    rgba(0, 0, 0, 0.4) 80%
+  );
 }
 
- /* Card grid */
+/* -------------------------
+   Card Grid
+-------------------------- */
+
 :root {
   --background-dark: #2d3548;
   --text-light: rgba(255, 255, 255, 0.6);
@@ -162,6 +179,7 @@ body.page-home {
   width: 100%;
   padding: 0 var(--spacing-l);
   list-style: none;
+  margin-bottom: 1.5rem; /* reduce extra space below cards */
 }
 
 @media (min-width: 540px) {
@@ -183,7 +201,7 @@ body.page-home {
 .card::before {
   content: "";
   display: block;
-  padding-bottom: 150%; 
+  padding-bottom: 150%;
   width: 100%;
 }
 
@@ -232,10 +250,13 @@ body.page-home {
   font-size: 1.9rem;
   line-height: 1.4;
   text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
-  word-spacing: 100vw; 
+  word-spacing: 100vw;
 }
 
- /* Home button */
+/* -------------------------
+   Home Button
+-------------------------- */
+
 .neon-btn2 {
   display: inline-block;
   padding: 12px 34px;
@@ -265,28 +286,12 @@ body.page-home {
   transform: translateY(-2px);
 }
 
-/* Contact icons */
+/* -------------------------
+   Contact Icons
+-------------------------- */
+
 .svg-icon {
   width: 1.6rem;
   height: 1.6rem;
-  fill: #e9fcff; /* 
-}
-
-/* Make homepage gradient cover the full screen */
-body.page-home {
-  min-height: 100vh;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-
-/* Reduce extra space below the cards */
-.page-home .card-grid {
-  margin-bottom: 1.5rem;  /* you can lower this further if needed */
-}
-
-/* Slightly tighten footer spacing so it doesn't push content down too far */
-.page-footer {
-  margin-top: 1.5rem;
-  padding-bottom: 1.5rem;
+  fill: #e9fcff;
 }
