@@ -42,10 +42,6 @@ body {
   to   { opacity: 1; }
 }
 
-/* -------------------------
-   Page-specific backgrounds
--------------------------- */
-
 .page-home {
   background-image: url("https://github.com/kizsak/Portfolio/raw/main/LightBleedCompressed.png");
 }
@@ -102,9 +98,13 @@ body {
   background-image: url("https://github.com/kizsak/Portfolio/raw/main/LightBleedOrangeGreenCompressed.png");
 }
 
-/* -------------------------
-   Neon headings
--------------------------- */
+body.page-home {
+  min-height: 100vh;           
+  background-size: cover;      
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  /* Neon headings */
 .page-header,
 .page-footer {
   padding: 2rem 1rem;
@@ -113,27 +113,21 @@ body {
 .neon {
   font-family: "Audiowide", sans-serif;
   font-weight: 400;
-  color: #c9f8ff; /* softer cyan */
+  color: #c9f8ff; 
   text-align: center;
 
-  /* SUBTLE neon glow — not overwhelming */
   text-shadow:
     0 0 4px #c9f8ff,
     0 0 8px rgba(0, 234, 255, 0.6),
     0 0 12px rgba(0, 234, 255, 0.4);
 
-  /* Optional: remove heavy drop-shadows */
   filter: none;
 
-  /* Bigger font size */
   font-size: 3.2rem;
   letter-spacing: 1px;
 }
 
-/* -------------------------
-   Hero section
--------------------------- */
-
+  /* Hero sections */   
 .hero-section {
   flex: 1;
   display: flex;
@@ -147,7 +141,6 @@ body {
 }
 
  /* Card grid */
-
 :root {
   --background-dark: #2d3548;
   --text-light: rgba(255, 255, 255, 0.6);
@@ -190,7 +183,7 @@ body {
 .card::before {
   content: "";
   display: block;
-  padding-bottom: 150%; /* controls card aspect ratio */
+  padding-bottom: 150%; 
   width: 100%;
 }
 
@@ -272,8 +265,9 @@ body {
   transform: translateY(-2px);
 }
 
+/* Contact icons */
 .svg-icon {
   width: 1.6rem;
   height: 1.6rem;
-  fill: #e9fcff; /* same neon-ish white-blue as your other icons */
+  fill: #e9fcff; /* 
 }
