@@ -288,15 +288,7 @@ body.page-home {
   transform: translateY(-2px);
 }
 
-/* -------------------------
-   Contact Icons
--------------------------- */
 
-.svg-icon {
-  width: 1.6rem;
-  height: 1.6rem;
-  fill: #e9fcff;
-}
 
 /* --- Card tweaks to restore rounded look --- */
 /* Make the card itself rounded and clip its contents */
