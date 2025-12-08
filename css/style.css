@@ -319,3 +319,121 @@ body.page-home {
 .card__heading {
   color: var(--text-lighter); /* from your :root, this is near-white */
 }
+
+
+/* =========================
+   Gallery Layout + Carousel
+   ========================= */
+
+.gallery-layout {
+  max-width: 1200px;
+  margin: 2rem auto 4rem;
+  padding: 0 1.5rem;
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+/* Stack columns on small screens */
+@media (max-width: 800px) {
+  .gallery-layout {
+    flex-direction: column;
+  }
+}
+
+/* LEFT COLUMN: TEXT PANEL */
+.gallery-text {
+  flex: 1;
+  color: #e9fcff;
+}
+
+.gallery-title {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.gallery-caption {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.gallery-description {
+  line-height: 1.6;
+  font-size: 0.95rem;
+  max-width: 30rem;
+}
+
+/* RIGHT COLUMN: CAROUSEL */
+.gallery-carousel {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* The visible window for the carousel */
+.carousel-window {
+  width: 100%;
+  aspect-ratio: 4 / 5;         /* adjust if you want a different proportion */
+  max-height: 520px;
+  border-radius: 24px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+  background: rgba(0, 0, 0, 0.4);
+}
+
+/* All images sit on top of each other; only .active is visible */
+.carousel-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1.02);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.carousel-image.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Prev / Next buttons */
+.carousel-controls {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.carousel-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid rgba(140, 255, 255, 0.9);
+  background: rgba(0, 0, 0, 0.35);
+  color: #e6ffff;
+  font-size: 1.6rem;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(120, 255, 255, 0.6);
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.carousel-btn:hover {
+  background: rgba(0, 255, 255, 0.25);
+  transform: translateY(-1px);
+  box-shadow: 0 0 14px rgba(140, 255, 255, 0.85);
+}
+
+.carousel-btn:active {
+  transform: translateY(1px);
+}
