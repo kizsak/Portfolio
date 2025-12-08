@@ -25,10 +25,11 @@ body {
   display: flex;
   flex-direction: column;
 
-  /* Shared background behavior */
-  background-size: cover;
-  background-position: center;
+  /* Shared background behavior: extend every background image */
+  background-size: 100% 150%;      /* width 100%, height 150% of viewport */
+  background-position: center top; /* anchor gradient at top */
   background-repeat: no-repeat;
+  background-color: #05070b;       /* fallback so no white ever shows */
 }
 
 @keyframes fadebg {
@@ -94,14 +95,6 @@ body {
 
 .page-contact {
   background-image: url("https://github.com/kizsak/Portfolio/raw/main/LightBleedOrangeGreenCompressed.png");
-}
-
-/* Ensure homepage background fully covers the viewport */
-body.page-home {
-  min-height: 100vh;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
 }
 
 /* -------------------------
@@ -288,8 +281,6 @@ body.page-home {
   transform: translateY(-2px);
 }
 
-
-
 /* --- Card tweaks to restore rounded look --- */
 /* Make the card itself rounded and clip its contents */
 .card {
@@ -311,7 +302,6 @@ body.page-home {
 .card__heading {
   color: var(--text-lighter); /* from your :root, this is near-white */
 }
-
 
 /* =========================
    Gallery Layout + Carousel
@@ -423,4 +413,3 @@ body.page-home {
 .carousel-btn:active {
   transform: translateY(1px);
 }
-
