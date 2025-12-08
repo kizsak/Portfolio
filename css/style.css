@@ -437,3 +437,47 @@ body.page-home {
 .carousel-btn:active {
   transform: translateY(1px);
 }
+
+/* =========================
+   Dynamic-Size Carousel
+   ========================= */
+
+.gallery-text {
+  flex: 1.4;             /* wider text column */
+  min-width: 320px;
+}
+
+.gallery-carousel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Let the carousel window adjust to content size */
+.carousel-window {
+  width: 100%;
+  max-width: 520px;
+  border-radius: 24px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+  background: rgba(0, 0, 0, 0.4);
+  height: auto;
+}
+
+/* Images grow/shrink naturally */
+.carousel-image {
+  display: none;
+  width: 100%;
+  height: auto;
+  object-fit: contain;  /* keeps the full artwork visible */
+}
+
+.carousel-image.active {
+  display: block;
+}
+
+.carousel-controls {
+  margin-top: 1.25rem;
+}
