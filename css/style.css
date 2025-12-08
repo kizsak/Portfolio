@@ -192,3 +192,180 @@ body {
   border-radius: var(--spacing-l);
   filter: brightness(0.75) saturate(1.2) contrast(0.85);
   transit
+
+   /* ====================================================
+   FIXES: Gallery layout, About page icons, top alignment
+   Paste this block at the VERY BOTTOM of style.css
+   so it overrides earlier rules.
+==================================================== */
+
+/* ---------- GALLERY LAYOUT + CAROUSEL (Land- and City-Scapes) ---------- */
+
+.gallery-layout {
+  max-width: 1200px;
+  margin: 2rem auto 4rem;
+  padding: 0 1.5rem;
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;       /* top-align text + image columns */
+}
+
+@media (max-width: 800px) {
+  .gallery-layout {
+    flex-direction: column;
+  }
+}
+
+/* LEFT COLUMN: TEXT */
+.gallery-text {
+  flex: 1.4;
+  min-width: 320px;
+  color: #e9fcff;
+}
+
+.gallery-title {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.gallery-caption {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.gallery-description {
+  line-height: 1.6;
+  font-size: 0.95rem;
+  max-width: 32rem;
+}
+
+/* RIGHT COLUMN: CAROUSEL */
+.gallery-carousel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: flex-start;        /* makes the right column align to the top */
+}
+
+/* Frame for images so portraits & landscapes feel same size */
+.carousel-window {
+  width: 520px;                 /* tweak if you want wider/narrower */
+  height: 360px;                /* shared height for all slides */
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+  background: rgba(0, 0, 0, 0.4);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Images: grow by height so landscapes aren’t tiny */
+.carousel-image {
+  display: none;                /* only .active shows */
+  height: 100%;                 /* fill frame vertically */
+  width: auto;                  /* keep aspect ratio */
+  max-width: 100%;
+  border-radius: 24px;
+}
+
+.carousel-image.active {
+  display: block;
+}
+
+/* Prev / Next buttons */
+.carousel-controls {
+  margin-top: 1.25rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.carousel-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid rgba(140, 255, 255, 0.9);
+  background: rgba(0, 0, 0, 0.35);
+  color: #e6ffff;
+  font-size: 1.6rem;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(120, 255, 255, 0.6);
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.carousel-btn:hover {
+  background: rgba(0, 255, 255, 0.25);
+  transform: translateY(-1px);
+  box-shadow: 0 0 14px rgba(140, 255, 255, 0.85);
+}
+
+.carousel-btn:active {
+  transform: translateY(1px);
+}
+
+/* ---------- ABOUT PAGE SOCIAL ICONS ---------- */
+
+.contact-section {
+  max-width: 1000px;
+  margin: 2.5rem auto 3rem;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+
+.social-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+/* Big neon-blue circular icons */
+.social-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1.9rem;
+  color: #e9fcff;
+  text-decoration: none;
+
+  background: linear-gradient(135deg, #37c6ff, #2064ff);
+  box-shadow:
+    0 0 10px rgba(80, 210, 255, 0.7),
+    0 0 18px rgba(40, 120, 255, 0.8);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    filter 0.2s ease;
+}
+
+.social-icon:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow:
+    0 0 16px rgba(100, 230, 255, 0.9),
+    0 0 26px rgba(60, 140, 255, 1);
+  filter: brightness(1.08);
+}
+
+.social-icon:active {
+  transform: translateY(1px) scale(0.97);
+}
