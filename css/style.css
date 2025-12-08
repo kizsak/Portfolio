@@ -343,7 +343,8 @@ body.page-home {
 
 /* LEFT COLUMN: TEXT PANEL */
 .gallery-text {
-  flex: 1;
+  flex: 1.4;             /* wider text column */
+  min-width: 320px;
   color: #e9fcff;
 }
 
@@ -361,49 +362,42 @@ body.page-home {
 .gallery-description {
   line-height: 1.6;
   font-size: 0.95rem;
-  max-width: 30rem;
+  max-width: 32rem;
 }
 
 /* RIGHT COLUMN: CAROUSEL */
 .gallery-carousel {
-  flex: 1.2;
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* The visible window for the carousel */
+/* The visible window — sized by its content */
 .carousel-window {
-  width: 100%;
-  aspect-ratio: 4 / 5;         /* adjust if you want a different proportion */
-  max-height: 520px;
+  display: inline-block;
   border-radius: 24px;
   overflow: hidden;
-  position: relative;
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
   background: rgba(0, 0, 0, 0.4);
 }
 
-/* All images sit on top of each other; only .active is visible */
+/* Images: natural size, scaled down if too big */
 .carousel-image {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transform: scale(1.02);
-  transition: opacity 0.4s ease, transform 0.4s ease;
+  display: none;            /* hide inactive */
+  max-width: 460px;         /* max width on large screens */
+  width: 100%;              /* shrink to fit smaller screens */
+  height: auto;             /* keep natural aspect ratio */
+  border-radius: 24px;      /* match the window rounding */
 }
 
 .carousel-image.active {
-  opacity: 1;
-  transform: scale(1);
+  display: block;           /* only active slide is visible */
 }
 
 /* Prev / Next buttons */
 .carousel-controls {
-  margin-top: 1rem;
+  margin-top: 1.25rem;
   display: flex;
   gap: 1rem;
 }
@@ -438,46 +432,3 @@ body.page-home {
   transform: translateY(1px);
 }
 
-/* =========================
-   Dynamic-Size Carousel
-   ========================= */
-
-.gallery-text {
-  flex: 1.4;             /* wider text column */
-  min-width: 320px;
-}
-
-.gallery-carousel {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* Let the carousel window adjust to content size */
-.carousel-window {
-  width: 100%;
-  max-width: 520px;
-  border-radius: 24px;
-  overflow: hidden;
-  position: relative;
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
-  background: rgba(0, 0, 0, 0.4);
-  height: auto;
-}
-
-/* Images grow/shrink naturally */
-.carousel-image {
-  display: none;
-  width: 100%;
-  height: auto;
-  object-fit: contain;  /* keeps the full artwork visible */
-}
-
-.carousel-image.active {
-  display: block;
-}
-
-.carousel-controls {
-  margin-top: 1.25rem;
-}
