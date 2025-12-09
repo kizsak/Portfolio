@@ -2,15 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Kate Izsak — Digital & Computational Arts</title>
+  <title>Kate Izsak — Land- and City-Scapes</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Stylesheet -->
+  <!-- Main site stylesheet -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body class="page-digital-painting-scapes">
-  
+
   <!-- Top Neon Title -->
   <header class="page-header">
     <h1 class="neon">Land- and City-Scapes</h1>
@@ -20,8 +20,9 @@
   </header>
 
   <main class="gallery-layout">
-    <!-- LEFT: caption + description (these will be filled by JS) -->
+    <!-- LEFT: caption + description (filled by JS) -->
     <section class="gallery-text">
+      <h2 class="gallery-title">Digital Painting<br>Land- and City-Scapes</h2>
       <p class="gallery-caption" id="image-caption"></p>
       <p class="gallery-description" id="image-description"></p>
     </section>
@@ -30,92 +31,93 @@
     <section class="gallery-carousel">
       <div class="carousel-window">
         <img
-          src="https://github.com/kizsak/Portfolio/raw/main/AsakusaPastels.png" 
+          src="https://github.com/kizsak/Portfolio/raw/main/AsakusaPastels.png"
           alt="Digital pastel painting of the Asakusa Market"
           class="carousel-image active"
           data-caption="Asakusa"
-          data-description="Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
+          data-description="<em>Asakusa</em><br>Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
         >
 
         <img
-          src="https://github.com/kizsak/Portfolio/raw/main/AssateaguePastels.jpg" 
+          src="https://github.com/kizsak/Portfolio/raw/main/AssateaguePastels.jpg"
           alt="Digital pastel painting of a marsh in Assateague"
           class="carousel-image"
           data-caption="Assateague Island"
-          data-description="Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
+          data-description="<em>Assateague Island</em><br>Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
         >
 
         <img
-          src="https://github.com/kizsak/Portfolio/raw/main/WaterlilyPastels1.png" 
+          src="https://github.com/kizsak/Portfolio/raw/main/WaterlilyPastels1.png"
           alt="Digital pastel painting of a tropical fuchsia water lily"
           class="carousel-image"
           data-caption="Waterlily I"
-          data-description="Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
+          data-description="<em>Waterlily I</em><br>Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
         >
 
         <img
-          src="https://github.com/kizsak/Portfolio/raw/main/WaterlilyPastels2.png" 
+          src="https://github.com/kizsak/Portfolio/raw/main/WaterlilyPastels2.png"
           alt="Digital pastel painting of a tropical fuchsia water lily"
           class="carousel-image"
           data-caption="Waterlily II"
-          data-description="Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
+          data-description="<em>Waterlily II</em><br>Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
         >
 
         <img
-          src="https://github.com/kizsak/Portfolio/raw/main/BrusselsPastels1.png" 
+          src="https://github.com/kizsak/Portfolio/raw/main/BrusselsPastels1.png"
           alt="Digital pastel painting of a street in Brussels lit up with Christmas lights"
           class="carousel-image"
           data-caption="Brussels I"
-          data-description="Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
+          data-description="<em>Brussels I</em><br>Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
         >
 
         <img
-          src="https://github.com/kizsak/Portfolio/raw/main/BrusselsPastels2.png" 
+          src="https://github.com/kizsak/Portfolio/raw/main/BrusselsPastels2.png"
           alt="Digital pastel painting of a street in Brussels lit up with Christmas lights"
           class="carousel-image"
           data-caption="Brussels II"
-          data-description="Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
+          data-description="<em>Brussels II</em><br>Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
         >
 
         <img
-          src="https://github.com/kizsak/Portfolio/raw/main/SingaporePastels.png" 
+          src="https://github.com/kizsak/Portfolio/raw/main/SingaporePastels.png"
           alt="Digital pastel painting of a mosque in Singapore"
           class="carousel-image"
           data-caption="Singapore Mosque"
-          data-description="Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
+          data-description="<em>Singapore Mosque</em><br>Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
         >
       </div>
-      
+
       <div class="carousel-controls">
-        <button class="carousel-btn prev">‹</button>
-        <button class="carousel-btn next">›</button>
+        <button class="carousel-btn prev" type="button">‹</button>
+        <button class="carousel-btn next" type="button">›</button>
       </div>
     </section>
   </main>
 
+  <!-- Carousel logic -->
   <script>
     (function () {
       const images = document.querySelectorAll('.carousel-image');
       const prevBtn = document.querySelector('.carousel-btn.prev');
       const nextBtn = document.querySelector('.carousel-btn.next');
-
       const captionEl = document.getElementById('image-caption');
       const descriptionEl = document.getElementById('image-description');
 
-      if (!images.length || !captionEl || !descriptionEl || !prevBtn || !nextBtn) return;
+      if (!images.length || !prevBtn || !nextBtn || !captionEl || !descriptionEl) {
+        return;
+      }
 
       let current = 0;
 
       function updateTextFromImage(index) {
         const img = images[index];
         captionEl.textContent = img.dataset.caption || '';
-        // use innerHTML so your <br> and <em> tags in data-description work
         descriptionEl.innerHTML = img.dataset.description || '';
       }
 
       function showSlide(index) {
         images[current].classList.remove('active');
-        current = (index + images.length) % images.length; // wrap around
+        current = (index + images.length) % images.length;
         images[current].classList.add('active');
         updateTextFromImage(current);
       }
