@@ -13,6 +13,72 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- ABOUT ME ICON ROW – local override so it wins over style.css -->
+  <style>
+    .contact-section {
+      max-width: 1000px;
+      margin: 2.5rem auto 3rem;
+      padding: 0 1.5rem;
+      text-align: center;
+    }
+
+    /* Row, no bullets */
+    main .social-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.6rem;
+    }
+
+    main .social-list li {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Icons themselves – similar size to the CodePen, warm glow */
+    main .social-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      font-size: 2.4rem;          /* adjust up/down if you want */
+      color: #ffeefc !important;  /* warm pastel instead of browser blue */
+      text-decoration: none !important;
+
+      text-shadow:
+        0 0 4px rgba(255, 220, 248, 0.9),
+        0 0 10px rgba(255, 170, 210, 0.9),
+        0 0 18px rgba(255, 120, 160, 0.7);
+
+      transition:
+        transform 0.2s ease,
+        text-shadow 0.2s ease,
+        color 0.2s ease;
+    }
+
+    main .social-icon i {
+      color: inherit;
+    }
+
+    main .social-icon:hover {
+      transform: translateY(-2px) scale(1.07);
+      color: #fff9ff !important;
+      text-shadow:
+        0 0 6px rgba(255, 240, 255, 1),
+        0 0 14px rgba(255, 190, 220, 1),
+        0 0 26px rgba(255, 150, 190, 0.95);
+    }
+
+    main .social-icon:active {
+      transform: translateY(1px) scale(0.97);
+    }
+  </style>
 </head>
 
 <body class="page-contact">
@@ -32,51 +98,50 @@
       Twine, and other experimental platforms.
     </p>
 
-   <section class="contact-section">
-  <ul class="social-list">
-    <li>
-      <a href="https://instagram.com/your-instagram" class="social-icon" aria-label="Instagram" target="_blank" rel="noopener">
-        <i class="fab fa-instagram"></i>
-      </a>
-    </li>
-    <li>
-      <a href="https://linkedin.com/in/your-linkedin" class="social-icon" aria-label="LinkedIn" target="_blank" rel="noopener">
-        <i class="fab fa-linkedin-in"></i>
-      </a>
-    </li>
-    <li>
-      <a href="https://github.com/your-github" class="social-icon" aria-label="GitHub" target="_blank" rel="noopener">
-        <i class="fab fa-github"></i>
-      </a>
-    </li>
-    <li>
-      <a href="https://codepen.io/your-codepen" class="social-icon" aria-label="CodePen" target="_blank" rel="noopener">
-        <i class="fab fa-codepen"></i>
-      </a>
-    </li>
-    <li>
-      <a href="https://pinterest.com/your-pinterest" class="social-icon" aria-label="Pinterest" target="_blank" rel="noopener">
-        <i class="fab fa-pinterest-p"></i>
-      </a>
-    </li>
-    <li>
-      <a href="https://itch.io/profile/your-itch" class="social-icon" aria-label="itch.io" target="_blank" rel="noopener">
-        <i class="fas fa-gamepad"></i>
-      </a>
-    </li>
-    <li>
-      <a href="https://ifdb.org" class="social-icon" aria-label="IFDB" target="_blank" rel="noopener">
-        <i class="fas fa-book-open"></i>
-      </a>
-    </li>
-    <li>
-      <a href="https://texturewriter.com" class="social-icon" aria-label="TextureWriter" target="_blank" rel="noopener">
-        <i class="fas fa-pen-nib"></i>
-      </a>
-    </li>
-  </ul>
-</section>
-
+    <section class="contact-section">
+      <ul class="social-list">
+        <li>
+          <a href="https://instagram.com/your-instagram" class="social-icon" aria-label="Instagram" target="_blank" rel="noopener">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://linkedin.com/in/your-linkedin" class="social-icon" aria-label="LinkedIn" target="_blank" rel="noopener">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/your-github" class="social-icon" aria-label="GitHub" target="_blank" rel="noopener">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://codepen.io/your-codepen" class="social-icon" aria-label="CodePen" target="_blank" rel="noopener">
+            <i class="fab fa-codepen"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://pinterest.com/your-pinterest" class="social-icon" aria-label="Pinterest" target="_blank" rel="noopener">
+            <i class="fab fa-pinterest-p"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://itch.io/profile/your-itch" class="social-icon" aria-label="itch.io" target="_blank" rel="noopener">
+            <i class="fas fa-gamepad"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://ifdb.org" class="social-icon" aria-label="IFDB" target="_blank" rel="noopener">
+            <i class="fas fa-book-open"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://texturewriter.com" class="social-icon" aria-label="TextureWriter" target="_blank" rel="noopener">
+            <i class="fas fa-pen-nib"></i>
+          </a>
+        </li>
+      </ul>
+    </section>
   </main>
 </body>
 </html>
