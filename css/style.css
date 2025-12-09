@@ -470,3 +470,48 @@ body {
   margin-left: 0;
   justify-content: flex-start;
 }
+
+/* ---- ABOUT PAGE LAYOUT ---- */
+
+.about-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2.5rem;
+  max-width: 1100px;
+  margin: 3rem auto;
+  padding: 0 2rem;
+}
+
+.about-text {
+  flex: 1;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.about-image img {
+  width: 260px;          /* Set the size you want */
+  border-radius: 20px;   /* Soft painterly corner */
+  object-fit: cover;
+  box-shadow:
+      0 0 20px rgba(0,255,255,0.25),
+      0 0 40px rgba(0,255,255,0.15);
+}
+
+/* ---- Mobile Responsive ---- */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column-reverse; /* text above, image below */
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-image img {
+    width: 60%;   /* smaller but still readable */
+    max-width: 260px;
+  }
+
+  .about-text {
+    text-align: left;  /* or center if you prefer */
+  }
+}
