@@ -428,10 +428,11 @@ body {
   transform: translateY(1px) scale(0.97);
 }
 
-/* About Me / Contact page body text color */
+/* Force About Me body text back to dark */
 .page-contact main,
 .page-contact main p,
 .page-contact main h2,
-.page-contact main h3 {
-  color: #111111;   /* or #222 / #333 if you want it a bit softer */
+.page-contact main h3,
+.page-contact main span {
+  color: #111111 !important;   /* or #222 / #333 if you prefer softer */
 }
