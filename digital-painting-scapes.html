@@ -16,7 +16,7 @@
     <h1 class="neon">Land- and City-Scapes</h1>
     <nav class="nav-bar">
       <a href="index2.html" class="nav-btn">Home</a>
-       <a href="index2.html" class="nav-btn">Digital Painting</a>
+      <a href="digital-painting.html" class="nav-btn">Digital Painting</a>
       <a href="comp-image-design.html" class="nav-btn">Computational Image Design</a>
       <a href="IF.html" class="nav-btn">Interactive Fiction</a>
       <a href="graphic_design.html" class="nav-btn">Graphic Design</a>
@@ -25,7 +25,11 @@
 
   <main class="gallery-layout">
     <!-- LEFT: title + caption + description (filled by JS) -->
-   
+    <section class="gallery-info">
+      <h2 id="image-caption" class="neon-soft"></h2>
+      <p id="image-description" class="piece-description"></p>
+    </section>
+
     <!-- RIGHT: image carousel -->
     <section class="gallery-carousel">
       <div class="carousel-window">
@@ -33,9 +37,7 @@
           src="https://github.com/kizsak/Portfolio/raw/main/AsakusaPastels.png"
           alt="Digital pastel painting of the Asakusa Market"
           class="carousel-image active"
-          <h1 class="neon-soft">
           data-caption="<em>Asakusa</em>"
-      </h1>
           data-description="Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
         >
 
@@ -43,7 +45,7 @@
           src="https://github.com/kizsak/Portfolio/raw/main/AssateaguePastels.jpg"
           alt="Digital pastel painting of a marsh in Assateague"
           class="carousel-image"
-          data-caption="Assateague Island"
+          data-caption="<em>Assateague Island</em>"
           data-description="Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
         >
 
@@ -51,7 +53,7 @@
           src="https://github.com/kizsak/Portfolio/raw/main/WaterlilyPastels1.png"
           alt="Digital pastel painting of a tropical fuchsia water lily"
           class="carousel-image"
-          data-caption="Waterlily I"
+          data-caption="<em>Waterlily I</em>"
           data-description="Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
         >
 
@@ -59,7 +61,7 @@
           src="https://github.com/kizsak/Portfolio/raw/main/WaterlilyPastels2.png"
           alt="Digital pastel painting of a tropical fuchsia water lily"
           class="carousel-image"
-          data-caption="Waterlily II"
+          data-caption="<em>Waterlily II</em>"
           data-description="Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
         >
 
@@ -67,7 +69,7 @@
           src="https://github.com/kizsak/Portfolio/raw/main/BrusselsPastels1.png"
           alt="Digital pastel painting of a street in Brussels lit up with Christmas lights"
           class="carousel-image"
-          data-caption="Brussels I"
+          data-caption="<em>Brussels I</em>"
           data-description="Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
         >
 
@@ -75,7 +77,7 @@
           src="https://github.com/kizsak/Portfolio/raw/main/BrusselsPastels2.png"
           alt="Digital pastel painting of a street in Brussels lit up with Christmas lights"
           class="carousel-image"
-          data-caption="Brussels II"
+          data-caption="<em>Brussels II</em>"
           data-description="Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
         >
 
@@ -83,8 +85,8 @@
           src="https://github.com/kizsak/Portfolio/raw/main/SingaporePastels.png"
           alt="Digital pastel painting of a mosque in Singapore"
           class="carousel-image"
-          data-caption="Singapore Mosque"
-          data-description="<em>Singapore Mosque</em><br>Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
+          data-caption="<em>Singapore Mosque</em>"
+          data-description="Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
         >
       </div>
 
@@ -95,7 +97,7 @@
     </section>
   </main>
 
-<!-- Carousel logic -->
+  <!-- Carousel logic -->
   <script>
     // Run after the DOM is ready
     (function () {
@@ -117,7 +119,7 @@
         if (!img) return;
 
         if (captionEl) {
-          captionEl.textContent = img.dataset.caption || '';
+          captionEl.innerHTML = img.dataset.caption || '';
         }
         if (descriptionEl) {
           // innerHTML so your <br> and <em> work
@@ -161,3 +163,6 @@
       }
     })();
   </script>
+
+</body>
+</html>
