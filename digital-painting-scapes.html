@@ -97,8 +97,9 @@
     </section>
   </main>
 
-  <!-- Carousel logic -->
+<!-- Carousel logic -->
   <script>
+    // Run after the DOM is ready
     (function () {
       const images = document.querySelectorAll('.carousel-image');
       const prevBtn = document.querySelector('.carousel-btn.prev');
@@ -106,7 +107,8 @@
       const captionEl = document.getElementById('image-caption');
       const descriptionEl = document.getElementById('image-description');
 
-      if (!images.length || !prevBtn || !nextBtn || !captionEl || !descriptionEl) {
+      // If no images at all, just stop.
+      if (!images.length) {
         return;
       }
 
@@ -114,23 +116,50 @@
 
       function updateTextFromImage(index) {
         const img = images[index];
-        captionEl.textContent = img.dataset.caption || '';
-        descriptionEl.innerHTML = img.dataset.description || '';
+        if (!img) return;
+
+        if (captionEl) {
+          captionEl.textContent = img.dataset.caption || '';
+        }
+        if (descriptionEl) {
+          // innerHTML so your <br> and <em> work
+          descriptionEl.innerHTML = img.dataset.description || '';
+        }
       }
 
       function showSlide(index) {
+        // Remove active from current
         images[current].classList.remove('active');
+
+        // Wrap index
         current = (index + images.length) % images.length;
+
+        // Add active to new
         images[current].classList.add('active');
+
+        // Update text panel
         updateTextFromImage(current);
       }
 
-      // initial text
-      updateTextFromImage(current);
+      // Initialize first slide + text
+      images[0].classList.add('active');
+      updateTextFromImage(0);
 
-      prevBtn.addEventListener('click', () => showSlide(current - 1));
-      nextBtn.addEventListener('click', () => showSlide(current + 1));
+      // Hook up buttons if they exist
+      if (prevBtn) {
+        prevBtn.addEventListener('click', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          showSlide(current - 1);
+        });
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener('click', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          showSlide(current + 1);
+        });
+      }
     })();
   </script>
-</body>
-</html>
