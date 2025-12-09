@@ -468,3 +468,25 @@ body {
     0 0 10px rgba(255, 150, 170, 0.6);
 }
 
+
+
+/* ===== Front-page card title fix ===== */
+
+.card__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: var(--spacing-l);
+  z-index: 2;            /* keep text above the image */
+}
+
+/* Override the earlier word-spacing rule etc. */
+.card__heading {
+  color: #fdfcff;        /* bright white for readability */
+  font-size: 2rem;
+  line-height: 1.25;
+  word-spacing: normal;  /* <<< this is the big fix */
+  text-shadow:
+    0 0 6px rgba(0, 0, 0, 0.7),
+    0 0 18px rgba(0, 0, 0, 0.8);
+}
