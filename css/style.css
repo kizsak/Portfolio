@@ -436,3 +436,25 @@ body {
 .page-contact main span {
   color: #111111 !important;   /* or #222 / #333 if you prefer softer */
 }
+
+/* ============================================
+   Global content width constraint
+   (applies to About Me and any other text pages)
+============================================ */
+
+.page-contact main,
+.page-contact .about-content,
+.page-contact section,
+.page-contact p {
+  max-width: 900px;        /* adjust: 750–900px is ideal for body text */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Give paragraphs comfortable spacing */
+.page-contact main p {
+  line-height: 1.7;
+  font-size: 1.05rem;
+  margin-bottom: 1.4rem;
+}
+
