@@ -463,3 +463,10 @@ body {
   color: #ffffff;
 }
 
+/* Override neon-soft centering for artwork titles */
+#image-caption.neon-soft,
+.gallery-info #image-caption {
+  text-align: left !important;
+  margin-left: 0;
+  justify-content: flex-start;
+}
