@@ -369,3 +369,64 @@ body {
 .social-icon:active {
   transform: translateY(1px) scale(0.97);
 }
+
+   /* ==========================================
+   About Me – Social Icon Row (CodePen style)
+========================================== */
+
+.contact-section {
+  max-width: 1000px;
+  margin: 2.5rem auto 3rem;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+
+/* Row of icons, no bullets */
+.social-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.6rem;              /* spacing between icons */
+}
+
+/* Icon links – just the glyph with glow, like the CodePen */
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 2.4rem;        /* similar to the original CodePen size */
+  color: #ffeefc;           /* warm pastel to match the background */
+  text-decoration: none;
+
+  text-shadow:
+    0 0 4px rgba(255, 220, 248, 0.9),
+    0 0 10px rgba(255, 170, 210, 0.9),
+    0 0 18px rgba(255, 120, 160, 0.7);
+
+  transition:
+    transform 0.2s ease,
+    text-shadow 0.2s ease,
+    color 0.2s ease;
+}
+
+/* Hover: a bit brighter and slightly larger */
+.social-icon:hover {
+  transform: translateY(-2px) scale(1.07);
+  color: #fff9ff;
+  text-shadow:
+    0 0 6px rgba(255, 240, 255, 1),
+    0 0 14px rgba(255, 190, 220, 1),
+    0 0 26px rgba(255, 150, 190, 0.95);
+}
+
+/* Active click: tiny press */
+.social-icon:active {
+  transform: translateY(1px) scale(0.97);
+}
+
