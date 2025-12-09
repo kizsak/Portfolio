@@ -427,3 +427,11 @@ body {
 .social-icon:active {
   transform: translateY(1px) scale(0.97);
 }
+
+/* About Me / Contact page body text color */
+.page-contact main,
+.page-contact main p,
+.page-contact main h2,
+.page-contact main h3 {
+  color: #111111;   /* or #222 / #333 if you want it a bit softer */
+}
