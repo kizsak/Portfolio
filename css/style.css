@@ -425,6 +425,25 @@ body {
     0 0 26px rgba(255, 150, 190, 0.95);
 }
 
+/* Make card headings look explicitly clickable */
+.card__content {
+  z-index: 3;
+  pointer-events: none; /* card click still works */
+}
+
+.card__heading {
+  pointer-events: auto; /* heading itself can receive hover */
+  cursor: pointer;
+  transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+.card__heading:hover {
+  color: #fff5f7;
+  text-shadow:
+    0 0 4px rgba(255, 210, 220, 0.8),
+    0 0 10px rgba(255, 150, 170, 0.6);
+}
+
 /* Active click: tiny press */
 .social-icon:active {
   transform: translateY(1px) scale(0.97);
