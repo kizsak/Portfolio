@@ -458,3 +458,8 @@ body {
   margin-bottom: 1.4rem;
 }
 
+.gallery-text {
+  max-width: 32rem;
+  color: #ffffff;
+}
+
