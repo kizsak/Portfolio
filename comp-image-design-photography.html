@@ -2,10 +2,167 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Kate Izsak — Digital & Computational Arts</title>
+  <title>Kate Izsak — Land- and City-Scapes</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Main Stylesheet -->
+  <!-- Main site stylesheet -->
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="page-digital-painting">
+
+<body class="page-digital-painting-scapes">
+
+  <!-- Top Neon Title -->
+  <header class="page-header">
+    <h1 class="neon">Land- and City-Scapes</h1>
+    <nav class="nav-bar">
+      <a href="index2.html" class="nav-btn">Home</a>
+      <a href="digital-painting.html" class="nav-btn">Digital Painting</a>
+      <a href="comp-image-design.html" class="nav-btn">Computational Image Design</a>
+      <a href="IF.html" class="nav-btn">Interactive Fiction</a>
+      <a href="graphic_design.html" class="nav-btn">Graphic Design</a>
+    </nav>
+  </header>
+
+  <main class="gallery-layout">
+    <!-- LEFT: title + caption + description (filled by JS) -->
+    <section class="gallery-info">
+      <h2 id="image-caption" class="neon-soft"></h2>
+      <p id="image-description" class="piece-description"></p>
+    </section>
+
+    <!-- RIGHT: image carousel -->
+    <section class="gallery-carousel">
+      <div class="carousel-window">
+        <img
+          src="https://github.com/kizsak/Portfolio/raw/main/AsakusaPastels.png"
+          alt="Digital pastel painting of the Asakusa Market"
+          class="carousel-image active"
+          data-caption="<em>Asakusa</em>"
+          data-description="Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
+        >
+
+        <img
+          src="https://github.com/kizsak/Portfolio/raw/main/AssateaguePastels.jpg"
+          alt="Digital pastel painting of a marsh in Assateague"
+          class="carousel-image"
+          data-caption="<em>Assateague Island</em>"
+          data-description="Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
+        >
+
+        <img
+          src="https://github.com/kizsak/Portfolio/raw/main/WaterlilyPastels1.png"
+          alt="Digital pastel painting of a tropical fuchsia water lily"
+          class="carousel-image"
+          data-caption="<em>Waterlily I</em>"
+          data-description="Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
+        >
+
+        <img
+          src="https://github.com/kizsak/Portfolio/raw/main/WaterlilyPastels2.png"
+          alt="Digital pastel painting of a tropical fuchsia water lily"
+          class="carousel-image"
+          data-caption="<em>Waterlily II</em>"
+          data-description="Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
+        >
+
+        <img
+          src="https://github.com/kizsak/Portfolio/raw/main/BrusselsPastels1.png"
+          alt="Digital pastel painting of a street in Brussels lit up with Christmas lights"
+          class="carousel-image"
+          data-caption="<em>Brussels I</em>"
+          data-description="Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
+        >
+
+        <img
+          src="https://github.com/kizsak/Portfolio/raw/main/BrusselsPastels2.png"
+          alt="Digital pastel painting of a street in Brussels lit up with Christmas lights"
+          class="carousel-image"
+          data-caption="<em>Brussels II</em>"
+          data-description="Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
+        >
+
+        <img
+          src="https://github.com/kizsak/Portfolio/raw/main/SingaporePastels.png"
+          alt="Digital pastel painting of a mosque in Singapore"
+          class="carousel-image"
+          data-caption="<em>Singapore Mosque</em>"
+          data-description="Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
+        >
+      </div>
+
+      <div class="carousel-controls">
+        <button class="carousel-btn prev" type="button">‹</button>
+        <button class="carousel-btn next" type="button">›</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Carousel logic -->
+  <script>
+    // Run after the DOM is ready
+    (function () {
+      const images = document.querySelectorAll('.carousel-image');
+      const prevBtn = document.querySelector('.carousel-btn.prev');
+      const nextBtn = document.querySelector('.carousel-btn.next');
+      const captionEl = document.getElementById('image-caption');
+      const descriptionEl = document.getElementById('image-description');
+
+      // If no images at all, just stop.
+      if (!images.length) {
+        return;
+      }
+
+      let current = 0;
+
+      function updateTextFromImage(index) {
+        const img = images[index];
+        if (!img) return;
+
+        if (captionEl) {
+          captionEl.innerHTML = img.dataset.caption || '';
+        }
+        if (descriptionEl) {
+          // innerHTML so your <br> and <em> work
+          descriptionEl.innerHTML = img.dataset.description || '';
+        }
+      }
+
+      function showSlide(index) {
+        // Remove active from current
+        images[current].classList.remove('active');
+
+        // Wrap index
+        current = (index + images.length) % images.length;
+
+        // Add active to new
+        images[current].classList.add('active');
+
+        // Update text panel
+        updateTextFromImage(current);
+      }
+
+      // Initialize first slide + text
+      images[0].classList.add('active');
+      updateTextFromImage(0);
+
+      // Hook up buttons if they exist
+      if (prevBtn) {
+        prevBtn.addEventListener('click', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          showSlide(current - 1);
+        });
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener('click', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          showSlide(current + 1);
+        });
+      }
+    })();
+  </script>
+
+</body>
+</html>
