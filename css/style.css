@@ -498,3 +498,12 @@ body {
     text-align: left;
   }
 }
+
+/* Left-justify the image title + description panel */
+.gallery-info {
+  text-align: left;
+}
+
+#image-caption {
+  text-align: left;
+}
