@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Kate Izsak - Digital and Computational Arts</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Main site stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="page-IF">
+
+  <!-- Top Neon Title -->
+  <header class="page-header">
+    <h1 class="neon">Computational Image Design</h1>
+    <nav class="nav-bar">
+      <a href="index.html" class="nav-btn">Home</a>
+      <a href="digital-painting.html" class="nav-btn">Digital Painting</a>
+      <a href="graphic-design.html" class="nav-btn">Graphic Design</a>
+      <a href="if.html" class="nav-btn">Interactive Fiction</a>
+      <a href="about-me.html" class="nav-btn">About Me</a>
+    </nav>
+  </header>
+
+  <main class="gallery-layout">
+    <!-- LEFT: title + caption + description (filled by JS) -->
+    <section class="gallery-info">
+      <h2 id="image-caption" class="neon-soft"></h2>
+      <p id="image-description" class="piece-description"></p>
+    </section>
+
+    <!-- RIGHT: image carousel -->
+    <section class="gallery-carousel">
+      <div class="carousel-window">
+        <img
+          src="https://github.com/kizsak/Portfolio/raw/main/BeeOrchidPolaroid.png"
+          alt="An image of a worn Polaroid of a bee orchid in bloom"
+          class="carousel-image active"
+          data-caption="<em>Aged Polaroid</em>"
+          data-description="Process: I created a generative botanical drawing of a bee orchid using <a href="https://www.midjourney.com/home">Midjourney</a>. Then, I created a worn Polaroid frame in <a href="https://canva.comhttps://canva.com">Canva</a>a>. Next, I wrote a <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython">Python script</a> to take any image, apply one of several light leak overlays, and apply the Polaroid frame. I created a series of these images to serve as epistolary sources for interactive fiction."
+        >
+
+        <img
+          src="https://github.com/kizsak/Portfolio/raw/main/Texture.gif"
+          alt="GIF showing a portion of gameplay in The Grief Gardens"
+          class="carousel-image"
+          data-caption="<em>The Grief Gardens</em>"
+          data-description="Development System: Texture<br>IFID: E2A5066D-E0EB-49B2-9117-AAB738F36452<br>TUID: c43ilw3epi791tya"
+        >
+
+        <img
+          src="https://github.com/kizsak/Portfolio/raw/main/Parser.gif"
+          alt="GIF showing a portion of gameplay from The Archivist's Vault"
+          class="carousel-image"
+          data-caption="<em>The Archivist's Vault</em>"
+          data-description="Development System: Inform 7<br>IFID: D1B48BCF-0741-4D41-B7BB-EB304674AD45<br>TUID: 74ufidb7o5fwgraw"
+        >
+      </div>
+
+      <div class="carousel-controls">
+        <button class="carousel-btn prev" type="button">‹</button>
+        <button class="carousel-btn next" type="button">›</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Carousel logic -->
+  <script>
+    // Run after the DOM is ready
+    (function () {
+      const images = document.querySelectorAll('.carousel-image');
+      const prevBtn = document.querySelector('.carousel-btn.prev');
+      const nextBtn = document.querySelector('.carousel-btn.next');
+      const captionEl = document.getElementById('image-caption');
+      const descriptionEl = document.getElementById('image-description');
+
+      // If no images at all, just stop.
+      if (!images.length) {
+        return;
+      }
+
+      let current = 0;
+
+      function updateTextFromImage(index) {
+        const img = images[index];
+        if (!img) return;
+
+        if (captionEl) {
+          captionEl.innerHTML = img.dataset.caption || '';
+        }
+        if (descriptionEl) {
+          // innerHTML so your <br> and <em> work
+          descriptionEl.innerHTML = img.dataset.description || '';
+        }
+      }
+
+      function showSlide(index) {
+        // Remove active from current
+        images[current].classList.remove('active');
+
+        // Wrap index
+        current = (index + images.length) % images.length;
+
+        // Add active to new
+        images[current].classList.add('active');
+
+        // Update text panel
+        updateTextFromImage(current);
+      }
+
+      // Initialize first slide + text
+      images[0].classList.add('active');
+      updateTextFromImage(0);
+
+      // Hook up buttons if they exist
+      if (prevBtn) {
+        prevBtn.addEventListener('click', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          showSlide(current - 1);
+        });
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener('click', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          showSlide(current + 1);
+        });
+      }
+    })();
+  </script>
+
+</body>
+</html>
