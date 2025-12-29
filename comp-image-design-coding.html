@@ -97,6 +97,12 @@
     </section>
   </main>
 
+  <!-- Lightbox -->
+<div id="lightbox">
+  <span id="close">&times;</span>
+  <img id="lightbox-img">
+</div>
+
   <!-- Carousel logic -->
   <script>
     // Run after the DOM is ready
@@ -162,6 +168,24 @@
         });
       }
     })();
+
+    <!-- Popup logic -->
+  const images = document.querySelectorAll('.carousel-img');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const closeBtn = document.getElementById('close');
+
+  images.forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.dataset.full;
+      lightbox.style.display = 'flex';
+    });
+  });
+
+  closeBtn.onclick = () => lightbox.style.display = 'none';
+  lightbox.onclick = e => {
+    if (e.target === lightbox) lightbox.style.display = 'none';
+  };
   </script>
 
 </body>
