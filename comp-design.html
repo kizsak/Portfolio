@@ -24,21 +24,23 @@
   </header>
 
   <main class="gallery-layout">
-    <!-- LEFT: title + caption + description (filled by JS) -->
+
+    <!-- LEFT: title + description -->
     <section class="gallery-info">
       <h2 id="image-caption" class="neon-soft"></h2>
       <p id="image-description" class="piece-description"></p>
     </section>
 
-    <!-- RIGHT: image carousel -->
+    <!-- RIGHT: carousel -->
     <section class="gallery-carousel">
       <div class="carousel-window">
+
         <img
           src="https://github.com/kizsak/Portfolio/raw/main/BeeOrchidPolaroid.png"
           alt="An image of a worn Polaroid of a bee orchid in bloom"
           class="carousel-image active"
           data-caption="<em>Aged Polaroid</em>"
-          data-description="Process: I created a generative botanical drawing of a bee orchid using <a href="https://www.midjourney.com/home">Midjourney</a>. Then, I created a worn Polaroid frame in <a href="https://canva.comhttps://canva.com">Canva</a>a>. Next, I wrote a <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython">Python script</a> to take any image, apply one of several light leak overlays, and apply the Polaroid frame. I created a series of these images to serve as epistolary sources for interactive fiction."
+          data-description="Process: I created a generative botanical drawing of a bee orchid using <a href='https://www.midjourney.com/home' target='_blank' rel='noopener noreferrer'>Midjourney</a>. Then, I created a worn Polaroid frame in <a href='https://www.canva.com' target='_blank' rel='noopener noreferrer'>Canva</a>. Next, I wrote a <a href='https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython' target='_blank' rel='noopener noreferrer'>Python script</a> to take any image, apply one of several light leak overlays, and apply the Polaroid frame. I created a series of these images to serve as epistolary sources for interactive fiction."
         >
 
         <img
@@ -46,7 +48,9 @@
           alt="GIF showing a portion of gameplay in The Grief Gardens"
           class="carousel-image"
           data-caption="<em>The Grief Gardens</em>"
-          data-description="Development System: Texture<br>IFID: E2A5066D-E0EB-49B2-9117-AAB738F36452<br>TUID: c43ilw3epi791tya"
+          data-description="Development System: Texture<br>
+          IFID: E2A5066D-E0EB-49B2-9117-AAB738F36452<br>
+          TUID: c43ilw3epi791tya"
         >
 
         <img
@@ -54,8 +58,11 @@
           alt="GIF showing a portion of gameplay from The Archivist's Vault"
           class="carousel-image"
           data-caption="<em>The Archivist's Vault</em>"
-          data-description="Development System: Inform 7<br>IFID: D1B48BCF-0741-4D41-B7BB-EB304674AD45<br>TUID: 74ufidb7o5fwgraw"
+          data-description="Development System: Inform 7<br>
+          IFID: D1B48BCF-0741-4D41-B7BB-EB304674AD45<br>
+          TUID: 74ufidb7o5fwgraw"
         >
+
       </div>
 
       <div class="carousel-controls">
@@ -65,9 +72,19 @@
     </section>
   </main>
 
-  <!-- Carousel logic -->
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox-backdrop" data-close></div>
+
+    <figure class="lightbox-content" role="dialog" aria-modal="true">
+      <button class="lightbox-close" type="button" data-close aria-label="Close">×</button>
+      <img class="lightbox-img" id="lightboxImg" alt="">
+      <figcaption class="lightbox-caption" id="lightboxCaption"></figcaption>
+    </figure>
+  </div>
+
+  <!-- JS -->
   <script>
-    // Run after the DOM is ready
     (function () {
       const images = document.querySelectorAll('.carousel-image');
       const prevBtn = document.querySelector('.carousel-btn.prev');
@@ -75,60 +92,62 @@
       const captionEl = document.getElementById('image-caption');
       const descriptionEl = document.getElementById('image-description');
 
-      // If no images at all, just stop.
-      if (!images.length) {
-        return;
-      }
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightboxImg');
+      const lightboxCaption = document.getElementById('lightboxCaption');
+
+      if (!images.length) return;
 
       let current = 0;
 
-      function updateTextFromImage(index) {
+      function updateText(index) {
         const img = images[index];
-        if (!img) return;
-
-        if (captionEl) {
-          captionEl.innerHTML = img.dataset.caption || '';
-        }
-        if (descriptionEl) {
-          // innerHTML so your <br> and <em> work
-          descriptionEl.innerHTML = img.dataset.description || '';
-        }
+        captionEl.innerHTML = img.dataset.caption || '';
+        descriptionEl.innerHTML = img.dataset.description || '';
       }
 
       function showSlide(index) {
-        // Remove active from current
         images[current].classList.remove('active');
-
-        // Wrap index
         current = (index + images.length) % images.length;
-
-        // Add active to new
         images[current].classList.add('active');
-
-        // Update text panel
-        updateTextFromImage(current);
+        updateText(current);
       }
 
-      // Initialize first slide + text
+      function openLightbox(img) {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt || '';
+        lightboxCaption.innerHTML =
+          (img.dataset.caption || '') + '<br>' + (img.dataset.description || '');
+        lightbox.classList.add('is-open');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeLightbox() {
+        lightbox.classList.remove('is-open');
+        lightbox.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      // Init
       images[0].classList.add('active');
-      updateTextFromImage(0);
+      updateText(0);
 
-      // Hook up buttons if they exist
-      if (prevBtn) {
-        prevBtn.addEventListener('click', function (e) {
-          e.preventDefault();
-          e.stopPropagation();
-          showSlide(current - 1);
-        });
-      }
+      prevBtn?.addEventListener('click', () => showSlide(current - 1));
+      nextBtn?.addEventListener('click', () => showSlide(current + 1));
 
-      if (nextBtn) {
-        nextBtn.addEventListener('click', function (e) {
-          e.preventDefault();
-          e.stopPropagation();
-          showSlide(current + 1);
-        });
-      }
+      images.forEach(img => {
+        img.style.cursor = 'zoom-in';
+        img.addEventListener('click', () => openLightbox(img));
+      });
+
+      lightbox?.addEventListener('click', e => {
+        if (e.target.hasAttribute('data-close')) closeLightbox();
+      });
+
+      document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') closeLightbox();
+      });
     })();
   </script>
 
