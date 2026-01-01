@@ -28,54 +28,120 @@
     <!-- LEFT: title + description -->
     <section class="gallery-info">
       <h2 id="image-caption" class="neon-soft"></h2>
-      <p id="image-description" class="piece-description"></p>
+      <div id="image-description" class="piece-description"></div>
     </section>
 
     <!-- RIGHT: carousel -->
     <section class="gallery-carousel">
       <div class="carousel-window">
 
+        <!-- 1) Aged Polaroid -->
         <img
           src="https://github.com/kizsak/Portfolio/raw/main/BeeOrchidPolaroid.png"
+          data-full="https://github.com/kizsak/Portfolio/raw/main/BeeOrchidPolaroid.png"
           alt="An image of a worn Polaroid of a bee orchid in bloom"
           class="carousel-image active"
           data-caption="<em>Aged Polaroid</em>"
-          data-description="<strong>Tools:<br>
-          <ul>
-          <li><strong>Python</strong>    
-            <ul>      
-              <li><strong>Pillow</strong> (image compositing, resizing, masking, and blend operations);
-              <li><strong>argparse</strong> (command-line parameter control);
-              <li><strong>pathlib</strong> (file and folder management);
-              <li><strong>random</strong> (controlled variation in frame and overlay selection)
-           <li><strong>Midjourney</strong> 
-           <li><strong>Photoshop</strong> 
-            </ul></ul>
-          <br><br>I created a synthetic photograph of an <em>Ophrys apifera</em> (Bee Orchid) in bloom, using Midjourney. Then, I created a worn Polaroid frame in Photoshop, by layering texture overlays to suggest an anged and worn feel. Next, I wrote a Python script <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target='_blank' rel='noopener noreferrer'>(download)</a>. This script treats the image not as a static photograph but as a material object subject to wear, exposure, and chemical instability. Starting from a clean digital input, the script introduces a series of degradations—edge softening, tonal flattening, color drift, and localized light leaks—that echo the visual artifacts of aging instant film. Rather than applying a single filter, the process unfolds in stages, allowing each transformation to subtly interfere with the last.<br><br>I created a series of these images to serve as epistolary sources for an interactive fiction game.">
+          data-description='
+            <strong>Tools:</strong>
+            <ul class="tools-list">
+              <li><strong>Python</strong>
+                <ul>
+                  <li><strong>Pillow (PIL)</strong>
+                    <ul>
+                      <li>image compositing</li>
+                      <li>resizing</li>
+                      <li>masking</li>
+                      <li>blend operations</li>
+                    </ul>
+                  </li>
+                  <li><strong>argparse</strong> (command-line parameter control)</li>
+                  <li><strong>pathlib</strong> (file and folder management)</li>
+                  <li><strong>random</strong> (controlled variation in frame and overlay selection)</li>
+                </ul>
+              </li>
+              <li><strong>Midjourney</strong></li>
+              <li><strong>Photoshop</strong></li>
+            </ul>
 
+            <p>
+              I created a synthetic photograph of an <em>Ophrys apifera</em> (Bee Orchid) in bloom using Midjourney. Then, I created a worn Polaroid frame in Photoshop by layering texture overlays to suggest an aged and worn feel. Next, I wrote a Python script
+              <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target="_blank" rel="noopener noreferrer">(download)</a>.
+              This script treats the image not as a static photograph but as a material object subject to wear, exposure, and chemical instability. Starting from a clean digital input, the script introduces a series of degradations—edge softening, tonal flattening, color drift, and localized light leaks—that echo the visual artifacts of aging instant film. Rather than applying a single filter, the process unfolds in stages, allowing each transformation to subtly interfere with the last.
+            </p>
+
+            <p>
+              I created a series of these images to serve as epistolary sources for an interactive fiction game.
+            </p>
+          '
+        >
+
+        <!-- 2) Daguerreotype -->
         <img
-          src="https://github.com/kizsak/Portfolio/raw/main/script"
-          alt="An image of an aged Daguerreotype of a sneezeweed in bloom"
+          src="https://github.com/kizsak/Portfolio/raw/main/Daguerreotype.jpg"
+          data-full="https://github.com/kizsak/Portfolio/raw/main/Daguerreotype.jpg"
+          alt="An image of an aged Daguerreotype-style botanical photograph"
           class="carousel-image"
           data-caption="<em>Daguerreotype</em>"
-          data-description="<strong>Tools: Python script (OpenCV + NumPy), Photoshop, Midjourney</strong><br><br>I created a synthetic photograph of a <em>Helenium autumnale</em> (Sneezweed), using Midjourney. I then processed the image using a custom Python script <a href="PLACEHOLDER">(download)</a> that reduced color information, compressed tonal range, and introduced metallic noise to simulate the visual characteristics of a daguerreotype. Finally, I refined surface texture and contrast in Photoshop to emphasize the fragile, plate-like quality of early photographic processes."
-        > 
+          data-description='
+            <strong>Tools:</strong>
+            <ul class="tools-list">
+              <li><strong>Python</strong>
+                <ul>
+                  <li><strong>NumPy</strong> (pixel-level tonal remapping, metallic color mapping, vignette math)</li>
+                  <li><strong>Pillow (PIL)</strong> (grayscale conversion, compositing, filters, alpha masks)</li>
+                  <li><strong>math</strong> (directional sheen and radial calculations)</li>
+                </ul>
+              </li>
+              <li><strong>Photoshop</strong></li>
+              <li><strong>Midjourney</strong></li>
+            </ul>
 
+            <p>
+              I used Midjourney to create a synthetic photograph of an <em>Ophrys apifera</em> (Bee Orchid) in bloom. I then processed the image using a Python script
+              <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target="_blank" rel="noopener noreferrer">(download)</a>
+              that converts the photograph to grayscale, reshapes its tonal curve, and maps it onto a simulated silver plate surface. The script introduces metallic color shifts, directional sheen, vignette falloff, and tarnish artifacts.
+            </p>
+
+            <p>
+              Finally, it precisely fits the image into an aged and worn digital daguerreotype frame I created in Photoshop, with softened edges and inner shadow to simulate depth and mounting.
+            </p>
+          '
+        >
+
+        <!-- 3) False-Color Heat Map Portrait -->
         <img
           src="https://github.com/kizsak/Portfolio/raw/main/HeatMapSelfie2.png"
+          data-full="https://github.com/kizsak/Portfolio/raw/main/HeatMapSelfie2.png"
           alt="An image of a woman rendered in purple, orange, and yellow"
           class="carousel-image"
           data-caption="<em>False-Color Heat Map Portrait</em>"
-          data-description="<strong>Tools: Python script (OpenCV + NumPy), Photoshop, Midjourney
-I created a synthetic image using Midjourney and generated a corresponding depth map, in Photoshop, by manually separating the image into depth planes and assigning grayscale values to represent relative distance from the viewer. I then used a Python script to translate depth values into a false-color heat map, mapping spatial distance to color intensity. The final image was adjusted in Photoshop to clarify contrast and reinforce depth as data rather than photographic illusion.
-"
+          data-description='
+            <strong>Tools:</strong>
+            <ul class="tools-list">
+              <li><strong>Python</strong>
+                <ul>
+                  <li><strong>NumPy</strong> (depth-to-color mapping, numeric normalization)</li>
+                  <li><strong>Pillow (PIL)</strong> (image I/O and format conversion)</li>
+                </ul>
+              </li>
+              <li><strong>Photoshop</strong></li>
+              <li><strong>Midjourney</strong></li>
+            </ul>
+
+            <p>
+              I began with a photographic self-portrait. I used Photoshop to construct a depth map of the image by manually segmenting the image into spatial regions using selection tools and tonal adjustments. I then processed this depth map with a Python script
+              <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target="_blank" rel="noopener noreferrer">(download)</a>
+              that reads pixel-level depth values and remaps them to a false-color heat visualization.
+            </p>
+          '
         >
 
       </div>
 
       <div class="carousel-controls">
-        <button class="carousel-btn prev" type="button">‹</button>
-        <button class="carousel-btn next" type="button">›</button>
+        <button class="carousel-btn prev" type="button" aria-label="Previous image">‹</button>
+        <button class="carousel-btn next" type="button" aria-label="Next image">›</button>
       </div>
     </section>
   </main>
@@ -84,7 +150,7 @@ I created a synthetic image using Midjourney and generated a corresponding depth
   <div class="lightbox" id="lightbox" aria-hidden="true">
     <div class="lightbox-backdrop" data-close></div>
 
-    <figure class="lightbox-content" role="dialog" aria-modal="true">
+    <figure class="lightbox-content" role="dialog" aria-modal="true" aria-label="Image viewer">
       <button class="lightbox-close" type="button" data-close aria-label="Close">×</button>
       <img class="lightbox-img" id="lightboxImg" alt="">
       <figcaption class="lightbox-caption" id="lightboxCaption"></figcaption>
@@ -122,7 +188,8 @@ I created a synthetic image using Midjourney and generated a corresponding depth
       }
 
       function openLightbox(img) {
-        lightboxImg.src = img.src;
+        const full = img.dataset.full || img.src;
+        lightboxImg.src = full;
         lightboxImg.alt = img.alt || '';
         lightboxCaption.innerHTML =
           (img.dataset.caption || '') + '<br>' + (img.dataset.description || '');
@@ -156,24 +223,8 @@ I created a synthetic image using Midjourney and generated a corresponding depth
       document.addEventListener('keydown', e => {
         if (e.key === 'Escape') closeLightbox();
       });
-
-  function openLightbox(img) {
-  const full = img.dataset.full || img.src;  
-  lightboxImg.src = full;
-  lightboxImg.alt = img.alt || '';
-  lightboxCaption.innerHTML =
-    (img.dataset.caption || '') + '<br>' + (img.dataset.description || '');
-  lightbox.classList.add('is-open');
-  lightbox.setAttribute('aria-hidden', 'false');
-  document.body.style.overflow = 'hidden';
-}
-
-    
     })();
   </script>
-
-
-
 
 </body>
 </html>
