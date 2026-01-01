@@ -37,7 +37,7 @@ body {
 }
 
 /* ----------------------------------------------------
-   Page Backgrounds  (ALL FIXED — syntax fully corrected)
+   Page Backgrounds
 ----------------------------------------------------- */
 
 .page-home {
@@ -282,7 +282,7 @@ body {
 }
 
 /* ----------------------------------------------------
-   GALLERY + CAROUSEL
+   GALLERY + CAROUSEL (UPDATED to match your HTML)
 ----------------------------------------------------- */
 
 .gallery-layout {
@@ -300,27 +300,34 @@ body {
   }
 }
 
-.gallery-text {
+/* Your HTML uses .gallery-info + #image-description */
+.gallery-info {
   flex: 1.4;
   min-width: 320px;
   color: #ffffff;
+  text-align: left;
 }
 
-.gallery-title {
-  font-size: 2rem;
+#image-caption {
+  text-align: left;
   margin-bottom: 0.75rem;
 }
 
-.gallery-caption {
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-bottom: 0.75rem;
-}
-
-.gallery-description {
+.piece-description {
   line-height: 1.6;
   font-size: 0.95rem;
-  max-width: 32rem;
+  max-width: 36rem;
+}
+
+/* Make links readable on bright background */
+.piece-description a,
+.lightbox-caption a {
+  color: #c9f8ff;
+  text-decoration: underline;
+}
+.piece-description a:hover,
+.lightbox-caption a:hover {
+  text-decoration: none;
 }
 
 .gallery-carousel {
@@ -338,7 +345,6 @@ body {
   overflow: hidden;
   box-shadow: 0 18px 40px rgba(0,0,0,0.45);
   background: rgba(0,0,0,0.4);
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -499,42 +505,10 @@ body {
   }
 }
 
-/* Left-justify the image title + description panel */
-.gallery-info {
-  text-align: left;
-}
+/* ----------------------------------------------------
+   LIGHTBOX (KEEP ONE SYSTEM — this matches your HTML)
+----------------------------------------------------- */
 
-#image-caption {
-  text-align: left;
-}
-
-#lightbox {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.85);
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-
-#lightbox img {
-  max-width: 90%;
-  max-height: 90%;
-  box-shadow: 0 0 30px rgba(255,255,255,0.15);
-}
-
-#close {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  font-size: 2.5rem;
-  color: #fff;
-  cursor: pointer;
-}
-
-
-/* LIGHTBOX */
 .lightbox {
   position: fixed;
   inset: 0;
@@ -571,11 +545,13 @@ body {
   height: auto;
   display: block;
   border-radius: 14px;
+  box-shadow: 0 0 30px rgba(255,255,255,0.12);
 }
 
 .lightbox-caption {
   margin-top: 0.75rem;
-  line-height: 1.4;
+  line-height: 1.45;
+  color: rgba(255,255,255,0.92);
 }
 
 .lightbox-close {
@@ -592,12 +568,19 @@ body {
   cursor: pointer;
 }
 
+/* ----------------------------------------------------
+   Nested list styling for Tools blocks (multi-rung bullets)
+----------------------------------------------------- */
 
-/* Pretty nested lists inside descriptions/captions */
 .piece-description ul,
 .lightbox-caption ul {
-  margin: 0.35em 0 0.75em 1.2em;
+  margin: 0.35em 0 0.85em 1.2em;
   padding-left: 1.1em;
+}
+
+.piece-description li,
+.lightbox-caption li {
+  margin: 0.15em 0;
 }
 
 .piece-description ul ul,
