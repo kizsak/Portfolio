@@ -591,3 +591,29 @@ body {
   font-size: 28px;
   cursor: pointer;
 }
+
+
+/* Pretty nested lists inside descriptions/captions */
+.piece-description ul,
+.lightbox-caption ul {
+  margin: 0.35em 0 0.75em 1.2em;
+  padding-left: 1.1em;
+}
+
+.piece-description ul ul,
+.lightbox-caption ul ul {
+  list-style-type: circle;      /* level 2 bullets */
+  margin-top: 0.25em;
+  margin-bottom: 0.6em;
+}
+
+.piece-description ul ul ul,
+.lightbox-caption ul ul ul {
+  list-style: none;             /* level 3 as dashes */
+  padding-left: 0.2em;
+}
+
+.piece-description ul ul ul li::before,
+.lightbox-caption ul ul ul li::before {
+  content: "– ";
+}
