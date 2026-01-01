@@ -59,6 +59,68 @@
           data-caption="<em>False-Color Heat Map Portrait</em>"
           data-desc="desc-heatmap"
         >
+      
+      <img
+  src="https://github.com/kizsak/Portfolio/raw/main/FILE.png"
+  data-full="https://github.com/kizsak/Portfolio/raw/main/FILE.png"
+  alt="An image of a 35mm slide showing a photograph of a field of black-eyed susans)"
+  class="carousel-image"
+  data-caption="<em>35mm Slide</em>"
+  data-desc="desc-slide"
+>
+
+<img
+  src="https://github.com/kizsak/Portfolio/raw/main/FILE.png"
+  data-full="https://github.com/kizsak/Portfolio/raw/main/FILE.png"
+  alt="Write an accessible description of the image"
+  class="carousel-image"
+  data-caption="<em>Comic Book Sketch</em>"
+  data-desc="desc-comic"
+>
+
+<img
+  src="https://github.com/kizsak/Portfolio/raw/main/FILE.png"
+  data-full="https://github.com/kizsak/Portfolio/raw/main/FILE.png"
+  alt="Write an accessible description of the image"
+  class="carousel-image"
+  data-caption="<em>Cyanotype</em>"
+  data-desc="desc-cyan"
+>
+
+<img
+  src="https://github.com/kizsak/Portfolio/raw/main/FILE.png"
+  data-full="https://github.com/kizsak/Portfolio/raw/main/FILE.png"
+  alt="Write an accessible description of the image"
+  class="carousel-image"
+  data-caption="<em>Microfiche Film</em>"
+  data-desc="desc-micro"
+>
+
+<img
+  src="https://github.com/kizsak/Portfolio/raw/main/FILE.png"
+  data-full="https://github.com/kizsak/Portfolio/raw/main/FILE.png"
+  alt="A cyanotype of a gardenia"
+  class="carousel-image"
+  data-caption="<em>Pencil Drawing</em>"
+  data-desc="desc-pencil”
+>
+<img
+  src="https://github.com/kizsak/Portfolio/raw/main/FILE.png"
+  data-full="https://github.com/kizsak/Portfolio/raw/main/FILE.png"
+  alt="Write an accessible description of the image"
+  class="carousel-image"
+  data-caption="<em>Chemical Bath Reveal</em>"
+  data-desc="desc-chem"
+>
+
+<img
+  src="https://github.com/kizsak/Portfolio/raw/main/FILE.png"
+  data-full="https://github.com/kizsak/Portfolio/raw/main/FILE.png"
+  alt="Write an accessible description of the image"
+  class="carousel-image"
+  data-caption="<em>Glitch Recover</em>"
+  data-desc="desc-glitch"
+>
       </div>
 
       <!-- Controls (you were missing these in the current version) -->
@@ -146,6 +208,136 @@
         </p>
       </template>
 
+      <template id="desc-slide">
+  <strong>Tools:</strong>
+  <ul class="tools-list">
+    <li><strong>Python</strong>
+      <ul>
+        <li><strong>Pillow (PIL)</strong> ((layout construction, texture layering, compositing)</li>
+        <li><strong>random</strong> (stochastic wash variation)</li>
+        <li><strong>argparse</strong> (parameterized output)</li>      
+        <li><strong>random</strong> (structured output handling)</li>
+</ul>
+    </li>
+    <li><strong>Photoshop</strong></li>
+    <li><strong>Midjourney</strong></li>
+  </ul>
+
+  <p>I took a photograph of my husband. I then processed the image with a Python script <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target='_blank' rel='noopener noreferrer'>(download)</a> to reduce the color palette using k-means clustering, extract bold inked edges using edge detection, and overlay halftone dot patterns to mimic printed comic panels. The script also adds borders, captions, and optional speech bubbles to complete the panel structure.
+  </p>
+</template>
+
+<template id="desc-comic">
+  <strong>Tools:</strong>
+  <ul class="tools-list">
+    <li><strong>Python</strong>
+      <ul>
+        <li><strong>Pillow (PIL)</strong> ((layout construction, texture layering, compositing)</li>
+        <li><strong>random</strong> (stochastic wash variation)</li>
+        <li><strong>argparse</strong> (parameterized output)</li>      
+        <li><strong>random</strong> (structured output handling)</li>
+</ul>
+    </li>
+    <li><strong>Photoshop</strong></li>
+    <li><strong>Midjourney</strong></li>
+  </ul>
+
+  <p>
+  </p>
+</template>
+
+<template id="desc-cyan">
+  <strong>Tools:</strong>
+<ul>
+    <li><strong>Python</strong>
+      <ul>
+        <li><strong>Pillow (PIL)</strong> (grayscale conversion, color mapping, blur)</li>
+        <li><strong>NumPy</strong> (procedural wash mask generation)</li>
+        <li><strong>random</strong> (stochastic wash variation)</li>
+</ul>
+    </li>
+    <li><strong>Photoshop</strong></li>
+    <li><strong>Midjourney</strong></li>
+  </ul>
+  <p>
+    I used Midjourney to create a synthetic photograph of a Gardenia jasminoides  (Gardenia). (Prompt: A photograph of the botanical specimen, gardenia, photographed in the field in the style of 1980s field botany documentation, soft natural light, shallow depth of field, Kodachrome 64 film look, muted warm tones, subtle film grain, macro detail, slight fading and color shift. The photograph should show the sculptural details of the petals well.) I then processed the image with a Python script <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target='_blank' rel='noopener noreferrer'>(download)</a> to remap tonal values into a cyanotype-inspired blue color range and layered a procedurally generated wash mask to simulate uneven chemical absorption. The image was also softened slightly to evoke paper texture and hand-coated surfaces.
+  </p>
+</template>
+
+<template id="desc-micro">
+  <strong>Tools:</strong>
+<ul>
+    <li><strong>Python</strong>
+      <ul>
+        <li><strong>Pillow (PIL)</strong> (grid layout, typography, compositing)</li>
+        <li><strong>NumPy</strong> (procedural wash mask generation)</li>
+        <li><strong>random</strong> (subtle noise and grain)</li>
+        <li><strong>argparse</strong> (subtle noise and grain)</li>
+        <li><strong>pathlib</strong> (file structure handling)</li>
+        <li><strong>datetime</strong> (archival metadata)</li>
+</ul>
+    <li><strong>Photoshop</strong></li>
+    <li><strong>Midjourney</strong></li>
+  </ul>
+<p>I created a synthetic photographic image using Midjourney. I then used a Python script <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target='_blank' rel='noopener noreferrer'>(download)</a> to fragment, scale, and tile the image into a grid structure modeled after microfiche archival formats. Final compositional and tonal adjustments were made in Photoshop to emphasize the aesthetics of compression and institutional storage.
+  </p>
+</template>
+
+<template id="desc-pencil">
+  <strong>Tools:</strong>
+  <ul class="tools-list">
+    <li><strong>Python</strong>
+      <ul>
+        <li><strong>Pillow (PIL)</strong> ((layout construction, texture layering, compositing)</li>
+        <li><strong>random</strong> (stochastic wash variation)</li>
+        <li><strong>argparse</strong> (parameterized output)</li>      
+        <li><strong>random</strong> (structured output handling)</li>
+</ul>
+    </li>
+    <li><strong>Photoshop</strong></li>
+    <li><strong>Midjourney</strong></li>
+  </ul>
+  <p>I took a photograph of a yellow-bellied sapsucker on a Scotch Pine. I then processed the image using a Python script <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target='_blank' rel='noopener noreferrer'>(download)</a>that converts it to grayscale, applies Gaussian blur, and uses a dodge-blend technique to simulate graphite shading. A secondary edge-based output produces a crisp line-drawing variant. 
+  </p>
+</template>
+
+<template id="desc-chem”>
+  <strong>Tools:</strong>
+  <ul class="tools-list">
+    <li><strong>Python</strong>
+      <ul>
+        <li><strong>Pillow (PIL)</strong> ((layout construction, texture layering, compositing)</li>
+        <li><strong>random</strong> (stochastic wash variation)</li>
+        <li><strong>argparse</strong> (parameterized output)</li>      
+        <li><strong>random</strong> (structured output handling)</li>
+</ul>
+    </li>
+    <li><strong>Photoshop</strong></li>
+    <li><strong>Midjourney</strong></li>
+  </ul>
+  <p>
+    I used Midjourney to create a synthetic photographic image of a field of <em>Rudbeckia hirta</em> (Black-Eyed Susans). I then processed the image with a Python script <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target='_blank' rel='noopener noreferrer'>(download)</a> that animates the gradual emergence of the image using layered noise fields, threshold masks, bloom effects, and evolving color casts that simulate photographic development in a chemical bath. Each frame reveals additional image detail until the photograph fully resolves.
+  </p>
+</template>
+
+<template id="desc-glitch”>
+  <strong>Tools:</strong>
+  <ul class="tools-list">
+    <li><strong>Python</strong>
+      <ul>
+        <li><strong>NumPy</strong> (noise fields, masks, temporal interpolation)</li>
+        <li><strong>Pillow (PIL)</strong> (frame-by-frame image processing)</li>                  
+        <li><strong>imageio</strong> (GIF / MP4 generation)</li>      
+        <li><strong>argparse</strong> (timing, resolution, and style controls)</li>      
+        <li><strong>random</strong> (stochastic animation variation)</li>
+    </ul>
+    <li><strong>Photoshop</strong></li>
+    <li><strong>Midjourney</strong></li>
+  </ul>
+  <p>
+    I used Midjourney to create a synthetic photographic image of a field of <em>Rudbeckia hirta</em> (Black-Eyed Susans). I then processed the image with a Python script <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target='_blank' rel='noopener noreferrer'>(download)</a> to deliberately corrupt the image using channel misalignment, scanlines, noise-driven tearing, and glitch artifacts before gradually stabilizing the image over time. 
+  </p>
+</template>
     </section>
   </main>
 
