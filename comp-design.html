@@ -7,6 +7,83 @@
 
   <!-- Main site stylesheet -->
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- Page-safe additions: lightbox visibility + nested bullets -->
+  <style>
+    /* Make nested bullets clearly multi-level inside description + lightbox */
+    .piece-description ul,
+    .lightbox-caption ul {
+      margin: 0.35em 0 0.9em 1.2em;
+      padding-left: 1.1em;
+    }
+    .piece-description ul ul,
+    .lightbox-caption ul ul {
+      list-style-type: circle;
+      margin-top: 0.25em;
+      margin-bottom: 0.6em;
+    }
+    .piece-description ul ul ul,
+    .lightbox-caption ul ul ul {
+      list-style: none;
+      padding-left: 0.2em;
+    }
+    .piece-description ul ul ul li::before,
+    .lightbox-caption ul ul ul li::before {
+      content: "– ";
+    }
+
+    /* Lightbox: ensure it actually shows when .is-open is applied */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      display: none;
+      z-index: 9999;
+    }
+    .lightbox.is-open {
+      display: grid;
+      place-items: center;
+    }
+    .lightbox-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.75);
+    }
+    .lightbox-content {
+      position: relative;
+      z-index: 1;
+      max-width: min(92vw, 1100px);
+      max-height: 90vh;
+      margin: 0;
+      padding: 1rem;
+      border-radius: 18px;
+      background: rgba(15, 15, 20, 0.92);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+      overflow: auto;
+    }
+    .lightbox-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 14px;
+    }
+    .lightbox-caption {
+      margin-top: 0.75rem;
+      line-height: 1.4;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 10px;
+      right: 12px;
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.25);
+      background: rgba(0,0,0,0.35);
+      color: white;
+      font-size: 28px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 
 <body class="page-IF">
@@ -33,103 +110,123 @@
 
     <!-- RIGHT: carousel -->
     <section class="gallery-carousel">
-     <div class="carousel-window">
 
-  <img
-    src="https://github.com/kizsak/Portfolio/raw/main/BeeOrchidPolaroid.png"
-    data-full="https://github.com/kizsak/Portfolio/raw/main/BeeOrchidPolaroid.png"
-    alt="An image of a worn Polaroid of a bee orchid in bloom"
-    class="carousel-image active"
-    data-caption="<em>Aged Polaroid</em>"
-    data-desc="desc-polaroid"
-  >
+      <div class="carousel-window">
+        <img
+          src="https://github.com/kizsak/Portfolio/raw/main/BeeOrchidPolaroid.png"
+          data-full="https://github.com/kizsak/Portfolio/raw/main/BeeOrchidPolaroid.png"
+          alt="An image of a worn Polaroid of a bee orchid in bloom"
+          class="carousel-image active"
+          data-caption="<em>Aged Polaroid</em>"
+          data-desc="desc-polaroid"
+        >
 
-  <img
-    src="https://github.com/kizsak/Portfolio/raw/main/Daguerreotype.jpg"
-    data-full="https://github.com/kizsak/Portfolio/raw/main/Daguerreotype.jpg"
-    alt="An image of an aged Daguerreotype-style botanical photograph"
-    class="carousel-image"
-    data-caption="<em>Daguerreotype</em>"
-    data-desc="desc-daguerreotype"
-  >
+        <img
+          src="https://github.com/kizsak/Portfolio/raw/main/Daguerreotype.jpg"
+          data-full="https://github.com/kizsak/Portfolio/raw/main/Daguerreotype.jpg"
+          alt="An image of an aged Daguerreotype-style botanical photograph"
+          class="carousel-image"
+          data-caption="<em>Daguerreotype</em>"
+          data-desc="desc-daguerreotype"
+        >
 
-  <img
-    src="https://github.com/kizsak/Portfolio/raw/main/HeatMapSelfie2.png"
-    data-full="https://github.com/kizsak/Portfolio/raw/main/HeatMapSelfie2.png"
-    alt="An image of a woman rendered in purple, orange, and yellow"
-    class="carousel-image"
-    data-caption="<em>False-Color Heat Map Portrait</em>"
-    data-desc="desc-heatmap"
-  >
+        <img
+          src="https://github.com/kizsak/Portfolio/raw/main/HeatMapSelfie2.png"
+          data-full="https://github.com/kizsak/Portfolio/raw/main/HeatMapSelfie2.png"
+          alt="An image of a woman rendered in purple, orange, and yellow"
+          class="carousel-image"
+          data-caption="<em>False-Color Heat Map Portrait</em>"
+          data-desc="desc-heatmap"
+        >
+      </div>
 
-</div>
+      <!-- Controls (you were missing these in the current version) -->
+      <div class="carousel-controls">
+        <button class="carousel-btn prev" type="button" aria-label="Previous image">‹</button>
+        <button class="carousel-btn next" type="button" aria-label="Next image">›</button>
+      </div>
 
-<!-- Description Templates (safe HTML; never breaks layout) -->
-<template id="desc-polaroid">
-  <strong>Tools:</strong>
-  <ul class="tools-list">
-    <li><strong>Python</strong>
-      <ul>
-        <li><strong>Pillow (PIL)</strong>
-          <ul>
-            <li>image compositing</li>
-            <li>resizing</li>
-            <li>masking</li>
-            <li>blend operations</li>
-          </ul>
-        </li>
-        <li><strong>argparse</strong> (command-line parameter control)</li>
-        <li><strong>pathlib</strong> (file and folder management)</li>
-        <li><strong>random</strong> (controlled variation in frame and overlay selection)</li>
-      </ul>
-    </li>
-    <li><strong>Midjourney</strong></li>
-    <li><strong>Photoshop</strong></li>
-  </ul>
+      <!-- Description Templates -->
+      <template id="desc-polaroid">
+        <strong>Tools:</strong>
+        <ul class="tools-list">
+          <li><strong>Python</strong>
+            <ul>
+              <li><strong>Pillow (PIL)</strong>
+                <ul>
+                  <li>image compositing</li>
+                  <li>resizing</li>
+                  <li>masking</li>
+                  <li>blend operations</li>
+                </ul>
+              </li>
+              <li><strong>argparse</strong> (command-line parameter control)</li>
+              <li><strong>pathlib</strong> (file and folder management)</li>
+              <li><strong>random</strong> (controlled variation in frame and overlay selection)</li>
+            </ul>
+          </li>
+          <li><strong>Midjourney</strong></li>
+          <li><strong>Photoshop</strong></li>
+        </ul>
 
-  <p>
-    I created a synthetic photograph of an <em>Ophrys apifera</em> (Bee Orchid) in bloom using Midjourney. Then, I created a worn Polaroid frame in Photoshop by layering texture overlays to suggest an aged and worn feel. Next, I wrote a Python script <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target="_blank" rel="noopener noreferrer">(download)</a>. This script treats the image not as a static photograph but as a material object subject to wear, exposure, and chemical instability. Starting from a clean digital input, the script introduces a series of degradations—edge softening, tonal flattening, color drift, and localized light leaks—that echo the visual artifacts of aging instant film. Rather than applying a single filter, the process unfolds in stages, allowing each transformation to subtly interfere with the last.
-  </p>
-</template>
+        <p>
+          I created a synthetic photograph of an <em>Ophrys apifera</em> (Bee Orchid) in bloom using Midjourney. Then, I created a worn Polaroid frame in Photoshop by layering texture overlays to suggest an aged and worn feel. Next, I wrote a Python script
+          <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target="_blank" rel="noopener noreferrer">(download)</a>.
+          This script treats the image not as a static photograph but as a material object subject to wear, exposure, and chemical instability. Starting from a clean digital input, the script introduces a series of degradations—edge softening, tonal flattening, color drift, and localized light leaks—that echo the visual artifacts of aging instant film. Rather than applying a single filter, the process unfolds in stages, allowing each transformation to subtly interfere with the last.
+        </p>
 
-<template id="desc-daguerreotype">
-  <strong>Tools:</strong>
-  <ul class="tools-list">
-    <li><strong>Python</strong>
-      <ul>
-        <li><strong>NumPy</strong> (pixel-level tonal remapping, metallic color mapping, vignette math)</li>
-        <li><strong>Pillow (PIL)</strong> (grayscale conversion, compositing, filters, alpha masks)</li>
-        <li><strong>math</strong> (directional sheen and radial calculations)</li>
-      </ul>
-    </li>
-    <li><strong>Photoshop</strong></li>
-    <li><strong>Midjourney</strong></li>
-  </ul>
+        <p>
+          I created a series of these images to serve as epistolary sources for an interactive fiction game.
+        </p>
+      </template>
 
-  <p>
-    I used Midjourney to create a synthetic photograph of an <em>Ophrys apifera</em> (Bee Orchid) in bloom. I then processed the image using a Python script
-    <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target="_blank" rel="noopener noreferrer">(download)</a> that converts the photograph to grayscale, reshapes its tonal curve, and maps it onto a simulated silver plate surface. The script introduces metallic color shifts, directional sheen, vignette falloff, and tarnish artifacts.Finally, it precisely fits the image into an aged and worn digital daguerreotype frame I created in Photoshop, with softened edges and inner shadow to simulate depth and mounting.
-  </p>
-</template>
+      <template id="desc-daguerreotype">
+        <strong>Tools:</strong>
+        <ul class="tools-list">
+          <li><strong>Python</strong>
+            <ul>
+              <li><strong>NumPy</strong> (pixel-level tonal remapping, metallic color mapping, vignette math)</li>
+              <li><strong>Pillow (PIL)</strong> (grayscale conversion, compositing, filters, alpha masks)</li>
+              <li><strong>math</strong> (directional sheen and radial calculations)</li>
+            </ul>
+          </li>
+          <li><strong>Photoshop</strong></li>
+          <li><strong>Midjourney</strong></li>
+        </ul>
 
-<template id="desc-heatmap">
-  <strong>Tools:</strong>
-  <ul class="tools-list">
-    <li><strong>Python</strong>
-      <ul>
-        <li><strong>NumPy</strong> (depth-to-color mapping, numeric normalization)</li>
-        <li><strong>Pillow (PIL)</strong> (image I/O and format conversion)</li>
-      </ul>
-    </li>
-    <li><strong>Photoshop</strong></li>
-    <li><strong>Midjourney</strong></li>
-  </ul>
+        <p>
+          I used Midjourney to create a synthetic photograph of an <em>Ophrys apifera</em> (Bee Orchid) in bloom. I then processed the image using a Python script
+          <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target="_blank" rel="noopener noreferrer">(download)</a>
+          that converts the photograph to grayscale, reshapes its tonal curve, and maps it onto a simulated silver plate surface. The script introduces metallic color shifts, directional sheen, vignette falloff, and tarnish artifacts.
+        </p>
 
-  <p>
-    I began with a photographic self-portrait. I used Photoshop to construct a depth map of the image by manually segmenting the image into spatial regions using selection tools and tonal adjustments. I then processed the depth map with a Python script <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target="_blank" rel="noopener noreferrer">(download)</a> that reads pixel-level depth values and remaps them to a false-color heat visualization.
-  </p>
-</template>
+        <p>
+          Finally, it precisely fits the image into an aged and worn digital daguerreotype frame I created in Photoshop, with softened edges and inner shadow to simulate depth and mounting.
+        </p>
+      </template>
 
+      <template id="desc-heatmap">
+        <strong>Tools:</strong>
+        <ul class="tools-list">
+          <li><strong>Python</strong>
+            <ul>
+              <li><strong>NumPy</strong> (depth-to-color mapping, numeric normalization)</li>
+              <li><strong>Pillow (PIL)</strong> (image I/O and format conversion)</li>
+            </ul>
+          </li>
+          <li><strong>Photoshop</strong></li>
+          <li><strong>Midjourney</strong></li>
+        </ul>
+
+        <p>
+          I began with a photographic self-portrait. I used Photoshop to construct a depth map of the image by manually segmenting the image into spatial regions using selection tools and tonal adjustments. I then processed the depth map with a Python script
+          <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target="_blank" rel="noopener noreferrer">(download)</a>
+          that reads pixel-level depth values and remaps them to a false-color heat visualization.
+        </p>
+      </template>
+
+    </section>
+  </main>
 
   <!-- LIGHTBOX -->
   <div class="lightbox" id="lightbox" aria-hidden="true">
@@ -159,10 +256,16 @@
 
       let current = 0;
 
+      function getDescHTML(img) {
+        const tplId = img.dataset.desc;
+        const tpl = tplId ? document.getElementById(tplId) : null;
+        return tpl ? tpl.innerHTML : '';
+      }
+
       function updateText(index) {
         const img = images[index];
         captionEl.innerHTML = img.dataset.caption || '';
-        descriptionEl.innerHTML = img.dataset.description || '';
+        descriptionEl.innerHTML = getDescHTML(img);
       }
 
       function showSlide(index) {
@@ -176,8 +279,8 @@
         const full = img.dataset.full || img.src;
         lightboxImg.src = full;
         lightboxImg.alt = img.alt || '';
-        lightboxCaption.innerHTML =
-          (img.dataset.caption || '') + '<br>' + (img.dataset.description || '');
+        lightboxCaption.innerHTML = (img.dataset.caption || '') + '<br>' + getDescHTML(img);
+
         lightbox.classList.add('is-open');
         lightbox.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
