@@ -156,8 +156,24 @@ I created a synthetic image using Midjourney and generated a corresponding depth
       document.addEventListener('keydown', e => {
         if (e.key === 'Escape') closeLightbox();
       });
+
+  function openLightbox(img) {
+  const full = img.dataset.full || img.src;  
+  lightboxImg.src = full;
+  lightboxImg.alt = img.alt || '';
+  lightboxCaption.innerHTML =
+    (img.dataset.caption || '') + '<br>' + (img.dataset.description || '');
+  lightbox.classList.add('is-open');
+  lightbox.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+}
+
+    
     })();
   </script>
+
+
+
 
 </body>
 </html>
