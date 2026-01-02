@@ -122,6 +122,42 @@
   data-caption="<em>Glitch Recover</em>"
   data-desc="desc-glitch"
 >
+
+<img
+  src="https://github.com/kizsak/Portfolio/raw/main/CollageSelfPortrait.png"
+  data-full="https://github.com/kizsak/Portfolio/raw/main/CollageSelfPortrait.png"
+  alt="A collage self-portrait of the artist using flower components"
+  class="carousel-image"
+  data-caption="<em>Collage Self-Portrait I</em>"
+  data-desc="desc-collage"
+>
+
+<img
+  src="https://github.com/kizsak/Portfolio/raw/main/ComputationalCollage.png"
+  data-full="https://github.com/kizsak/Portfolio/raw/main/ComputationalCollage.png"
+  alt="A collage self-portrait of the artist with hand-painted accents"
+  class="carousel-image"
+  data-caption="<em>Collage Self-Portrait II</em>"
+  data-desc="desc-compcollage"
+>
+
+<img
+  src="https://github.com/kizsak/Portfolio/raw/main/HanakotabaDataSculpture.png"
+  data-full="https://github.com/kizsak/Portfolio/raw/main/HanakotabaDataSculpture.png"
+  alt="An abstract geometric image with ribbons spanning a circle"
+  class="carousel-image"
+  data-caption="<em>Hanakotoba</em>"
+  data-desc="desc-hana"
+>
+
+<img
+  src="https://github.com/kizsak/Portfolio/raw/main/Geogebra1.jpg"
+  data-full="https://github.com/kizsak/Portfolio/raw/main/Geogebra1.jpg"
+  alt="An abstract geometric image with repeating shapes"
+  class="carousel-image"
+  data-caption="<em>Untitled</em>"
+  data-desc="desc-geo"
+>
       </div>
 
       <!-- Controls (you were missing these in the current version) -->
@@ -339,7 +375,63 @@
     I used Midjourney to create a synthetic photographic image of a field of <em>Rudbeckia hirta</em> (Black-Eyed Susans). I then processed the image with a Python script <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target='_blank' rel='noopener noreferrer'>(download)</a> to deliberately corrupt the image using channel misalignment, scanlines, noise-driven tearing, and glitch artifacts before gradually stabilizing the image over time. 
   </p>
 </template>
-    </section>
+
+<template id="desc-collage">
+  <strong>Tools:</strong>
+  <ul class="tools-list">
+  <li><strong>Python</strong>
+      <ul>
+        <li><strong>Pillow (PIL)</strong> (image compositing, rotation, scaling, alpha compositing)</li>
+        <li><strong>rembg</strong> (foreground/background separation)</li>
+        <li><strong>argparse</strong> (mode selection, parameter control)</li>   
+        <li><strong>pathlib</strong> (file traversal and output management)</li>
+        <li><strong>math</strong> (parametric curves, trigonometry)</li></ul>
+        <li><strong>random</strong> (controlled stochastic variation)</li></ul>
+<li>Midjourney</li>
+<li>Autodesk Sketchpad Pro</li>
+
+<p>
+I began with a photographic self-portrait, then sampled the colors to record their hex codes and create a personal color palette. Next, I used Midjourney to create more than 700 synthetic botanical photographs in the hues from my personal palette. (Sample prompt: /imagine A specimen photograph of a hydrangea cluster in blush pink (#d29791). Soft natural light, shallow depth of field, Kodachrome 64 film look, ethereal lighting, subtle film grain, macro detail, slight fading and color shift, bokeh background, dreamy pastel palette.) I then processed those images using a Python script <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target='_blank' rel='noopener noreferrer'>(download)</a> to extract floral forms from the images and export them as transparent PNG assets. The script applies a pretrained machine-learning segmentation model to identify the flower as foreground and separate it from the background using alpha matting, preserving fine details such as petal edges and stems. A subtle Gaussian blur is applied to the alpha channel to soften cut edges and prevent visible halos. I then took those elements and manually layered them to construct a digital self-portrait collage. The process deliberately separates algorithmic extraction from intuitive composition, treating code as a preparatory tool rather than the final author of the image.
+</p>
+</template>
+
+<template id="desc-compcollage">
+  <strong>Tools:</strong>
+  <ul class="tools-list">
+  <li><strong>Python</strong>
+      <ul>
+        <li><strong>Pillow (PIL)</strong> (image-decoding, RGBA handling, alpha-channel feathering)</li>
+        <li><strong>rembg</strong> (foreground/background separation)</li>
+        <li><strong>argparse</strong> (command-line interface for batch processing)</li>   
+        <li><strong>pathlib</strong> (recursive file and folder management)</li>
+        <li><strong>io</strong> (in-memory image byte handing between model output and PIL)</li></ul>
+<li>Midjourney</li>
+<li>Autodesk Sketchpad Pro</li>
+
+<p>
+I used Midjourney to produce over 300 synthetic botanical drawings of my favorite flowers (Sample prompt: A specimen photograph of blue Cornflower, symbolizing beauty, photographed in the field in the style of 1980s field botany documentation, soft natural light, shallow depth of field, Kodachrome 64 film look, muted warm tones, subtle film grain, macro detail, slight fading and color shift.)  Next, I processed them using a a Python script <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target='_blank' rel='noopener noreferrer'>(download)</a> that generates a procedural collage by placing images along a computed structure which was based on a photographic self-portrait. The script uses mask sampling to create target points, then iteratively places images using a simplified circle-packing rule to prevent overcrowding. Scale, opacity, rotation, and position are randomized within constraints, producing variation while still preserving the legibility of the underlying algorithmic form. Finally, in order to soften the geometric grid created by the script, I handpainted several features using digital acrylics in Autodesk Sketchpad Pro.
+</p>
+</template>
+
+<template id="desc-hana">
+  <strong>Tools:</strong>
+  <ul class="tools-list">
+    <li><strong>Microsoft Excel</strong>
+    <li><strong>RAWGraphs</strong></li>
+    <li><strong>Inkscape</strong></li>
+  </ul>
+<p>I created a dataset based on Hanakotaba, the Japanese cultural system of flower meanings. I collected data on individual flowers and at least one associated meaning from Hanakotoba.com. I then conducted an inductive content analysis, grouping individual meanings into broader thematic categories, which resulted in 24 generalized meaning buckets. Using a pivot table, I calculated the distribution of flower colors associated with each category, producing counts of color occurrences per meaning group. I then cleaned and restructured the data into a .csv file and imported it into RawGraphs, where I generated a chord diagram. After removing the chart’s labels, I exported the visualization as an .svg file. In Inkscape, I treated the diagram as a set of editable vector paths, selectively adjusting stroke and fill colors, opacity levels, and layering order to emphasize particular relationships between meaning categories. I also repositioned and scaled groups of ribbons to shift the visual center of the diagram, allowing specific clusters to emerge as focal points. The final color palette and transparency settings were chosen to evoke the density and overlap of an abstract flower garden, transforming the data visualization into a sculptural composition.</p
+</template>
+
+<template id="desc-geo">
+  <strong>Tools:</strong>
+  <ul class="tools-list">
+    <li><strong>Geogebra Classic</strong>
+    <li><strong>Autodesk Sketchpad Pro</strong></li>
+  </ul>
+<p>I constructed this image algorithmically in GeoGebra Classic. I defined a central geometric structure and then generated a system of repeated triangles using rotational symmetry and proportional subdivision. Rather than drawing shapes manually, I relied on GeoGebra’s constraint-based construction system: points are mathematically linked, lines are derived from relationships between points, and rotations are generated algorithmically around a fixed center. Changes to a single parameter propagate across the entire structure, producing a tightly coupled, rule-driven form. Once the geometric system was complete, I exported the construction and applied color in Autodesk Sketchpad Pro, using the digital airbrush feature. I layered color manually, using repeated palettes and radial symmetry to reinforce the underlying algorithmic structure. The final image reflects a hybrid process: a mathematically constrained, algorithmic foundation combined with intuitive, painterly color decisions.</p>
+</template>
+  </section>
   </main>
 
   <!-- LIGHTBOX -->
