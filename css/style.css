@@ -601,3 +601,39 @@ body.no-scroll {
   content: "– ";
 }
 
+/* ---- Simple :target lightbox (no JS) ---- */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  display: none;
+  padding: 4vh 4vw;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 9999;
+}
+
+.lightbox:target {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox img {
+  max-width: 92vw;
+  max-height: 92vh;
+  width: auto;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.6);
+}
+
+.lightbox .close {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  font-size: 34px;
+  line-height: 1;
+  color: #fff;
+  text-decoration: none;
+  padding: 6px 10px;
+}
+
