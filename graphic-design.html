@@ -129,10 +129,14 @@
     </section>
   </main>
 
- <!-- Lightbox overlay -->
+<!-- Lightbox overlay (place once per page, right before </body>) -->
 <div id="lightbox" class="lightbox" aria-hidden="true">
   <button class="lightbox-close" type="button" aria-label="Close">&times;</button>
-  <img id="lightbox-img" alt="">
+
+  <div class="lightbox-stage">
+    <img id="lightbox-img" alt="">
+    <div id="lightbox-caption" class="lightbox-caption"></div>
+  </div>
 </div>
 </body>
 </html>
