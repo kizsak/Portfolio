@@ -47,7 +47,7 @@ body {
   background-image: url("https://github.com/kizsak/Portfolio/raw/main/LightBleedFilmEdgeCompressed.png");
 }
 .page-digital-painting-animals {
-  background-image: url("https://github.com/kizsak/Portfolio/raw/main/LightBleedBlueBlackCompressed.png");
+  background-image: url("https://github.com/kizsak/Portfolio/raw/main/LightBleedBright.jpg");
 }
 .page-digital-painting-portraits {
   background-image: url("https://github.com/kizsak/Portfolio/raw/main/LightBleedBlueYellowRed.jpg");
@@ -58,22 +58,10 @@ body {
 .page-digital-painting-still {
   background-image: url("https://github.com/kizsak/Portfolio/raw/main/LightBleedLiightDark.jpg");
 }
-.page-image-design {
-  background-image: url("https://github.com/kizsak/Portfolio/raw/main/LightBleedSquigglesCompressed.png");
-}
-.page-image-design-coding {
+.page-comp-design {
   background-image: url("https://github.com/kizsak/Portfolio/raw/main/LightBleedBokehCompressed.png");
 }
-.page-image-design-photography {
-  background-image: url("https://github.com/kizsak/Portfolio/raw/main/LightBleedStripes.jpg");
-}
-.page-image-design-css {
-  background-image: url("https://github.com/kizsak/Portfolio/raw/main/LightBleedBlueYellowRed.jpg");
-}
-.page-image-design-algorithmic {
-  background-image: url("https://github.com/kizsak/Portfolio/raw/main/LightBleedBright.jpg");
-}
-.page-IF {
+.page-if {
   background-image: url("https://github.com/kizsak/Portfolio/raw/main/LightBleedYellowPinkCompressed.png");
 }
 .page-graphic-design {
