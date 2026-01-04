@@ -6,8 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- Main site stylesheet -->
-  <link rel="stylesheet" href="css/style.css">
-  <script src="js/carousel-lightbox.js"></script>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body class="page-graphic-design">
@@ -15,7 +14,8 @@
   <!-- Top Neon Title -->
   <header class="page-header">
     <h1 class="neon">Graphic Design</h1>
-    <nav class="nav-bar">
+
+    <nav class="nav-bar" aria-label="Primary navigation">
       <a href="index.html" class="nav-btn">Home</a>
       <a href="digital-painting.html" class="nav-btn">Digital Painting</a>
       <a href="comp-design.html" class="nav-btn">Computational Image Design</a>
@@ -26,119 +26,134 @@
 
   <main class="gallery-layout">
     <!-- LEFT: title + caption + description (filled by JS) -->
-    <section class="gallery-info">
+    <section class="gallery-info" aria-live="polite">
       <h2 id="image-caption" class="neon-soft"></h2>
       <p id="image-description" class="piece-description"></p>
     </section>
 
     <!-- RIGHT: image carousel -->
-    <section class="gallery-carousel">
-      <div class="carousel-window">
+    <section class="gallery-carousel" aria-label="Artwork carousel">
+      <div class="carousel-window" data-carousel-window>
+
         <img
           src="https://github.com/kizsak/Portfolio/raw/main/60thDoodlePink.jpg"
+          data-full="https://github.com/kizsak/Portfolio/raw/main/60thDoodlePink.jpg"
           alt="Logo with a birthday cake and the words INFO@60"
           class="carousel-image active"
           data-caption="<em>Logo: 60th Anniversary Celebration, College of Information, University of Maryland</em>"
           data-description="Digital airbrush<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
-        >
+        />
 
         <img
           src="https://github.com/kizsak/Portfolio/raw/main/60thDoodleBlack.png"
+          data-full="https://github.com/kizsak/Portfolio/raw/main/60thDoodleBlack.png"
           alt="Digital airbrush design of champagne flutes and a piece of cake"
           class="carousel-image"
-          data-caption="<em>Logo: 60th Anniverstiy, College of Information, University of Maryland</em>"
+          data-caption="<em>Logo: 60th Anniversary, College of Information, University of Maryland</em>"
           data-description="Digital airbrush<br>2025<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
-        >
+        />
 
         <img
           src="https://github.com/kizsak/Portfolio/raw/main/C3Logo2.0.png"
+          data-full="https://github.com/kizsak/Portfolio/raw/main/C3Logo2.0.png"
           alt="Digital airbrush design of a glowing circuit"
           class="carousel-image"
           data-caption="<em>Logo: Campus Computing Center, College of Information, University of Maryland</em>"
           data-description="Digital airbrush<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
-        >
+        />
 
         <img
           src="https://github.com/kizsak/Portfolio/raw/main/DJLogo2Design.png"
-          alt="Digital airbrush design of a logo with a turtle wearing simulated data visualizations"
+          data-full="https://github.com/kizsak/Portfolio/raw/main/DJLogo2Design.png"
+          alt="Digital airbrush sticker design of a turtle wearing simulated data visualizations"
           class="carousel-image"
           data-caption="<em>Sticker: Data Justice, College Park Scholars, University of Maryland</em>"
           data-description="Digital airbrush<br>2025<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
-        >
+        />
 
         <img
           src="https://github.com/kizsak/Portfolio/raw/main/DJLogo3.png"
-          alt="Digital airbrush design of a logo with a turtle wearing simulated data visualizations"
+          data-full="https://github.com/kizsak/Portfolio/raw/main/DJLogo3.png"
+          alt="Digital pastel sticker design of a turtle wearing simulated data visualizations"
           class="carousel-image"
           data-caption="<em>Sticker: Data Justice, College Park Scholars, University of Maryland</em>"
           data-description="Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
-        >
+        />
 
         <img
           src="https://github.com/kizsak/Portfolio/raw/main/DataJusticeLogo1.png"
-          alt="Digital airbrush design of a logo with a turtle wearing simulated data visualzatiions"
+          data-full="https://github.com/kizsak/Portfolio/raw/main/DataJusticeLogo1.png"
+          alt="Digital airbrush sticker design of a turtle wearing simulated data visualizations"
           class="carousel-image"
           data-caption="<em>Sticker: Data Justice, College Park Scholars, University of Maryland</em>"
           data-description="Digital airbrush<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
-        >
+        />
 
         <img
           src="https://github.com/kizsak/Portfolio/raw/main/GoblinSticker.png"
-          alt="Digital airbrush design of a logo with a turtle wearing simulated data visualzatiions"
+          data-full="https://github.com/kizsak/Portfolio/raw/main/GoblinSticker.png"
+          alt="Sticker design of a stylized cat named Goblin"
           class="carousel-image"
           data-caption="<em>Sticker: Goblin, Just for Fun</em>"
           data-description="Digital airbrush<br>2025<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
-        >
-     <img
+        />
+
+        <img
           src="https://github.com/kizsak/Portfolio/raw/main/OpusSticker.png"
-          alt="Digital airbrush design of a logo with a horse head in profile at sunset"
+          data-full="https://github.com/kizsak/Portfolio/raw/main/OpusSticker.png"
+          alt="Sticker design of a horse head in profile at sunset"
           class="carousel-image"
           data-caption="<em>Sticker: Opus, Brooke Grove Farm</em>"
           data-description="Digital airbrush<br>2025<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
-        >
+        />
 
-      <img
+        <img
           src="https://github.com/kizsak/Portfolio/raw/main/SymmetryDesign.jpg"
-          alt="Digital airbrush design of a geometric logo design in green, black, and gray"
+          data-full="https://github.com/kizsak/Portfolio/raw/main/SymmetryDesign.jpg"
+          alt="Digital airbrush geometric logo design in green, black, and gray"
           class="carousel-image"
           data-caption="<em>Logo: Symmetry Strength</em>"
           data-description="Digital airbrush<br>2025<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
-        >
+        />
 
-       <img
+        <img
           src="https://github.com/kizsak/Portfolio/raw/main/VaultAltLogoAirbrush.jpg"
-          alt="Digital mixed media piece incorporating digital airbrush and generative art in a cyberpunk setting"
+          data-full="https://github.com/kizsak/Portfolio/raw/main/VaultAltLogoAirbrush.jpg"
+          alt="Digital mixed media logo concept in a cyberpunk setting incorporating airbrush and generative effects"
           class="carousel-image"
           data-caption="<em>Logo: The Vault of Stories, itch.io</em>"
           data-description="Digital airbrush and generative art<br>2025<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
-        >
+        />
 
         <img
           src="https://github.com/kizsak/Portfolio/raw/main/VaultLogo.png"
-          alt="Digital mixed media piece incorporating digital airbrush and generative art in a cyberpunk setting"
+          data-full="https://github.com/kizsak/Portfolio/raw/main/VaultLogo.png"
+          alt="Digital mixed media logo in a cyberpunk setting incorporating airbrush and generative effects"
           class="carousel-image"
           data-caption="<em>Logo: The Vault of Stories, itch.io</em>"
           data-description="Digital airbrush and generative art<br>2025<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
-        >    
+        />
+
       </div>
 
-      <div class="carousel-controls">
-        <button class="carousel-btn prev" type="button">‹</button>
-        <button class="carousel-btn next" type="button">›</button>
+      <div class="carousel-controls" aria-label="Carousel controls">
+        <button class="carousel-btn prev" type="button" aria-label="Previous image">‹</button>
+        <button class="carousel-btn next" type="button" aria-label="Next image">›</button>
       </div>
     </section>
   </main>
 
-<!-- Lightbox overlay (place once per page, right before </body>) -->
-<div id="lightbox" class="lightbox" aria-hidden="true">
-  <button class="lightbox-close" type="button" aria-label="Close">&times;</button>
+  <!-- Lightbox overlay (place once per page, right before </body>) -->
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <button class="lightbox-close" type="button" aria-label="Close">&times;</button>
 
-  <div class="lightbox-stage">
-    <img id="lightbox-img" alt="">
-    <div id="lightbox-caption" class="lightbox-caption"></div>
+    <div class="lightbox-stage">
+      <img id="lightbox-img" alt="" />
+      <div id="lightbox-caption" class="lightbox-caption"></div>
+    </div>
   </div>
-</div>
+
+  <!-- Site JS (load at the end so the page exists before JS runs) -->
+  <script src="js/site.js"></script>
 </body>
 </html>
-
-
