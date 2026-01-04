@@ -2,71 +2,193 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Kate Izsak — Land and City-Scapes</title>
+  <title>Kate Izsak — Land- and City-Scapes</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- Main site stylesheet -->
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/carousel-lightbox.js"></script>
 </head>
 
 <body class="page-digital-painting-scapes">
 
   <!-- Top Neon Title -->
   <header class="page-header">
-    <h1 class="neon">Land and City-Scapes</h1>
-
-    <nav class="nav-bar" aria-label="Primary navigation">
+    <h1 class="neon">Land- and City-Scapes</h1>
+    <nav class="nav-bar">
       <a href="index.html" class="nav-btn">Home</a>
       <a href="digital-painting.html" class="nav-btn">Digital Painting</a>
       <a href="comp-design.html" class="nav-btn">Computational Image Design</a>
       <a href="if.html" class="nav-btn">Interactive Fiction</a>
       <a href="graphic-design.html" class="nav-btn">Graphic Design</a>
+      <a href="about-me.html" class="nav-btn">About Me</a>
     </nav>
   </header>
 
   <main class="gallery-layout">
     <!-- LEFT: title + caption + description (filled by JS) -->
-    <section class="gallery-info" aria-live="polite">
+    <section class="gallery-info">
       <h2 id="image-caption" class="neon-soft"></h2>
       <p id="image-description" class="piece-description"></p>
     </section>
 
     <!-- RIGHT: image carousel -->
-    <section class="gallery-carousel" aria-label="Artwork carousel">
-      <div class="carousel-window" data-carousel-window>
-
-        <!-- Example 1 -->
+    <section class="gallery-carousel">
+      <div class="carousel-window">
         <img
           src="https://github.com/kizsak/Portfolio/raw/main/AsakusaPastels.png"
-          data-full="https://github.com/kizsak/Portfolio/raw/main/AsakusaPastels.png"
-          alt="Digital pastel cityscape of Asakusa with layered color and architectural detail"
+          alt="Digital pastel painting of the Asakusa Market"
+          class="carousel-image active"
+          data-caption="<em>Asakusa</em>"
+          data-description="Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
+        >
+
+        <img
+          src="https://github.com/kizsak/Portfolio/raw/main/AssateaguePastels.jpg"
+          alt="Digital pastel painting of a marsh in Assateague"
           class="carousel-image"
-          data-caption="Asakusa"
-          data-description="Digital pastels<br>2025<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
-        />
+          data-caption="<em>Assateague Island</em>"
+          data-description="Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
+        >
 
-        <!-- Add more scapes below following the same pattern -->
+        <img
+          src="https://github.com/kizsak/Portfolio/raw/main/LilyPastels.png"
+          alt="Digital pastel painting of a tropical fuchsia water lily"
+          class="carousel-image"
+          data-caption="<em>Waterlily I</em>"
+          data-description="Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
+        >
 
+        <img
+          src="https://github.com/kizsak/Portfolio/raw/main/WaterLily.png"
+          alt="Digital pastel painting of a tropical fuchsia water lily"
+          class="carousel-image"
+          data-caption="<em>Waterlily II</em>"
+          data-description="Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
+        >
+
+        <img
+          src="https://github.com/kizsak/Portfolio/raw/main/BrusselsCityscapePastels.png"
+          alt="Digital pastel painting of a street in Brussels lit up with Christmas lights"
+          class="carousel-image"
+          data-caption="<em>Brussels I</em>"
+          data-description="Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
+        >
+
+        <img
+          src="https://github.com/kizsak/Portfolio/raw/main/BrusselsPastels2.png"
+          alt="Digital pastel painting of a street in Brussels lit up with Christmas lights"
+          class="carousel-image"
+          data-caption="<em>Brussels II</em>"
+          data-description="Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
+        >
+
+        <img
+          src="https://github.com/kizsak/Portfolio/raw/main/SingaporePastels.png"
+          alt="Digital pastel painting of a mosque in Singapore"
+          class="carousel-image"
+          data-caption="<em>Singapore Mosque</em>"
+          data-description="Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
+        >
+
+         <img
+          src="https://github.com/kizsak/Portfolio/raw/main//DahliaBlooming.gif"
+          alt="Digital animated pastel painting of a dahlia blooming"
+          class="carousel-image"
+          data-caption="<em>Dahlia</em>"
+          data-description="Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br><br>Animated in PhotoshopSamsung Galaxy S9+, S-Pen Creator Edition"
+        >
+         <img
+          src="https://github.com/kizsak/Portfolio/raw/main/IcelandPastels.png"
+          alt="Digital pastel painting of a home built into a cave in Reykjavik"
+          class="carousel-image"
+          data-caption="<em>Reykjavik</em>"
+          data-description="Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
+        >
+         <img
+          src="https://github.com/kizsak/Portfolio/raw/main/LotusPastels.png"
+          alt="Digital pastel painting of a pink lotus bloom"
+          class="carousel-image"
+          data-caption="<em>Lotus</em>"
+          data-description="Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
+        >
+
+                 <img
+          src="https://github.com/kizsak/Portfolio/raw/main/MinnesotaLandscapePastels.png"
+          alt="Digital pastel painting of a hoarfrost in Minnesota"
+          class="carousel-image"
+          data-caption="<em>Minnesota Hoarfrost</em>"
+          data-description="Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
+        >
+
+               <img
+          src="https://github.com/kizsak/Portfolio/raw/main/Tokyo.png"
+          alt="Digital pastel painting of an aerial view of Tokyo"
+          class="carousel-image"
+          data-caption="<em>Tokyo I</em>"
+          data-description="Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
+        >
+
+           <img
+          src="https://github.com/kizsak/Portfolio/raw/main/NoVacancyInk.jpg"
+          alt="Digital pen and ink drawing of neon signs in Tokyo"
+          class="carousel-image"
+          data-caption="<em>Tokyo II</em>"
+          data-description="Digital pen and ink<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
+        >
+
+            <img
+          src="https://github.com/kizsak/Portfolio/raw/main/OKCInk.jpg"
+          alt="Digital pen and ink drawing of Oklahoma City bombing memorial"
+          class="carousel-image"
+          data-caption="<em>Oklahoma City</em>"
+          data-description="Digital pen and ink<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
+        >
+        
+            <img
+          src="https://github.com/kizsak/Portfolio/raw/main/RoselleFlowerOils.jpg"
+          alt="Digital oil painting of a roselle bloom"
+          class="carousel-image"
+          data-caption="<em>Roselle</em>"
+          data-description="Digital oils<br>2024<br>ArtRage Vitae<br>Samsung Galaxy S9+, S-Pen Creator Edition"
+        >
+
+        <img
+          src="https://github.com/kizsak/Portfolio/raw/main/StockholmCityscapePastels.png"
+          alt="Digital pastel painting of a subway station in Stockholm"
+          class="carousel-image"
+          data-caption="<em>Stockholm</em>"
+          data-description="Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
+        >
+        
+        <img
+          src="https://github.com/kizsak/Portfolio/raw/main/Sunrise.gif"
+          alt="Digital animated pastel painting of a sunrise"
+          class="carousel-image"
+          data-caption="<em>Sunrise</em>"
+          data-description="Digital pastels, animated<br>Autodesk Sketchpad Pro<br>Animated in Photoshop<br>Samsung Galaxy S9+, S-Pen Creator Edition"
+        >
+
+        <img
+          src="https://github.com/kizsak/Portfolio/raw/main/TohokuPastels.png"
+          alt="Digital pastel painting of a port in Tohoku, Japan"
+          class="carousel-image"
+          data-caption="<em>Tohoku</em>"
+          data-description="Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
+        >
       </div>
 
-      <div class="carousel-controls" aria-label="Carousel controls">
-        <button class="carousel-btn prev" type="button" aria-label="Previous image">‹</button>
-        <button class="carousel-btn next" type="button" aria-label="Next image">›</button>
+      <div class="carousel-controls">
+        <button class="carousel-btn prev" type="button">‹</button>
+        <button class="carousel-btn next" type="button">›</button>
       </div>
     </section>
-
-    <!-- Lightbox overlay (place once per page, right before </body>) -->
-    <div id="lightbox" class="lightbox" aria-hidden="true">
-      <button class="lightbox-close" type="button" aria-label="Close">&times;</button>
-
-      <div class="lightbox-stage">
-        <img id="lightbox-img" alt="" />
-        <div id="lightbox-caption" class="lightbox-caption"></div>
-      </div>
-    </div>
   </main>
 
-  <!-- Site JS (load at the end so the page exists before JS runs) -->
-  <script src="js/site.js"></script>
+<!-- Lightbox overlay -->
+<div id="lightbox" class="lightbox" aria-hidden="true">
+  <button class="lightbox-close" type="button" aria-label="Close">&times;</button>
+  <img id="lightbox-img" alt="">
+</div>
 </body>
 </html>
