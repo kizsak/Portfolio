@@ -2,20 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Kate Izsak - Digital and Computational Arts</title>
+  <title>Kate Izsak — Digital and Computational Arts</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- Main site stylesheet -->
-  <link rel="stylesheet" href="css/style.css">
-  <script src="js/carousel-lightbox.js" defer></script>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
-  
-<body class=".page-comp-design">
+
+<body class="page-comp-design">
 
   <!-- Top Neon Title -->
   <header class="page-header">
     <h1 class="neon">Computational Image Design</h1>
-    <nav class="nav-bar">
+
+    <nav class="nav-bar" aria-label="Primary navigation">
       <a href="index.html" class="nav-btn">Home</a>
       <a href="digital-painting.html" class="nav-btn">Digital Painting</a>
       <a href="graphic-design.html" class="nav-btn">Graphic Design</a>
@@ -27,15 +27,15 @@
   <main class="gallery-layout">
 
     <!-- LEFT: title + description -->
-    <section class="gallery-info">
+    <section class="gallery-info" aria-live="polite">
       <h2 id="image-caption" class="neon-soft"></h2>
       <div id="image-description" class="piece-description"></div>
     </section>
 
     <!-- RIGHT: carousel -->
-    <section class="gallery-carousel">
+    <section class="gallery-carousel" aria-label="Artwork carousel">
 
-      <div class="carousel-window">
+      <div class="carousel-window" data-carousel-window>
         <img
           src="https://github.com/kizsak/Portfolio/raw/main/BeeOrchidPolaroid.png"
           data-full="https://github.com/kizsak/Portfolio/raw/main/BeeOrchidPolaroid.png"
@@ -43,16 +43,16 @@
           class="carousel-image active"
           data-caption="<em>Aged Polaroid</em>"
           data-desc="desc-polaroid"
-        >
+        />
 
         <img
           src="https://github.com/kizsak/Portfolio/raw/main/Daguerreotype.jpg"
           data-full="https://github.com/kizsak/Portfolio/raw/main/Daguerreotype.jpg"
-          alt="An image of an aged Daguerreotype-style botanical photograph"
+          alt="An image of an aged daguerreotype-style botanical photograph"
           class="carousel-image"
           data-caption="<em>Daguerreotype</em>"
           data-desc="desc-daguerreotype"
-        >
+        />
 
         <img
           src="https://github.com/kizsak/Portfolio/raw/main/HeatMapSelfie2.jpg"
@@ -61,16 +61,16 @@
           class="carousel-image"
           data-caption="<em>False-Color Heat Map Portrait</em>"
           data-desc="desc-heatmap"
-        >
+        />
 
         <img
           src="https://github.com/kizsak/Portfolio/raw/main/35mmslide.jpg"
           data-full="https://github.com/kizsak/Portfolio/raw/main/35mmslide.jpg"
-          alt="An image of a 35mm slide showing a photograph of a field of black-eyed susans"
+          alt="An image of a 35mm slide showing a photograph of a field of black-eyed Susans"
           class="carousel-image"
           data-caption="<em>35mm Slide</em>"
           data-desc="desc-slide"
-        >
+        />
 
         <img
           src="https://github.com/kizsak/Portfolio/raw/main/ComicBook.jpg"
@@ -79,7 +79,7 @@
           class="carousel-image"
           data-caption="<em>Comic Book Sketch</em>"
           data-desc="desc-comic"
-        >
+        />
 
         <img
           src="https://github.com/kizsak/Portfolio/raw/main/Microfiche.jpg"
@@ -88,7 +88,7 @@
           class="carousel-image"
           data-caption="<em>Cyanotype</em>"
           data-desc="desc-cyan"
-        >
+        />
 
         <img
           src="https://github.com/kizsak/Portfolio/raw/main/Microfiche.jpg"
@@ -97,7 +97,7 @@
           class="carousel-image"
           data-caption="<em>Microfiche Film</em>"
           data-desc="desc-micro"
-        >
+        />
 
         <img
           src="https://github.com/kizsak/Portfolio/raw/main/PencilDrawing.jpg"
@@ -106,7 +106,7 @@
           class="carousel-image"
           data-caption="<em>Pencil Drawing</em>"
           data-desc="desc-pencil"
-        >
+        />
 
         <img
           src="https://github.com/kizsak/Portfolio/raw/main/ChemicalBathReveal.gif"
@@ -115,7 +115,7 @@
           class="carousel-image"
           data-caption="<em>Chemical Bath Reveal</em>"
           data-desc="desc-chem"
-        >
+        />
 
         <img
           src="https://github.com/kizsak/Portfolio/raw/main/GlitchReveal.gif"
@@ -124,7 +124,7 @@
           class="carousel-image"
           data-caption="<em>Glitch Recover</em>"
           data-desc="desc-glitch"
-        >
+        />
 
         <img
           src="https://github.com/kizsak/Portfolio/raw/main/CollageSelfPortrait.png"
@@ -133,7 +133,7 @@
           class="carousel-image"
           data-caption="<em>Collage Self-Portrait I</em>"
           data-desc="desc-collage"
-        >
+        />
 
         <img
           src="https://github.com/kizsak/Portfolio/raw/main/ComputationalCollage.png"
@@ -142,7 +142,7 @@
           class="carousel-image"
           data-caption="<em>Collage Self-Portrait II</em>"
           data-desc="desc-compcollage"
-        >
+        />
 
         <img
           src="https://github.com/kizsak/Portfolio/raw/main/HanakotabaDataSculpture.png"
@@ -151,7 +151,7 @@
           class="carousel-image"
           data-caption="<em>Hanakotoba</em>"
           data-desc="desc-hana"
-        >
+        />
 
         <img
           src="https://github.com/kizsak/Portfolio/raw/main/Geogebra1.jpg"
@@ -160,11 +160,11 @@
           class="carousel-image"
           data-caption="<em>Untitled</em>"
           data-desc="desc-geo"
-        >
+        />
       </div>
 
       <!-- Controls -->
-      <div class="carousel-controls">
+      <div class="carousel-controls" aria-label="Carousel controls">
         <button class="carousel-btn prev" type="button" aria-label="Previous image">‹</button>
         <button class="carousel-btn next" type="button" aria-label="Next image">›</button>
       </div>
@@ -175,7 +175,7 @@
         <ul class="tools-list">
           <li><strong>Python</strong>
             <ul>
-              <li><strong>Pillow</strong> (image compositing, resizing, masking, blend operations</li>
+              <li><strong>Pillow</strong> (image compositing, resizing, masking, blend operations)</li>
               <li><strong>argparse</strong> (command-line parameter control)</li>
               <li><strong>pathlib</strong> (file and folder management)</li>
               <li><strong>random</strong> (controlled variation in frame and overlay selection)</li>
@@ -263,8 +263,11 @@
           <li><strong>Midjourney</strong></li>
         </ul>
 
-        <p>I took a photograph of my husband. I then processed the image with a Python script <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target='_blank' rel='noopener noreferrer'>(download)</a> to reduce the color palette using k-means clustering, extract bold inked edges using edge detection, and overlay halftone dot patterns to mimic printed comic panels. The script also adds borders, captions, and optional speech bubbles to complete the panel structure.
-</p>
+        <p>
+          I took a photograph of my husband. I then processed the image with a Python script
+          <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target="_blank" rel="noopener noreferrer">(download)</a>
+          to reduce the color palette using k-means clustering, extract bold inked edges using edge detection, and overlay halftone dot patterns to mimic printed comic panels. The script also adds borders, captions, and optional speech bubbles to complete the panel structure.
+        </p>
       </template>
 
       <template id="desc-cyan">
@@ -282,7 +285,9 @@
         </ul>
 
         <p>
-          I used Midjourney to create a synthetic photograph of a <em>Gardenia jasminoides</em> (Gardenia). I then processed the image with a Python script <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target="_blank" rel="noopener noreferrer">(download)</a> to remap tonal values into a cyanotype-inspired blue color range and layered a procedurally generated wash mask to simulate uneven chemical absorption. The image was softened slightly to evoke paper texture and hand-coated surfaces.
+          I used Midjourney to create a synthetic photograph of a <em>Gardenia jasminoides</em> (Gardenia). I then processed the image with a Python script
+          <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target="_blank" rel="noopener noreferrer">(download)</a>
+          to remap tonal values into a cyanotype-inspired blue color range and layered a procedurally generated wash mask to simulate uneven chemical absorption. The image was softened slightly to evoke paper texture and hand-coated surfaces.
         </p>
       </template>
 
@@ -304,7 +309,9 @@
         </ul>
 
         <p>
-          I created a synthetic photographic image using Midjourney, then used a Python script <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target="_blank" rel="noopener noreferrer">(download)</a> to fragment, scale, and tile the image into a grid structure modeled after microfiche archival formats. Final compositional and tonal adjustments were made in Photoshop to emphasize the aesthetics of compression and institutional storage.
+          I created a synthetic photographic image using Midjourney, then used a Python script
+          <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target="_blank" rel="noopener noreferrer">(download)</a>
+          to fragment, scale, and tile the image into a grid structure modeled after microfiche archival formats. Final compositional and tonal adjustments were made in Photoshop to emphasize the aesthetics of compression and institutional storage.
         </p>
       </template>
 
@@ -323,7 +330,8 @@
         </ul>
 
         <p>
-          I took a photograph of a yellow-bellied sapsucker on a Scotch Pine. I then processed the image using a Python script <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target="_blank" rel="noopener noreferrer">(download)</a>
+          I took a photograph of a yellow-bellied sapsucker on a Scotch pine. I then processed the image using a Python script
+          <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target="_blank" rel="noopener noreferrer">(download)</a>
           that converts it to grayscale, applies Gaussian blur, and uses a dodge-blend technique to simulate graphite shading. A secondary edge-based output produces a crisp line-drawing variant.
         </p>
       </template>
@@ -343,7 +351,9 @@
         </ul>
 
         <p>
-          I used Midjourney to create a synthetic photographic image of a field of <em>Rudbeckia hirta</em> (Black-Eyed Susans). I then processed the image with a Python script <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target="_blank" rel="noopener noreferrer">(download)</a> that animates the gradual emergence of the image using layered noise fields, threshold masks, bloom effects, and evolving color casts that simulate photographic development in a chemical bath. Each frame reveals additional image detail until the photograph fully resolves.
+          I used Midjourney to create a synthetic photographic image of a field of <em>Rudbeckia hirta</em> (Black-Eyed Susans). I then processed the image with a Python script
+          <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target="_blank" rel="noopener noreferrer">(download)</a>
+          that animates the gradual emergence of the image using layered noise fields, threshold masks, bloom effects, and evolving color casts that simulate photographic development in a chemical bath. Each frame reveals additional image detail until the photograph fully resolves.
         </p>
       </template>
 
@@ -364,7 +374,9 @@
         </ul>
 
         <p>
-          I used Midjourney to create a synthetic photographic image of a field of <em>Rudbeckia hirta</em> (Black-Eyed Susans). I then processed the image with a Python script <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target="_blank" rel="noopener noreferrer">(download)</a> to deliberately corrupt the image using channel misalignment, scanlines, noise-driven tearing, and glitch artifacts before gradually stabilizing the image over time.
+          I used Midjourney to create a synthetic photographic image of a field of <em>Rudbeckia hirta</em> (Black-Eyed Susans). I then processed the image with a Python script
+          <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target="_blank" rel="noopener noreferrer">(download)</a>
+          to deliberately corrupt the image using channel misalignment, scanlines, noise-driven tearing, and glitch artifacts before gradually stabilizing the image over time.
         </p>
       </template>
 
@@ -386,7 +398,9 @@
         </ul>
 
         <p>
-          I began with a photographic self-portrait, then sampled the colors to record their hex codes and create a personal color palette. Next, I used Midjourney to create more than 700 synthetic botanical photographs in the hues from my personal palette. I then processed those images using a Python script <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target="_blank" rel="noopener noreferrer">(download)</a> to extract floral forms from the images and export them as transparent PNG assets. I then manually layered those elements to construct a digital self-portrait collage.
+          I began with a photographic self-portrait, then sampled the colors to record their hex codes and create a personal color palette. Next, I used Midjourney to create more than 700 synthetic botanical photographs in the hues from my personal palette. I then processed those images using a Python script
+          <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target="_blank" rel="noopener noreferrer">(download)</a>
+          to extract floral forms from the images and export them as transparent PNG assets. I then manually layered those elements to construct a digital self-portrait collage.
         </p>
       </template>
 
@@ -407,7 +421,9 @@
         </ul>
 
         <p>
-          I used Midjourney to produce over 300 synthetic botanical drawings, then processed them using a Python script<a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target="_blank" rel="noopener noreferrer">(download)</a> that generates a procedural collage. Finally, I hand-painted several features using digital acrylics in Autodesk Sketchpad Pro.
+          I used Midjourney to produce over 300 synthetic botanical drawings, then processed them using a Python script
+          <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target="_blank" rel="noopener noreferrer">(download)</a>
+          that generates a procedural collage. Finally, I hand-painted several features using digital acrylics in Autodesk Sketchpad Pro.
         </p>
       </template>
 
@@ -435,18 +451,21 @@
           I constructed this image algorithmically in GeoGebra Classic using rotational symmetry and proportional subdivision. Once the geometric system was complete, I exported the construction and applied color in Autodesk Sketchpad Pro, layering painterly airbrush color to reinforce the underlying structure.
         </p>
       </template>
+
     </section>
   </main>
 
-<!-- Lightbox overlay (place once per page, right before </body>) -->
-<div id="lightbox" class="lightbox" aria-hidden="true">
-  <button class="lightbox-close" type="button" aria-label="Close">&times;</button>
+  <!-- Lightbox overlay (place once per page, right before </body>) -->
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <button class="lightbox-close" type="button" aria-label="Close">&times;</button>
 
-  <div class="lightbox-stage">
-    <img id="lightbox-img" alt="">
-    <div id="lightbox-caption" class="lightbox-caption"></div>
+    <div class="lightbox-stage">
+      <img id="lightbox-img" alt="" />
+      <div id="lightbox-caption" class="lightbox-caption"></div>
+    </div>
   </div>
-</div>
 
+  <!-- Site JS (load at the end so the page exists before JS runs) -->
+  <script src="js/site.js"></script>
 </body>
 </html>
