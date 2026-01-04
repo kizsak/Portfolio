@@ -2,12 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Kate Izsak — Digital and Computational Arts</title>
+  <title>Kate Izsak — Animal Portraits</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- Main site stylesheet -->
-  <link rel="stylesheet" href="css/style.css">
-  <script src="js/carousel-lightbox.js" defer></script>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body class="page-digital-painting-animals">
@@ -15,7 +14,8 @@
   <!-- Top Neon Title -->
   <header class="page-header">
     <h1 class="neon">Animal Portraits</h1>
-    <nav class="nav-bar">
+
+    <nav class="nav-bar" aria-label="Primary navigation">
       <a href="index.html" class="nav-btn">Home</a>
       <a href="digital-painting.html" class="nav-btn">Digital Painting</a>
       <a href="comp-design.html" class="nav-btn">Computational Image Design</a>
@@ -26,21 +26,21 @@
 
   <main class="gallery-layout">
     <!-- LEFT: title + caption + description (filled by JS) -->
-    <section class="gallery-info">
+    <section class="gallery-info" aria-live="polite">
       <h2 id="image-caption" class="neon-soft"></h2>
       <p id="image-description" class="piece-description"></p>
     </section>
 
     <!-- RIGHT: image carousel -->
-    <section class="gallery-carousel">
-      <div class="carousel-window">
+    <section class="gallery-carousel" aria-label="Artwork carousel">
+      <div class="carousel-window" data-carousel-window>
 
         <img
           src="https://github.com/kizsak/Portfolio/raw/main/Banshee_001.jpg"
           data-full="https://github.com/kizsak/Portfolio/raw/main/Banshee_001.jpg"
           alt="Digital oil painting of a black and white cat on a colorful background"
           class="carousel-image"
-          data-caption="<em>Banshee</em>"
+          data-caption="Banshee"
           data-description="Digital oils<br>2025<br>ArtRage Vitae<br>Samsung Galaxy S9+, S-Pen Creator Edition"
         />
 
@@ -49,7 +49,7 @@
           data-full="https://github.com/kizsak/Portfolio/raw/main/DemonAcrylics.jpg"
           alt="Digital acrylic painting of a gray cat on a colorful background"
           class="carousel-image"
-          data-caption="<em>Demon</em>"
+          data-caption="Demon"
           data-description="Digital acrylics<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
         />
 
@@ -58,7 +58,7 @@
           data-full="https://github.com/kizsak/Portfolio/raw/main/GoblinAcrylics1.jpg"
           alt="Digital acrylic painting of a mostly white cat on a colorful background"
           class="carousel-image"
-          data-caption="<em>Goblin I</em>"
+          data-caption="Goblin I"
           data-description="Digital acrylics<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
         />
 
@@ -67,7 +67,7 @@
           data-full="https://github.com/kizsak/Portfolio/raw/main/GoblinBlanketsAcrylics.jpg"
           alt="Digital pastel painting of a mostly white cat wrapped in a giant-yarn blanket"
           class="carousel-image"
-          data-caption="<em>Goblin II</em>"
+          data-caption="Goblin II"
           data-description="Digital acrylics<br>2025<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
         />
 
@@ -76,7 +76,7 @@
           data-full="https://github.com/kizsak/Portfolio/raw/main/GoblinOils.png"
           alt="Digital oil painting of a mostly white cat curled up on a couch"
           class="carousel-image"
-          data-caption="<em>Goblin III</em>"
+          data-caption="Goblin III"
           data-description="Digital oils<br>2025<br>ArtRage Vitae<br>Samsung Galaxy S9+, S-Pen Creator Edition"
         />
 
@@ -85,7 +85,7 @@
           data-full="https://github.com/kizsak/Portfolio/raw/main/GoblinAcrylics4.png"
           alt="Digital acrylic painting of a mostly white cat looking annoyed"
           class="carousel-image"
-          data-caption="<em>Goblin IV</em>"
+          data-caption="Goblin IV"
           data-description="Digital acrylics<br>2025<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
         />
 
@@ -94,7 +94,7 @@
           data-full="https://github.com/kizsak/Portfolio/raw/main/GoblinCardCataloguePastels.png"
           alt="Digital pastels of a mostly white cat inside a card catalogue"
           class="carousel-image"
-          data-caption="<em>Goblin V</em>"
+          data-caption="Goblin V"
           data-description="Digital pastels<br>2025<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
         />
 
@@ -103,7 +103,7 @@
           data-full="https://github.com/kizsak/Portfolio/raw/main/YoelTortieKoshkaAcrylics.png"
           alt="Digital acrylic painting of a man with two kittens sitting on his lap"
           class="carousel-image"
-          data-caption="<em>Yoel, Tortie, and Koshka</em>"
+          data-caption="Yoel, Tortie, and Koshka"
           data-description="Digital acrylics<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
         />
 
@@ -112,7 +112,7 @@
           data-full="https://github.com/kizsak/Portfolio/raw/main/LilyAcrylics.jpg"
           alt="Digital acrylic painting of a gray cat on a colorful background"
           class="carousel-image"
-          data-caption="<em>Lily</em>"
+          data-caption="Lily"
           data-description="Digital acrylics<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
         />
 
@@ -121,7 +121,7 @@
           data-full="https://github.com/kizsak/Portfolio/raw/main/SunnyAcrylics.png"
           alt="Digital acrylic painting of an orange cat with a colorful background"
           class="carousel-image"
-          data-caption="<em>Sunny</em>"
+          data-caption="Sunny"
           data-description="Digital acrylics<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
         />
 
@@ -130,7 +130,7 @@
           data-full="https://github.com/kizsak/Portfolio/raw/main/StellaAcrylics.png"
           alt="Digital acrylic painting of a black cat with a colorful background"
           class="carousel-image"
-          data-caption="<em>Stella</em>"
+          data-caption="Stella"
           data-description="Digital acrylics<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
         />
 
@@ -139,7 +139,7 @@
           data-full="https://github.com/kizsak/Portfolio/raw/main/MonsterAcrylics.png"
           alt="Digital acrylic painting of a multi-colored cat with a colorful background"
           class="carousel-image"
-          data-caption="<em>Monster</em>"
+          data-caption="Monster"
           data-description="Digital acrylics<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
         />
 
@@ -148,7 +148,7 @@
           data-full="https://github.com/kizsak/Portfolio/raw/main/BeastAcrylics.png"
           alt="Digital acrylic painting of a multi-colored cat with a colorful background"
           class="carousel-image"
-          data-caption="<em>Beast</em>"
+          data-caption="Beast"
           data-description="Digital acrylics<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
         />
 
@@ -157,7 +157,7 @@
           data-full="https://github.com/kizsak/Portfolio/raw/main/DreamaAcrylics.png"
           alt="Digital acrylic painting of a leopard Appaloosa horse on a colorful background"
           class="carousel-image"
-          data-caption="<em>Dreama</em>"
+          data-caption="Dreama"
           data-description="Digital acrylics<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
         />
 
@@ -166,7 +166,7 @@
           data-full="https://github.com/kizsak/Portfolio/raw/main/GemPastels.png"
           alt="Digital pastel painting of a dark bay horse lying down in a stall"
           class="carousel-image"
-          data-caption="<em>Gem</em>"
+          data-caption="Gem"
           data-description="Digital pastels<br>2025<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
         />
 
@@ -175,7 +175,7 @@
           data-full="https://github.com/kizsak/Portfolio/raw/main/Freddie.png"
           alt="Digital pastel painting of a strawberry roan horse lying down in a field"
           class="carousel-image"
-          data-caption="<em>Freddie</em>"
+          data-caption="Freddie"
           data-description="Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
         />
 
@@ -184,7 +184,7 @@
           data-full="https://github.com/kizsak/Portfolio/raw/main/OpusDPastels.jpg"
           alt="Digital pastel painting of a white pony and tall black horse"
           class="carousel-image"
-          data-caption="<em>Opus and D'Artagnan</em>"
+          data-caption="Opus and D'Artagnan"
           data-description="Digital pastels<br>2025<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
         />
 
@@ -193,7 +193,7 @@
           data-full="https://github.com/kizsak/Portfolio/raw/main/SimonAcrylics.jpg"
           alt="Digital acrylic painting of a liver chestnut pony on a colorful background"
           class="carousel-image"
-          data-caption="<em>Simon I</em>"
+          data-caption="Simon I"
           data-description="Digital acrylics<br>2025<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
         />
 
@@ -202,34 +202,34 @@
           data-full="https://github.com/kizsak/Portfolio/raw/main/SimonPastels.png"
           alt="Digital pastel painting of a liver chestnut pony in a field with forest surrounding it"
           class="carousel-image"
-          data-caption="<em>Simon II</em>"
+          data-caption="Simon II"
           data-description="Digital pastels<br>2025<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
         />
 
         <img
           src="https://github.com/kizsak/Portfolio/raw/main/GreenMalachitePastels.png"
           data-full="https://github.com/kizsak/Portfolio/raw/main/GreenMalachitePastels.png"
-          alt="Digital pastel painting of a Green Malachite butterfly inside a plant"
+          alt="Digital pastel painting of a green malachite butterfly inside a plant"
           class="carousel-image"
-          data-caption="<em>Green Malachite Butterfly I</em>"
+          data-caption="Green Malachite Butterfly I"
           data-description="Digital pastels<br>2025<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
         />
 
         <img
           src="https://github.com/kizsak/Portfolio/raw/main/GreenButterflyPastels.png"
           data-full="https://github.com/kizsak/Portfolio/raw/main/GreenButterflyPastels.png"
-          alt="Digital pastel painting of a Green Malachite butterfly inside a plant"
+          alt="Digital pastel painting of a green malachite butterfly inside a plant"
           class="carousel-image"
-          data-caption="<em>Green Malachite Butterfly II</em>"
+          data-caption="Green Malachite Butterfly II"
           data-description="Digital pastels<br>2025<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
         />
 
         <img
           src="https://github.com/kizsak/Portfolio/raw/main/Monarch.gif"
           data-full="https://github.com/kizsak/Portfolio/raw/main/Monarch.gif"
-          alt="Digital animated pastel painting of a Monarch sitting on a woman's hand, drying its wings"
+          alt="Digital animated pastel painting of a monarch butterfly sitting on a woman's hand, drying its wings"
           class="carousel-image"
-          data-caption="<em>Monarch</em>"
+          data-caption="Monarch"
           data-description="Digital pastels<br>2025<br>Autodesk Sketchpad Pro<br>Animated in Photoshop<br>Samsung Galaxy S9+, S-Pen Creator Edition"
         />
 
@@ -238,7 +238,7 @@
           data-full="https://github.com/kizsak/Portfolio/raw/main/WalterPastels.png"
           alt="Digital pastel painting of a gray Weimaraner on a green blanket"
           class="carousel-image"
-          data-caption="<em>Walter</em>"
+          data-caption="Walter"
           data-description="Digital pastels<br>2025<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
         />
 
@@ -247,7 +247,7 @@
           data-full="https://github.com/kizsak/Portfolio/raw/main/SmokeyPastels.png"
           alt="Digital pastel painting of a scruffy gray dog wearing paper eclipse goggles and lying in grass"
           class="carousel-image"
-          data-caption="<em>Smokey</em>"
+          data-caption="Smokey"
           data-description="Digital pastels<br>2025<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
         />
 
@@ -256,7 +256,7 @@
           data-full="https://github.com/kizsak/Portfolio/raw/main/HummingbirdInk.jpg"
           alt="Digital pen and ink drawing of a hummingbird at a pink flower"
           class="carousel-image"
-          data-caption="<em>Hummingbird</em>"
+          data-caption="Hummingbird"
           data-description="Digital pen and ink<br>2025<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
         />
 
@@ -265,16 +265,16 @@
           data-full="https://github.com/kizsak/Portfolio/raw/main/KoiAcrylics.png"
           alt="Digital acrylic painting of a multicolored koi fish in a pond"
           class="carousel-image"
-          data-caption="<em>Koi</em>"
+          data-caption="Koi"
           data-description="Digital acrylics<br>2025<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
         />
 
         <img
           src="https://github.com/kizsak/Portfolio/raw/main/ShubunkinAcrylics.png"
           data-full="https://github.com/kizsak/Portfolio/raw/main/ShubunkinAcrylics.png"
-          alt="Digital acrylic painting of a mostly orange Shubunkin in a pond"
+          alt="Digital acrylic painting of a mostly orange shubunkin fish in a pond"
           class="carousel-image"
-          data-caption="<em>Shubunkin</em>"
+          data-caption="Shubunkin"
           data-description="Digital acrylics<br>2025<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
         />
 
@@ -283,7 +283,7 @@
           data-full="https://github.com/kizsak/Portfolio/raw/main/Armadillo.jpg"
           alt="Digital pen and ink drawing of an armadillo"
           class="carousel-image"
-          data-caption="<em>Armadillo I</em>"
+          data-caption="Armadillo I"
           data-description="Digital pen and ink<br>2025<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
         />
 
@@ -292,7 +292,7 @@
           data-full="https://github.com/kizsak/Portfolio/raw/main/Armadillo2Pen.jpg"
           alt="Digital pen and ink drawing of an armadillo"
           class="carousel-image"
-          data-caption="<em>Armadillo II</em>"
+          data-caption="Armadillo II"
           data-description="Digital pen and ink<br>2025<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
         />
 
@@ -301,21 +301,30 @@
           data-full="https://github.com/kizsak/Portfolio/raw/main/IvysaurAcrylics.jpg"
           alt="Digital acrylic painting of an eastern box turtle"
           class="carousel-image"
-          data-caption="<em>Ivysaur</em>"
+          data-caption="Ivysaur"
           data-description="Digital acrylics<br>2025<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
         />
 
       </div>
 
-      <div class="carousel-controls">
-        <button class="carousel-btn prev" type="button">‹</button>
-        <button class="carousel-btn next" type="button">›</button>
+      <div class="carousel-controls" aria-label="Carousel controls">
+        <button class="carousel-btn prev" type="button" aria-label="Previous image">‹</button>
+        <button class="carousel-btn next" type="button" aria-label="Next image">›</button>
       </div>
     </section>
-    
-    <!-- Lightbox overlay -->
-<div id="lightbox" class="lightbox" aria-hidden="true">
-  <button class="lightbox-close" type="button" aria-label="Close">&times;</button>
-  <img id="lightbox-img" alt="">
-</div>
 
+    <!-- Lightbox overlay (place once per page, right before </body>) -->
+    <div id="lightbox" class="lightbox" aria-hidden="true">
+      <button class="lightbox-close" type="button" aria-label="Close">&times;</button>
+
+      <div class="lightbox-stage">
+        <img id="lightbox-img" alt="" />
+        <div id="lightbox-caption" class="lightbox-caption"></div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Site JS (load at the end so the page exists before JS runs) -->
+  <script src="js/site.js"></script>
+</body>
+</html>
