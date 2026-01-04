@@ -2,135 +2,71 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Kate Izsak — Digital and Computational Arts</title>
+  <title>Kate Izsak — Still Life</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- Main site stylesheet -->
-  <link rel="stylesheet" href="css/style.css">
-  <script src="js/carousel-lightbox.js"></script>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 
-<body class="page-digital-painting-still">
+<body class="page-digital-painting-stilllife">
 
   <!-- Top Neon Title -->
   <header class="page-header">
     <h1 class="neon">Still Life</h1>
-    <nav class="nav-bar">
+
+    <nav class="nav-bar" aria-label="Primary navigation">
       <a href="index.html" class="nav-btn">Home</a>
       <a href="digital-painting.html" class="nav-btn">Digital Painting</a>
       <a href="comp-design.html" class="nav-btn">Computational Image Design</a>
       <a href="if.html" class="nav-btn">Interactive Fiction</a>
       <a href="graphic-design.html" class="nav-btn">Graphic Design</a>
-      <a href="about-me.html" class="nav-btn">About Me</a>
     </nav>
   </header>
 
   <main class="gallery-layout">
     <!-- LEFT: title + caption + description (filled by JS) -->
-    <section class="gallery-info">
+    <section class="gallery-info" aria-live="polite">
       <h2 id="image-caption" class="neon-soft"></h2>
       <p id="image-description" class="piece-description"></p>
     </section>
 
-    <div class="comp-left-text">
     <!-- RIGHT: image carousel -->
-    <section class="gallery-carousel">
-      <div class="carousel-window">
+    <section class="gallery-carousel" aria-label="Artwork carousel">
+      <div class="carousel-window" data-carousel-window>
+
+        <!-- Example 1 -->
         <img
           src="https://github.com/kizsak/Portfolio/raw/main/BonsaiPastels.png"
-          alt="Digital pastel painting of a bonsai"
-          class="carousel-image active"
-          data-caption="<em>Bonsai</em>"
-          data-description="Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
-        >
-
-        <img
-          src="https://github.com/kizsak/Portfolio/raw/main/BrushesPastels.png"
-          alt="Digital pastel painting of a collection of synthetic paint brushes"
+          data-full="https://github.com/kizsak/Portfolio/raw/main/BonsaiPastels.png"
+          alt="Digital pastel still life of a bonsai tree with stylized color and texture"
           class="carousel-image"
-          data-caption="<em>Brushes</em>"
-          data-description="Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
-        >
+          data-caption="Bonsai"
+          data-description="Digital pastels<br>2025<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
+        />
 
-        <img
-          src="https://github.com/kizsak/Portfolio/raw/main/MacramaStillLifeInk.jpg"
-          alt="Digital pen and ink drawing of a piece of macrame"
-          class="carousel-image"
-          data-caption="<em>Macrame</em>"
-          data-description="Digital pen and ink<br>2025<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
-        >
+        <!-- Add more still lifes below following the same pattern -->
 
-        <img
-          src="https://github.com/kizsak/Portfolio/raw/main/OrigamiStillLife2Pastels.png"
-          alt="Digital pastel painting of an origami parrot sitting on the edge of a glass"
-          class="carousel-image"
-          data-caption="<em>Origami I</em>"
-          data-description="Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
-        >
+      </div>
 
-        <img
-          src="https://github.com/kizsak/Portfolio/raw/main/OrigamiStillLife3Pastels.png"
-          alt="Digital pastel painting of an adult and juvenile elephant"
-          class="carousel-image"
-          data-caption="<em>Origami II</em>"
-          data-description="Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
-        >
-
-        <img
-          src="https://github.com/kizsak/Portfolio/raw/main/OrigamiStillLife4Pastels.png"
-          alt="Digital pastel painting of an origami adult and juvenile crane"
-          class="carousel-image"
-          data-caption="<em>Origami III</em>"
-          data-description="Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
-        >
-
-        <img
-          src="https://github.com/kizsak/Portfolio/raw/main/PaintTubesPastels.png"
-          alt="Digital pastel painting of oil paint tubes"
-          class="carousel-image"
-          data-caption="<em>Oil Paints</em>"
-          data-description="Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
-        >
-
-         <img
-          src="https://github.com/kizsak/Portfolio/raw/main/WatercolorPalettePastels.png"
-          alt="Digital pastel painting of a watercolor palette"
-          class="carousel-image"
-          data-caption="<em>Watercolor Palette</em>"
-          data-description="Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
-        >
-
-         <img
-          src="https://github.com/kizsak/Portfolio/raw/main/WatercolorPalettePastels.png"
-          alt="Digital pastel painting of a watercolor palette"
-          class="carousel-image"
-          data-caption="<em>Watercolor Palette</em>"
-          data-description="Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
-        >
-
-       <img
-          src="https://github.com/kizsak/Portfolio/raw/main/BraceletInk.png"
-          alt="Digital pen and ink drawing of a chain maille bracelet"
-          class="carousel-image"
-          data-caption="<em>Watercolor Palette</em>"
-          data-description="Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
-        >
-
-       <img
-          src="https://github.com/kizsak/Portfolio/raw/main/BraceletInk.png"
-          alt="Digital pen and ink drawing of a chain maille bracelet"
-          class="carousel-image"
-          data-caption="<em>Watercolor Palette</em>"
-          data-description="Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
-        >
-
-        
-      </div></div>
-
-      <div class="carousel-controls">
-        <button class="carousel-btn prev" type="button">‹</button>
-        <button class="carousel-btn next" type="button">›</button>
+      <div class="carousel-controls" aria-label="Carousel controls">
+        <button class="carousel-btn prev" type="button" aria-label="Previous image">‹</button>
+        <button class="carousel-btn next" type="button" aria-label="Next image">›</button>
       </div>
     </section>
+
+    <!-- Lightbox overlay (place once per page, right before </body>) -->
+    <div id="lightbox" class="lightbox" aria-hidden="true">
+      <button class="lightbox-close" type="button" aria-label="Close">&times;</button>
+
+      <div class="lightbox-stage">
+        <img id="lightbox-img" alt="" />
+        <div id="lightbox-caption" class="lightbox-caption"></div>
+      </div>
+    </div>
   </main>
 
+  <!-- Site JS (load at the end so the page exists before JS runs) -->
+  <script src="js/site.js"></script>
+</body>
+</html>
