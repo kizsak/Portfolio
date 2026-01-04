@@ -1,133 +1,204 @@
+/* =========================================================
+   Portfolio Site JS
+   - Lightbox for any image with: [data-lightbox]
+   - Carousel for any element with: [data-carousel]
+========================================================= */
+
 (function () {
-  function ready(fn) {
-    if (document.readyState === "loading") {
-      document.addEventListener("DOMContentLoaded", fn);
-    } else {
-      fn();
+  "use strict";
+
+  // ---------------------------
+  // Lightbox (single reusable modal)
+  // ---------------------------
+
+  const lightbox = createLightbox();
+
+  function createLightbox() {
+    const root = document.createElement("div");
+    root.className = "lightbox";
+    root.setAttribute("aria-hidden", "true");
+
+    root.innerHTML = `
+      <div class="lightbox-dialog" role="dialog" aria-modal="true">
+        <div class="lightbox-toolbar">
+          <div class="lightbox-title" data-lb-title>Preview</div>
+          <div class="lb-actions">
+            <button class="lb-btn" type="button" data-lb-prev aria-label="Previous">‹</button>
+            <button class="lb-btn" type="button" data-lb-next aria-label="Next">›</button>
+            <button class="lb-btn" type="button" data-lb-close aria-label="Close">✕</button>
+          </div>
+        </div>
+        <div class="lightbox-body">
+          <img alt="" data-lb-img />
+        </div>
+      </div>
+    `;
+
+    document.addEventListener("DOMContentLoaded", () => {
+      document.body.appendChild(root);
+    });
+
+    const imgEl = root.querySelector("[data-lb-img]");
+    const titleEl = root.querySelector("[data-lb-title]");
+    const btnClose = root.querySelector("[data-lb-close]");
+    const btnPrev = root.querySelector("[data-lb-prev]");
+    const btnNext = root.querySelector("[data-lb-next]");
+
+    let currentGroup = [];
+    let currentIndex = 0;
+    let lastFocusEl = null;
+
+    function openWith(group, index) {
+      currentGroup = group;
+      currentIndex = index;
+      lastFocusEl = document.activeElement;
+
+      render();
+      root.classList.add("is-open");
+      root.setAttribute("aria-hidden", "false");
+
+      // Focus close for accessibility
+      btnClose.focus();
+      document.addEventListener("keydown", onKeyDown);
     }
+
+    function close() {
+      root.classList.remove("is-open");
+      root.setAttribute("aria-hidden", "true");
+      document.removeEventListener("keydown", onKeyDown);
+      if (lastFocusEl && typeof lastFocusEl.focus === "function") lastFocusEl.focus();
+    }
+
+    function render() {
+      if (!currentGroup.length) return;
+
+      const el = currentGroup[currentIndex];
+      const src = el.getAttribute("data-full") || el.getAttribute("src");
+      const title = el.getAttribute("data-title") || el.getAttribute("alt") || "Preview";
+
+      imgEl.src = src;
+      imgEl.alt = title;
+      titleEl.textContent = title;
+    }
+
+    function prev() {
+      if (!currentGroup.length) return;
+      currentIndex = (currentIndex - 1 + currentGroup.length) % currentGroup.length;
+      render();
+    }
+
+    function next() {
+      if (!currentGroup.length) return;
+      currentIndex = (currentIndex + 1) % currentGroup.length;
+      render();
+    }
+
+    function onKeyDown(e) {
+      if (!root.classList.contains("is-open")) return;
+
+      if (e.key === "Escape") close();
+      if (e.key === "ArrowLeft") prev();
+      if (e.key === "ArrowRight") next();
+    }
+
+    // Click outside dialog closes
+    root.addEventListener("click", (e) => {
+      if (e.target === root) close();
+    });
+
+    btnClose.addEventListener("click", close);
+    btnPrev.addEventListener("click", prev);
+    btnNext.addEventListener("click", next);
+
+    return { openWith, close, prev, next };
   }
 
-  ready(function () {
-    const images = Array.from(document.querySelectorAll(".carousel-image"));
-    if (!images.length) return;
+  // ---------------------------
+  // Bind lightbox to any [data-lightbox] images
+  // Grouping:
+  // - If images share the same data-group value, they become a set
+  // - Otherwise each image is its own group (or page-wide group if you want)
+  // ---------------------------
 
-    const prevBtn = document.querySelector(".carousel-btn.prev");
-    const nextBtn = document.querySelector(".carousel-btn.next");
-    const captionEl = document.getElementById("image-caption");
-    const descriptionEl = document.getElementById("image-description");
+  function initLightbox() {
+    const imgs = Array.from(document.querySelectorAll("img[data-lightbox]"));
+    if (!imgs.length) return;
 
-    const lightbox = document.getElementById("lightbox");
-    const lightboxImg = document.getElementById("lightbox-img");
-    const lightboxClose = document.querySelector(".lightbox-close");
+    // build groups by data-group
+    const groups = new Map();
+    imgs.forEach((img) => {
+      const g = img.getAttribute("data-group") || "__default__";
+      if (!groups.has(g)) groups.set(g, []);
+      groups.get(g).push(img);
+    });
 
-    let current = 0;
-
-    function renderDescriptionFromTemplate(templateId) {
-      if (!templateId || !descriptionEl) return false;
-      const tpl = document.getElementById(templateId);
-      if (!tpl) return false;
-
-      // Works for <template> and for normal elements
-      if (tpl.tagName.toLowerCase() === "template" && tpl.content) {
-        descriptionEl.innerHTML = tpl.innerHTML;
-      } else {
-        descriptionEl.innerHTML = tpl.innerHTML;
-      }
-      return true;
-    }
-
-    function updateTextFromImage(index) {
-      const img = images[index];
-      if (!img) return;
-
-      if (captionEl) captionEl.innerHTML = img.dataset.caption || "";
-
-      // Mode 1: direct HTML string in data-description (your other pages)
-      if (img.dataset.description) {
-        if (descriptionEl) descriptionEl.innerHTML = img.dataset.description;
-        return;
-      }
-
-      // Mode 2: template reference in data-desc (your comp-design page)
-      if (img.dataset.desc) {
-        const ok = renderDescriptionFromTemplate(img.dataset.desc);
-        if (!ok && descriptionEl) descriptionEl.innerHTML = "";
-        return;
-      }
-
-      // If neither exists:
-      if (descriptionEl) descriptionEl.innerHTML = "";
-    }
-
-    function showSlide(index) {
-      images[current].classList.remove("active");
-      current = (index + images.length) % images.length;
-      images[current].classList.add("active");
-      updateTextFromImage(current);
-    }
-
-    // Ensure only one active on load
-    images.forEach((img) => img.classList.remove("active"));
-    images[0].classList.add("active");
-    updateTextFromImage(0);
-
-    if (prevBtn) {
-      prevBtn.addEventListener("click", (e) => {
-        e.preventDefault();
-        showSlide(current - 1);
-      });
-    }
-
-    if (nextBtn) {
-      nextBtn.addEventListener("click", (e) => {
-        e.preventDefault();
-        showSlide(current + 1);
-      });
-    }
-
-    function openLightboxFromImage(img) {
-      if (!lightbox || !lightboxImg) return;
-
-      const fullSrc = img.dataset.full || img.src;
-      lightboxImg.src = fullSrc;
-      lightboxImg.alt = img.alt || "";
-
-      lightbox.classList.add("open");
-      lightbox.setAttribute("aria-hidden", "false");
-      document.body.classList.add("no-scroll");
-    }
-
-    function closeLightbox() {
-      if (!lightbox || !lightboxImg) return;
-
-      lightbox.classList.remove("open");
-      lightbox.setAttribute("aria-hidden", "true");
-      document.body.classList.remove("no-scroll");
-
-      // avoid flashing old image next open
-      lightboxImg.src = "";
-      lightboxImg.alt = "";
-    }
-
-    // Clicking the active image opens lightbox
-    images.forEach((img) => {
+    imgs.forEach((img) => {
       img.addEventListener("click", () => {
-        if (img.classList.contains("active")) openLightboxFromImage(img);
+        const g = img.getAttribute("data-group") || "__default__";
+        const groupArr = groups.get(g) || [img];
+        const index = groupArr.indexOf(img);
+        lightbox.openWith(groupArr, Math.max(index, 0));
       });
     });
+  }
 
-    if (lightboxClose) lightboxClose.addEventListener("click", closeLightbox);
+  // ---------------------------
+  // Carousel
+  // Works for each [data-carousel]
+  // Requires .car-track inside, and buttons with [data-dir="-1"] / [data-dir="1"]
+  // ---------------------------
 
-    if (lightbox) {
-      lightbox.addEventListener("click", (e) => {
-        if (e.target === lightbox) closeLightbox();
+  function initCarousels() {
+    const carousels = Array.from(document.querySelectorAll("[data-carousel]"));
+    if (!carousels.length) return;
+
+    carousels.forEach((carousel) => {
+      const track = carousel.querySelector(".car-track");
+      if (!track) return;
+
+      const slides = Array.from(track.children);
+      if (slides.length <= 1) return;
+
+      let index = 0;
+
+      const btnPrev = carousel.querySelector('[data-dir="-1"]');
+      const btnNext = carousel.querySelector('[data-dir="1"]');
+
+      function goTo(i) {
+        index = (i + slides.length) % slides.length;
+        track.style.transform = `translateX(${-index * 100}%)`;
+      }
+
+      if (btnPrev) btnPrev.addEventListener("click", () => goTo(index - 1));
+      if (btnNext) btnNext.addEventListener("click", () => goTo(index + 1));
+
+      // Allow swipe on mobile (simple)
+      let startX = null;
+      carousel.addEventListener("touchstart", (e) => {
+        startX = e.touches[0].clientX;
+      }, { passive: true });
+
+      carousel.addEventListener("touchend", (e) => {
+        if (startX == null) return;
+        const endX = e.changedTouches[0].clientX;
+        const dx = endX - startX;
+        startX = null;
+
+        if (Math.abs(dx) < 35) return;
+        if (dx > 0) goTo(index - 1);
+        else goTo(index + 1);
       });
-    }
 
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") closeLightbox();
-      if (e.key === "ArrowLeft") showSlide(current - 1);
-      if (e.key === "ArrowRight") showSlide(current + 1);
+      goTo(0);
     });
+  }
+
+  // ---------------------------
+  // Boot
+  // ---------------------------
+
+  document.addEventListener("DOMContentLoaded", () => {
+    initLightbox();
+    initCarousels();
   });
 })();
