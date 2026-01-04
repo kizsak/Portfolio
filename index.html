@@ -2,11 +2,59 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Kate Izsak — Digital &amp; Computational Arts</title>
+  <title>Kate Izsak — Digital & Computational Arts</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- Main stylesheet -->
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Soft neon + card title overrides (local, guaranteed to load) -->
+  <style>
+    /* Soft coral neon for secondary headings (footer title) */
+    .neon-soft {
+      font-family: "Audiowide", sans-serif;
+      font-weight: 400;
+      text-align: center;
+
+      font-size: 2.2rem;
+      letter-spacing: 0.5px;
+
+      color: #ffd6d9; /* pale coral */
+
+      text-shadow:
+        0 0 3px #ffd6d9,
+        0 0 6px rgba(255, 160, 170, 0.7),
+        0 0 14px rgba(255, 110, 120, 0.5);
+    }
+
+    /* Front-page card titles – make sure they show and look clickable */
+    .card__content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 1.5rem;
+      z-index: 2;
+    }
+
+    .card__heading {
+      color: #fdfcff;
+      font-size: 2rem;
+      line-height: 1.25;
+      word-spacing: normal;   /* undo old 100vw hack */
+      text-shadow:
+        0 0 6px rgba(0, 0, 0, 0.7),
+        0 0 18px rgba(0, 0, 0, 0.8);
+      cursor: pointer;
+      transition: color 0.2s ease, text-shadow 0.2s ease;
+    }
+
+    .card__heading:hover {
+      color: #fff5f7;
+      text-shadow:
+        0 0 4px rgba(255, 210, 220, 0.8),
+        0 0 10px rgba(255, 150, 170, 0.6);
+    }
+  </style>
 </head>
 
 <body class="page-home">
@@ -16,71 +64,63 @@
   </header>
 
   <!-- Card grid -->
-  <main>
-    <section class="hero-section" aria-label="Portfolio sections">
-      <ul class="card-grid">
+  <section class="hero-section">
+    <ul class="card-grid">
 
-        <!-- DIGITAL PAINTING -->
-        <li class="card">
-          <a href="digital-painting.html" class="card__link" aria-label="Digital Painting">
-            <div
-              class="card__background"
-              style="background-image: url('https://github.com/kizsak/Portfolio/raw/main/FlareSelfPortrait.png');">
-            </div>
-            <div class="card__content">
-              <h2 class="card__heading">Digital<br>Painting</h2>
-            </div>
-          </a>
-        </li>
+      <!-- DIGITAL PAINTING -->
+      <li class="card">
+        <a href="digital-painting.html" class="card__link">
+          <div class="card__background"
+               style="background-image: url(https://github.com/kizsak/Portfolio/raw/main/FlareSelfPortrait.png);">
+          </div>
+          <div class="card__content">
+            <h3 class="card__heading">Digital<br>Painting</h3>
+          </div>
+        </a>
+      </li>
 
-        <!-- COMPUTATIONAL IMAGE DESIGN -->
-        <li class="card">
-          <a href="comp-design.html" class="card__link" aria-label="Computational Image Design">
-            <div
-              class="card__background"
-              style="background-image: url('https://github.com/kizsak/Portfolio/raw/main/GlitchRevealStill.jpg');">
-            </div>
-            <div class="card__content">
-              <h2 class="card__heading">Computational<br>Image<br>Design</h2>
-            </div>
-          </a>
-        </li>
+      <!-- COMPUTATIONAL IMAGE DESIGN -->
+      <li class="card">
+        <a href="comp-design.html" class="card__link">
+          <div class="card__background"
+               style="background-image: url(https://github.com/kizsak/Portfolio/raw/main/GlitchRevealStill.jpg);">
+          </div>
+          <div class="card__content">
+            <h3 class="card__heading">Computational<br>Image<br>Design</h3>
+          </div>
+        </a>
+      </li>
 
-        <!-- INTERACTIVE FICTION -->
-        <li class="card">
-          <a href="if.html" class="card__link" aria-label="Interactive Fiction">
-            <div
-              class="card__background"
-              style="background-image: url('https://github.com/kizsak/Portfolio/raw/main/OminousDemon.png');">
-            </div>
-            <div class="card__content">
-              <h2 class="card__heading">Interactive<br>Fiction</h2>
-            </div>
-          </a>
-        </li>
+      <!-- INTERACTIVE FICTION -->
+      <li class="card">
+        <a href="if.html" class="card__link">
+          <div class="card__background"
+               style="background-image: url(https://github.com/kizsak/Portfolio/raw/main/OminousDemon.png);">
+          </div>
+          <div class="card__content">
+            <h3 class="card__heading">Interactive<br>Fiction</h3>
+          </div>
+        </a>
+      </li>
 
-        <!-- GRAPHIC DESIGN -->
-        <li class="card">
-          <a href="graphic-design.html" class="card__link" aria-label="Graphic Design">
-            <div
-              class="card__background"
-              style="background-image: url('https://github.com/kizsak/Portfolio/raw/main/GoblinSticker.png');">
-            </div>
-            <div class="card__content">
-              <h2 class="card__heading">Graphic<br>Design</h2>
-            </div>
-          </a>
-        </li>
+      <!-- GRAPHIC DESIGN -->
+      <li class="card">
+        <a href="design.html" class="card__link">
+          <div class="card__background"
+               style="background-image: url(https://github.com/kizsak/Portfolio/raw/main/GoblinSticker.png);">
+          </div>
+          <div class="card__content">
+            <h3 class="card__heading">Graphic<br>Design</h3>
+          </div>
+        </a>
+      </li>
 
-      </ul>
-    </section>
-  </main>
+    </ul>
+  </section>
 
-  <footer class="page-footer-title">
-    <h2 class="neon-soft">Digital and Computational Arts Portfolio</h2>
-  </footer>
-
-  <!-- Site JS (if you use it elsewhere; safe to include) -->
-  <script src="js/site.js"></script>
-</body>
+ 
+    <h1 class="neon-soft">
+      Digital and Computational Arts Portfolio
+    </h1>
+ </body>
 </html>
