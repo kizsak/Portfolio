@@ -5,14 +5,12 @@
   <title>Kate Izsak — Digital and Computational Arts</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Main site stylesheet -->
   <link rel="stylesheet" href="css/style.css" />
   <script src="js/carousel-lightbox.js" defer></script>
 </head>
 
 <body class="page-comp-design">
 
-  <!-- Top Neon Title -->
   <header class="page-header">
     <h1 class="neon">Computational Image Design</h1>
 
@@ -27,9 +25,11 @@
 
   <main class="gallery-layout">
 
-    <!-- LEFT: title + description -->
+    <!-- LEFT: title + SHORT blurb (optional) -->
     <section class="gallery-info" aria-live="polite">
       <h2 id="image-caption" class="neon-soft"></h2>
+
+      <!-- Keep this for short “tools” or 1–2 lines if you want -->
       <div id="image-description" class="piece-description"></div>
     </section>
 
@@ -44,6 +44,7 @@
           class="carousel-image active"
           data-caption="<em>Aged Polaroid</em>"
           data-desc="desc-polaroid"
+          data-essay="essay-polaroid"
         />
 
         <img
@@ -53,6 +54,7 @@
           class="carousel-image"
           data-caption="<em>Daguerreotype</em>"
           data-desc="desc-daguerreotype"
+          data-essay="essay-daguerreotype"
         />
 
         <img
@@ -62,6 +64,7 @@
           class="carousel-image"
           data-caption="<em>False-Color Heat Map Portrait</em>"
           data-desc="desc-heatmap"
+          data-essay="essay-heatmap"
         />
 
         <img
@@ -71,6 +74,7 @@
           class="carousel-image"
           data-caption="<em>35mm Slide</em>"
           data-desc="desc-slide"
+          data-essay="essay-slide"
         />
 
         <img
@@ -80,6 +84,7 @@
           class="carousel-image"
           data-caption="<em>Comic Book Sketch</em>"
           data-desc="desc-comic"
+          data-essay="essay-comic"
         />
 
         <img
@@ -89,6 +94,7 @@
           class="carousel-image"
           data-caption="<em>Cyanotype</em>"
           data-desc="desc-cyan"
+          data-essay="essay-cyan"
         />
 
         <img
@@ -98,6 +104,7 @@
           class="carousel-image"
           data-caption="<em>Microfiche Film</em>"
           data-desc="desc-micro"
+          data-essay="essay-micro"
         />
 
         <img
@@ -107,6 +114,7 @@
           class="carousel-image"
           data-caption="<em>Pencil Drawing</em>"
           data-desc="desc-pencil"
+          data-essay="essay-pencil"
         />
 
         <img
@@ -116,6 +124,7 @@
           class="carousel-image"
           data-caption="<em>Chemical Bath Reveal</em>"
           data-desc="desc-chem"
+          data-essay="essay-chem"
         />
 
         <img
@@ -125,6 +134,7 @@
           class="carousel-image"
           data-caption="<em>Glitch Recover</em>"
           data-desc="desc-glitch"
+          data-essay="essay-glitch"
         />
 
         <img
@@ -134,6 +144,7 @@
           class="carousel-image"
           data-caption="<em>Collage Self-Portrait I</em>"
           data-desc="desc-collage"
+          data-essay="essay-collage"
         />
 
         <img
@@ -143,18 +154,19 @@
           class="carousel-image"
           data-caption="<em>Collage Self-Portrait II</em>"
           data-desc="desc-compcollage"
+          data-essay="essay-compcollage"
         />
 
-       <img
+        <img
           src="https://github.com/kizsak/Portfolio/raw/main/EpisodicDisability.gif"
           data-full="https://github.com/kizsak/Portfolio/raw/main/EpisodicDisability.gif"
-          alt="A collage self-portrait of the artist using flower components"
+          alt="An animated self-portrait with flickering false-color remapping"
           class="carousel-image"
           data-caption="<em>Animated Self-Portrait</em>"
           data-desc="desc-animate"
+          data-essay="essay-animate"
         />
 
-        
         <img
           src="https://github.com/kizsak/Portfolio/raw/main/HanakotabaDataSculpture.png"
           data-full="https://github.com/kizsak/Portfolio/raw/main/HanakotabaDataSculpture.png"
@@ -162,6 +174,7 @@
           class="carousel-image"
           data-caption="<em>Hanakotoba</em>"
           data-desc="desc-hana"
+          data-essay="essay-hana"
         />
 
         <img
@@ -171,346 +184,157 @@
           class="carousel-image"
           data-caption="<em>Untitled</em>"
           data-desc="desc-geo"
+          data-essay="essay-geo"
         />
       </div>
 
-      <!-- Controls -->
       <div class="carousel-controls" aria-label="Carousel controls">
         <button class="carousel-btn prev" type="button" aria-label="Previous image">‹</button>
         <button class="carousel-btn next" type="button" aria-label="Next image">›</button>
       </div>
 
-      <!-- Description Templates -->
-      <template id="desc-polaroid">
-        <strong>Tools:</strong>
-        <ul class="tools-list">
-          <li><strong>Python</strong>
-            <ul>
-              <li><strong>Pillow</strong> (image compositing, resizing, masking, blend operations)</li>
-              <li><strong>argparse</strong> (command-line parameter control)</li>
-              <li><strong>pathlib</strong> (file and folder management)</li>
-              <li><strong>random</strong> (controlled variation in frame and overlay selection)</li>
-            </ul>
-          </li>
-          <li><strong>Midjourney</strong></li>
-          <li><strong>Photoshop</strong></li>
-        </ul>
+      <!-- SHORT Description Templates (keep or simplify) -->
+      <template id="desc-polaroid"><strong>Tools:</strong> Python (Pillow, argparse, pathlib, random), Midjourney, Photoshop</template>
+      <template id="desc-daguerreotype"><strong>Tools:</strong> Python (NumPy, PIL, math), Midjourney, Photoshop</template>
+      <template id="desc-heatmap"><strong>Tools:</strong> Python (NumPy, PIL), Midjourney, Photoshop</template>
+      <template id="desc-slide"><strong>Tools:</strong> Python (Pillow, random, argparse), Midjourney, Photoshop</template>
+      <template id="desc-comic"><strong>Tools:</strong> Python (Pillow, random, argparse), Midjourney, Photoshop</template>
+      <template id="desc-cyan"><strong>Tools:</strong> Python (Pillow, NumPy, random), Midjourney, Photoshop</template>
+      <template id="desc-micro"><strong>Tools:</strong> Python (Pillow, NumPy, random, argparse, pathlib, datetime), Midjourney, Photoshop</template>
+      <template id="desc-pencil"><strong>Tools:</strong> Python (Pillow, random, argparse), Midjourney, Photoshop</template>
+      <template id="desc-chem"><strong>Tools:</strong> Python (Pillow, random, argparse), Midjourney, Photoshop</template>
+      <template id="desc-glitch"><strong>Tools:</strong> Python (NumPy, Pillow, imageio, argparse, random), Midjourney, Photoshop</template>
+      <template id="desc-collage"><strong>Tools:</strong> Python (Pillow, rembg, argparse, pathlib, math, random), Midjourney, Autodesk Sketchpad Pro</template>
+      <template id="desc-compcollage"><strong>Tools:</strong> Python (Pillow, rembg, argparse, pathlib, io), Midjourney, Autodesk Sketchpad Pro</template>
+      <template id="desc-animate"><strong>Tools:</strong> Photoshop</template>
+      <template id="desc-hana"><strong>Tools:</strong> Excel, RAWGraphs, Inkscape</template>
+      <template id="desc-geo"><strong>Tools:</strong> GeoGebra Classic, Autodesk Sketchpad Pro</template>
 
+      <!-- ESSAY Templates (long form) -->
+      <template id="essay-polaroid">
         <p>
-          I created a synthetic photograph of an <em>Ophrys apifera</em> (Bee Orchid) in bloom using Midjourney (prompt: A photograph of the botanical specimen, bee orchid, photographed in the field in the style of 1980s field botany documentation, soft natural light, shallow depth of field, Kodachrome 64 film look, muted warm tones, subtle film grain, macro detail, slight fading and color shift.). Then, I created a worn Polaroid frame in Photoshop by layering texture overlays to suggest an aged and worn feel. Next, I wrote a Python script
-          <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target="_blank" rel="noopener noreferrer">(download)</a>. This script treats the image not as a static photograph but as a material object subject to wear, exposure, and chemical instability. Starting from a clean digital input, the script introduces a series of degradations—edge softening, tonal flattening, color drift, and localized light leaks—that echo the visual artifacts of aging instant film. Rather than applying a single filter, the process unfolds in stages, allowing each transformation to subtly interfere with the last.
+          I created a synthetic photograph of an <em>Ophrys apifera</em> (Bee Orchid) in bloom using Midjourney. Then I created a worn Polaroid frame in Photoshop by layering texture overlays to suggest an aged, handled object.
         </p>
-      </template>
-
-      <template id="desc-daguerreotype">
-        <strong>Tools:</strong>
-        <ul class="tools-list">
-          <li><strong>Python</strong>
-            <ul>
-              <li><strong>NumPy</strong> (pixel-level tonal remapping, metallic color mapping, vignette math)</li>
-              <li><strong>Pillow (PIL)</strong> (grayscale conversion, compositing, filters, alpha masks)</li>
-              <li><strong>math</strong> (directional sheen and radial calculations)</li>
-            </ul>
-          </li>
-          <li><strong>Photoshop</strong></li>
-          <li><strong>Midjourney</strong></li>
-        </ul>
-
         <p>
-          I used Midjourney to create a synthetic photograph of an <em>Helena autumnale</em> (Sneezeweed) in bloom (prompt: A photograph of the botanical specimen, sneezeweed, photographed in the field in the style of 1980s field botany documentation, soft natural light, shallow depth of field, Kodachrome 64 film look, muted warm tones, subtle film grain, macro detail, slight fading and color shift. The photograph should show the sculptural details of the petals well.). I then processed the image using a Python script
-          <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target="_blank" rel="noopener noreferrer">(download)</a> that converts the photograph to grayscale, reshapes its tonal curve, and maps it onto a simulated silver plate surface. The script introduces metallic color shifts, directional sheen, vignette falloff, and tarnish artifacts. Finally, it precisely fits the image into an aged and worn digital daguerreotype frame I created in Photoshop, with softened edges and inner shadow to simulate depth and mounting.
-        </p>
-      </template>
-
-      <template id="desc-heatmap">
-        <strong>Tools:</strong>
-        <ul class="tools-list">
-          <li><strong>Python</strong>
-            <ul>
-              <li><strong>NumPy</strong> (depth-to-color mapping, numeric normalization)</li>
-              <li><strong>Pillow (PIL)</strong> (image I/O and format conversion)</li>
-            </ul>
-          </li>
-          <li><strong>Photoshop</strong></li>
-          <li><strong>Midjourney</strong></li>
-        </ul>
-
-        <p>
-          I began with a photographic self-portrait. I used Photoshop to construct a depth map of the photo by manually segmenting the image into spatial regions using selection tools and tonal adjustments. I then processed the depth map with a Python script
-          <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target="_blank" rel="noopener noreferrer">(download)</a> that reads pixel-level depth values and remaps them to a false-color heat visualization.
-        </p>
-      </template>
-
-      <template id="desc-slide">
-        <strong>Tools:</strong>
-        <ul class="tools-list">
-          <li><strong>Python</strong>
-            <ul>
-              <li><strong>Pillow (PIL)</strong> (layout construction, texture layering, compositing)</li>
-              <li><strong>random</strong> (stochastic variation)</li>
-              <li><strong>argparse</strong> (parameterized output)</li>
-            </ul>
-          </li>
-          <li><strong>Photoshop</strong></li>
-          <li><strong>Midjourney</strong></li>
-        </ul>
-
-        <p>
-          (Update this description if needed — your original slide/comic text looked swapped.)
-        </p>
-      </template>
-
-      <template id="desc-comic">
-        <strong>Tools:</strong>
-        <ul class="tools-list">
-          <li><strong>Python</strong>
-            <ul>
-              <li><strong>Pillow (PIL)</strong> (layout construction, texture layering, compositing)</li>
-              <li><strong>random</strong> (stochastic variation)</li>
-              <li><strong>argparse</strong> (parameterized output)</li>
-            </ul>
-          </li>
-          <li><strong>Photoshop</strong></li>
-          <li><strong>Midjourney</strong></li>
-        </ul>
-
-        <p>
-          I took a photograph of my husband. I then processed the image with a Python script
+          Next, I wrote a Python script
           <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target="_blank" rel="noopener noreferrer">(download)</a>
-          to reduce the color palette using k-means clustering, extract bold inked edges using edge detection, and overlay halftone dot patterns to mimic printed comic panels. The script also adds borders, captions, and optional speech bubbles to complete the panel structure.
+          that introduces staged degradations—edge softening, tonal flattening, color drift, and localized light leaks—so the “photograph” behaves like material film rather than a single filter effect.
         </p>
       </template>
 
-      <template id="desc-cyan">
-        <strong>Tools:</strong>
-        <ul class="tools-list">
-          <li><strong>Python</strong>
-            <ul>
-              <li><strong>Pillow (PIL)</strong> (grayscale conversion, color mapping, blur)</li>
-              <li><strong>NumPy</strong> (procedural wash mask generation)</li>
-              <li><strong>random</strong> (stochastic wash variation)</li>
-            </ul>
-          </li>
-          <li><strong>Photoshop</strong></li>
-          <li><strong>Midjourney</strong></li>
-        </ul>
-
+      <template id="essay-daguerreotype">
         <p>
-          I used Midjourney to create a synthetic photograph of a <em>Gardenia jasminoides</em> (Gardenia). I then processed the image with a Python script
+          I generated a botanical photograph in Midjourney and then processed it with a Python script to convert to grayscale, reshape its tonal curve, and map it onto a simulated silver plate surface (metallic shifts, sheen, vignette falloff, tarnish artifacts).
+        </p>
+        <p>
+          Finally, I fit the image into an aged daguerreotype frame created in Photoshop, using softened edges and inner shadow to simulate depth and mounting.
+        </p>
+      </template>
+
+      <template id="essay-heatmap">
+        <p>
+          I began with a photographic self-portrait. In Photoshop, I constructed a depth map by manually segmenting the image into spatial regions using selection tools and tonal adjustments.
+        </p>
+        <p>
+          I then processed the depth map with a Python script
           <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target="_blank" rel="noopener noreferrer">(download)</a>
-          to remap tonal values into a cyanotype-inspired blue color range and layered a procedurally generated wash mask to simulate uneven chemical absorption. The image was softened slightly to evoke paper texture and hand-coated surfaces.
+          that reads pixel-level depth values and remaps them to a false-color heat visualization.
         </p>
       </template>
 
-      <template id="desc-micro">
-        <strong>Tools:</strong>
-        <ul class="tools-list">
-          <li><strong>Python</strong>
-            <ul>
-              <li><strong>Pillow (PIL)</strong> (grid layout, typography, compositing)</li>
-              <li><strong>NumPy</strong> (procedural masks)</li>
-              <li><strong>random</strong> (subtle noise and grain)</li>
-              <li><strong>argparse</strong> (parameter controls)</li>
-              <li><strong>pathlib</strong> (file structure handling)</li>
-              <li><strong>datetime</strong> (archival metadata)</li>
-            </ul>
-          </li>
-          <li><strong>Photoshop</strong></li>
-          <li><strong>Midjourney</strong></li>
-        </ul>
+      <template id="essay-slide">
+        <p>(Replace with your slide essay when ready.)</p>
+      </template>
 
+      <template id="essay-comic">
         <p>
-          I created a synthetic photographic image using Midjourney, then used a Python script
+          I took a photograph of my husband, then processed it with a Python script
           <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target="_blank" rel="noopener noreferrer">(download)</a>
-          to fragment, scale, and tile the image into a grid structure modeled after microfiche archival formats. Final compositional and tonal adjustments were made in Photoshop to emphasize the aesthetics of compression and institutional storage.
+          to reduce the palette (k-means), extract ink-like edges, and overlay halftone dot patterns to mimic printed comic texture.
         </p>
       </template>
 
-      <template id="desc-pencil">
-        <strong>Tools:</strong>
-        <ul class="tools-list">
-          <li><strong>Python</strong>
-            <ul>
-              <li><strong>Pillow (PIL)</strong> (grayscale conversion, blur, compositing)</li>
-              <li><strong>random</strong> (controlled variation)</li>
-              <li><strong>argparse</strong> (parameterized output)</li>
-            </ul>
-          </li>
-          <li><strong>Photoshop</strong></li>
-          <li><strong>Midjourney</strong></li>
-        </ul>
-
+      <template id="essay-cyan">
         <p>
-          I took a photograph of a yellow-bellied sapsucker on a Scotch pine. I then processed the image using a Python script
-          <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target="_blank" rel="noopener noreferrer">(download)</a>
-          that converts it to grayscale, applies Gaussian blur, and uses a dodge-blend technique to simulate graphite shading. A secondary edge-based output produces a crisp line-drawing variant.
+          I generated a botanical photograph and then used a Python script to remap tonal values into a cyanotype-inspired blue range. A procedural wash mask simulates uneven chemical absorption, and the final image is softened to evoke paper texture.
         </p>
       </template>
 
-      <template id="desc-chem">
-        <strong>Tools:</strong>
-        <ul class="tools-list">
-          <li><strong>Python</strong>
-            <ul>
-              <li><strong>Pillow (PIL)</strong> (compositing, masks, frame processing)</li>
-              <li><strong>random</strong> (stochastic variation)</li>
-              <li><strong>argparse</strong> (parameterized output)</li>
-            </ul>
-          </li>
-          <li><strong>Photoshop</strong></li>
-          <li><strong>Midjourney</strong></li>
-        </ul>
-
+      <template id="essay-micro">
         <p>
-          I used Midjourney to create a synthetic photographic image of a field of <em>Rudbeckia hirta</em> (Black-Eyed Susans). I then processed the image with a Python script
-          <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target="_blank" rel="noopener noreferrer">(download)</a>
-          that animates the gradual emergence of the image using layered noise fields, threshold masks, bloom effects, and evolving color casts that simulate photographic development in a chemical bath. Each frame reveals additional image detail until the photograph fully resolves.
+          I used a Python script to fragment, scale, and tile an image into a grid modeled after microfiche archival formats, then refined tonal and compositional balance in Photoshop to emphasize compression and institutional storage aesthetics.
         </p>
       </template>
 
-      <template id="desc-glitch">
-        <strong>Tools:</strong>
-        <ul class="tools-list">
-          <li><strong>Python</strong>
-            <ul>
-              <li><strong>NumPy</strong> (noise fields, masks, temporal interpolation)</li>
-              <li><strong>Pillow (PIL)</strong> (frame-by-frame image processing)</li>
-              <li><strong>imageio</strong> (GIF / MP4 generation)</li>
-              <li><strong>argparse</strong> (timing, resolution, and style controls)</li>
-              <li><strong>random</strong> (stochastic animation variation)</li>
-            </ul>
-          </li>
-          <li><strong>Photoshop</strong></li>
-          <li><strong>Midjourney</strong></li>
-        </ul>
-
+      <template id="essay-pencil">
         <p>
-          I used Midjourney to create a synthetic photographic image of a field of <em>Rudbeckia hirta</em> (Black-Eyed Susans). I then processed the image with a Python script
-          <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target="_blank" rel="noopener noreferrer">(download)</a>
-          to deliberately corrupt the image using channel misalignment, scanlines, noise-driven tearing, and glitch artifacts before gradually stabilizing the image over time.
+          Starting from a photograph, I used a Python script to convert to grayscale, apply blur, and use a dodge-blend approach to simulate graphite shading. A secondary edge-based output produces a crisp line-drawing variant.
         </p>
       </template>
 
-      <template id="desc-collage">
-        <strong>Tools:</strong>
-        <ul class="tools-list">
-          <li><strong>Python</strong>
-            <ul>
-              <li><strong>Pillow (PIL)</strong> (image compositing, rotation, scaling, alpha compositing)</li>
-              <li><strong>rembg</strong> (foreground/background separation)</li>
-              <li><strong>argparse</strong> (mode selection, parameter control)</li>
-              <li><strong>pathlib</strong> (file traversal and output management)</li>
-              <li><strong>math</strong> (parametric curves, trigonometry)</li>
-              <li><strong>random</strong> (controlled stochastic variation)</li>
-            </ul>
-          </li>
-          <li><strong>Midjourney</strong></li>
-          <li><strong>Autodesk Sketchpad Pro</strong></li>
-        </ul>
-
+      <template id="essay-chem">
         <p>
-          I began with a photographic self-portrait, then sampled the colors to record their hex codes and create a personal color palette. Next, I used Midjourney to create more than 700 synthetic botanical photographs in the hues from my personal palette. I then processed those images using a Python script
-          <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target="_blank" rel="noopener noreferrer">(download)</a>
-          to extract floral forms from the images and export them as transparent PNG assets. I then manually layered those elements to construct a digital self-portrait collage.
+          I animated a gradual emergence using layered noise fields, threshold masks, bloom effects, and evolving color casts to simulate photographic development in a chemical bath—each frame reveals additional detail until the image fully resolves.
         </p>
       </template>
 
-      <template id="desc-compcollage">
-        <strong>Tools:</strong>
-        <ul class="tools-list">
-          <li><strong>Python</strong>
-            <ul>
-              <li><strong>Pillow (PIL)</strong> (image-decoding, RGBA handling, alpha-channel feathering)</li>
-              <li><strong>rembg</strong> (foreground/background separation)</li>
-              <li><strong>argparse</strong> (command-line interface for batch processing)</li>
-              <li><strong>pathlib</strong> (recursive file and folder management)</li>
-              <li><strong>io</strong> (in-memory image byte handling)</li>
-            </ul>
-          </li>
-          <li><strong>Midjourney</strong></li>
-          <li><strong>Autodesk Sketchpad Pro</strong></li>
-        </ul>
-
+      <template id="essay-glitch">
         <p>
-          I used Midjourney to produce over 300 synthetic botanical drawings, then processed them using a Python script
-          <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target="_blank" rel="noopener noreferrer">(download)</a>
-          that generates a procedural collage. Finally, I hand-painted several features using digital acrylics in Autodesk Sketchpad Pro.
+          I corrupted an image deliberately (channel misalignment, scanlines, tearing, noise-driven artifacts) and then gradually stabilized it over time, treating “recovery” as a visible process rather than an instant fix.
         </p>
       </template>
 
-
-
-   <template id="desc-collage">
-        <strong>Tools:</strong>
-        <ul class="tools-list">
-          <li><strong>Python</strong>
-            <ul>
-              <li><strong>Pillow (PIL)</strong> (image compositing, rotation, scaling, alpha compositing)</li>
-              <li><strong>rembg</strong> (foreground/background separation)</li>
-              <li><strong>argparse</strong> (mode selection, parameter control)</li>
-              <li><strong>pathlib</strong> (file traversal and output management)</li>
-              <li><strong>math</strong> (parametric curves, trigonometry)</li>
-              <li><strong>random</strong> (controlled stochastic variation)</li>
-            </ul>
-          </li>
-          <li><strong>Midjourney</strong></li>
-          <li><strong>Autodesk Sketchpad Pro</strong></li>
-        </ul>
-
+      <template id="essay-collage">
         <p>
-          I began with a photographic self-portrait, then sampled the colors to record their hex codes and create a personal color palette. Next, I used Midjourney to create more than 700 synthetic botanical photographs in the hues from my personal palette. I then processed those images using a Python script
-          <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target="_blank" rel="noopener noreferrer">(download)</a>
-          to extract floral forms from the images and export them as transparent PNG assets. I then manually layered those elements to construct a digital self-portrait collage.
+          I sampled colors from a self-portrait to build a personal palette, generated hundreds of botanical images in those hues, extracted floral forms as transparent assets, and manually layered them into a digital self-portrait collage.
         </p>
       </template>
 
-      <template id="desc-animate">
-        <strong>Tools:</strong>
-        <ul class="tools-list">
-          <li><strong>Photoshop</strong>
-            </ul>
-        <p>This animated portrait explores the instability of self-representation through aggressive color remapping and temporal distortion. Beginning from a photographic self-portrait, I processed the image into a high-contrast, false-color palette that exaggerates tonal boundaries and collapses subtle facial detail into fields of saturated red, yellow, and black. The animation introduces slight temporal variation in color intensity and edge definition, producing a flickering effect that resists visual settling. Rather than presenting a stable or coherent portrait, the work foregrounds fluctuation—how identity, visibility, and bodily experience can shift from moment to moment. The face remains recognizable, but only barely, and only temporarily.</p>
-
-      <template id="desc-hana">
-        <strong>Tools:</strong>
-        <ul class="tools-list">
-          <li><strong>Microsoft Excel</strong></li>
-          <li><strong>RAWGraphs</strong></li>
-          <li><strong>Inkscape</strong></li>
-        </ul>
-
+      <template id="essay-compcollage">
         <p>
-          I created a dataset based on Hanakotaba, the Japanese cultural system of flower meanings. I collected data on individual flowers and at least one associated meaning, conducted an inductive content analysis to form 24 generalized meaning buckets, and used pivot tables to compute color distributions. I then created a chord diagram in RAWGraphs, exported it as an SVG, and refined the vector paths in Inkscape to emphasize clusters and density.
+          I generated synthetic botanical drawings, then used a Python script to create a procedural collage. I finished the work with hand-painted accents in Autodesk Sketchpad Pro.
         </p>
       </template>
-        
-        <template id="desc-geo">
-         <strong>Tools:</strong>
-        <ul class="tools-list">
-          <li><strong>Microsoft Excel</strong></li>
-          <li><strong>RAWGraphs</strong></li>
-          <li><strong>Inkscape</strong></li>
-         </ul>
 
+      <template id="essay-animate">
         <p>
-          I constructed this image algorithmically in GeoGebra Classic using rotational symmetry and proportional subdivision. Once the geometric system was complete, I exported the construction and applied color in Autodesk Sketchpad Pro, layering painterly airbrush color to reinforce the underlying structure.
+          This animated portrait explores instability of self-representation through aggressive color remapping and temporal distortion. Beginning from a photographic self-portrait, I processed the image into a high-contrast, false-color palette that exaggerates tonal boundaries and collapses subtle facial detail into fields of saturated red, yellow, and black.
+        </p>
+        <p>
+          The flicker resists visual settling—recognizable, but only barely, and only temporarily—foregrounding fluctuation in identity, visibility, and bodily experience.
+        </p>
+      </template>
+
+      <template id="essay-hana">
+        <p>
+          I created a dataset based on Hanakotoba, analyzed meanings into generalized buckets, computed color distributions with pivot tables, and built a chord diagram in RAWGraphs before refining paths and clusters in Inkscape.
+        </p>
+      </template>
+
+      <template id="essay-geo">
+        <p>
+          I constructed this image algorithmically in GeoGebra Classic using rotational symmetry and proportional subdivision. Once the geometric system was complete, I exported the construction and applied color in Autodesk Sketchpad Pro.
         </p>
       </template>
 
     </section>
   </main>
 
-  <!-- Lightbox overlay (place once per page, right before </body>) -->
+  <!-- Essay panel (one per page; JS swaps content per image) -->
+  <section class="essay-panel" aria-label="Process notes">
+    <h2 class="essay-title">Process Notes</h2>
+    <div id="essay-body" class="essay-body"></div>
+  </section>
+
+  <!-- Lightbox overlay -->
   <div id="lightbox" class="lightbox" aria-hidden="true">
     <button class="lightbox-close" type="button" aria-label="Close">&times;</button>
-
     <div class="lightbox-stage">
       <img id="lightbox-img" alt="" />
       <div id="lightbox-caption" class="lightbox-caption"></div>
     </div>
   </div>
 
-  <!-- Site JS (load at the end so the page exists before JS runs) -->
   <script src="js/site.js"></script>
 </body>
 </html>
