@@ -914,3 +914,25 @@ img{
     width: 260px;
   }
 }
+
+/* ============================================
+   ABOUT PAGE — MAKE PORTRAIT IMAGE BIGGER
+============================================ */
+
+.page-contact .about-image img {
+  width: 320px;      /* was ~240px */
+  max-width: 85%;    /* allows growth but still responsive */
+  border-radius: 20px;
+}
+
+/* Optional: let it breathe a bit more vertically */
+.page-contact .about-image {
+  gap: 1.75rem;
+}
+
+/* Mobile: slightly smaller so it doesn’t crowd text */
+@media (max-width: 700px) {
+  .page-contact .about-image img {
+    width: 260px;
+  }
+}
