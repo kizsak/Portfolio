@@ -741,3 +741,33 @@ body.no-scroll {
 .lightbox:target {
   display: none !important;     /* disable :target behavior */
 }
+
+/* ==============================
+   Comp Design page: dark text
+   ============================== */
+
+.page-comp-design .gallery-info,
+.page-comp-design #image-caption,
+.page-comp-design #image-description,
+.page-comp-design .piece-description,
+.page-comp-design .piece-description * {
+  color: #111 !important;
+  text-shadow: none !important;
+}
+
+/* Make links still readable */
+.page-comp-design .piece-description a,
+.page-comp-design #image-description a {
+  color: #003a55 !important;
+  text-decoration: underline;
+}
+.page-comp-design .piece-description a:hover,
+.page-comp-design #image-description a:hover {
+  text-decoration: none;
+}
+
+/* Optional: darken bullet markers too */
+.page-comp-design .piece-description li,
+.page-comp-design .piece-description li::marker {
+  color: #111 !important;
+}
