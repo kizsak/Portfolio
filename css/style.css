@@ -974,3 +974,49 @@ img{
     margin: 0 auto;
   }
 }
+
+/* =========================================
+   Essay Panel — typography & color tuning
+========================================= */
+
+.essay-panel {
+  background: #e3e3e3; /* already matches your screenshot */
+}
+
+/* Match tools box text color */
+.essay-panel,
+.essay-panel p,
+.essay-panel a {
+  color: #1f1f1f; /* same dark neutral as tools box */
+}
+
+/* Reduce paragraph “hard breaks” */
+.essay-body p {
+  margin: 0 0 0.85em 0;   /* smaller bottom margin */
+  line-height: 1.55;     /* slightly tighter flow */
+  max-width: 70ch;       /* readable but less cramped */
+}
+
+/* Optional: make first paragraph feel anchored */
+.essay-body p:first-child {
+  margin-top: 0.25em;
+}
+
+/* Links: subtle, non-neon */
+.essay-body a {
+  color: #2a2a2a;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.essay-body a:hover {
+  color: #000;
+}
+
+/* Mobile tuning */
+@media (max-width: 768px) {
+  .essay-body p {
+    max-width: 100%;
+    line-height: 1.6;
+  }
+}
