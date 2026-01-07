@@ -667,3 +667,46 @@ img{
   max-width: 100%;
   height: auto;
 }
+
+/* =========================================================
+   CAROUSEL: NO CROP / NO STRETCH (hard override)
+========================================================= */
+
+/* Let the carousel window size to content; don't force a fixed box */
+.gallery-carousel .carousel-window{
+  width: min(900px, 100%) !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+
+  display: grid !important;
+  place-items: center !important;
+
+  padding: 12px !important;
+  overflow: visible !important;   /* prevents "clipped" edges */
+}
+
+/* Make the active image fit inside the viewport without cropping */
+.gallery-carousel .carousel-image{
+  display: none;
+}
+
+.gallery-carousel .carousel-image.active{
+  display: block !important;
+
+  width: auto !important;
+  height: auto !important;
+
+  max-width: 100% !important;
+  max-height: 72vh !important;
+
+  object-fit: contain !important;
+  object-position: center !important;
+
+  border-radius: 18px;
+}
+
+/* If any parent is clipping, this helps */
+.gallery-carousel{
+  overflow: visible !important;
+}
