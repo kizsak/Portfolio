@@ -583,3 +583,87 @@ body.no-scroll{ overflow: hidden; }
 .card__background{
   background-size: cover !important;
 }
+
+/* =========================================================
+   GLOBAL IMAGE NORMALIZER — best for ARTWORK
+   - Cards: show full image (no cropping)
+   - Carousel: remove "forced box" feel; no crop / no stretch
+========================================================= */
+
+
+/* -------------------------
+   1) CARD IMAGES (homepage + hubs)
+   Switch cards from "cover" (cropping) to "contain" (no crop).
+   This will add letterboxing when needed, but preserves the art.
+-------------------------- */
+
+/* Keep card shape consistent */
+.card{
+  min-height: 240px;
+}
+
+/* Show whole image inside the card */
+.card__background{
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+
+  /* Give letterboxed areas a subtle base instead of harsh empty space */
+  background-color: rgba(0,0,0,0.25);
+}
+
+/* Keep your readability shade */
+.card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index: 1;
+  pointer-events:none;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.45) 0%,
+    rgba(0,0,0,0.12) 70%,
+    rgba(0,0,0,0.00) 100%
+  );
+}
+
+
+/* -------------------------
+   2) CAROUSEL WINDOW
+   Stop forcing a fixed 520x360 box — that’s what makes many images feel wrong.
+-------------------------- */
+
+.carousel-window{
+  width: min(720px, 100%);
+  height: auto !important;          /* override fixed height */
+  max-height: 78vh;
+  padding: 12px;
+  display: grid;
+  place-items: center;
+}
+
+/* Make each image fit inside the available space without distortion */
+.carousel-image{
+  display: none;
+  max-width: 100%;
+  max-height: 72vh;
+  width: auto !important;
+  height: auto !important;
+
+  object-fit: contain;
+  object-position: center;
+  border-radius: 18px;
+}
+
+.carousel-image.active{
+  display: block;
+}
+
+
+/* -------------------------
+   3) SAFETY: kill accidental stretching rules anywhere
+-------------------------- */
+img{
+  max-width: 100%;
+  height: auto;
+}
