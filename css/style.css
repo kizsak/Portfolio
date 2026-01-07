@@ -1,89 +1,638 @@
-@import url("https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;600&display=swap");
+/* ----------------------------------------------------
+   Base + Layout
+----------------------------------------------------- */
+@import url("https://fonts.googleapis.com/css2?family=Oxanium&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Audiowide&display=swap");
 
-:root{
-  --bg:#05070b;
-  --text:#e9f0ff;
-  --radius:18px;
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
 }
 
-*{ box-sizing:border-box; }
-body{
-  margin:0;
-  font-family: Oxanium, system-ui, sans-serif;
-  background: var(--bg);
-  color: var(--text);
+html {
+  height: 100%;
+  font-family: "Oxanium", sans-serif;
+  font-size: 14px;
 }
 
-.page-header{
-  padding: 28px 18px 16px;
-  text-align:center;
+/* Fade-in animation */
+body {
+  animation: fadebg 0.8s ease-in-out;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  /* Backgrounds extend beyond viewport */
+  background-size: 100% 150%;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-color: #05070b;
 }
 
-.neon{
-  margin:0;
-  font-family: Audiowide, Oxanium, sans-serif;
-  font-size: clamp(26px, 4vw, 42px);
+@keyframes fadebg {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ----------------------------------------------------
+   Page Backgrounds
+----------------------------------------------------- */
+
+.page-home {
+  background-image: url("https://github.com/kizsak/Portfolio/raw/main/LightBleedCompressed.png");
+}
+.page-digital-painting {
+  background-image: url("https://github.com/kizsak/Portfolio/raw/main/LightBleedFilmEdgeCompressed.png");
+}
+.page-digital-painting-animals {
+  background-image: url("https://github.com/kizsak/Portfolio/raw/main/LightBleedBright.jpg");
+}
+.page-digital-painting-portraits {
+  background-image: url("https://github.com/kizsak/Portfolio/raw/main/LightBleedBlueYellowRed.jpg");
+}
+.page-digital-painting-scapes {
+  background-image: url("https://github.com/kizsak/Portfolio/raw/main/LightBleedGreenBlackCompressed.png");
+}
+.page-digital-painting-still {
+  background-image: url("https://github.com/kizsak/Portfolio/raw/main/LightBleedLiightDark.jpg");
+}
+.page-comp-design {
+  background-image: url("https://github.com/kizsak/Portfolio/raw/main/LightBleedLiightDark.jpg");
+}
+.page-if {
+  background-image: url("https://github.com/kizsak/Portfolio/raw/main/LightBleedSquigglesCompressed.png");
+}
+.page-graphic-design {
+  background-image: url("https://github.com/kizsak/Portfolio/raw/main/LightBleedPurpleWhiteCompressed.png");
+}
+.page-contact {
+  background-image: url("https://github.com/kizsak/Portfolio/raw/main/LightBleedOrangeGreenCompressed.png");
+}
+
+/* ----------------------------------------------------
+   Header + Footer Neon Titles
+----------------------------------------------------- */
+
+.page-header,
+.page-footer {
+  padding: 2rem 1rem;
+}
+
+.neon {
+  font-family: "Audiowide", sans-serif;
+  font-weight: 400;
+  color: #c9f8ff;
+  text-align: center;
+  font-size: 3.2rem;
+  letter-spacing: 1px;
   text-shadow:
-    0 0 8px rgba(80,220,255,.45),
-    0 0 18px rgba(80,220,255,.28),
-    0 0 26px rgba(255,80,220,.18);
+    0 0 4px #c9f8ff,
+    0 0 8px rgba(0, 234, 255, 0.6),
+    0 0 12px rgba(0, 234, 255, 0.4);
 }
 
-.hero{
-  width: min(1080px, calc(100% - 36px));
-  margin: 0 auto;
-  padding: 10px 0 42px;
+/* Soft coral neon */
+.neon-soft {
+  font-family: "Audiowide", sans-serif;
+  font-weight: 400;
+  text-align: center;
+  font-size: 2.2rem;
+  letter-spacing: 0.5px;
+  color: #ffd6d9;
+  text-shadow:
+    0 0 3px #ffd6d9,
+    0 0 6px rgba(255, 160, 170, 0.7),
+    0 0 14px rgba(255, 110, 120, 0.5);
+}
+
+.page-footer {
+  margin-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+/* ----------------------------------------------------
+   NAVIGATION BUTTON BAR
+----------------------------------------------------- */
+
+.nav-bar {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.nav-btn {
+  display: inline-block;
+  padding: 10px 24px;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #dfffff;
+  text-decoration: none !important;
+
+  background: rgba(0, 255, 255, 0.12);
+  border: 2px solid rgba(140, 255, 255, 0.8);
+
+  box-shadow:
+    0 0 10px rgba(120, 255, 255, 0.45),
+    inset 0 0 6px rgba(120, 255, 255, 0.25);
+
+  backdrop-filter: blur(5px);
+  transition: 0.25s ease;
+}
+
+.nav-btn:hover {
+  background: rgba(0, 255, 255, 0.25);
+  border-color: rgba(180, 255, 255, 1);
+  box-shadow:
+    0 0 14px rgba(140, 255, 255, 0.65),
+    inset 0 0 10px rgba(140, 255, 255, 0.35);
+  transform: translateY(-2px);
+}
+
+.nav-btn:active {
+  transform: translateY(2px);
+  box-shadow:
+    0 0 6px rgba(120, 255, 255, 0.4),
+    inset 0 0 4px rgba(120, 255, 255, 0.3);
+}
+
+/* ----------------------------------------------------
+   Hero Section
+----------------------------------------------------- */
+
+.hero-section {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 1.5rem 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(0, 0, 0, 0.0) 0%,
+    rgba(0, 0, 0, 0.4) 80%
+  );
+}
+
+/* ----------------------------------------------------
+   Card Grid
+----------------------------------------------------- */
+
+:root {
+  --text-light: rgba(255, 255, 255, 0.6);
+  --text-lighter: rgba(255, 255, 255, 0.9);
+  --spacing-l: 24px;
+  --width-container: 1200px;
+}
+
+.card-grid {
   display: grid;
-  gap: 14px;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: var(--spacing-l);
+  max-width: var(--width-container);
+  width: 100%;
+  padding: 0 var(--spacing-l);
+  list-style: none;
+  margin-bottom: 1.5rem;
 }
 
-@media (min-width: 720px){
-  .hero{ grid-template-columns: repeat(2, 1fr); }
-}
-@media (min-width: 1020px){
-  .hero{ grid-template-columns: repeat(4, 1fr); }
+@media (min-width: 540px) {
+  .card-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
-.card{
+@media (min-width: 960px) {
+  .card-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+.card {
   position: relative;
-  min-height: 240px;
-  border-radius: var(--radius);
+  border-radius: var(--spacing-l);
   overflow: hidden;
+}
+
+.card::before {
+  content: "";
   display: block;
-  text-decoration: none;
-  color: inherit;
-  background-image: var(--img);
+  padding-bottom: 150%;
+}
+
+.card__background {
+  position: absolute;
+  inset: 0;
   background-size: cover;
   background-position: center;
+  border-radius: var(--spacing-l);
+  filter: brightness(0.75) saturate(1.2) contrast(0.85);
+  transform-origin: center;
+  transform: scale(1) translateZ(0);
+  transition:
+    filter 200ms linear,
+    transform 200ms linear;
 }
 
-.card::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background: linear-gradient(to bottom, rgba(0,0,0,.55), rgba(0,0,0,.15));
+.card:hover .card__background {
+  transform: scale(1.05);
 }
 
-.card h2{
-  position:absolute;
-  z-index:1;
-  margin:0;
-  padding: 16px;
-  font-family: Audiowide, sans-serif;
+.card-grid:hover > .card:not(:hover) .card__background {
+  filter: brightness(0.5) saturate(0) contrast(1.2) blur(20px);
+}
+
+.card__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: var(--spacing-l);
+  z-index: 3;
+  pointer-events: none;
+}
+
+.card__heading {
+  color: #fdfcff;
+  font-size: 2rem;
+  line-height: 1.25;
+  word-spacing: normal;
+  text-shadow:
+    0 0 6px rgba(0, 0, 0, 0.7),
+    0 0 18px rgba(0, 0, 0, 0.8);
+  pointer-events: auto;
+  cursor: pointer;
+  transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+.card__heading:hover {
+  color: #fff5f7;
+  text-shadow:
+    0 0 4px rgba(255, 210, 220, 0.8),
+    0 0 10px rgba(255, 150, 170, 0.6);
+}
+
+/* ----------------------------------------------------
+   GALLERY + CAROUSEL (UPDATED to match your HTML)
+----------------------------------------------------- */
+
+.gallery-layout {
+  max-width: 1200px;
+  margin: 2rem auto 4rem;
+  padding: 0 1.5rem;
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+@media (max-width: 800px) {
+  .gallery-layout {
+    flex-direction: column;
+  }
+}
+
+/* Your HTML uses .gallery-info + #image-description */
+.gallery-info {
+  flex: 1.4;
+  min-width: 320px;
+  color: #ffffff;
+  text-align: left;
+}
+
+#image-caption {
+  text-align: left;
+  margin-bottom: 0.75rem;
+}
+
+.piece-description {
+  line-height: 1.6;
+  font-size: 0.95rem;
+  max-width: 36rem;
+}
+
+/* Make links readable on bright background */
+.piece-description a,
+.lightbox-caption a {
+  color: #c9f8ff;
+  text-decoration: underline;
+}
+.piece-description a:hover,
+.lightbox-caption a:hover {
+  text-decoration: none;
+}
+
+.gallery-carousel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: flex-start;
+}
+
+.carousel-window {
+  width: 520px;
+  height: 360px;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.45);
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-image {
+  display: none;
+  height: 100%;
+  width: auto;
+  max-width: 100%;
+  border-radius: 24px;
+}
+
+.carousel-image.active {
+  display: block;
+}
+
+.carousel-controls {
+  margin-top: 1.25rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.carousel-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid rgba(140,255,255,0.9);
+  background: rgba(0,0,0,0.35);
+  color: #e6ffff;
   font-size: 1.6rem;
-  text-shadow: 0 0 10px rgba(0,0,0,.8);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(120,255,255,0.6);
+  transition: 0.2s;
 }
 
-.card:hover{
-  transform: translateY(-2px);
-  transition: transform 150ms ease;
+.carousel-btn:hover {
+  background: rgba(0,255,255,0.25);
+  transform: translateY(-1px);
+  box-shadow: 0 0 14px rgba(140,255,255,0.85);
 }
 
-.footer-title{
-  text-align:center;
-  font-family: Audiowide, sans-serif;
-  padding: 0 18px 30px;
-  opacity: 0.9;
+.carousel-btn:active {
+  transform: translateY(1px);
+}
+
+/* ----------------------------------------------------
+   ABOUT PAGE ICON ROW
+----------------------------------------------------- */
+
+.social-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.6rem;
+}
+
+.social-icon {
+  font-size: 2.4rem;
+  color: #ffeefc;
+  text-decoration: none;
+  text-shadow:
+    0 0 4px rgba(255,220,248,0.9),
+    0 0 10px rgba(255,170,210,0.9),
+    0 0 18px rgba(255,120,160,0.7);
+  transition:
+    transform 0.2s ease,
+    text-shadow 0.2s ease;
+}
+
+.social-icon:hover {
+  transform: translateY(-2px) scale(1.07);
+  color: #fff9ff;
+  text-shadow:
+    0 0 6px rgba(255,240,255,1),
+    0 0 14px rgba(255,190,220,1),
+    0 0 26px rgba(255,150,190,0.95);
+}
+
+.social-icon:active {
+  transform: translateY(1px) scale(0.97);
+}
+
+/* Force About Me body text back to dark */
+.page-contact main,
+.page-contact main p,
+.page-contact main h2,
+.page-contact main h3,
+.page-contact main span {
+  color: #111111 !important;
+}
+
+/* Global content width constraint */
+.page-contact main,
+.page-contact .about-content,
+.page-contact section,
+.page-contact p {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Paragraph formatting */
+.page-contact main p {
+  line-height: 1.7;
+  font-size: 1.05rem;
+  margin-bottom: 1.4rem;
+}
+
+/* ---- ABOUT PAGE LAYOUT ---- */
+
+.about-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2.5rem;
+  max-width: 1100px;
+  margin: 3rem auto;
+  padding: 0 2rem;
+}
+
+.about-text {
+  flex: 1;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.about-image img {
+  width: 260px;
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow:
+      0 0 20px rgba(0,255,255,0.25),
+      0 0 40px rgba(0,255,255,0.15);
+}
+
+/* ---- Mobile Responsive ---- */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-image img {
+    width: 60%;
+    max-width: 260px;
+  }
+
+  .about-text {
+    text-align: left;
+  }
+}
+
+/* ----------------------------------------------------
+   LIGHTBOX (single clean system — matches your HTML + JS)
+----------------------------------------------------- */
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+/* overlay */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  display: none;              /* hidden by default */
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 9999;
+}
+
+/* JS adds .open */
+.lightbox.open {
+  display: flex;
+}
+
+/* modal stage */
+.lightbox-stage {
+  position: relative;
+  max-width: min(1100px, 96vw);
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* image */
+.lightbox-stage img {
+  max-width: 100%;
+  max-height: 82vh;
+  object-fit: contain;
+  border-radius: 14px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+}
+
+/* caption */
+.lightbox-caption {
+  text-align: center;
+  line-height: 1.45;
+  opacity: 0.92;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+/* close button (fixed so it’s always reachable) */
+.lightbox-close {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  font-size: 28px;
+  line-height: 44px;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+.lightbox-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+
+/* ----------------------------------------------------
+   Nested list styling for Tools blocks (multi-rung bullets)
+----------------------------------------------------- */
+
+.piece-description ul,
+.lightbox-caption ul {
+  margin: 0.35em 0 0.85em 1.2em;
+  padding-left: 1.1em;
+}
+
+.piece-description li,
+.lightbox-caption li {
+  margin: 0.15em 0;
+}
+
+.piece-description ul ul,
+.lightbox-caption ul ul {
+  list-style-type: circle;      /* level 2 bullets */
+  margin-top: 0.25em;
+  margin-bottom: 0.6em;
+}
+
+.piece-description ul ul ul,
+.lightbox-caption ul ul ul {
+  list-style: none;             /* level 3 as dashes */
+  padding-left: 0.2em;
+}
+
+.piece-description ul ul ul li::before,
+.lightbox-caption ul ul ul li::before {
+  content: "– ";
+}
+
+/* ---- Simple :target lightbox (no JS) ---- */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  display: none;
+  padding: 4vh 4vw;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 9999;
+}
+
+.lightbox:target {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox img {
+  max-width: 92vw;
+  max-height: 92vh;
+  width: auto;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.6);
+}
+
+.lightbox .close {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  font-size: 34px;
+  line-height: 1;
+  color: #fff;
+  text-decoration: none;
+  padding: 6px 10px;
 }
