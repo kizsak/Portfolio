@@ -209,20 +209,175 @@
           <li><strong>Photoshop</strong></li>
         </ul>
       </template>
-      <template id="desc-daguerreotype"><strong>Tools:</strong> Python (NumPy, PIL, math), Midjourney, Photoshop</template>
-      <template id="desc-heatmap"><strong>Tools:</strong> Python (NumPy, PIL), Midjourney, Photoshop</template>
-      <template id="desc-slide"><strong>Tools:</strong> Python (Pillow, random, argparse), Midjourney, Photoshop</template>
-      <template id="desc-comic"><strong>Tools:</strong> Python (Pillow, random, argparse), Midjourney, Photoshop</template>
-      <template id="desc-cyan"><strong>Tools:</strong> Python (Pillow, NumPy, random), Midjourney, Photoshop</template>
-      <template id="desc-micro"><strong>Tools:</strong> Python (Pillow, NumPy, random, argparse, pathlib, datetime), Midjourney, Photoshop</template>
-      <template id="desc-pencil"><strong>Tools:</strong> Python (Pillow, random, argparse), Midjourney, Photoshop</template>
-      <template id="desc-chem"><strong>Tools:</strong> Python (Pillow, random, argparse), Midjourney, Photoshop</template>
-      <template id="desc-glitch"><strong>Tools:</strong> Python (NumPy, Pillow, imageio, argparse, random), Midjourney, Photoshop</template>
-      <template id="desc-collage"><strong>Tools:</strong> Python (Pillow, rembg, argparse, pathlib, math, random), Midjourney, Autodesk Sketchpad Pro</template>
-      <template id="desc-compcollage"><strong>Tools:</strong> Python (Pillow, rembg, argparse, pathlib, io), Midjourney, Autodesk Sketchpad Pro</template>
-      <template id="desc-animate"><strong>Tools:</strong> Photoshop</template>
+      <template id="desc-daguerreotype">
+        <strong>Tools:</strong>
+        <ul class="tools-list">
+          <li><strong>Python</strong>
+            <ul>
+              <li><strong>NumPy</strong> (pixel-level tonal remapping, metallic color mapping, vignette math)</li>
+              <li><strong>Pillow (PIL)</strong> (grayscale conversion, compositing, filters, alpha masks)</li>
+              <li><strong>math</strong> (directional sheen and radial calculations)</li>
+            </ul>
+          </li>
+          <li><strong>Photoshop</strong></li>
+          <li><strong>Midjourney</strong></li>
+        </ul>
+</template>
+      <template id="desc-heatmap"><strong>Tools:</strong>
+        <ul class="tools-list">
+          <li><strong>Python</strong>
+            <ul>
+              <li><strong>NumPy</strong> (depth-to-color mapping, numeric normalization)</li>
+              <li><strong>Pillow (PIL)</strong> (image I/O and format conversion)</li>
+            </ul>
+          </li>
+          <li><strong>Photoshop</strong></li>
+          <li><strong>Midjourney</strong></li>
+        </ul></template>
+      <template id="desc-slide">
+         <strong>Tools:</strong>
+        <ul class="tools-list">
+          <li><strong>Python</strong>
+            <ul>
+              <li><strong>Pillow (PIL)</strong> (layout construction, texture layering, compositing)</li>
+              <li><strong>random</strong> (stochastic variation)</li>
+              <li><strong>argparse</strong> (parameterized output)</li>
+            </ul>
+          </li>
+          <li><strong>Photoshop</strong></li>
+          <li><strong>Midjourney</strong></li>
+        </ul>
+</template>
+      <template id="desc-comic">
+         <strong>Tools:</strong>
+        <ul class="tools-list">
+          <li><strong>Python</strong>
+            <ul>
+              <li><strong>Pillow (PIL)</strong> (layout construction, texture layering, compositing)</li>
+              <li><strong>random</strong> (stochastic variation)</li>
+              <li><strong>argparse</strong> (parameterized output)</li>
+            </ul>
+          </li>
+          <li><strong>Photoshop</strong></li>
+          <li><strong>Midjourney</strong></li>
+        </ul>
+</template>
+      <template id="desc-cyan"><strong>Tools:</strong>
+        <ul class="tools-list">
+          <li><strong>Python</strong>
+            <ul>
+              <li><strong>Pillow (PIL)</strong> (grayscale conversion, color mapping, blur)</li>
+              <li><strong>NumPy</strong> (procedural wash mask generation)</li>
+              <li><strong>random</strong> (stochastic wash variation)</li>
+            </ul>
+          </li>
+          <li><strong>Photoshop</strong></li>
+          <li><strong>Midjourney</strong></li>
+        </ul>
+</template>
+      <template id="desc-micro">   <strong>Tools:</strong>
+        <ul class="tools-list">
+          <li><strong>Python</strong>
+            <ul>
+              <li><strong>Pillow (PIL)</strong> (grid layout, typography, compositing)</li>
+              <li><strong>NumPy</strong> (procedural masks)</li>
+              <li><strong>random</strong> (subtle noise and grain)</li>
+              <li><strong>argparse</strong> (parameter controls)</li>
+              <li><strong>pathlib</strong> (file structure handling)</li>
+              <li><strong>datetime</strong> (archival metadata)</li>
+            </ul>
+          </li>
+          <li><strong>Photoshop</strong></li>
+          <li><strong>Midjourney</strong></li>
+        </ul>
+</template>
+      <template id="desc-pencil"> <strong>Tools:</strong>
+        <ul class="tools-list">
+          <li><strong>Python</strong>
+            <ul>
+              <li><strong>Pillow (PIL)</strong> (grayscale conversion, blur, compositing)</li>
+              <li><strong>random</strong> (controlled variation)</li>
+              <li><strong>argparse</strong> (parameterized output)</li>
+            </ul>
+          </li>
+          <li><strong>Photoshop</strong></li>
+          <li><strong>Midjourney</strong></li>
+        </ul>
+</template>
+      <template id="desc-chem"><strong>Tools:</strong>
+        <ul class="tools-list">
+          <li><strong>Python</strong>
+            <ul>
+              <li><strong>Pillow (PIL)</strong> (compositing, masks, frame processing)</li>
+              <li><strong>random</strong> (stochastic variation)</li>
+              <li><strong>argparse</strong> (parameterized output)</li>
+            </ul>
+          </li>
+          <li><strong>Photoshop</strong></li>
+          <li><strong>Midjourney</strong></li>
+        </ul>
+</template>
+      <template id="desc-glitch"> <strong>Tools:</strong>
+        <ul class="tools-list">
+          <li><strong>Python</strong>
+            <ul>
+              <li><strong>NumPy</strong> (noise fields, masks, temporal interpolation)</li>
+              <li><strong>Pillow (PIL)</strong> (frame-by-frame image processing)</li>
+              <li><strong>imageio</strong> (GIF / MP4 generation)</li>
+              <li><strong>argparse</strong> (timing, resolution, and style controls)</li>
+              <li><strong>random</strong> (stochastic animation variation)</li>
+            </ul>
+          </li>
+          <li><strong>Photoshop</strong></li>
+          <li><strong>Midjourney</strong></li>
+        </ul>
+</template>
+      <template id="desc-collage"> <strong>Tools:</strong>
+        <ul class="tools-list">
+          <li><strong>Python</strong>
+            <ul>
+              <li><strong>Pillow (PIL)</strong> (image compositing, rotation, scaling, alpha compositing)</li>
+              <li><strong>rembg</strong> (foreground/background separation)</li>
+              <li><strong>argparse</strong> (mode selection, parameter control)</li>
+              <li><strong>pathlib</strong> (file traversal and output management)</li>
+              <li><strong>math</strong> (parametric curves, trigonometry)</li>
+              <li><strong>random</strong> (controlled stochastic variation)</li>
+            </ul>
+          </li>
+          <li><strong>Midjourney</strong></li>
+          <li><strong>Autodesk Sketchpad Pro</strong></li>
+        </ul>
+</template>
+      <template id="desc-compcollage"> <strong>Tools:</strong>
+        <ul class="tools-list">
+          <li><strong>Python</strong>
+            <ul>
+              <li><strong>Pillow (PIL)</strong> (image-decoding, RGBA handling, alpha-channel feathering)</li>
+              <li><strong>rembg</strong> (foreground/background separation)</li>
+              <li><strong>argparse</strong> (command-line interface for batch processing)</li>
+              <li><strong>pathlib</strong> (recursive file and folder management)</li>
+              <li><strong>io</strong> (in-memory image byte handling)</li>
+            </ul>
+          </li>
+          <li><strong>Midjourney</strong></li>
+          <li><strong>Autodesk Sketchpad Pro</strong></li>
+        </ul>
+</template>
+      <template id="desc-animate"><<strong>Tools:</strong>
+        <ul class="tools-list">
+          <li><strong>Microsoft Excel</strong></li>
+          <li><strong>RAWGraphs</strong></li>
+          <li><strong>Inkscape</strong></li>
+        </ul>
+
+</template>
       <template id="desc-hana"><strong>Tools:</strong> Excel, RAWGraphs, Inkscape</template>
-      <template id="desc-geo"><strong>Tools:</strong> GeoGebra Classic, Autodesk Sketchpad Pro</template>
+      <template id="desc-geo">  <strong>Tools:</strong>
+        <ul class="tools-list">
+          <li><strong>GeoGebra Classic</strong></li>
+          <li><strong>Autodesk Sketchpad Pro</strong></li>
+        </ul>
+</template>
 
       <!-- ESSAY Templates (long form) -->
       <template id="essay-polaroid">
