@@ -1,18 +1,32 @@
+/* =========================================================
+   carousel-lightbox.js
+   - Carousel (prev/next + keyboard)
+   - Caption + short description (tools)
+   - Essay panel ("Process Notes") via data-essay templates
+   - Lightbox (click image to open)
+========================================================= */
+
 (function () {
   "use strict";
 
-  function initCarousel() {
-    const images = Array.from(document.querySelectorAll(".carousel-image"));
+  function initCarouselAndPanels() {
+    // Scope everything to the first carousel on the page
+    const carouselSection = document.querySelector(".gallery-carousel");
+    if (!carouselSection) return;
+
+    const images = Array.from(carouselSection.querySelectorAll(".carousel-image"));
     if (images.length === 0) return;
 
-    const prevBtn = document.querySelector(".carousel-btn.prev");
-    const nextBtn = document.querySelector(".carousel-btn.next");
+    const prevBtn = carouselSection.querySelector(".carousel-btn.prev");
+    const nextBtn = carouselSection.querySelector(".carousel-btn.next");
 
-    const titleEl = document.querySelector("#image-caption");      // H2
-    const descEl  = document.querySelector("#image-description");  // DIV or P
+    // Left panel
+    const titleEl = document.querySelector("#image-caption");
+    const descEl  = document.querySelector("#image-description");
 
-    // NEW: Essay panel outlet (optional; only exists on comp-design.html)
-    const essayEl = document.querySelector("#essay-body");         // DIV
+    // Bottom essay panel
+    const essayPanel = document.querySelector(".essay-panel");
+    const essayBody  = document.querySelector("#essay-body");
 
     let index = images.findIndex(img => img.classList.contains("active"));
     if (index < 0) index = 0;
@@ -21,31 +35,31 @@
       return img.getAttribute("data-caption") || img.getAttribute("alt") || "";
     }
 
-    function getTemplateHTML(templateId) {
-      if (!templateId) return "";
-      const tpl = document.getElementById(templateId);
-      if (tpl && tpl.tagName && tpl.tagName.toLowerCase() === "template") {
-        return tpl.innerHTML;
-      }
-      return "";
-    }
-
-    function getDescriptionHTML(img) {
+    function getShortHTML(img) {
       // Style A: direct HTML description
       const direct = img.getAttribute("data-description");
       if (direct) return direct;
 
-      // Style B: template reference (data-desc="desc-...")
+      // Style B: short template reference (your data-desc)
       const templateId = img.getAttribute("data-desc");
-      if (templateId) return getTemplateHTML(templateId);
+      if (templateId) {
+        const tpl = document.getElementById(templateId);
+        if (tpl && tpl.tagName.toLowerCase() === "template") {
+          return tpl.innerHTML;
+        }
+      }
 
       return "";
     }
 
-    // NEW: Long-form essay HTML (data-essay="essay-...")
     function getEssayHTML(img) {
       const essayId = img.getAttribute("data-essay");
-      if (essayId) return getTemplateHTML(essayId);
+      if (!essayId) return "";
+
+      const tpl = document.getElementById(essayId);
+      if (tpl && tpl.tagName.toLowerCase() === "template") {
+        return tpl.innerHTML;
+      }
       return "";
     }
 
@@ -58,32 +72,27 @@
 
       const img = images[index];
 
-      // Caption
+      // Title (left)
       if (titleEl) {
         titleEl.innerHTML = getTitleHTML(img);
         titleEl.style.display = "block";
       }
 
-      // Short description (left panel)
+      // Short tools line (left)
       if (descEl) {
-        const shortHTML = getDescriptionHTML(img);
+        const shortHTML = getShortHTML(img);
         descEl.innerHTML = shortHTML;
         descEl.style.display = shortHTML ? "block" : "none";
-        descEl.style.opacity = "1";
-        descEl.style.visibility = "visible";
       }
 
-      // Essay panel (bottom) — only updates if the page has #essay-body
-      if (essayEl) {
+      // Essay panel (bottom)
+      if (essayBody) {
         const essayHTML = getEssayHTML(img);
+        essayBody.innerHTML = essayHTML;
 
-        // If there's no essay for this image, clear/hide the panel content
-        essayEl.innerHTML = essayHTML || "";
-
-        // Optional: hide the whole panel if empty (requires .essay-panel wrapper)
-        const panel = document.querySelector(".essay-panel");
-        if (panel) {
-          panel.style.display = essayHTML ? "block" : "none";
+        // hide panel if no essay exists for this image
+        if (essayPanel) {
+          essayPanel.style.display = essayHTML ? "block" : "none";
         }
       }
     }
@@ -94,7 +103,7 @@
     if (nextBtn) nextBtn.addEventListener("click", next);
     if (prevBtn) prevBtn.addEventListener("click", prev);
 
-    // keyboard support
+    // Keyboard support (avoid when typing)
     document.addEventListener("keydown", (e) => {
       const tag = (document.activeElement?.tagName || "").toLowerCase();
       if (["input", "textarea", "select"].includes(tag)) return;
@@ -102,8 +111,59 @@
       if (e.key === "ArrowLeft") prev();
     });
 
+    // ----------------------------
+    // Lightbox (optional)
+    // ----------------------------
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const lightboxCaption = document.getElementById("lightbox-caption");
+    const lightboxClose = document.querySelector(".lightbox-close");
+
+    function openLightbox(img) {
+      if (!lightbox || !lightboxImg) return;
+
+      const full = img.getAttribute("data-full") || img.getAttribute("src");
+      lightboxImg.src = full || "";
+      lightboxImg.alt = img.getAttribute("alt") || "";
+
+      if (lightboxCaption) {
+        lightboxCaption.innerHTML = getTitleHTML(img) || "";
+      }
+
+      lightbox.classList.add("open");
+      document.body.classList.add("no-scroll");
+      lightbox.setAttribute("aria-hidden", "false");
+    }
+
+    function closeLightbox() {
+      if (!lightbox) return;
+      lightbox.classList.remove("open");
+      document.body.classList.remove("no-scroll");
+      lightbox.setAttribute("aria-hidden", "true");
+      if (lightboxImg) lightboxImg.src = "";
+      if (lightboxCaption) lightboxCaption.innerHTML = "";
+    }
+
+    // Click active image to open
+    images.forEach((img) => {
+      img.addEventListener("click", () => openLightbox(img));
+      img.style.cursor = "zoom-in";
+    });
+
+    // Close interactions
+    if (lightboxClose) lightboxClose.addEventListener("click", closeLightbox);
+    if (lightbox) {
+      lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) closeLightbox();
+      });
+    }
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeLightbox();
+    });
+
+    // Initial render
     show(index);
   }
 
-  document.addEventListener("DOMContentLoaded", initCarousel);
+  document.addEventListener("DOMContentLoaded", initCarouselAndPanels);
 })();
