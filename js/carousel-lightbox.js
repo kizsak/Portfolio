@@ -11,12 +11,23 @@
     const titleEl = document.querySelector("#image-caption");      // H2
     const descEl  = document.querySelector("#image-description");  // DIV or P
 
+    // NEW: Essay panel outlet (optional; only exists on comp-design.html)
+    const essayEl = document.querySelector("#essay-body");         // DIV
+
     let index = images.findIndex(img => img.classList.contains("active"));
     if (index < 0) index = 0;
 
     function getTitleHTML(img) {
-      // Prefer data-caption (may include <em>), fallback to alt
       return img.getAttribute("data-caption") || img.getAttribute("alt") || "";
+    }
+
+    function getTemplateHTML(templateId) {
+      if (!templateId) return "";
+      const tpl = document.getElementById(templateId);
+      if (tpl && tpl.tagName && tpl.tagName.toLowerCase() === "template") {
+        return tpl.innerHTML;
+      }
+      return "";
     }
 
     function getDescriptionHTML(img) {
@@ -24,15 +35,17 @@
       const direct = img.getAttribute("data-description");
       if (direct) return direct;
 
-      // Style B: template reference (comp-design.html)
+      // Style B: template reference (data-desc="desc-...")
       const templateId = img.getAttribute("data-desc");
-      if (templateId) {
-        const tpl = document.getElementById(templateId);
-        if (tpl && tpl.tagName.toLowerCase() === "template") {
-          return tpl.innerHTML;
-        }
-      }
+      if (templateId) return getTemplateHTML(templateId);
 
+      return "";
+    }
+
+    // NEW: Long-form essay HTML (data-essay="essay-...")
+    function getEssayHTML(img) {
+      const essayId = img.getAttribute("data-essay");
+      if (essayId) return getTemplateHTML(essayId);
       return "";
     }
 
@@ -45,16 +58,33 @@
 
       const img = images[index];
 
+      // Caption
       if (titleEl) {
         titleEl.innerHTML = getTitleHTML(img);
         titleEl.style.display = "block";
       }
 
+      // Short description (left panel)
       if (descEl) {
-        descEl.innerHTML = getDescriptionHTML(img);
-        descEl.style.display = "block";
+        const shortHTML = getDescriptionHTML(img);
+        descEl.innerHTML = shortHTML;
+        descEl.style.display = shortHTML ? "block" : "none";
         descEl.style.opacity = "1";
         descEl.style.visibility = "visible";
+      }
+
+      // Essay panel (bottom) — only updates if the page has #essay-body
+      if (essayEl) {
+        const essayHTML = getEssayHTML(img);
+
+        // If there's no essay for this image, clear/hide the panel content
+        essayEl.innerHTML = essayHTML || "";
+
+        // Optional: hide the whole panel if empty (requires .essay-panel wrapper)
+        const panel = document.querySelector(".essay-panel");
+        if (panel) {
+          panel.style.display = essayHTML ? "block" : "none";
+        }
       }
     }
 
