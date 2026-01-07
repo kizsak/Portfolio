@@ -536,3 +536,11 @@ body.no-scroll{ overflow: hidden; }
   color: rgba(255,255,255,0.92);
   opacity: 0.95;
 }
+
+/* Gallery carousel: never stretch, never crop */
+.carousel-image{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;   /* shows full image */
+  object-position: center;
+}
