@@ -1,102 +1,79 @@
-/* =========================================================
-   Portfolio Carousel + Caption + Card Click Safety
-   Works with:
-   - .carousel-image (one should have .active initially)
-   - .carousel-btn.prev / .carousel-btn.next (buttons)
-   - #image-caption OR #image-description (caption target)
-========================================================= */
-
 (function () {
   "use strict";
 
-  function initCardClickSafety() {
-    // Only enable on pages that actually have the card grid
-    const cardGrid = document.querySelector(".card-grid");
-    if (!cardGrid) return;
-
-    const cards = document.querySelectorAll(".card");
-    cards.forEach((card) => {
-      const link = card.querySelector("a");
-      if (!link) return;
-
-      card.style.cursor = "pointer";
-
-      card.addEventListener("click", (e) => {
-        // If user clicked an actual interactive element, do nothing
-        const interactive = e.target.closest("a, button, input, textarea, select, label");
-        if (interactive) return;
-
-        link.click();
-      });
-    });
-  }
-
   function initCarousel() {
     const images = Array.from(document.querySelectorAll(".carousel-image"));
-    if (images.length === 0) return; // no carousel on this page
+    if (images.length === 0) return;
 
     const prevBtn = document.querySelector(".carousel-btn.prev");
     const nextBtn = document.querySelector(".carousel-btn.next");
 
-    // Caption target: support either ID
-    const captionEl =
-      document.querySelector("#image-caption") ||
-      document.querySelector("#image-description");
+    const titleEl = document.querySelector("#image-caption");      // H2
+    const descEl  = document.querySelector("#image-description");  // DIV or P
 
-    let index = Math.max(0, images.findIndex((img) => img.classList.contains("active")));
-    if (index === -1) index = 0;
+    let index = images.findIndex(img => img.classList.contains("active"));
+    if (index < 0) index = 0;
 
-    // Ensure only one active at start
-    images.forEach((img, i) => img.classList.toggle("active", i === index));
-
-    function getCaptionFor(img) {
-      // Prefer explicit data-caption, fallback to alt, fallback to empty
+    function getTitleHTML(img) {
+      // Prefer data-caption (may include <em>), fallback to alt
       return img.getAttribute("data-caption") || img.getAttribute("alt") || "";
     }
 
-    function render() {
-      images.forEach((img, i) => img.classList.toggle("active", i === index));
+    function getDescriptionHTML(img) {
+      // Style A: direct HTML description
+      const direct = img.getAttribute("data-description");
+      if (direct) return direct;
 
-      if (captionEl) {
-        const text = getCaptionFor(images[index]);
-        captionEl.textContent = text;
-        // Make sure it’s visible (helps if older CSS hid it)
-        captionEl.style.display = "block";
-        captionEl.style.opacity = "1";
-        captionEl.style.visibility = "visible";
+      // Style B: template reference (comp-design.html)
+      const templateId = img.getAttribute("data-desc");
+      if (templateId) {
+        const tpl = document.getElementById(templateId);
+        if (tpl && tpl.tagName.toLowerCase() === "template") {
+          return tpl.innerHTML;
+        }
+      }
+
+      return "";
+    }
+
+    function show(i) {
+      index = (i + images.length) % images.length;
+
+      images.forEach((img, idx) => {
+        img.classList.toggle("active", idx === index);
+      });
+
+      const img = images[index];
+
+      if (titleEl) {
+        titleEl.innerHTML = getTitleHTML(img);
+        titleEl.style.display = "block";
+      }
+
+      if (descEl) {
+        descEl.innerHTML = getDescriptionHTML(img);
+        descEl.style.display = "block";
+        descEl.style.opacity = "1";
+        descEl.style.visibility = "visible";
       }
     }
 
-    function next() {
-      index = (index + 1) % images.length;
-      render();
-    }
-
-    function prev() {
-      index = (index - 1 + images.length) % images.length;
-      render();
-    }
+    function next() { show(index + 1); }
+    function prev() { show(index - 1); }
 
     if (nextBtn) nextBtn.addEventListener("click", next);
     if (prevBtn) prevBtn.addEventListener("click", prev);
 
-    // Keyboard support (optional but nice)
+    // keyboard support
     document.addEventListener("keydown", (e) => {
-      // Don’t hijack typing in inputs
-      const tag = (document.activeElement && document.activeElement.tagName || "").toLowerCase();
+      const tag = (document.activeElement?.tagName || "").toLowerCase();
       if (["input", "textarea", "select"].includes(tag)) return;
-
       if (e.key === "ArrowRight") next();
       if (e.key === "ArrowLeft") prev();
     });
 
-    // Initial paint
-    render();
+    show(index);
   }
 
-  document.addEventListener("DOMContentLoaded", () => {
-    initCardClickSafety();
-    initCarousel();
-    console.log("✔ carousel + captions initialized");
-  });
+  document.addEventListener("DOMContentLoaded", initCarousel);
 })();
