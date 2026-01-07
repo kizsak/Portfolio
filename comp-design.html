@@ -83,8 +83,8 @@
         />
 
         <img
-          src="https://github.com/kizsak/Portfolio/raw/main/Microfiche.jpg"
-          data-full="https://github.com/kizsak/Portfolio/raw/main/Microfiche.jpg"
+          src="https://github.com/kizsak/Portfolio/raw/main/cyanotype.jpg"
+          data-full="https://github.com/kizsak/Portfolio/raw/main/cyanotype.jpg"
           alt="A cyanotype of a gardenia"
           class="carousel-image"
           data-caption="<em>Cyanotype</em>"
@@ -145,6 +145,16 @@
           data-desc="desc-compcollage"
         />
 
+       <img
+          src="https://github.com/kizsak/Portfolio/raw/main/EpisodicDisability.gif"
+          data-full="https://github.com/kizsak/Portfolio/raw/main/EpisodicDisability.gif"
+          alt="A collage self-portrait of the artist using flower components"
+          class="carousel-image"
+          data-caption="<em>Animated Self-Portrait</em>"
+          data-desc="desc-animate"
+        />
+
+        
         <img
           src="https://github.com/kizsak/Portfolio/raw/main/HanakotabaDataSculpture.png"
           data-full="https://github.com/kizsak/Portfolio/raw/main/HanakotabaDataSculpture.png"
@@ -428,6 +438,50 @@
         </p>
       </template>
 
+
+
+   <template id="desc-collage">
+        <strong>Tools:</strong>
+        <ul class="tools-list">
+          <li><strong>Python</strong>
+            <ul>
+              <li><strong>Pillow (PIL)</strong> (image compositing, rotation, scaling, alpha compositing)</li>
+              <li><strong>rembg</strong> (foreground/background separation)</li>
+              <li><strong>argparse</strong> (mode selection, parameter control)</li>
+              <li><strong>pathlib</strong> (file traversal and output management)</li>
+              <li><strong>math</strong> (parametric curves, trigonometry)</li>
+              <li><strong>random</strong> (controlled stochastic variation)</li>
+            </ul>
+          </li>
+          <li><strong>Midjourney</strong></li>
+          <li><strong>Autodesk Sketchpad Pro</strong></li>
+        </ul>
+
+        <p>
+          I began with a photographic self-portrait, then sampled the colors to record their hex codes and create a personal color palette. Next, I used Midjourney to create more than 700 synthetic botanical photographs in the hues from my personal palette. I then processed those images using a Python script
+          <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target="_blank" rel="noopener noreferrer">(download)</a>
+          to extract floral forms from the images and export them as transparent PNG assets. I then manually layered those elements to construct a digital self-portrait collage.
+        </p>
+      </template>
+
+      <template id="desc-animate">
+        <strong>Tools:</strong>
+        <ul class="tools-list">
+          <li><strong>Python</strong>
+            <ul>
+              <li><strong>Pillow (PIL)</strong> (image-decoding, RGBA handling, alpha-channel feathering)</li>
+              <li><strong>rembg</strong> (foreground/background separation)</li>
+              <li><strong>argparse</strong> (command-line interface for batch processing)</li>
+              <li><strong>pathlib</strong> (recursive file and folder management)</li>
+              <li><strong>io</strong> (in-memory image byte handling)</li>
+            </ul>
+          </li>
+          <li><strong>Midjourney</strong></li>
+          <li><strong>Autodesk Sketchpad Pro</strong></li>
+        </ul>
+
+
+      
       <template id="desc-hana">
         <strong>Tools:</strong>
         <ul class="tools-list">
