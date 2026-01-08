@@ -1020,3 +1020,59 @@ img{
     line-height: 1.6;
   }
 }
+
+/* ==============================
+   Essay Panel — match tools box + fill width
+   Paste at END of style.css
+================================= */
+
+/* Make the panel background match the left tools box */
+.page-comp-design .essay-panel {
+  /* pick one:
+     - If your tools box is white-ish: use #f7f7f7
+     - If it's light gray: use #efefef
+     This is a safe middle that looks like your left card. */
+  background: #f2f2f2 !important;
+
+  /* if anything is dimming it */
+  opacity: 1 !important;
+  filter: none !important;
+
+  /* spacing + shape to match your other panels */
+  border-radius: 24px;
+  padding: 2rem 2.25rem 2.5rem;
+  margin: 2rem auto 3rem;
+  max-width: 1200px;
+}
+
+/* Make the essay text actually use the space */
+.page-comp-design .essay-body {
+  max-width: none !important;   /* remove any cap */
+  width: 100%;
+}
+
+/* Paragraphs: fill width, but keep good rhythm */
+.page-comp-design .essay-body p {
+  max-width: none !important;   /* remove the 70ch constraint */
+  margin: 0 0 1rem 0;
+  line-height: 1.65;
+  font-size: 1.05rem;
+  color: #1b1b1b;
+}
+
+/* Title color match */
+.page-comp-design .essay-title {
+  color: #1b1b1b;
+  margin-bottom: 1.25rem;
+}
+
+/* Links: readable but not neon */
+.page-comp-design .essay-body a {
+  color: #1b1b1b;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.page-comp-design .essay-body a:hover {
+  color: #000;
+}
