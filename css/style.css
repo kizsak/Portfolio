@@ -1076,3 +1076,86 @@ img{
 .page-comp-design .essay-body a:hover {
   color: #000;
 }
+
+/* =========================================================
+   ESSAY PANEL — 2-column layout on desktop (Comp Design + IF)
+   Paste at END of style.css
+   ========================================================= */
+
+/* Shared panel shell (works for comp-design + IF) */
+.page-comp-design .essay-panel,
+.page-if .essay-panel {
+  max-width: 1200px;
+  margin: 2rem auto 3rem;
+  padding: 2rem 2.25rem 2.5rem;
+  border-radius: 24px;
+
+  /* match your “tools box” vibe */
+  background: rgba(255, 255, 255, 0.78) !important;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.20);
+}
+
+/* Title */
+.page-comp-design .essay-title,
+.page-if .essay-title {
+  color: #111 !important;
+  margin: 0 0 1.25rem 0;
+}
+
+/* Body text base */
+.page-comp-design .essay-body,
+.page-if .essay-body {
+  color: #111 !important;
+  font-size: 1.05rem;
+  line-height: 1.65;
+
+  /* IMPORTANT: ensure width caps aren’t limiting this */
+  max-width: none !important;
+  width: 100% !important;
+}
+
+/* Paragraph spacing */
+.page-comp-design .essay-body p,
+.page-if .essay-body p {
+  margin: 0 0 1rem 0;
+}
+
+/* Links */
+.page-comp-design .essay-body a,
+.page-if .essay-body a {
+  color: #0b3a55 !important;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ---- Columns: only on wider screens ---- */
+@media (min-width: 980px) {
+  .page-comp-design .essay-body,
+  .page-if .essay-body {
+    column-count: 2;
+    column-gap: 3rem;
+    column-fill: balance;
+  }
+
+  /* Avoid awkward breaks */
+  .page-comp-design .essay-body p,
+  .page-if .essay-body p,
+  .page-comp-design .essay-body ul,
+  .page-if .essay-body ul,
+  .page-comp-design .essay-body ol,
+  .page-if .essay-body ol,
+  .page-comp-design .essay-body blockquote,
+  .page-if .essay-body blockquote {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}
+
+/* On very large screens, optionally widen the gutter a bit */
+@media (min-width: 1300px) {
+  .page-comp-design .essay-body,
+  .page-if .essay-body {
+    column-gap: 3.5rem;
+  }
+}
