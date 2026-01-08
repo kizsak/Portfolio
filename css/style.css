@@ -1159,3 +1159,57 @@ img{
     column-gap: 3.5rem;
   }
 }
+
+/* ===========================
+   ESSAY PANEL — stop clipping
+   (paste at END of style.css)
+   =========================== */
+
+/* Let the page scroll if needed (some layouts accidentally disable it) */
+html, body {
+  height: auto;
+  overflow-y: auto;
+}
+
+/* If your main/gallery area was set to 100vh + overflow hidden, undo that */
+.gallery-layout {
+  height: auto;
+  min-height: 0;
+  overflow: visible;
+}
+
+/* Essay panel should expand with content */
+.essay-panel {
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+
+  /* keep your rounded look */
+  padding-bottom: 2.5rem;
+}
+
+/* Essay body: no max-height, allow normal wrapping, no hidden overflow */
+.essay-body {
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+
+  white-space: normal !important;
+  word-break: normal;
+  overflow-wrap: anywhere;
+}
+
+/* If you enabled columns, keep them but avoid weird “cutoff” behavior */
+.essay-body {
+  column-width: 34ch;      /* tweak: smaller = more columns */
+  column-gap: 2.25rem;
+  column-fill: auto;
+}
+
+/* On small screens, turn columns off (prevents cramped clipping) */
+@media (max-width: 900px) {
+  .essay-body {
+    column-count: 1;
+    column-width: auto;
+  }
+}
