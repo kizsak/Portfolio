@@ -1213,3 +1213,56 @@ html, body {
     column-width: auto;
   }
 }
+
+/* =========================================
+   ESSAY PANEL — make text fill the space
+   Paste at END of style.css
+   ========================================= */
+
+/* Match the left tool box background (tweak the rgba if needed) */
+.essay-panel {
+  background: rgba(255, 255, 255, 0.72) !important; /* lighten */
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 26px;
+}
+
+/* The big fix: remove narrow max-width constraints */
+.essay-body,
+.essay-body * {
+  max-width: none !important;
+}
+
+/* Let the essay container actually take the full panel width */
+.essay-body {
+  width: 100% !important;
+}
+
+/* If paragraphs were given a “readable width,” undo it */
+.essay-body p,
+.essay-body li {
+  width: auto !important;
+  max-width: none !important;
+}
+
+/* OPTIONAL: columns so it “fills” the panel like a magazine */
+@media (min-width: 980px) {
+  .essay-body {
+    column-count: 2;
+    column-gap: 2.25rem;
+    column-fill: auto;
+  }
+
+  /* Helps avoid awkward breaks */
+  .essay-body p,
+  .essay-body ul,
+  .essay-body ol {
+    break-inside: avoid;
+  }
+}
+
+/* On small screens, keep it single column */
+@media (max-width: 979px) {
+  .essay-body {
+    column-count: 1;
+  }
+}
