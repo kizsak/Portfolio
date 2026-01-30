@@ -43,7 +43,9 @@ body{
    Page Backgrounds (light leaks)
 ------------------------------ */
 .page-home{
-  Background-image: linear-gradient (rgba(0,0,0,0.7))url(https://github.com/kizsak/Portfolio/raw/main/Geogebra1.jpg); 
+  background-image:
+    linear-gradient(to bottom, rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+    url("https://github.com/kizsak/Portfolio/raw/main/Geogebra1.jpg");
 }
 .page-digital-painting{
   background-image: url("https://github.com/kizsak/Portfolio/raw/main/LightBleedFilmEdgeCompressed.png");
