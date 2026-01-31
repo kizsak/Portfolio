@@ -54,6 +54,69 @@
         0 0 4px rgba(255, 210, 220, 0.8),
         0 0 10px rgba(255, 150, 170, 0.6);
     }
+
+
+  /* STEP 1 OVERRIDE: force the homepage cards to show no matter what style.css is doing */
+.page-home .hero-section,
+.page-home .card-grid,
+.page-home .card {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  transform: none !important;
+  height: auto !important;
+  overflow: visible !important;
+  position: relative !important;
+  z-index: 5 !important;
+}
+
+/* make the list a real single-column grid */
+.page-home .card-grid {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 24px auto !important;
+  width: min(1000px, 92vw) !important;
+
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 18px !important;
+}
+
+/* ensure each card has a visible area */
+.page-home .card {
+  min-height: 220px !important;
+}
+
+/* make the link/card actually contain its background */
+.page-home .card__link {
+  display: block !important;
+  position: relative !important;
+  min-height: 220px !important;
+  border-radius: 18px !important;
+  overflow: hidden !important;
+}
+
+/* background image layer */
+.page-home .card__background {
+  position: absolute !important;
+  inset: 0 !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+/* title layer */
+.page-home .card__content {
+  position: relative !important;
+  z-index: 2 !important;
+  padding: 18px !important;
+}
+
+/* optional: improve heading readability over images */
+.page-home .card__heading {
+  margin: 0 !important;
+  text-shadow: 0 2px 18px rgba(0,0,0,0.65) !important;
+}
+
   </style>
 </head>
 
