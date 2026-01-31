@@ -52,32 +52,45 @@ body{
     linear-gradient(to bottom, rgba(0,0,0,0.70), rgba(0,0,0,0.70)),
     url("https://github.com/kizsak/Portfolio/raw/main/KoiBent.bmp");
 }
-
-}
 .page-digital-painting-animals{
-  background-image: url("https://github.com/kizsak/Portfolio/raw/main/LightBleedBright.jpg");
+  background-image:
+    linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+    url("https://github.com/kizsak/Portfolio/raw/main/KoiBent.bmp");
 }
 .page-digital-painting-portraits{
-  background-image: url("https://github.com/kizsak/Portfolio/raw/main/LightBleedBlueYellowRed.jpg");
+  background-image:
+    linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+    url("https://github.com/kizsak/Portfolio/raw/main/KoiBent.bmp");
 }
 .page-digital-painting-scapes{
-  background-image: url("https://github.com/kizsak/Portfolio/raw/main/LightBleedGreenBlackCompressed.png");
+  background-image:
+    linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+    url("https://github.com/kizsak/Portfolio/raw/main/KoiBent.bmp);
 }
 .page-digital-painting-still,
 .page-digital-painting-stilllife{
-  background-image: url("https://github.com/kizsak/Portfolio/raw/main/LightBleedYellowPinkCompressed.png");
-}
+   background-image:
+    linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+    url("https://github.com/kizsak/Portfolio/raw/main/KoiBent.bmp);
 .page-comp-design{
-  background-image: url("https://github.com/kizsak/Portfolio/raw/main/LightBleedLiightDark.jpg");
+  background-image: 
+     linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+     url("https://github.com/kizsak/Portfolio/raw/main/BentLandscape.png");
 }
 .page-if{
-  background-image: url("https://github.com/kizsak/Portfolio/raw/main/LightBlleedPinkGreenStripes.jpg");
+  background-image: 
+     linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+     url("https://github.com/kizsak/Portfolio/raw/main/Background1.jpg");
 }
 .page-graphic-design{
-  background-image: url("https://github.com/kizsak/Portfolio/raw/main/LightBleedPurpleWhiteCompressed.png");
+   linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+   background-image: url("https://github.com/kizsak/Portfolio/raw/main/BentLantana.jpg");
 }
 .page-contact{
-  background-image: url("https://github.com/kizsak/Portfolio/raw/main/LightBleedOrangeGreenCompressed.png");
+  background-image: 
+     linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+     url("https://github.com/kizsak/Portfolio/raw/main/Background2.jpg");
+   
 }
 
 /* -----------------------------
