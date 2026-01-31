@@ -1497,3 +1497,14 @@ header,
   max-width: 100%;
 }
 
+/* STEP 1: Make sure front-page cards are not clipped */
+.hero-section {
+  height: auto !important;
+  overflow: visible !important;
+}
+
+.card-grid {
+  position: relative !important;
+  overflow: visible !important;
+}
+
