@@ -1545,3 +1545,75 @@ header,
   left: auto !important;
   top: auto !important;
 }
+
+/* =========================================================
+   Digital Painting page — make it match the homepage cards
+   (paste at very bottom of css/style.css)
+   ========================================================= */
+
+.page-digital-painting .hero-section{
+  width: min(1000px, 92vw);
+  margin: 24px auto 48px;
+}
+
+.page-digital-painting .card-grid{
+  list-style: none;
+  padding: 0;
+  margin: 24px 0 0;
+
+  display: grid;
+  grid-template-columns: 1fr;   /* single column */
+  gap: 18px;
+}
+
+/* Card shell */
+.page-digital-painting .card{
+  min-height: 220px;
+}
+
+/* Clickable card area */
+.page-digital-painting .card__link{
+  display: block;
+  position: relative;
+  min-height: 220px;
+
+  border-radius: 18px;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+/* Background image layer */
+.page-digital-painting .card__background{
+  position: absolute;
+  inset: 0;
+
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.02);
+}
+
+/* Title layer */
+.page-digital-painting .card__content{
+  position: relative;
+  z-index: 2;
+  padding: 18px;
+}
+
+/* Title text */
+.page-digital-painting .card__heading{
+  margin: 0;
+  text-shadow: 0 2px 18px rgba(0,0,0,0.65);
+}
+
+/* Optional: a subtle dark gradient so white text reads well */
+.page-digital-painting .card__link::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0,0,0,0.45),
+    rgba(0,0,0,0.05)
+  );
+  z-index: 1;
+}
