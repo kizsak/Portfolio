@@ -1301,6 +1301,133 @@ html, body {
   width: min(1000px, 92vw);
 }
 
+/* =====================================================
+   SINGLE COLUMN LAYOUT — GLOBAL OVERRIDE
+   Drop this at the END of your CSS file
+   ===================================================== */
+
+/* 1. Kill accidental horizontal scrolling site-wide */
+html, body {
+  overflow-x: hidden;
+}
+
+/* 2. Establish a readable single column for all main content */
+main,
+.main,
+.container,
+.page,
+.content,
+.shell,
+.wrap {
+  width: min(1000px, 92vw);
+  margin-inline: auto;
+}
+
+/* 3. Disable side rails / left nav behavior */
+.left-rail,
+.side-rail,
+.sidebar,
+.nav-rail {
+  position: static !important;
+  width: auto !important;
+  margin: 0 0 1.5rem 0;
+}
+
+/* If you want them gone entirely, uncomment this instead */
+/*
+.left-rail,
+.side-rail,
+.sidebar,
+.nav-rail {
+  display: none !important;
+}
+*/
+
+/* 4. HERO / HEADER — keep centered, single column */
+header,
+.hero,
+.page-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* =====================================================
+   FEATURED PROJECT PANEL (Homepage)
+   ===================================================== */
+
+/* Stack everything vertically */
+.featured__panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  align-items: stretch;
+  max-width: 100%;
+  overflow: hidden; /* critical: prevents page-wide scroll */
+}
+
+/* Meta (title, description, buttons) */
+.featured__meta {
+  width: 100%;
+}
+
+/* Image strip stays horizontal INSIDE the panel */
+.featured__strip {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Prevent children from widening the page */
+.featured__strip *,
+.featured__panel * {
+  max-width: 100%;
+}
+
+/* Optional: nicer scrollbar */
+.featured__strip::-webkit-scrollbar {
+  height: 8px;
+}
+.featured__strip::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.25);
+  border-radius: 4px;
+}
+
+/* =====================================================
+   GALLERY / CAROUSEL PAGES
+   ===================================================== */
+
+/* Stack title box -> carousel -> notes */
+.gallery-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Unified column width */
+.gallery-info,
+.gallery-carousel,
+.essay-panel {
+  width: min(1000px, 92vw);
+}
+
+/* Center gallery titles if desired */
+.gallery-info {
+  text-align: center;
+}
+
+/* =====================================================
+   SAFETY NET — neutralize leftover grid/flex rows
+   ===================================================== */
+
+/* If anything still tries to go side-by-side, this wins */
+[class*="grid"],
+[class*="row"] {
+  max-width: 100%;
+}
+
+
 /* Optional: center the caption/title text */
 .gallery-info{
   text-align: center;
