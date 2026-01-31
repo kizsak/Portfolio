@@ -1508,3 +1508,32 @@ header,
   overflow: visible !important;
 }
 
+/* HERO HEADER — centered above cards */
+.page-home header,
+.page-home .hero,
+.page-home .hero-header {
+  width: min(1000px, 92vw);
+  margin: 0 auto 2.5rem auto;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+/* Your name */
+.page-home .site-name,
+.page-home .author-name,
+.page-home h1 {
+  margin: 0 0 0.5rem 0;
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 600;
+}
+
+/* Portfolio subtitle */
+.page-home .portfolio-title,
+.page-home .hero-subtitle,
+.page-home h2 {
+  margin: 0;
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  font-weight: 400;
+  opacity: 0.9;
+}
