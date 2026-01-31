@@ -1285,3 +1285,23 @@ html, body {
     column-count: 1;
   }
 }
+
+/* Make carousel pages stack vertically: title box -> carousel -> (process notes already below) */
+.gallery-layout{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Give the top info box and carousel a consistent column width */
+.gallery-info,
+.gallery-carousel,
+.essay-panel{
+  width: min(1000px, 92vw);
+}
+
+/* Optional: center the caption/title text */
+.gallery-info{
+  text-align: center;
+}
