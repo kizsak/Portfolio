@@ -1465,3 +1465,35 @@ header,
   max-width: 100%;
 }
 
+   /* STEP 1: Fix missing featured cards by making the strip a real horizontal scroller */
+.featured__panel {
+  overflow: visible !important;   /* stop parent from clipping thumbnails */
+}
+
+.featured__strip {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;   /* prevents cards from dropping/wrapping */
+  gap: 14px;
+  align-items: center;
+
+  overflow-x: auto !important;    /* enables scrolling to “missing” cards */
+  overflow-y: hidden !important;
+  -webkit-overflow-scrolling: touch;
+
+  max-width: 100%;
+  padding-bottom: 10px;           /* gives room for scrollbar on some OS */
+}
+
+/* Each card/thumbnail must NOT shrink to zero */
+.featured__strip > * {
+  flex: 0 0 auto !important;
+}
+
+/* Images behave inside cards */
+.featured__strip img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
