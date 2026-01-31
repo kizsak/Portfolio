@@ -1537,3 +1537,11 @@ header,
   font-weight: 400;
   opacity: 0.9;
 }
+
+/* Neutralize corner positioning for name on homepage */
+.page-home .site-name,
+.page-home .author-name {
+  position: static !important;
+  left: auto !important;
+  top: auto !important;
+}
