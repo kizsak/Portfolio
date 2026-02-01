@@ -28,7 +28,8 @@ body{
 .page-home{
   background-image:
     linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
-    style="background-image: url(https://github.com/kizsak/Portfolio/raw/main/Texture5.png); background-position: 20% 35%;
+    style="background-image: url(https://github.com/kizsak/Portfolio/raw/main/Texture5.png"); 
+  background-position: 50% 20%;
   background-repeat: no-repeat;
   background-position: center top;
   background-size: cover;
@@ -38,6 +39,7 @@ body{
   background-image:
     linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
     url("https://github.com/kizsak/Portfolio/raw/main/KoiBent.jpg")
+  background-position: 50% 20%;
   background-repeat: no-repeat;
   background-position: center top;
   background-size: cover;
@@ -47,7 +49,7 @@ body{
   background-image:
     linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
     url("https://github.com/kizsak/Portfolio/raw/main/BentLantana.jpg");
-   url("https://github.com/kizsak/Portfolio/raw/main/Texture5.png");
+  background-position: 50% 20%;
   background-repeat: no-repeat;
   background-position: center top;
   background-size: cover;
@@ -298,3 +300,61 @@ body{
   .fp__item{ width: 300px; }
   .fp__item img{ height: 200px; }
 }
+
+/* =========================
+   PATCH: Nav buttons
+   (paste at end of style.css)
+========================= */
+
+.nav-bar{
+  width: min(1000px, 92vw);
+  margin: 12px auto 0;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.nav-btn{
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: rgba(255,255,255,0.92) !important;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.14);
+}
+
+.nav-btn:hover{
+  background: rgba(255,255,255,0.12);
+}
+
+.nav-btn.is-active{
+  background: rgba(255,255,255,0.16);
+  border-color: rgba(255,255,255,0.22);
+}
+
+
+/* =========================
+   PATCH: Reliable background
+   (use JPG instead of BMP)
+========================= */
+
+.page-digital-painting{
+  background-image:
+    linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
+    url("https://github.com/kizsak/Portfolio/raw/main/KoiBent.jpg");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+}
+
+
+/* =========================
+   PATCH: Taller cards option
+========================= */
+
+.card.card--tall{
+  min-height: 320px; /* increase if you want more height */
+}
+
