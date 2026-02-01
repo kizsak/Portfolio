@@ -28,13 +28,10 @@ body{
 .page-home{
   background-image:
     linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
-    url("https://github.com/kizsak/Portfolio/raw/main/Texture5.png");
+    style="background-image: url(https://github.com/kizsak/Portfolio/raw/main/Texture5.png); background-position: 20% 35%;
   background-repeat: no-repeat;
   background-position: center top;
   background-size: cover;
-}
-
-/* Keep these if you use them on other pages */v
 }
 
 .page-if{
@@ -50,6 +47,7 @@ body{
   background-image:
     linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
     url("https://github.com/kizsak/Portfolio/raw/main/BentLantana.jpg");
+   url("https://github.com/kizsak/Portfolio/raw/main/Texture5.png");
   background-repeat: no-repeat;
   background-position: center top;
   background-size: cover;
