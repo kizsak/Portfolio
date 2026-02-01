@@ -34,34 +34,13 @@ body{
   background-size: cover;
 }
 
-/* Keep these if you use them on other pages */
-.page-digital-painting,
-.page-digital-painting-animals,
-.page-digital-painting-humans,
-.page-digital-painting-scapes,
-.page-digital-painting-still,
-.page-digital-painting-stilllife{
-  background-image:
-    linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
-    url("https://github.com/kizsak/Portfolio/raw/main/KoiBent.bmp");
-  background-repeat: no-repeat;
-  background-position: center top;
-  background-size: cover;
-}
-
-.page-comp-design{
-  background-image:
-    linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
-    url("https://github.com/kizsak/Portfolio/raw/main/BentLandscape.png");
-  background-repeat: no-repeat;
-  background-position: center top;
-  background-size: cover;
+/* Keep these if you use them on other pages */v
 }
 
 .page-if{
   background-image:
     linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
-    url("https://github.com/kizsak/Portfolio/raw/main/Background1.jpg");
+    url("https://github.com/kizsak/Portfolio/raw/main/KoiBent.jpg")
   background-repeat: no-repeat;
   background-position: center top;
   background-size: cover;
