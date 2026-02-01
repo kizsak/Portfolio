@@ -1617,3 +1617,59 @@ header,
   );
   z-index: 1;
 }
+
+/* =====================================================
+   FEATURED PROJECT — SCALE IMAGES TO FILL SPACE
+   ===================================================== */
+
+/* Give the whole featured panel more breathing room */
+.featured__panel {
+  padding: 32px 36px;
+}
+
+/* Let the strip actually claim width */
+.featured__strip {
+  display: flex;
+  gap: 20px;
+
+  /* critical: let it grow */
+  flex: 1 1 auto;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Make each featured image card BIG */
+.featured__strip a,
+.featured__strip .thumb,
+.featured__strip img {
+  flex: 0 0 auto;
+
+  width: 240px;      /* ← main size control */
+  height: 180px;
+
+  border-radius: 18px;
+}
+
+/* If images are background-based */
+.featured__strip .thumb {
+  background-size: cover;
+  background-position: center;
+}
+
+/* If <img> tags are used */
+.featured__strip img {
+  object-fit: cover;
+  display: block;
+}
+
+/* Optional: scale up even more on large screens */
+@media (min-width: 1200px) {
+  .featured__strip a,
+  .featured__strip .thumb,
+  .featured__strip img {
+    width: 280px;
+    height: 210px;
+  }
+}
