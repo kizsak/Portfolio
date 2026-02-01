@@ -1,19 +1,15 @@
 /* =========================================================
-   Kate Izsak — Portfolio Styles (CLEAN FULL REBUILD)
-   Replace entire style.css with this file
+   Kate Izsak — Portfolio Styles (clean + stable)
+   Replace entire css/style.css with this file
 ========================================================= */
 
-/* -----------------------------
-   Fonts
------------------------------- */
 @import url("https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Audiowide&display=swap");
 
-/* -----------------------------
-   Reset + Base
------------------------------- */
+/* ---------- Reset ---------- */
 * { box-sizing: border-box; }
-html, body { height: 100%; }
+html, body { height: auto; }
+img { max-width: 100%; height: auto; display: block; }
 
 body{
   margin: 0;
@@ -21,106 +17,87 @@ body{
   font-size: 14px;
   line-height: 1.45;
   color: rgba(255,255,255,0.92);
-
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-
   background-color: #05070b;
-  background-repeat: no-repeat;
-  background-position: center top;
-  background-size: 100% 150%;
 
-  animation: fadebg 0.8s ease-in-out;
+  /* stop page-wide sideways scroll */
+  overflow-x: hidden;
 }
 
-@keyframes fadebg{
-  from{ opacity: 0; }
-  to{ opacity: 1; }
-}
-
-/* -----------------------------
-   Page Backgrounds (light leaks)
------------------------------- */
+/* ---------- Page backgrounds ---------- */
 .page-home{
   background-image:
     linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
     url("https://github.com/kizsak/Portfolio/raw/main/Texture5.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
 }
-.page-digital-painting{
-  background-image:
-    linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
-    url("https://github.com/kizsak/Portfolio/raw/main/KoiBent.bmp");
-}
-.page-digital-painting-animals{
-  background-image:
-    linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
-    url("https://github.com/kizsak/Portfolio/raw/main/KoiBent.bmp");
-}
-.page-digital-painting-portraits{
-  background-image:
-    linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
-    url("https://github.com/kizsak/Portfolio/raw/main/KoiBent.bmp");
-}
-.page-digital-painting-scapes{
-  background-image:
-    linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
-    url("https://github.com/kizsak/Portfolio/raw/main/KoiBent.bmp);
-}
+
+/* Keep these if you use them on other pages */
+.page-digital-painting,
+.page-digital-painting-animals,
+.page-digital-painting-humans,
+.page-digital-painting-scapes,
 .page-digital-painting-still,
 .page-digital-painting-stilllife{
-   background-image:
+  background-image:
     linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
-    url("https://github.com/kizsak/Portfolio/raw/main/KoiBent.bmp);
+    url("https://github.com/kizsak/Portfolio/raw/main/KoiBent.bmp");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+}
+
 .page-comp-design{
-  background-image: 
-     linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
-     url("https://github.com/kizsak/Portfolio/raw/main/BentLandscape.png");
+  background-image:
+    linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
+    url("https://github.com/kizsak/Portfolio/raw/main/BentLandscape.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
 }
+
 .page-if{
-  background-image: 
-     linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
-     url("https://github.com/kizsak/Portfolio/raw/main/Background1.jpg");
+  background-image:
+    linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
+    url("https://github.com/kizsak/Portfolio/raw/main/Background1.jpg");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
 }
+
 .page-graphic-design{
-   linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
-   background-image: url("https://github.com/kizsak/Portfolio/raw/main/BentLantana.jpg");
+  background-image:
+    linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
+    url("https://github.com/kizsak/Portfolio/raw/main/BentLantana.jpg");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
 }
+
 .page-contact{
-  background-image: 
-     linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
-     url("https://github.com/kizsak/Portfolio/raw/main/Background2.jpg");
-   
+  background-image:
+    linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
+    url("https://github.com/kizsak/Portfolio/raw/main/Background2.jpg");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
 }
 
-/* -----------------------------
-   Header + Neon Titles
------------------------------- */
+/* ---------- Header / Title ---------- */
 .page-header{
-  width: 100%;
-  padding: 28px 18px 10px;
-}
-
-.neon{
-  margin: 0;
-  font-family: "Audiowide", "Oxanium", sans-serif;
-  font-weight: 400;
-  letter-spacing: 0.06em;
-  font-size: clamp(26px, 4vw, 44px);
+  width: min(1000px, 92vw);
+  margin: 0 auto;
+  padding: 28px 0 10px;
   text-align: center;
-  color: #c9f8ff;
-  text-shadow:
-    0 0 6px rgba(80, 220, 255, 0.55),
-    0 0 16px rgba(80, 220, 255, 0.35),
-    0 0 24px rgba(255, 80, 220, 0.18);
 }
 
 .neon-soft{
   margin: 0;
   font-family: "Audiowide", sans-serif;
   font-weight: 400;
-  text-align: left;
-  font-size: 2.05rem;
+  font-size: clamp(26px, 4vw, 44px);
   letter-spacing: 0.5px;
   color: #ffd6d9;
   text-shadow:
@@ -129,76 +106,22 @@ body{
     0 0 14px rgba(255, 110, 120, 0.5);
 }
 
-/* -----------------------------
-   Navigation
------------------------------- */
-.nav-bar{
-  margin-top: 14px;
-  display:flex;
-  gap: 10px;
-  justify-content:center;
-  flex-wrap:wrap;
-}
-
-.nav-btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding: 9px 14px;
-  border-radius: 999px;
-  border: 2px solid rgba(140, 255, 255, 0.8);
-  background: rgba(0, 255, 255, 0.12);
-  color: rgba(233,255,255,0.95);
-  text-decoration: none;
-  font-weight: 600;
-  box-shadow:
-    0 0 10px rgba(120, 255, 255, 0.45),
-    inset 0 0 6px rgba(120, 255, 255, 0.25);
-  backdrop-filter: blur(5px);
-  transition: transform 140ms ease, box-shadow 140ms ease, border-color 140ms ease, background 140ms ease;
-}
-
-.nav-btn:hover{
-  transform: translateY(-2px);
-  border-color: rgba(180, 255, 255, 1);
-  background: rgba(0, 255, 255, 0.25);
-  box-shadow:
-    0 0 14px rgba(140, 255, 255, 0.65),
-    inset 0 0 10px rgba(140, 255, 255, 0.35);
-}
-
-.nav-btn:active{
-  transform: translateY(1px);
-}
-
 /* =========================================================
-   HOMEPAGE + HUB CARD GRID
+   HOMEPAGE CARDS — SINGLE COLUMN
 ========================================================= */
 .hero-section{
-  width: min(1200px, calc(100% - 36px));
+  width: min(1000px, 92vw);
   margin: 0 auto;
-  padding: 14px 0 52px;
-
-  /* gentle vignette behind cards */
-  background: radial-gradient(circle at center, rgba(0,0,0,0.0) 0%, rgba(0,0,0,0.45) 78%);
-  border-radius: 22px;
+  padding: 14px 0 18px;
 }
 
 .card-grid{
   list-style: none;
-  padding: 0 18px;
+  padding: 0;
   margin: 0;
   display: grid;
+  grid-template-columns: 1fr; /* single column always */
   gap: 18px;
-
-  grid-template-columns: 1fr;
-}
-
-@media (min-width: 540px){
-  .card-grid{ grid-template-columns: repeat(2, 1fr); }
-}
-@media (min-width: 960px){
-  .card-grid{ grid-template-columns: repeat(4, 1fr); }
 }
 
 .card{
@@ -206,29 +129,25 @@ body{
   border-radius: 22px;
   overflow: hidden;
   min-height: 240px;
-
   border: 1px solid rgba(255, 255, 255, 0.10);
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
 }
 
-/* keep your existing HTML: <div class="card__background" style="background-image: url(...)"> */
 .card__background{
   position: absolute;
   inset: 0;
   background-size: cover;
   background-position: center;
-  filter: brightness(0.78) saturate(1.15) contrast(0.92);
+  filter: brightness(0.78) saturate(1.12) contrast(0.92);
   transform: scale(1.02);
   transition: transform 180ms ease, filter 180ms ease;
-  pointer-events: none;
 }
 
 .card:hover .card__background{
   transform: scale(1.06);
-  filter: brightness(0.88) saturate(1.22) contrast(0.95);
+  filter: brightness(0.88) saturate(1.18) contrast(0.95);
 }
 
-/* shade overlay */
 .card::after{
   content:"";
   position:absolute;
@@ -243,7 +162,6 @@ body{
   );
 }
 
-/* link covers whole card */
 .card__link{
   position: absolute;
   inset: 0;
@@ -274,1430 +192,132 @@ body{
 }
 
 /* =========================================================
-   GALLERY LAYOUT + CAROUSEL + CAPTIONS
+   FEATURED PROJECT (Homepage)
 ========================================================= */
-.gallery-layout{
-  width: min(1200px, calc(100% - 36px));
-  margin: 22px auto 56px;
+.featured{
+  width: min(1000px, 92vw);
+  margin: 18px auto 44px;
+}
+
+.featured__panel{
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 22px;
-  align-items: start;
-}
+  grid-template-columns: 1fr;       /* single column layout */
+  gap: 16px;
 
-@media (min-width: 900px){
-  .gallery-layout{
-    grid-template-columns: 0.95fr 1.35fr;
-  }
-}
-
-.gallery-info{
+  padding: 22px;
   border-radius: 22px;
-  padding: 18px;
-  background: rgba(0,0,0,0.25);
-  border: 1px solid rgba(255,255,255,0.10);
-  box-shadow: 0 14px 32px rgba(0,0,0,0.25);
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(10, 14, 18, .38);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+
+  overflow: hidden; /* contains the strip */
 }
 
-#image-caption{
-  margin: 0 0 12px;
+.featured__kicker{
+  margin: 0 0 6px;
+  font-size: .9rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  opacity: .8;
 }
 
-#image-description{
-  display: block;
-  margin-top: 6px;
-  line-height: 1.6;
-  font-size: 0.95rem;
-  max-width: 40rem;
-  color: rgba(255,255,255,0.92);
+.featured__title{
+  margin: 0 0 10px;
+  font-size: clamp(1.4rem, 3vw, 2.25rem);
+  letter-spacing: .02em;
 }
 
-/* tools list spacing (templates) */
-.tools-list{
-  margin: 10px 0 0;
-  padding-left: 18px;
-  color: inherit;
-  font-size: 0.95rem;
-}
-.tools-list ul{
-  margin: 6px 0 8px;
-  padding-left: 18px;
+.featured__desc{
+  margin: 0 0 14px;
+  line-height: 1.45;
+  max-width: 70ch;
+  opacity: .92;
 }
 
-/* links readable */
-#image-description a,
-.lightbox-caption a{
-  color: #c9f8ff;
-  text-decoration: underline;
-}
-#image-description a:hover,
-.lightbox-caption a:hover{
-  text-decoration: none;
-}
-
-/* carousel */
-.gallery-carousel{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.carousel-window{
-  width: 520px;
-  max-width: 100%;
-  height: 360px;
-  border-radius: 24px;
-  overflow: hidden;
-  box-shadow: 0 18px 40px rgba(0,0,0,0.45);
-  background: rgba(0,0,0,0.40);
-  display: grid;
-  place-items: center;
-  padding: 10px;
-}
-
-.carousel-image{
-  display: none;
-  max-width: 100%;
-  max-height: 100%;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-  border-radius: 18px;
-  cursor: zoom-in;
-}
-
-.carousel-image.active{ display: block; }
-
-.carousel-controls{
-  margin-top: 14px;
+.featured__actions{
   display: flex;
   gap: 12px;
-}
-
-.carousel-btn{
-  width: 44px;
-  height: 44px;
-  border-radius: 999px;
-  border: 2px solid rgba(140,255,255,0.9);
-  background: rgba(0,0,0,0.35);
-  color: #e6ffff;
-  font-size: 1.6rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  box-shadow: 0 0 10px rgba(120,255,255,0.6);
-  transition: transform 140ms ease, box-shadow 140ms ease, background 140ms ease;
-}
-.carousel-btn:hover{
-  background: rgba(0,255,255,0.25);
-  transform: translateY(-1px);
-  box-shadow: 0 0 14px rgba(140,255,255,0.85);
-}
-.carousel-btn:active{
-  transform: translateY(1px);
-}
-
-/* =========================================================
-   COMP-DESIGN: dark text + glass panel
-========================================================= */
-.page-comp-design .gallery-info{
-  background: rgba(255,255,255,0.55);
-}
-
-.page-comp-design #image-caption,
-.page-comp-design #image-description,
-.page-comp-design #image-description *{
-  color: #111 !important;
-  text-shadow: none !important;
-}
-
-.page-comp-design #image-description a{
-  color: #003a55 !important;
-}
-
-/* =========================================================
-   ABOUT PAGE: social icons + layout
-========================================================= */
-.social-list{
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  justify-content: center;
   flex-wrap: wrap;
-  gap: 1.6rem;
+  align-items: center;
 }
 
-.social-icon{
-  font-size: 2.4rem;
-  color: #ffeefc;
-  text-decoration: none;
-  text-shadow:
-    0 0 4px rgba(255,220,248,0.9),
-    0 0 10px rgba(255,170,210,0.9),
-    0 0 18px rgba(255,120,160,0.7);
-  transition: transform 0.2s ease, text-shadow 0.2s ease, color 0.2s ease;
-}
-
-.social-icon:hover{
-  transform: translateY(-2px) scale(1.07);
-  color: #fff9ff;
-  text-shadow:
-    0 0 6px rgba(255,240,255,1),
-    0 0 14px rgba(255,190,220,1),
-    0 0 26px rgba(255,150,190,0.95);
-}
-
-/* about layout */
-.about-container{
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 2.5rem;
-  width: min(1100px, calc(100% - 36px));
-  margin: 24px auto 56px;
-  padding: 0 18px;
-}
-
-.about-text{
-  flex: 1;
-  font-size: 1.15rem;
-  line-height: 1.7;
-}
-
-.about-image img{
-  width: 260px;
-  border-radius: 20px;
-  object-fit: cover;
-  box-shadow:
-    0 0 20px rgba(0,255,255,0.25),
-    0 0 40px rgba(0,255,255,0.15);
-}
-
-@media (max-width: 768px){
-  .about-container{
-    flex-direction: column-reverse;
-    align-items: center;
-    text-align: center;
-  }
-  .about-image img{
-    width: 60%;
-    max-width: 260px;
-  }
-  .about-text{
-    text-align: left;
-  }
-}
-
-/* =========================================================
-   LIGHTBOX (JS-only)
-========================================================= */
-body.no-scroll{ overflow: hidden; }
-
-.lightbox{
-  position: fixed;
-  inset: 0;
-  display: none;
-  place-items: center;
-  z-index: 9999;
-  padding: 18px;
-  background: rgba(0,0,0,0.78);
-}
-
-.lightbox.open{ display: grid; }
-
-.lightbox-close{
-  position: fixed;
-  top: 16px;
-  right: 16px;
-  width: 44px;
-  height: 44px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.25);
-  background: rgba(255,255,255,0.12);
-  color: #fff;
-  font-size: 28px;
-  line-height: 44px;
-  cursor: pointer;
-  z-index: 10000;
-}
-.lightbox-close:hover{
-  background: rgba(255,255,255,0.2);
-}
-
-.lightbox-stage{
-  width: min(1100px, 100%);
-  max-height: calc(100vh - 36px);
-  border-radius: 22px;
-  background: rgba(10,16,28,0.78);
-  border: 1px solid rgba(255,255,255,0.10);
-  box-shadow: 0 16px 40px rgba(0,0,0,0.55);
-  padding: 14px;
-  display: grid;
-  gap: 10px;
-  justify-items: center;
-}
-
-#lightbox-img{
-  width: 100%;
-  height: auto;
-  max-height: calc(100vh - 160px);
-  object-fit: contain;
+.featured__btn{
+  display: inline-block;
+  padding: 10px 14px;
   border-radius: 14px;
-}
-
-.lightbox-caption{
-  width: 100%;
-  text-align: center;
-  line-height: 1.45;
-  font-size: 0.95rem;
-  color: rgba(255,255,255,0.92);
-  opacity: 0.95;
-}
-
-/* Gallery carousel: never stretch, never crop */
-.carousel-image{
-  width: 100%;
-  height: 100%;
-  object-fit: contain;   /* shows full image */
-  object-position: center;
-}
-
-/* =========================================================
-   IMAGE ASPECT-RATIO FIXES
-   - Cards: fill nicely, minimal cropping
-   - Gallery: show full image, no distortion
-========================================================= */
-
-
-/* ---------------------------------
-   GALLERY / CAROUSEL IMAGES
-   --------------------------------- */
-/* These should NEVER stretch or crop */
-.carousel-image{
-  width: 100%;
-  height: 100%;
-  object-fit: contain;        /* show entire image */
-  object-position: center;
-  background: transparent;
-}
-
-
-/* ---------------------------------
-   CARD GRID IMAGES (homepage + hubs)
-   --------------------------------- */
-/* Still fills the card, but crops less aggressively */
-.card__background{
-  background-size: cover;
-  background-position: center 35%;  /* nudges focal point upward */
-  background-repeat: no-repeat;
-}
-
-
-/* ---------------------------------
-   SAFETY: prevent accidental stretching
-   --------------------------------- */
-/* If any background image was set to 100% 100%, undo it */
-.card__background{
-  background-size: cover !important;
-}
-
-/* =========================================================
-   GLOBAL IMAGE NORMALIZER — best for ARTWORK
-   - Cards: show full image (no cropping)
-   - Carousel: remove "forced box" feel; no crop / no stretch
-========================================================= */
-
-
-/* -------------------------
-   1) CARD IMAGES (homepage + hubs)
-   Switch cards from "cover" (cropping) to "contain" (no crop).
-   This will add letterboxing when needed, but preserves the art.
--------------------------- */
-
-/* Keep card shape consistent */
-.card{
-  min-height: 240px;
-}
-
-/* Show whole image inside the card */
-.card__background{
-  background-size: contain !important;
-  background-repeat: no-repeat !important;
-  background-position: center center !important;
-
-  /* Give letterboxed areas a subtle base instead of harsh empty space */
-  background-color: rgba(0,0,0,0.25);
-}
-
-/* Keep your readability shade */
-.card::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  z-index: 1;
-  pointer-events:none;
-  background: linear-gradient(
-    to bottom,
-    rgba(0,0,0,0.45) 0%,
-    rgba(0,0,0,0.12) 70%,
-    rgba(0,0,0,0.00) 100%
-  );
-}
-
-
-/* -------------------------
-   2) CAROUSEL WINDOW
-   Stop forcing a fixed 520x360 box — that’s what makes many images feel wrong.
--------------------------- */
-
-.carousel-window{
-  width: min(720px, 100%);
-  height: auto !important;          /* override fixed height */
-  max-height: 78vh;
-  padding: 12px;
-  display: grid;
-  place-items: center;
-}
-
-/* Make each image fit inside the available space without distortion */
-.carousel-image{
-  display: none;
-  max-width: 100%;
-  max-height: 72vh;
-  width: auto !important;
-  height: auto !important;
-
-  object-fit: contain;
-  object-position: center;
-  border-radius: 18px;
-}
-
-.carousel-image.active{
-  display: block;
-}
-
-
-/* -------------------------
-   3) SAFETY: kill accidental stretching rules anywhere
--------------------------- */
-img{
-  max-width: 100%;
-  height: auto;
-}
-
-/* =========================================================
-   CAROUSEL: NO CROP / NO STRETCH (hard override)
-========================================================= */
-
-/* Let the carousel window size to content; don't force a fixed box */
-.gallery-carousel .carousel-window{
-  width: min(900px, 100%) !important;
-  height: auto !important;
-  min-height: 0 !important;
-  max-height: none !important;
-
-  display: grid !important;
-  place-items: center !important;
-
-  padding: 12px !important;
-  overflow: visible !important;   /* prevents "clipped" edges */
-}
-
-/* Make the active image fit inside the viewport without cropping */
-.gallery-carousel .carousel-image{
-  display: none;
-}
-
-.gallery-carousel .carousel-image.active{
-  display: block !important;
-
-  width: auto !important;
-  height: auto !important;
-
-  max-width: 100% !important;
-  max-height: 72vh !important;
-
-  object-fit: contain !important;
-  object-position: center !important;
-
-  border-radius: 18px;
-}
-
-/* If any parent is clipping, this helps */
-.gallery-carousel{
-  overflow: visible !important;
-}
-
-/* =========================================================
-   COMP DESIGN: readable long-form text panel
-========================================================= */
-
-.page-comp-design .gallery-info{
-  background: linear-gradient(
-    180deg,
-    rgba(255,255,255,0.78),
-    rgba(255,255,255,0.88)
-  );
-  border-radius: 24px;
-  padding: 1.75rem 2rem;
-  box-shadow:
-    0 20px 40px rgba(0,0,0,0.25),
-    inset 0 0 0 1px rgba(0,0,0,0.05);
-
-  /* Let it grow naturally */
-  max-height: none;
-}
-
-/* Slightly tighter typography for dense passages */
-.page-comp-design .piece-description{
-  font-size: 0.95rem;
-  line-height: 1.65;
-}
-
-/* Caption stays visually distinct */
-.page-comp-design #image-caption{
-  margin-bottom: 0.85rem;
-  font-size: 1.4rem;
-}
-
-/* =========================================================
-   COMP DESIGN: readable long-form text panel
-========================================================= */
-
-.page-comp-design .gallery-info{
-  background: linear-gradient(
-    180deg,
-    rgba(255,255,255,0.78),
-    rgba(255,255,255,0.88)
-  );
-  border-radius: 24px;
-  padding: 1.75rem 2rem;
-  box-shadow:
-    0 20px 40px rgba(0,0,0,0.25),
-    inset 0 0 0 1px rgba(0,0,0,0.05);
-
-  max-height: none;
-}
-
-.page-comp-design .piece-description{
-  font-size: 0.95rem;
-  line-height: 1.65;
-}
-
-.page-comp-design #image-caption{
-  margin-bottom: 0.85rem;
-  font-size: 1.4rem;
-}
-
-/* =========================================================
-   Essay panel (for long-form writeups under gallery pages)
-========================================================= */
-
-.essay-panel{
-  width: min(1100px, 100%);
-  margin: 1.5rem auto 4rem;
-  padding: 1.75rem 2rem;
-  border-radius: 24px;
-
-  background: rgba(255, 255, 255, 0.82);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
-  color: #111;
-}
-
-.essay-title{
-  margin: 0 0 0.75rem;
-  font-family: "Audiowide", sans-serif;
-  font-weight: 400;
-  font-size: 1.35rem;
-  letter-spacing: 0.3px;
-}
-
-.essay-body{
-  font-size: 1rem;
-  line-height: 1.75;
-  max-width: 75ch;
-}
-
-.essay-body p{
-  margin: 0 0 1rem;
-}
-
-.essay-body a{
-  color: #003a55;
-  text-decoration: underline;
-}
-.essay-body a:hover{
+  border: 1px solid rgba(255,255,255,.18);
+  background: rgba(255,255,255,.08);
   text-decoration: none;
-}
-
-/* =========================================================
-   ABOUT PAGE STABILITY PATCH (paste at end)
-   Applies to About page if body class is page-contact
-========================================================= */
-
-.page-contact main {
-  width: 100%;
-  padding: 2rem 1.5rem 3rem;
-}
-
-/* Use your existing about-container, but make it predictable */
-.page-contact .about-container {
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 2.5rem;
-  align-items: start;
-
-  max-width: 1100px;
-  margin: 2.5rem auto;
-}
-
-/* Left text column */
-.page-contact .about-text {
-  font-size: 1.12rem;
-  line-height: 1.75;
-}
-
-/* Right column: image + icons */
-.page-contact .about-image {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.25rem;
-}
-
-.page-contact .about-image img {
-  width: 240px;
-  max-width: 70%;
-  border-radius: 18px;
-  display: block;
-}
-
-/* Icon row: keep it compact and centered */
-.page-contact .social-list {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1.1rem;
-  margin-top: 0.5rem;
-}
-
-.page-contact .social-icon {
-  font-size: 2.1rem; /* prevents giant icons */
-  line-height: 1;
-}
-
-/* Credits / acknowledgement block shouldn’t float weirdly */
-.page-contact .acknowledgements,
-.page-contact .credits,
-.page-contact .attribution {
-  max-width: 1100px;
-  margin: 1.5rem auto 0;
-  padding: 0 1rem;
-  text-align: right;
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-
-/* Mobile */
-@media (max-width: 900px) {
-  .page-contact .about-container {
-    grid-template-columns: 1fr;
-  }
-  .page-contact .acknowledgements,
-  .page-contact .credits,
-  .page-contact .attribution {
-    text-align: left;
-  }
-}
-
-/* ============================================
-   ABOUT PAGE — MAKE PORTRAIT IMAGE BIGGER
-============================================ */
-
-.page-contact .about-image img {
-  width: 320px;      /* was ~240px */
-  max-width: 85%;    /* allows growth but still responsive */
-  border-radius: 20px;
-}
-
-/* Optional: let it breathe a bit more vertically */
-.page-contact .about-image {
-  gap: 1.75rem;
-}
-
-/* Mobile: slightly smaller so it doesn’t crowd text */
-@media (max-width: 700px) {
-  .page-contact .about-image img {
-    width: 260px;
-  }
-}
-
-/* ============================================
-   ABOUT PAGE — MAKE PORTRAIT IMAGE BIGGER
-============================================ */
-
-.page-contact .about-image img {
-  width: 320px;      /* was ~240px */
-  max-width: 85%;    /* allows growth but still responsive */
-  border-radius: 20px;
-}
-
-/* Optional: let it breathe a bit more vertically */
-.page-contact .about-image {
-  gap: 1.75rem;
-}
-
-/* Mobile: slightly smaller so it doesn’t crowd text */
-@media (max-width: 700px) {
-  .page-contact .about-image img {
-    width: 260px;
-  }
-}
-
-/* ===============================
-   About Me — image sizing fix
-================================ */
-
-.page-contact .about-container {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr; /* text | image */
-  align-items: center;
-  gap: 3rem;
-  max-width: 1100px;
-  margin: 3rem auto;
-  padding: 0 1.5rem;
-}
-
-.page-contact .about-image img {
-  width: 100%;
-  max-width: 380px;   /* <-- increase if you want it even larger */
-  height: auto;
-  border-radius: 14px;
-
-  box-shadow:
-    0 0 18px rgba(255, 160, 200, 0.35),
-    0 0 42px rgba(255, 120, 160, 0.25);
-}
-
-/* Mobile: stack nicely */
-@media (max-width: 768px) {
-  .page-contact .about-container {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .page-contact .about-image img {
-    max-width: 280px;
-    margin: 0 auto;
-  }
-}
-
-/* =========================================
-   Essay Panel — typography & color tuning
-========================================= */
-
-.essay-panel {
-  background: #e3e3e3; /* already matches your screenshot */
-}
-
-/* Match tools box text color */
-.essay-panel,
-.essay-panel p,
-.essay-panel a {
-  color: #1f1f1f; /* same dark neutral as tools box */
-}
-
-/* Reduce paragraph “hard breaks” */
-.essay-body p {
-  margin: 0 0 0.85em 0;   /* smaller bottom margin */
-  line-height: 1.55;     /* slightly tighter flow */
-  max-width: 70ch;       /* readable but less cramped */
-}
-
-/* Optional: make first paragraph feel anchored */
-.essay-body p:first-child {
-  margin-top: 0.25em;
-}
-
-/* Links: subtle, non-neon */
-.essay-body a {
-  color: #2a2a2a;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-
-.essay-body a:hover {
-  color: #000;
-}
-
-/* Mobile tuning */
-@media (max-width: 768px) {
-  .essay-body p {
-    max-width: 100%;
-    line-height: 1.6;
-  }
-}
-
-/* ==============================
-   Essay Panel — match tools box + fill width
-   Paste at END of style.css
-================================= */
-
-/* Make the panel background match the left tools box */
-.page-comp-design .essay-panel {
-  /* pick one:
-     - If your tools box is white-ish: use #f7f7f7
-     - If it's light gray: use #efefef
-     This is a safe middle that looks like your left card. */
-  background: #f2f2f2 !important;
-
-  /* if anything is dimming it */
-  opacity: 1 !important;
-  filter: none !important;
-
-  /* spacing + shape to match your other panels */
-  border-radius: 24px;
-  padding: 2rem 2.25rem 2.5rem;
-  margin: 2rem auto 3rem;
-  max-width: 1200px;
-}
-
-/* Make the essay text actually use the space */
-.page-comp-design .essay-body {
-  max-width: none !important;   /* remove any cap */
-  width: 100%;
-}
-
-/* Paragraphs: fill width, but keep good rhythm */
-.page-comp-design .essay-body p {
-  max-width: none !important;   /* remove the 70ch constraint */
-  margin: 0 0 1rem 0;
-  line-height: 1.65;
-  font-size: 1.05rem;
-  color: #1b1b1b;
-}
-
-/* Title color match */
-.page-comp-design .essay-title {
-  color: #1b1b1b;
-  margin-bottom: 1.25rem;
-}
-
-/* Links: readable but not neon */
-.page-comp-design .essay-body a {
-  color: #1b1b1b;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-
-.page-comp-design .essay-body a:hover {
-  color: #000;
-}
-
-/* =========================================================
-   ESSAY PANEL — 2-column layout on desktop (Comp Design + IF)
-   Paste at END of style.css
-   ========================================================= */
-
-/* Shared panel shell (works for comp-design + IF) */
-.page-comp-design .essay-panel,
-.page-if .essay-panel {
-  max-width: 1200px;
-  margin: 2rem auto 3rem;
-  padding: 2rem 2.25rem 2.5rem;
-  border-radius: 24px;
-
-  /* match your “tools box” vibe */
-  background: rgba(255, 255, 255, 0.78) !important;
-  backdrop-filter: blur(6px);
-  box-shadow: 0 18px 40px rgba(0,0,0,0.20);
-}
-
-/* Title */
-.page-comp-design .essay-title,
-.page-if .essay-title {
-  color: #111 !important;
-  margin: 0 0 1.25rem 0;
-}
-
-/* Body text base */
-.page-comp-design .essay-body,
-.page-if .essay-body {
-  color: #111 !important;
-  font-size: 1.05rem;
-  line-height: 1.65;
-
-  /* IMPORTANT: ensure width caps aren’t limiting this */
-  max-width: none !important;
-  width: 100% !important;
-}
-
-/* Paragraph spacing */
-.page-comp-design .essay-body p,
-.page-if .essay-body p {
-  margin: 0 0 1rem 0;
-}
-
-/* Links */
-.page-comp-design .essay-body a,
-.page-if .essay-body a {
-  color: #0b3a55 !important;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-
-/* ---- Columns: only on wider screens ---- */
-@media (min-width: 980px) {
-  .page-comp-design .essay-body,
-  .page-if .essay-body {
-    column-count: 2;
-    column-gap: 3rem;
-    column-fill: balance;
-  }
-
-  /* Avoid awkward breaks */
-  .page-comp-design .essay-body p,
-  .page-if .essay-body p,
-  .page-comp-design .essay-body ul,
-  .page-if .essay-body ul,
-  .page-comp-design .essay-body ol,
-  .page-if .essay-body ol,
-  .page-comp-design .essay-body blockquote,
-  .page-if .essay-body blockquote {
-    break-inside: avoid;
-    page-break-inside: avoid;
-  }
-}
-
-/* On very large screens, optionally widen the gutter a bit */
-@media (min-width: 1300px) {
-  .page-comp-design .essay-body,
-  .page-if .essay-body {
-    column-gap: 3.5rem;
-  }
-}
-
-/* ===========================
-   ESSAY PANEL — stop clipping
-   (paste at END of style.css)
-   =========================== */
-
-/* Let the page scroll if needed (some layouts accidentally disable it) */
-html, body {
-  height: auto;
-  overflow-y: auto;
-}
-
-/* If your main/gallery area was set to 100vh + overflow hidden, undo that */
-.gallery-layout {
-  height: auto;
-  min-height: 0;
-  overflow: visible;
-}
-
-/* Essay panel should expand with content */
-.essay-panel {
-  height: auto !important;
-  max-height: none !important;
-  overflow: visible !important;
-
-  /* keep your rounded look */
-  padding-bottom: 2.5rem;
-}
-
-/* Essay body: no max-height, allow normal wrapping, no hidden overflow */
-.essay-body {
-  height: auto !important;
-  max-height: none !important;
-  overflow: visible !important;
-
-  white-space: normal !important;
-  word-break: normal;
-  overflow-wrap: anywhere;
-}
-
-/* If you enabled columns, keep them but avoid weird “cutoff” behavior */
-.essay-body {
-  column-width: 34ch;      /* tweak: smaller = more columns */
-  column-gap: 2.25rem;
-  column-fill: auto;
-}
-
-/* On small screens, turn columns off (prevents cramped clipping) */
-@media (max-width: 900px) {
-  .essay-body {
-    column-count: 1;
-    column-width: auto;
-  }
-}
-
-/* =========================================
-   ESSAY PANEL — make text fill the space
-   Paste at END of style.css
-   ========================================= */
-
-/* Match the left tool box background (tweak the rgba if needed) */
-.essay-panel {
-  background: rgba(255, 255, 255, 0.72) !important; /* lighten */
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  border-radius: 26px;
-}
-
-/* The big fix: remove narrow max-width constraints */
-.essay-body,
-.essay-body * {
-  max-width: none !important;
-}
-
-/* Let the essay container actually take the full panel width */
-.essay-body {
-  width: 100% !important;
-}
-
-/* If paragraphs were given a “readable width,” undo it */
-.essay-body p,
-.essay-body li {
-  width: auto !important;
-  max-width: none !important;
-}
-
-/* OPTIONAL: columns so it “fills” the panel like a magazine */
-@media (min-width: 980px) {
-  .essay-body {
-    column-count: 2;
-    column-gap: 2.25rem;
-    column-fill: auto;
-  }
-
-  /* Helps avoid awkward breaks */
-  .essay-body p,
-  .essay-body ul,
-  .essay-body ol {
-    break-inside: avoid;
-  }
-}
-
-/* On small screens, keep it single column */
-@media (max-width: 979px) {
-  .essay-body {
-    column-count: 1;
-  }
-}
-
-/* Make carousel pages stack vertically: title box -> carousel -> (process notes already below) */
-.gallery-layout{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
-}
-
-/* Give the top info box and carousel a consistent column width */
-.gallery-info,
-.gallery-carousel,
-.essay-panel{
-  width: min(1000px, 92vw);
-}
-
-/* =====================================================
-   SINGLE COLUMN LAYOUT — GLOBAL OVERRIDE
-   Drop this at the END of your CSS file
-   ===================================================== */
-
-/* 1. Kill accidental horizontal scrolling site-wide */
-html, body {
-  overflow-x: hidden;
-}
-
-/* 2. Establish a readable single column for all main content */
-main,
-.main,
-.container,
-.page,
-.content,
-.shell,
-.wrap {
-  width: min(1000px, 92vw);
-  margin-inline: auto;
-}
-
-/* 3. Disable side rails / left nav behavior */
-.left-rail,
-.side-rail,
-.sidebar,
-.nav-rail {
-  position: static !important;
-  width: auto !important;
-  margin: 0 0 1.5rem 0;
-}
-
-/* If you want them gone entirely, uncomment this instead */
-/*
-.left-rail,
-.side-rail,
-.sidebar,
-.nav-rail {
-  display: none !important;
-}
-*/
-
-/* 4. HERO / HEADER — keep centered, single column */
-header,
-.hero,
-.page-header {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-/* =====================================================
-   FEATURED PROJECT PANEL (Homepage)
-   ===================================================== */
-
-/* Stack everything vertically */
-.featured__panel {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-  align-items: stretch;
-  max-width: 100%;
-  overflow: hidden; /* critical: prevents page-wide scroll */
-}
-
-/* Meta (title, description, buttons) */
-.featured__meta {
-  width: 100%;
-}
-
-/* Image strip stays horizontal INSIDE the panel */
-.featured__strip {
-  width: 100%;
-  overflow-x: auto;
-  overflow-y: hidden;
-  -webkit-overflow-scrolling: touch;
-}
-
-/* Prevent children from widening the page */
-.featured__strip *,
-.featured__panel * {
-  max-width: 100%;
-}
-
-/* Optional: nicer scrollbar */
-.featured__strip::-webkit-scrollbar {
-  height: 8px;
-}
-.featured__strip::-webkit-scrollbar-thumb {
-  background: rgba(255,255,255,0.25);
-  border-radius: 4px;
-}
-
-/* =====================================================
-   GALLERY / CAROUSEL PAGES
-   ===================================================== */
-
-/* Stack title box -> carousel -> notes */
-.gallery-layout {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
-}
-
-/* Unified column width */
-.gallery-info,
-.gallery-carousel,
-.essay-panel {
-  width: min(1000px, 92vw);
-}
-
-/* Center gallery titles if desired */
-.gallery-info {
-  text-align: center;
-}
-
-/* =====================================================
-   SAFETY NET — neutralize leftover grid/flex rows
-   ===================================================== */
-
-/* If anything still tries to go side-by-side, this wins */
-[class*="grid"],
-[class*="row"] {
-  max-width: 100%;
-}
-
-
-/* Optional: center the caption/title text */
-.gallery-info{
-  text-align: center;
-}
-
-   /* STEP 1: Fix missing featured cards by making the strip a real horizontal scroller */
-.featured__panel {
-  overflow: visible !important;   /* stop parent from clipping thumbnails */
-}
-
-.featured__strip {
-  display: flex !important;
-  flex-direction: row !important;
-  flex-wrap: nowrap !important;   /* prevents cards from dropping/wrapping */
-  gap: 14px;
-  align-items: center;
-
-  overflow-x: auto !important;    /* enables scrolling to “missing” cards */
-  overflow-y: hidden !important;
-  -webkit-overflow-scrolling: touch;
-
-  max-width: 100%;
-  padding-bottom: 10px;           /* gives room for scrollbar on some OS */
-}
-
-/* Each card/thumbnail must NOT shrink to zero */
-.featured__strip > * {
-  flex: 0 0 auto !important;
-}
-
-/* Images behave inside cards */
-.featured__strip img {
-  display: block;
-  height: auto;
-  max-width: 100%;
-}
-
-   /* STEP 1: Fix missing featured cards by making the strip a real horizontal scroller */
-.featured__panel {
-  overflow: visible !important;   /* stop parent from clipping thumbnails */
-}
-
-.featured__strip {
-  display: flex !important;
-  flex-direction: row !important;
-  flex-wrap: nowrap !important;   /* prevents cards from dropping/wrapping */
-  gap: 14px;
-  align-items: center;
-
-  overflow-x: auto !important;    /* enables scrolling to “missing” cards */
-  overflow-y: hidden !important;
-  -webkit-overflow-scrolling: touch;
-
-  max-width: 100%;
-  padding-bottom: 10px;           /* gives room for scrollbar on some OS */
-}
-
-/* Each card/thumbnail must NOT shrink to zero */
-.featured__strip > * {
-  flex: 0 0 auto !important;
-}
-
-/* Images behave inside cards */
-.featured__strip img {
-  display: block;
-  height: auto;
-  max-width: 100%;
-}
-
-/* STEP 1: Make sure front-page cards are not clipped */
-.hero-section {
-  height: auto !important;
-  overflow: visible !important;
-}
-
-.card-grid {
-  position: relative !important;
-  overflow: visible !important;
-}
-
-/* HERO HEADER — centered above cards */
-.page-home header,
-.page-home .hero,
-.page-home .hero-header {
-  width: min(1000px, 92vw);
-  margin: 0 auto 2.5rem auto;
-  text-align: center;
-  position: relative;
-  z-index: 2;
-}
-
-/* Your name */
-.page-home .site-name,
-.page-home .author-name,
-.page-home h1 {
-  margin: 0 0 0.5rem 0;
-  font-size: clamp(2rem, 4vw, 2.75rem);
+  color: inherit;
   font-weight: 600;
 }
 
-/* Portfolio subtitle */
-.page-home .portfolio-title,
-.page-home .hero-subtitle,
-.page-home h2 {
-  margin: 0;
-  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
-  font-weight: 400;
-  opacity: 0.9;
+.featured__btn:hover{
+  background: rgba(255,255,255,.12);
 }
 
-/* Neutralize corner positioning for name on homepage */
-.page-home .site-name,
-.page-home .author-name {
-  position: static !important;
-  left: auto !important;
-  top: auto !important;
-}
-
-/* =========================================================
-   Digital Painting page — make it match the homepage cards
-   (paste at very bottom of css/style.css)
-   ========================================================= */
-
-.page-digital-painting .hero-section{
-  width: min(1000px, 92vw);
-  margin: 24px auto 48px;
-}
-
-.page-digital-painting .card-grid{
-  list-style: none;
-  padding: 0;
-  margin: 24px 0 0;
-
-  display: grid;
-  grid-template-columns: 1fr;   /* single column */
-  gap: 18px;
-}
-
-/* Card shell */
-.page-digital-painting .card{
-  min-height: 220px;
-}
-
-/* Clickable card area */
-.page-digital-painting .card__link{
-  display: block;
-  position: relative;
-  min-height: 220px;
-
-  border-radius: 18px;
-  overflow: hidden;
+.featured__link{
   text-decoration: none;
+  opacity: .95;
+  color: #c9f8ff;
 }
+.featured__link:hover{ text-decoration: underline; }
 
-/* Background image layer */
-.page-digital-painting .card__background{
-  position: absolute;
-  inset: 0;
-
-  background-size: cover;
-  background-position: center;
-  transform: scale(1.02);
-}
-
-/* Title layer */
-.page-digital-painting .card__content{
-  position: relative;
-  z-index: 2;
-  padding: 18px;
-}
-
-/* Title text */
-.page-digital-painting .card__heading{
-  margin: 0;
-  text-shadow: 0 2px 18px rgba(0,0,0,0.65);
-}
-
-/* Optional: a subtle dark gradient so white text reads well */
-.page-digital-painting .card__link::after{
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to right,
-    rgba(0,0,0,0.45),
-    rgba(0,0,0,0.05)
-  );
-  z-index: 1;
-}
-
-/* =====================================================
-   FEATURED PROJECT — SCALE IMAGES TO FILL SPACE
-   ===================================================== */
-
-/* Give the whole featured panel more breathing room */
-.featured__panel {
-  padding: 32px 36px;
-}
-
-/* Let the strip actually claim width */
-.featured__strip {
+/* Strip: true horizontal scroller */
+.featured__strip{
   display: flex;
-  gap: 20px;
-
-  /* critical: let it grow */
-  flex: 1 1 auto;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 14px;
 
   overflow-x: auto;
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
-}
 
-/* Make each featured image card BIG */
-.featured__strip a,
-.featured__strip .thumb,
-.featured__strip img {
-  flex: 0 0 auto;
-
-  width: 240px;      /* ← main size control */
-  height: 180px;
-
-  border-radius: 18px;
-}
-
-/* If images are background-based */
-.featured__strip .thumb {
-  background-size: cover;
-  background-position: center;
-}
-
-/* If <img> tags are used */
-.featured__strip img {
-  object-fit: cover;
-  display: block;
-}
-
-/* Optional: scale up even more on large screens */
-@media (min-width: 1200px) {
-  .featured__strip a,
-  .featured__strip .thumb,
-  .featured__strip img {
-    width: 280px;
-    height: 210px;
-  }
-}
-
-/* === Featured project: bigger thumbnails that fill the right side nicely === */
-
-.featured__panel{
-  grid-template-columns: 1fr 2fr; /* more room for the images */
-  padding: 28px 30px;
-}
-
-.featured__strip{
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: minmax(240px, 1fr); /* <-- main size control */
-  gap: 16px;
-  overflow-x: auto;
-  overflow-y: hidden;
-  padding-bottom: 10px;
+  padding: 6px 2px 10px;
   scroll-snap-type: x mandatory;
 }
 
-.featured__shot{
-  aspect-ratio: 16 / 10; /* makes each thumbnail feel larger/wider */
+/* Each thumbnail card (YOUR markup uses fp__item) */
+.fp__item{
+  flex: 0 0 auto;
+  width: 260px;                 /* <-- size knob */
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(0,0,0,.25);
+  scroll-snap-align: start;
+  margin: 0;
 }
 
-@media (min-width: 1200px){
-  .featured__strip{
-    grid-auto-columns: minmax(300px, 1fr);
-  }
+.fp__item img{
+  width: 100%;
+  height: 180px;                /* <-- height knob */
+  object-fit: cover;
+}
+
+.fp__caption{
+  padding: 10px 12px 12px;
+  font-size: 0.92rem;
+  line-height: 1.35;
+  opacity: 0.92;
+}
+
+/* subtle scrollbar */
+.featured__strip::-webkit-scrollbar{ height: 10px; }
+.featured__strip::-webkit-scrollbar-thumb{
+  background: rgba(255,255,255,.14);
+  border-radius: 999px;
+}
+.featured__strip::-webkit-scrollbar-track{
+  background: rgba(255,255,255,.04);
+  border-radius: 999px;
+}
+
+/* Larger thumbnails on big screens */
+@media (min-width: 1100px){
+  .fp__item{ width: 300px; }
+  .fp__item img{ height: 200px; }
 }
