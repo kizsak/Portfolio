@@ -7,722 +7,196 @@
 
   <!-- Main stylesheet -->
   <link rel="stylesheet" href="css/style.css">
-
-  <!-- Soft neon + card title overrides (local, guaranteed to load) -->
-  <style>
-    /* Soft coral neon for secondary headings (footer title) */
-    .neon-soft {
-      font-family: "Audiowide", sans-serif;
-      font-weight: 400;
-      text-align: center;
-
-      font-size: 2.2rem;
-      letter-spacing: 0.5px;
-
-      color: #ffd6d9; /* pale coral */
-
-      text-shadow:
-        0 0 3px #ffd6d9,
-        0 0 6px rgba(255, 160, 170, 0.7),
-        0 0 14px rgba(255, 110, 120, 0.5);
-    }
-
-    /* Front-page card titles – make sure they show and look clickable */
-    .card__content {
-      position: absolute;
-      top: 0;
-      left: 0;
-      padding: 1.5rem;
-      z-index: 2;
-    }
-
-    .card__heading {
-      color: #fdfcff;
-      font-size: 2rem;
-      line-height: 1.25;
-      word-spacing: normal;   /* undo old 100vw hack */
-      text-shadow:
-        0 0 6px rgba(0, 0, 0, 0.7),
-        0 0 18px rgba(0, 0, 0, 0.8);
-      cursor: pointer;
-      transition: color 0.2s ease, text-shadow 0.2s ease;
-    }
-
-    .card__heading:hover {
-      color: #fff5f7;
-      text-shadow:
-        0 0 4px rgba(255, 210, 220, 0.8),
-        0 0 10px rgba(255, 150, 170, 0.6);
-    }
-
-
-  /* STEP 1 OVERRIDE: force the homepage cards to show no matter what style.css is doing */
-.page-home .hero-section,
-.page-home .card-grid,
-.page-home .card {
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  transform: none !important;
-  height: auto !important;
-  overflow: visible !important;
-  position: relative !important;
-  z-index: 5 !important;
-}
-
-/* make the list a real single-column grid */
-.page-home .card-grid {
-  list-style: none !important;
-  padding: 0 !important;
-  margin: 24px auto !important;
-  width: min(1000px, 92vw) !important;
-
-  display: grid !important;
-  grid-template-columns: 1fr !important;
-  gap: 18px !important;
-}
-
-/* ensure each card has a visible area */
-.page-home .card {
-  min-height: 220px !important;
-}
-
-/* make the link/card actually contain its background */
-.page-home .card__link {
-  display: block !important;
-  position: relative !important;
-  min-height: 220px !important;
-  border-radius: 18px !important;
-  overflow: hidden !important;
-}
-
-/* background image layer */
-.page-home .card__background {
-  position: absolute !important;
-  inset: 0 !important;
-  background-size: cover !important;
-  background-position: center !important;
-}
-
-/* title layer */
-.page-home .card__content {
-  position: relative !important;
-  z-index: 2 !important;
-  padding: 18px !important;
-}
-
-/* optional: improve heading readability over images */
-.page-home .card__heading {
-  margin: 0 !important;
-  text-shadow: 0 2px 18px rgba(0,0,0,0.65) !important;
-}
-
-  </style>
 </head>
 
 <body class="page-home">
-  <!-- Top Neon Title -->
-<header class="page-header">
-  <h2 class="neon-soft">Kate Izsak<br>Digital and Computational Arts Portfolio</h2>
-</header>
+  <!-- Top title (centered) -->
+  <header class="page-header">
+    <h1 class="neon-soft">
+      Kate Izsak<br>
+      Digital and Computational Arts Portfolio
+    </h1>
+  </header>
+
   <!-- Card grid -->
-  <section class="hero-section">
-    <ul class="card-grid">
+  <main>
+    <section class="hero-section" aria-label="Portfolio sections">
+      <ul class="card-grid">
 
-      <!-- DIGITAL PAINTING -->
-      <li class="card">
-        <a href="digital-painting.html" class="card__link">
-          <div class="card__background"
-               style="background-image: url(https://github.com/kizsak/Portfolio/raw/main/FlareSelfPortrait.png);">
-          </div>
-          <div class="card__content">
-            <h3 class="card__heading">Digital<br>Painting</h3>
-          </div>
-        </a>
-      </li>
+        <!-- DIGITAL PAINTING -->
+        <li class="card">
+          <a href="digital-painting.html" class="card__link">
+            <div class="card__background"
+                 style="background-image: url(https://github.com/kizsak/Portfolio/raw/main/FlareSelfPortrait.png);">
+            </div>
+            <div class="card__content">
+              <h3 class="card__heading">Digital<br>Painting</h3>
+            </div>
+          </a>
+        </li>
 
-      <!-- COMPUTATIONAL IMAGE DESIGN -->
-      <li class="card">
-        <a href="comp-design.html" class="card__link">
-          <div class="card__background"
-               style="background-image: url(https://github.com/kizsak/Portfolio/raw/main/GlitchRevealStill.jpg);">
-          </div>
-          <div class="card__content">
-            <h3 class="card__heading">Computa-<br>tional<br>Image<br>Design</h3>
-          </div>
-        </a>
-      </li>
+        <!-- COMPUTATIONAL IMAGE DESIGN -->
+        <li class="card">
+          <a href="comp-design.html" class="card__link">
+            <div class="card__background"
+                 style="background-image: url(https://github.com/kizsak/Portfolio/raw/main/GlitchRevealStill.jpg);">
+            </div>
+            <div class="card__content">
+              <h3 class="card__heading">Computa-<br>tional<br>Image<br>Design</h3>
+            </div>
+          </a>
+        </li>
 
-      <!-- INTERACTIVE FICTION -->
-      <li class="card">
-        <a href="if.html" class="card__link">
-          <div class="card__background"
-               style="background-image: url(https://github.com/kizsak/Portfolio/raw/main/OminousDemon.png);">
+        <!-- INTERACTIVE FICTION -->
+        <li class="card">
+          <a href="if.html" class="card__link">
+            <div class="card__background"
+                 style="background-image: url(https://github.com/kizsak/Portfolio/raw/main/OminousDemon.png);">
+            </div>
+            <div class="card__content">
+              <h3 class="card__heading">Interactive<br>Fiction</h3>
+            </div>
+          </a>
+        </li>
+
+        <!-- GRAPHIC DESIGN -->
+        <li class="card">
+          <a href="graphic-design.html" class="card__link">
+            <div class="card__background"
+                 style="background-image: url(https://github.com/kizsak/Portfolio/raw/main/GoblinSticker.png);">
+            </div>
+            <div class="card__content">
+              <h3 class="card__heading">Graphic<br>Design</h3>
+            </div>
+          </a>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- Featured project (SINGLE, not duplicated) -->
+    <section class="featured" aria-label="Featured project">
+      <div class="featured__panel">
+
+        <div class="featured__meta">
+          <p class="featured__kicker">Featured Project · In Development</p>
+          <h2 class="featured__title"><i>Hana Fubuki</i>: A New Twine Story</h2>
+          <p class="featured__desc">
+            An interactive fiction project built in Twine that blends narrative discovery,
+            archive aesthetics, and a growing image set created for the story world.
+          </p>
+          <div class="featured__actions">
+            <a class="featured__btn" href="twine.html">View project</a>
+            <a class="featured__link" href="gallery.html">See image set →</a>
           </div>
-          <div class="card__content">
-            <h3 class="card__heading">Interactive<br>Fiction</h3>
-          </div>
-        </a>
-      </li>
+        </div>
 
-      <!-- GRAPHIC DESIGN -->
-      <li class="card">
-        <a href="graphic-design.html" class="card__link">
-          <div class="card__background"
-               style="background-image: url(https://github.com/kizsak/Portfolio/raw/main/GoblinSticker.png);">
-          </div>
-          <div class="card__content">
-            <h3 class="card__heading">Graphic<br>Design</h3>
-          </div>
-        </a>
-      </li>
+        <div class="featured__strip" aria-label="Project image strip">
+          <figure class="fp__item">
+            <img src="images/twine-01.jpg"
+                 alt="Photo of a woman holding a potted orchid; character concept for Hana Fubuki" />
+            <figcaption class="fp__caption">Character concept: Elara</figcaption>
+          </figure>
 
-    </ul>
-  </section>
+          <figure class="fp__item">
+            <img src="https://github.com/kizsak/Portfolio/raw/main/ElarasGreenhouseNotes.png"
+                 alt="A beat-up document showing a character's notes on the greenhouse" />
+            <figcaption class="fp__caption">Notes on the expanding greenhouse</figcaption>
+          </figure>
 
-<section class="featured">
-  <div class="featured__panel">
+          <figure class="fp__item">
+            <img src="https://github.com/kizsak/Portfolio/raw/main/FogOfWar.png"
+                 alt="An image from a fog of war game set in a greenhouse" />
+            <figcaption class="fp__caption">A Fog of War minigame set in the greenhouse</figcaption>
+          </figure>
 
-    <div class="featured__meta">
-      <p class="featured__kicker">Featured Project · In Development</p>
-      <h2 class="featured__title"><i>Hana Fubuki</i>: A New Twine Story – In Progress</h2>
-      <p class="featured__desc">
-        An interactive fiction project built in Twine. <section class="featured">
-  <div class="featured__panel">
+          <figure class="fp__item">
+            <img src="https://github.com/kizsak/Portfolio/raw/main/ElaraIG.png"
+                 alt="Elara's Instagram profile" />
+            <figcaption class="fp__caption">An Instagram profile for Elara</figcaption>
+          </figure>
 
-    <div class="featured__meta">
-      <p class="featured__kicker">Featured Project · In Development</p>
-      <h2 class="featured__title"><i>Hana Fubuki</i>: A New Twine Story – In Progress</h2>
-      <p class="featured__desc">
-        An interactive fiction project built in Twine that blends narrative discovery,
-        archive aesthetics, and a growing image set created for the story world.
-      </p>
-      <div class="featured__actions">
-        <a class="featured__btn" href="twine.html">View project</a>
-        <a class="featured__link" href="gallery.html">See image set →</a>
+          <figure class="fp__item">
+            <img src="https://github.com/kizsak/Portfolio/raw/main/ElaraGR.png"
+                 alt="Elara's Goodreads account" />
+            <figcaption class="fp__caption">A Goodreads profile for Elara</figcaption>
+          </figure>
+
+          <figure class="fp__item">
+            <img src="https://github.com/kizsak/Portfolio/raw/main/OrchidsOil.png"
+                 alt="Digital oil painting of several orchids" />
+            <figcaption class="fp__caption">A painting produced in an art therapy session in the greenhouse</figcaption>
+          </figure>
+
+          <figure class="fp__item">
+            <img src="https://github.com/kizsak/Portfolio/raw/main/Biodomes2.jpg"
+                 alt="Photograph of a large greenhouse with succulents in the foreground" />
+            <figcaption class="fp__caption">Real-world inspiration: Singapore's Gardens by the Bay (1/6)</figcaption>
+          </figure>
+
+          <figure class="fp__item">
+            <img src="https://github.com/kizsak/Portfolio/raw/main/Singapore2.jpg"
+                 alt="Photograph of a large greenhouse" />
+            <figcaption class="fp__caption">Real-world inspiration: Singapore's Gardens by the Bay (2/6)</figcaption>
+          </figure>
+
+          <figure class="fp__item">
+            <img src="https://github.com/kizsak/Portfolio/raw/main/Singapore3.jpg"
+                 alt="Photograph of a large greenhouse" />
+            <figcaption class="fp__caption">Real-world inspiration: Singapore's Gardens by the Bay (3/6)</figcaption>
+          </figure>
+
+          <figure class="fp__item">
+            <img src="https://github.com/kizsak/Portfolio/raw/main/Singapore4.jpg"
+                 alt="Photograph of a large greenhouse" />
+            <figcaption class="fp__caption">Real-world inspiration: Singapore's Gardens by the Bay (4/6)</figcaption>
+          </figure>
+
+          <figure class="fp__item">
+            <img src="https://github.com/kizsak/Portfolio/raw/main/Singapore5.jpg"
+                 alt="Photograph of a large greenhouse" />
+            <figcaption class="fp__caption">Real-world inspiration: Singapore's Gardens by the Bay (5/6)</figcaption>
+          </figure>
+
+          <figure class="fp__item">
+            <img src="https://github.com/kizsak/Portfolio/raw/main/Singapore6.jpg"
+                 alt="Photograph of a large greenhouse" />
+            <figcaption class="fp__caption">Real-world inspiration: Singapore's Gardens by the Bay (6/6)</figcaption>
+          </figure>
+
+          <figure class="fp__item">
+            <img src="https://github.com/kizsak/Portfolio/raw/main/GreenhouseConceptArt.png"
+                 alt="Illustration of a large greenhouse" />
+            <figcaption class="fp__caption">Concept art – greenhouse (1/6)</figcaption>
+          </figure>
+
+          <figure class="fp__item">
+            <img src="https://github.com/kizsak/Portfolio/raw/main/GreenhouseConceptArt2.png"
+                 alt="Illustration of a large greenhouse" />
+            <figcaption class="fp__caption">Concept art – greenhouse (2/6)</figcaption>
+          </figure>
+
+          <figure class="fp__item">
+            <img src="https://github.com/kizsak/Portfolio/raw/main/GreenhouseConceptArt3.png"
+                 alt="Illustration of a large greenhouse" />
+            <figcaption class="fp__caption">Concept art – greenhouse (3/6)</figcaption>
+          </figure>
+
+          <figure class="fp__item">
+            <img src="https://github.com/kizsak/Portfolio/raw/main/GreenhouseConceptArt4.png"
+                 alt="Illustration of a large greenhouse" />
+            <figcaption class="fp__caption">Concept art – greenhouse (4/6)</figcaption>
+          </figure>
+
+          <figure class="fp__item">
+            <img src="https://github.com/kizsak/Portfolio/raw/main/GreenhouseConceptArt5.png"
+                 alt="Illustration of a large greenhouse" />
+            <figcaption class="fp__caption">Concept art – greenhouse (5/6)</figcaption>
+          </figure>
+        </div>
+
       </div>
-    </div>
-
-    <div class="featured__strip" aria-label="Project image strip">
-
-      <figure class="fp__item">
-        <img src="images/twine-01.jpg"
-             alt="Photo of a woman holding a potted orchid; character concept for Hana Fubuki" />
-        <figcaption class="fp__caption">Character concept: Elara</figcaption>
-      </figure>
-
-      <figure class="fp__item">
-        <img src="https://github.com/kizsak/Portfolio/raw/main/ElarasGreenhouseNotes.png"
-             alt="A beat-up document showing a character's notes on the greenhouse" />
-        <figcaption class="fp__caption">Notes on the expanding greenhouse</figcaption>
-      </figure>
-
-      <figure class="fp__item">
-        <img src="https://github.com/kizsak/Portfolio/raw/main/FogOfWar.png"
-             alt="An image from a fog of war game set in a greenhouse" />
-        <figcaption class="fp__caption">A Fog of War minigame set in the greenhouse</figcaption>
-      </figure>
-
-      <figure class="fp__item">
-        <img src="https://github.com/kizsak/Portfolio/raw/main/ElaraIG.png"
-             alt="Elara's Instagram profile" />
-        <figcaption class="fp__caption">An Instagram profile for Elara</figcaption>
-      </figure>
-
-      <figure class="fp__item">
-        <img src="https://github.com/kizsak/Portfolio/raw/main/ElaraGR.png"
-             alt="Elara's Goodreads account" />
-        <figcaption class="fp__caption">A Goodreads profile for Elara</figcaption>
-      </figure>
-
-      <figure class="fp__item">
-        <img src="https://github.com/kizsak/Portfolio/raw/main/OrchidsOil.png"
-             alt="Digital oil painting of several orchids" />
-        <figcaption class="fp__caption">
-          A painting produced in an art therapy session in the greenhouse
-        </figcaption>
-      </figure>
-
-      <figure class="fp__item">
-        <img src="https://github.com/kizsak/Portfolio/raw/main/Biodomes2.jpg"
-             alt="Photograph of a large greenhouse with succulents in the foreground" />
-        <figcaption class="fp__caption">
-          Real-world inspiration: Singapore's Gardens by the Bay (1/6)
-        </figcaption>
-      </figure>
-
-      <figure class="fp__item">
-        <img src="https://github.com/kizsak/Portfolio/raw/main/Singapore2.jpg"
-             alt="Photograph of a large greenhouse" />
-        <figcaption class="fp__caption">
-          Real-world inspiration: Singapore's Gardens by the Bay (2/6)
-        </figcaption>
-      </figure>
-
-      <figure class="fp__item">
-        <img src="https://github.com/kizsak/Portfolio/raw/main/Singapore3.jpg"
-             alt="Photograph of a large greenhouse" />
-        <figcaption class="fp__caption">
-          Real-world inspiration: Singapore's Gardens by the Bay (3/6)
-        </figcaption>
-      </figure>
-
-      <figure class="fp__item">
-        <img src="https://github.com/kizsak/Portfolio/raw/main/Singapore4.jpg"
-             alt="Photograph of a large greenhouse" />
-        <figcaption class="fp__caption">
-          Real-world inspiration: Singapore's Gardens by the Bay (4/6)
-        </figcaption>
-      </figure>
-
-      <figure class="fp__item">
-        <img src="https://github.com/kizsak/Portfolio/raw/main/Singapore5.jpg"
-             alt="Photograph of a large greenhouse" />
-        <figcaption class="fp__caption">
-          Real-world inspiration: Singapore's Gardens by the Bay (5/6)
-        </figcaption>
-      </figure>
-
-      <figure class="fp__item">
-        <img src="https://github.com/kizsak/Portfolio/raw/main/Singapore6.jpg"
-             alt="Photograph of a large greenhouse" />
-        <figcaption class="fp__caption">
-          Real-world inspiration: Singapore's Gardens by the Bay (6/6)
-        </figcaption>
-      </figure>
-
-      <figure class="fp__item">
-        <img src="https://github.com/kizsak/Portfolio/raw/main/GreenhouseConceptArt.png"
-             alt="Illustration of a large greenhouse" />
-        <figcaption class="fp__caption">
-          Concept art – greenhouse (1/6)
-        </figcaption>
-      </figure>
-
-      <figure class="fp__item">
-        <img src="https://github.com/kizsak/Portfolio/raw/main/GreenhouseConceptArt2.png"
-             alt="Illustration of a large greenhouse" />
-        <figcaption class="fp__caption">
-          Concept art – greenhouse (2/6)
-        </figcaption>
-      </figure>
-
-      <figure class="fp__item">
-        <img src="https://github.com/kizsak/Portfolio/raw/main/GreenhouseConceptArt3.png"
-             alt="Illustration of a large greenhouse" />
-        <figcaption class="fp__caption">
-          Concept art – greenhouse (3/6)
-        </figcaption>
-      </figure>
-
-      <figure class="fp__item">
-        <img src="https://github.com/kizsak/Portfolio/raw/main/GreenhouseConceptArt4.png"
-             alt="Illustration of a large greenhouse" />
-        <figcaption class="fp__caption">
-          Concept art – greenhouse (4/6)
-        </figcaption>
-      </figure>
-
-      <figure class="fp__item">
-        <img src="https://github.com/kizsak/Portfolio/raw/main/GreenhouseConceptArt5.png"
-             alt="Illustration of a large greenhouse" />
-        <figcaption class="fp__caption">
-          Concept art – greenhouse (5/6)
-        </figcaption>
-      </figure>
-
-    </div>
-  </div>
-</section>
-
-      </p>
-      <div class="featured__actions">
-        <a class="featured__btn" href="twine.html">View project</a>
-        <a class="featured__link" href="gallery.html">See image set →</a>
-      </div>
-    </div>
-
-    <div class="featured__strip" aria-label="Project image strip">
-
-      <figure class="fp__item">
-        <img src="images/twine-01.jpg"
-             alt="Photo of a woman holding a potted orchid; character concept for Hana Fubuki" />
-        <figcaption class="fp__caption">Character concept: Elara</figcaption>
-      </figure>
-
-      <figure class="fp__item">
-        <img src="https://github.com/kizsak/Portfolio/raw/main/ElarasGreenhouseNotes.png"
-             alt="A beat-up document showing a character's notes on the greenhouse" />
-        <figcaption class="fp__caption">Notes on the expanding greenhouse</figcaption>
-      </figure>
-
-      <figure class="fp__item">
-        <img src="https://github.com/kizsak/Portfolio/raw/main/FogOfWar.png"
-             alt="An image from a fog of war game set in a greenhouse" />
-        <figcaption class="fp__caption">A Fog of War minigame set in the greenhouse</figcaption>
-      </figure>
-
-      <figure class="fp__item">
-        <img src="https://github.com/kizsak/Portfolio/raw/main/ElaraIG.png"
-             alt="Elara's Instagram profile" />
-        <figcaption class="fp__caption">An Instagram profile for Elara</figcaption>
-      </figure>
-
-      <figure class="fp__item">
-        <img src="https://github.com/kizsak/Portfolio/raw/main/ElaraGR.png"
-             alt="Elara's Goodreads account" />
-        <figcaption class="fp__caption">A Goodreads profile for Elara</figcaption>
-      </figure>
-
-      <figure class="fp__item">
-        <img src="https://github.com/kizsak/Portfolio/raw/main/OrchidsOil.png"
-             alt="Digital oil painting of several orchids" />
-        <figcaption class="fp__caption">
-          A painting produced in an art therapy session in the greenhouse
-        </figcaption>
-      </figure>
-
-      <figure class="fp__item">
-        <img src="https://github.com/kizsak/Portfolio/raw/main/Biodomes2.jpg"
-             alt="Photograph of a large greenhouse with succulents in the foreground" />
-        <figcaption class="fp__caption">
-          Real-world inspiration: Singapore's Gardens by the Bay (1/6)
-        </figcaption>
-      </figure>
-
-      <figure class="fp__item">
-        <img src="https://github.com/kizsak/Portfolio/raw/main/Singapore2.jpg"
-             alt="Photograph of a large greenhouse" />
-        <figcaption class="fp__caption">
-          Real-world inspiration: Singapore's Gardens by the Bay (2/6)
-        </figcaption>
-      </figure>
-
-      <figure class="fp__item">
-        <img src="https://github.com/kizsak/Portfolio/raw/main/Singapore3.jpg"
-             alt="Photograph of a large greenhouse" />
-        <figcaption class="fp__caption">
-          Real-world inspiration: Singapore's Gardens by the Bay (3/6)
-        </figcaption>
-      </figure>
-
-      <figure class="fp__item">
-        <img src="https://github.com/kizsak/Portfolio/raw/main/Singapore4.jpg"
-             alt="Photograph of a large greenhouse" />
-        <figcaption class="fp__caption">
-          Real-world inspiration: Singapore's Gardens by the Bay (4/6)
-        </figcaption>
-      </figure>
-
-      <figure class="fp__item">
-        <img src="https://github.com/kizsak/Portfolio/raw/main/Singapore5.jpg"
-             alt="Photograph of a large greenhouse" />
-        <figcaption class="fp__caption">
-          Real-world inspiration: Singapore's Gardens by the Bay (5/6)
-        </figcaption>
-      </figure>
-
-      <figure class="fp__item">
-        <img src="https://github.com/kizsak/Portfolio/raw/main/Singapore6.jpg"
-             alt="Photograph of a large greenhouse" />
-        <figcaption class="fp__caption">
-          Real-world inspiration: Singapore's Gardens by the Bay (6/6)
-        </figcaption>
-      </figure>
-
-      <figure class="fp__item">
-        <img src="https://github.com/kizsak/Portfolio/raw/main/GreenhouseConceptArt.png"
-             alt="Illustration of a large greenhouse" />
-        <figcaption class="fp__caption">
-          Concept art – greenhouse (1/6)
-        </figcaption>
-      </figure>
-
-      <figure class="fp__item">
-        <img src="https://github.com/kizsak/Portfolio/raw/main/GreenhouseConceptArt2.png"
-             alt="Illustration of a large greenhouse" />
-        <figcaption class="fp__caption">
-          Concept art – greenhouse (2/6)
-        </figcaption>
-      </figure>
-
-      <figure class="fp__item">
-        <img src="https://github.com/kizsak/Portfolio/raw/main/GreenhouseConceptArt3.png"
-             alt="Illustration of a large greenhouse" />
-        <figcaption class="fp__caption">
-          Concept art – greenhouse (3/6)
-        </figcaption>
-      </figure>
-
-      <figure class="fp__item">
-        <img src="https://github.com/kizsak/Portfolio/raw/main/GreenhouseConceptArt4.png"
-             alt="Illustration of a large greenhouse" />
-        <figcaption class="fp__caption">
-          Concept art – greenhouse (4/6)
-        </figcaption>
-      </figure>
-
-      <figure class="fp__item">
-        <img src="https://github.com/kizsak/Portfolio/raw/main/GreenhouseConceptArt5.png"
-             alt="Illustration of a large greenhouse" />
-        <figcaption class="fp__caption">
-          Concept art – greenhouse (5/6)
-        </figcaption>
-      </figure>
-
-    </div>
-  </div>
-</section>
-      
-
-<style>
-  .featured{
-    width: min(1180px, 92vw);
-    margin: 28px auto 0;
-  }
-
-  .featured__panel{
-    display: grid;
-    grid-template-columns: 1.05fr 1.35fr;
-    gap: 18px;
-    padding: 18px;
-    border-radius: 22px;
-    border: 1px solid rgba(255,255,255,.14);
-    background: rgba(10, 14, 18, .38);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    box-shadow: 0 10px 30px rgba(0,0,0,.35);
-  }
-
-  .featured__kicker{
-    margin: 0 0 6px;
-    font-size: .9rem;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    opacity: .8;
-  }
-
-  .featured__title{
-    margin: 0 0 10px;
-    font-size: clamp(1.4rem, 2.2vw, 2rem);
-    letter-spacing: .02em;
-  }
-
-  .featured__desc{
-    margin: 0 0 14px;
-    line-height: 1.45;
-    max-width: 52ch;
-    opacity: .9;
-  }
-
-  .featured__actions{
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-    align-items: center;
-  }
-
-  .featured__btn{
-    display: inline-block;
-    padding: 10px 14px;
-    border-radius: 14px;
-    border: 1px solid rgba(255,255,255,.18);
-    background: rgba(255,255,255,.08);
-    text-decoration: none;
-    color: inherit;
-    font-weight: 600;
-  }
-
-  .featured__btn:hover{
-    background: rgba(255,255,255,.12);
-  }
-
-  .featured__link{
-    text-decoration: none;
-    opacity: .9;
-  }
-
-  .featured__link:hover{
-    text-decoration: underline;
-  }
-
-  .featured__strip{
-    display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: minmax(150px, 1fr);
-    gap: 12px;
-    overflow-x: auto;
-    padding-bottom: 6px;
-    scroll-snap-type: x mandatory;
-  }
-
-  .featured__shot{
-    margin: 0;
-    border-radius: 18px;
-    overflow: hidden;
-    border: 1px solid rgba(255,255,255,.14);
-    background: rgba(0,0,0,.25);
-    scroll-snap-align: start;
-    aspect-ratio: 4 / 3;
-  }
-
-  .featured__shot img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    filter: saturate(1.02) contrast(1.02);
-  }
-
-  /* subtle custom scrollbar (optional) */
-  .featured__strip::-webkit-scrollbar{
-    height: 10px;
-  }
-  .featured__strip::-webkit-scrollbar-thumb{
-    background: rgba(255,255,255,.14);
-    border-radius: 999px;
-  }
-  .featured__strip::-webkit-scrollbar-track{
-    background: rgba(255,255,255,.04);
-    border-radius: 999px;
-  }
-
-  @media (max-width: 860px){
-    .featured__panel{
-      grid-template-columns: 1fr;
-    }
-    .featured__desc{
-      max-width: 70ch;
-    }
-    .featured__strip{
-      grid-auto-columns: minmax(180px, 1fr);
-    }
-  }
-
-  .featured{
-    width: min(1180px, 92vw);
-    margin: 28px auto 0;
-  }
-
-  .featured__panel{
-    display: grid;
-    grid-template-columns: 1.05fr 1.35fr;
-    gap: 18px;
-    padding: 18px;
-    border-radius: 22px;
-    border: 1px solid rgba(255,255,255,.14);
-    background: rgba(10, 14, 18, .38);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    box-shadow: 0 10px 30px rgba(0,0,0,.35);
-  }
-
-  .featured__kicker{
-    margin: 0 0 6px;
-    font-size: .9rem;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    opacity: .8;
-  }
-
-  .featured__title{
-    margin: 0 0 10px;
-    font-size: clamp(1.4rem, 2.2vw, 2rem);
-    letter-spacing: .02em;
-  }
-
-  .featured__desc{
-    margin: 0 0 14px;
-    line-height: 1.45;
-    max-width: 52ch;
-    opacity: .9;
-  }
-
-  .featured__actions{
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-    align-items: center;
-  }
-
-  .featured__btn{
-    display: inline-block;
-    padding: 10px 14px;
-    border-radius: 14px;
-    border: 1px solid rgba(255,255,255,.18);
-    background: rgba(255,255,255,.08);
-    text-decoration: none;
-    color: inherit;
-    font-weight: 600;
-  }
-
-  .featured__btn:hover{
-    background: rgba(255,255,255,.12);
-  }
-
-  .featured__link{
-    text-decoration: none;
-    opacity: .9;
-  }
-
-  .featured__link:hover{
-    text-decoration: underline;
-  }
-
-  .featured__strip{
-    display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: minmax(150px, 1fr);
-    gap: 12px;
-    overflow-x: auto;
-    padding-bottom: 6px;
-    scroll-snap-type: x mandatory;
-  }
-
-  .featured__shot{
-    margin: 0;
-    border-radius: 18px;
-    overflow: hidden;
-    border: 1px solid rgba(255,255,255,.14);
-    background: rgba(0,0,0,.25);
-    scroll-snap-align: start;
-    aspect-ratio: 4 / 3;
-  }
-
-  .featured__shot img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    filter: saturate(1.02) contrast(1.02);
-  }
-
-  /* subtle custom scrollbar (optional) */
-  .featured__strip::-webkit-scrollbar{
-    height: 10px;
-  }
-  .featured__strip::-webkit-scrollbar-thumb{
-    background: rgba(255,255,255,.14);
-    border-radius: 999px;
-  }
-  .featured__strip::-webkit-scrollbar-track{
-    background: rgba(255,255,255,.04);
-    border-radius: 999px;
-  }
-
-  @media (max-width: 860px){
-    .featured__panel{
-      grid-template-columns: 1fr;
-    }
-    .featured__desc{
-      max-width: 70ch;
-    }
-    .featured__strip{
-      grid-auto-columns: minmax(180px, 1fr);
-    }
-  }
-</style>
-
-  
- </body>
+    </section>
+  </main>
+</body>
 </html>
