@@ -11,6 +11,66 @@
 </head>
 <body class="page-digital-painting">
 
+<style>
+/* FORCE the 4-card homepage layout on Digital Painting */
+.page-digital-painting .hero-section{
+  width: min(1000px, 92vw) !important;
+  margin: 24px auto 48px !important;
+}
+
+.page-digital-painting .card-grid{
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 24px 0 0 !important;
+
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 18px !important;
+}
+
+.page-digital-painting .card{
+  min-height: 220px !important;
+}
+
+.page-digital-painting .card__link{
+  display: block !important;
+  position: relative !important;
+  min-height: 220px !important;
+  border-radius: 18px !important;
+  overflow: hidden !important;
+  text-decoration: none !important;
+}
+
+.page-digital-painting .card__background{
+  position: absolute !important;
+  inset: 0 !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+.page-digital-painting .card__content{
+  position: relative !important;
+  z-index: 2 !important;
+  padding: 18px !important;
+}
+
+.page-digital-painting .card__heading{
+  margin: 0 !important;
+  text-shadow: 0 2px 18px rgba(0,0,0,0.65) !important;
+}
+
+.page-digital-painting .card__link::after{
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background: linear-gradient(to right, rgba(0,0,0,0.45), rgba(0,0,0,0.05)) !important;
+  z-index: 1 !important;
+}
+</style>
+
+
+
+  
   <!-- Top Neon Title -->
   <header class="page-header">
     <h1 class="neon limelight-regular">Digital Painting</h1>
