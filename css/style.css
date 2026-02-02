@@ -580,3 +580,66 @@ body {
   font-family: 'Oxanium', 'Audiowide', system-ui, sans-serif;
 }
 
+/* ===== About Me layout ===== */
+.about-main{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 22px 18px 40px;
+}
+
+.about-title{
+  text-align: center;
+  margin: 12px 0 18px;
+}
+
+.about-hero{
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 22px;
+  align-items: start;
+  padding: 16px;
+  border-radius: 18px;
+  background: rgba(0,0,0,0.35);
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+}
+
+@media (max-width: 900px){
+  .about-hero{
+    grid-template-columns: 1fr;
+  }
+}
+
+.about-portrait img{
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.10);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.55);
+}
+
+.about-bio{
+  padding: 6px 4px;
+  line-height: 1.55;
+  font-size: 1.05rem;
+}
+
+/* ===== Icons row (centered under hero) ===== */
+.about-icons{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+/* Ensure the buttons have consistent sizing */
+.social-neon__btn{
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  text-decoration: none;
+}
