@@ -573,3 +573,10 @@ body {
     0 0 28px rgba(255, 90, 170, 0.6),
     0 0 44px rgba(255, 0, 140, 0.5);
 }
+
+.social-neon__badge {
+  font-weight: 800;
+  font-size: 1.2rem;
+  font-family: 'Oxanium', 'Audiowide', system-ui, sans-serif;
+}
+
