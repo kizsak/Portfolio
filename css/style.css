@@ -513,3 +513,37 @@ body {
   background-attachment: fixed;
   background-size: auto;
 }
+
+/* Bigger, calmer grid tiles */
+.grid-gallery{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); /* <-- bigger min */
+  gap: 22px;
+  align-items: start;
+  padding: 18px 0;
+}
+
+/* Each work card */
+.g-item{
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(0,0,0,0.35);
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+}
+
+/* Make the image area large enough even if the image is small */
+.g-media{
+  position: relative;
+  height: 260px;               /* <-- key: controls visible image size */
+  cursor: zoom-in;
+}
+
+/* The image fills the media box */
+.g-img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;           /* or 'contain' if you never want cropping */
+  display: block;
+}
+
