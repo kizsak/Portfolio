@@ -643,3 +643,13 @@ body {
   border-radius: 16px;
   text-decoration: none;
 }
+
+.social-neon__btn i,
+.social-neon__badge{
+  color: #ffd6e8;
+  text-shadow:
+    0 0 6px rgba(255, 120, 190, 0.9),
+    0 0 14px rgba(255, 80, 170, 0.7),
+    0 0 28px rgba(255, 40, 150, 0.6),
+    0 0 42px rgba(255, 0, 120, 0.45);
+}
