@@ -24,46 +24,23 @@ body{
   overflow-x: hidden;
 }
 
-/* ---------- Page backgrounds ---------- */
-.page-home{
-  background-image:
-    linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
-    style="background-image: url(https://github.com/kizsak/Portfolio/raw/main/Texture5.png"); 
-  background-position: 50% 15%;
-  background-repeat: no-repeat;
-  background-position: center top;
-  background-size: cover;
+/* ===== Global Site Background ===== */
+html, body {
+  height: 100%;
 }
 
-.page-if{
-  background-image:
-    linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
-    url("https://github.com/kizsak/Portfolio/raw/main/KoiBent.jpg")
-  background-position: 50% 15%;
-  background-repeat: no-repeat;
-  background-position: center top;
-  background-size: cover;
-}
+body {
+  margin: 0;
 
-.page-graphic-design{
-  background-image:
-    linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
-    url("https://github.com/kizsak/Portfolio/raw/main/BentLantana.jpg");
-  background-position: 50% 20%;
-  background-repeat: no-repeat;
-  background-position: center top;
-  background-size: cover;
-}
+  background-image: url("../images/Texture5.png");
+  background-repeat: repeat;        /* good for texture images */
+  background-position: center center;
+  background-attachment: fixed;     /* subtle parallax feel; optional */
+  background-size: auto;             /* preserves texture scale */
 
-.page-contact{
-  background-image:
-    linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
-    url("https://github.com/kizsak/Portfolio/raw/main/Background2.jpg");
-  background-repeat: no-repeat;
-  background-position: center top;
-  background-size: cover;
+  /* fallback color while image loads */
+  background-color: #050608;
 }
-
 /* ---------- Header / Title ---------- */
 .page-header{
   width: min(1000px, 92vw);
