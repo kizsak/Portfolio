@@ -33,12 +33,11 @@ body {
   margin: 0;
 
   background-image: url("https://github.com/kizsak/Portfolio/raw/main/Texture5.png");
-  background-repeat: repeat;        /* good for texture images */
+  background-repeat: repeat;       
   background-position: center center;
-  background-attachment: fixed;     /* subtle parallax feel; optional */
-  background-size: auto;             /* preserves texture scale */
-
-  /* fallback color while image loads */
+  background-attachment: fixed;    
+  background-size: 1200px auto;
+  background-repeat: repeat;
   background-color: #050608;
 }
 
