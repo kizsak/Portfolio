@@ -387,3 +387,84 @@ body{
     0 0 30px rgba(255, 110, 120, 0.40) !important;
 }
 
+/* ===== Neon Social Icons ===== */
+.social-neon {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 0;
+}
+
+.social-neon__btn {
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  text-decoration: none;
+
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255,255,255,0.14);
+
+  /* “glass + neon” */
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.06),
+    0 10px 28px rgba(0,0,0,0.55),
+    0 0 18px rgba(0,255,255,0.18);
+
+  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+}
+
+.social-neon__btn i,
+.social-neon__badge {
+  font-size: 22px;
+  color: rgba(255,255,255,0.92);
+
+  /* neon text glow like a title */
+  text-shadow:
+    0 0 6px rgba(0,255,255,0.55),
+    0 0 16px rgba(255,0,255,0.35),
+    0 0 28px rgba(0,255,255,0.25);
+}
+
+/* Notion badge */
+.social-neon__badge {
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+/* Hover = brighter + lift */
+.social-neon__btn:hover {
+  transform: translateY(-2px);
+  border-color: rgba(0,255,255,0.35);
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.10),
+    0 16px 40px rgba(0,0,0,0.62),
+    0 0 22px rgba(0,255,255,0.30),
+    0 0 34px rgba(255,0,255,0.20);
+}
+
+/* Keyboard focus */
+.social-neon__btn:focus-visible {
+  outline: none;
+  border-color: rgba(255,255,255,0.45);
+  box-shadow:
+    0 0 0 2px rgba(0,255,255,0.35),
+    0 0 28px rgba(0,255,255,0.28);
+}
+
+/* Optional: slow hue shimmer like the CodePen vibe */
+@media (prefers-reduced-motion: no-preference) {
+  .social-neon__btn i,
+  .social-neon__badge {
+    animation: neonHue 6s linear infinite;
+  }
+  @keyframes neonHue {
+    from { filter: hue-rotate(0deg); }
+    to   { filter: hue-rotate(360deg); }
+  }
+}
+
+
