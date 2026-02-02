@@ -6,8 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- MAIN STYLESHEET -->
-  <!-- IMPORTANT: if your CSS is NOT in a /css folder,
-       change this to href="style.css" -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -15,7 +13,7 @@
 
   <!-- PAGE HEADER -->
   <header class="page-header">
-    <h1 class="neon-soft">Digital Painting</h1>
+    <h2 class="neon-soft">Digital Painting</h2>
 
     <!-- NAVIGATION -->
     <nav class="nav-bar" aria-label="Site navigation">
@@ -29,20 +27,68 @@
   </header>
 
   <!-- MAIN CONTENT -->
+  <!-- Card grid -->
   <main>
-<section class="grid-gallery" aria-label="Gallery">
-  <figure class="g-item tall">
-    <a class="g-link zoom" href="https://github.com/kizsak/Portfolio/raw/main/BeeOrchidPolaroid.png" data-full="https://github.com/kizsak/Portfolio/raw/main/BeeOrchidPolaroid.png">
-      <img class="g-img" src="https://github.com/kizsak/Portfolio/raw/main/BeeOrchidPolaroid.png" alt="A digitally aged Polaroid-style bee orchid image." loading="lazy">
-      <span class="g-overlay">Aged Polaroid</span>
-    </a>
-    <figcaption class="g-cap">
-      <h3>Aged Polaroid, digital image, 2025</h3>
-    </figcaption>
-  </figure>
+    <section class="hero-section" aria-label="Portfolio sections">
+      <ul class="card-grid">
 
-</section>
+        <li class="card">
+          <a href="digital-painting.html" class="card__link">
+            <div class="card__background"
+                 style="background-image: url(https://github.com/kizsak/Portfolio/raw/Freddie.png);">
+            </div>
+            <div class="card__content">
+              <h3 class="card__heading">Animal<br>Portraits</h3>
+            </div>
+          </a>
+        </li>
 
+                <li class="card">
+          <a href="comp-design.html" class="card__link">
+            <div class="card__background"
+                 style="background-image: url(https://github.com/kizsak/Portfolio/raw/main/YoelGoblinAcrylics.jpg);">
+            </div>
+            <div class="card__content">
+              <h3 class="card__heading">Human<br>Portraits</h3>
+            </div>
+          </a>
+        </li>
+
+        <li class="card">
+          <a href="if.html" class="card__link">
+            <div class="card__background"
+                 style="background-image: url(https://github.com/kizsak/Portfolio/raw/main/LotusPastels.png);">
+            </div>
+            <div class="card__content">
+              <h3 class="card__heading">Land-<br>and City-<br>Scapes</h3>
+            </div>
+          </a>
+        </li>
+        
+        <li class="card">
+          <a href="graphic-design.html" class="card__link">
+            <div class="card__background"
+                 style="background-image: url(https://github.com/kizsak/Portfolio/raw/main/OrigamiStillLife3Pastels.png);">
+            </div>
+            <div class="card__content">
+              <h3 class="card__heading">Still<br>Life</h3>
+            </div>
+          </a>
+        </li>
+
+        <li class="card">
+          <a href="graphic-design.html" class="card__link">
+            <div class="card__background"
+                 style="background-image: url(https://github.com/kizsak/Portfolio/raw/main/Abstract1Acrylics.jpg);">
+            </div>
+            <div class="card__content">
+              <h3 class="card__heading">Expressive<br>Abstracts<br>COMING SOON!</h3>
+            </div>
+          </a>
+        </li>
+
+      </ul>
+    </section>
   </main>
 
 </body>
