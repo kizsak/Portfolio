@@ -41,6 +41,16 @@ body {
   /* fallback color while image loads */
   background-color: #050608;
 }
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75); /* ← this is the fade you remember */
+  pointer-events: none;
+  z-index: -1;
+}
+
 /* ---------- Header / Title ---------- */
 .page-header{
   width: min(1000px, 92vw);
