@@ -32,7 +32,7 @@ html, body {
 body {
   margin: 0;
 
-  background-image: url("../images/Texture5.png");
+  background-image: url("https://github.com/kizsak/Portfolio/raw/main/Texture5.png");
   background-repeat: repeat;        /* good for texture images */
   background-position: center center;
   background-attachment: fixed;     /* subtle parallax feel; optional */
