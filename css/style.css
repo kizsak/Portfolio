@@ -492,3 +492,15 @@ body {
   opacity: 0.95;
 }
 
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #050608;
+  background-image: url("../Texture5.png");
+  background-repeat: repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: auto;
+}
