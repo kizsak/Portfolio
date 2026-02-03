@@ -653,3 +653,9 @@ body {
     0 0 28px rgba(255, 40, 150, 0.6),
     0 0 42px rgba(255, 0, 120, 0.45);
 }
+
+.about-hero {
+  display: grid;
+  grid-template-columns: 320px 1fr; /* ↓ smaller portrait column */
+  gap: 28px;                        /* ↑ more breathing room */
+}
