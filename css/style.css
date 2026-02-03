@@ -696,3 +696,13 @@ body {
   display: block;
 }
 
+/* Default: center crop */
+.dp-card img { object-position: center; }
+
+/* Move the visible window UP (show higher part of image) */
+.dp-animal img { object-position: center 22%; }     /* horse eyes higher */
+.dp-human img  { object-position: center 18%; }     /* man’s eye level */
+.dp-stilllife img { object-position: center 28%; }  /* elephant face higher */
+
+/* If you need to go even higher: try 10–15% */
+
