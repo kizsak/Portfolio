@@ -45,7 +45,7 @@ body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.85); /* ← this is the fade you remember */
+  background: rgba(0, 0, 0, 0.8); /* ← this is the fade you remember */
   pointer-events: none;
   z-index: -1;
 }
