@@ -706,3 +706,18 @@ body {
 
 /* If you need to go even higher: try 10–15% */
 
+.dp-card { position: relative; overflow: hidden; }
+
+.dp-card img { position: absolute; inset: 0; z-index: 0; }
+
+.dp-label { position: relative; z-index: 2; }
+
+/* overlay */
+.dp-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  z-index: 1;
+}
+
