@@ -659,3 +659,31 @@ body {
   grid-template-columns: 320px 1fr; /* ↓ smaller portrait column */
   gap: 28px;                        /* ↑ more breathing room */
 }
+
+.about-portrait img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.45); /* softer shadow */
+}
+
+.about-bio {
+  font-size: 1.25rem;   /* ↑ from ~1.05–1.1 */
+  line-height: 1.65;    /* ↑ readability + presence */
+  max-width: 42ch;      /* keeps it elegant, not too wide */
+}
+
+.about-hero {
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .about-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .about-bio {
+    font-size: 1.15rem;
+    max-width: none;
+  }
+}
