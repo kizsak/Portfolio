@@ -1,99 +1,45 @@
-(function () {
-  "use strict";
+(() => {
+  const carousels = document.querySelectorAll(".img-carousel");
+  if (!carousels.length) return;
 
-  function init() {
-    const carouselSection = document.querySelector(".gallery-carousel");
-    const essayBody = document.getElementById("essay-body");
+  carousels.forEach((root) => {
+    const slides = Array.from(root.querySelectorAll(".img-slide"));
+    const prevBtn = root.querySelector('[data-dir="prev"]');
+    const nextBtn = root.querySelector('[data-dir="next"]');
+    const dotsWrap = root.querySelector(".img-carousel__dots");
 
-    // This log is KEY: if you don't see it in DevTools -> Console,
-    // you're not loading the updated file.
-    console.log("✅ carousel-lightbox.js running", {
-      hasCarousel: !!carouselSection,
-      hasEssayBody: !!essayBody
-    });
-
-    if (!carouselSection) return;
-
-    const images = Array.from(carouselSection.querySelectorAll(".carousel-image"));
-    if (!images.length) return;
-
-    const prevBtn = carouselSection.querySelector(".carousel-btn.prev");
-    const nextBtn = carouselSection.querySelector(".carousel-btn.next");
-
-    const titleEl = document.getElementById("image-caption");
-    const descEl  = document.getElementById("image-description");
-
-    const essayPanel = document.querySelector(".essay-panel");
-
-    let index = images.findIndex(img => img.classList.contains("active"));
+    let index = slides.findIndex(s => s.classList.contains("is-active"));
     if (index < 0) index = 0;
 
-    function getTitleHTML(img) {
-      return img.getAttribute("data-caption") || img.getAttribute("alt") || "";
-    }
-
-    function getShortHTML(img) {
-      const direct = img.getAttribute("data-description");
-      if (direct) return direct;
-
-      const templateId = img.getAttribute("data-desc");
-      if (templateId) {
-        const tpl = document.getElementById(templateId);
-        if (tpl && tpl.tagName.toLowerCase() === "template") return tpl.innerHTML;
-      }
-      return "";
-    }
-
-    function getEssayHTML(img) {
-      const essayId = img.getAttribute("data-essay");
-      if (!essayId) return "";
-
-      const tpl = document.getElementById(essayId);
-      if (tpl && tpl.tagName.toLowerCase() === "template") return tpl.innerHTML;
-
-      console.warn("⚠️ Missing essay template:", essayId);
-      return "";
-    }
-
-    function show(i) {
-      index = (i + images.length) % images.length;
-
-      images.forEach((img, idx) => img.classList.toggle("active", idx === index));
-      const img = images[index];
-
-      if (titleEl) titleEl.innerHTML = getTitleHTML(img);
-
-      if (descEl) {
-        const shortHTML = getShortHTML(img);
-        descEl.innerHTML = shortHTML;
-        descEl.style.display = shortHTML ? "block" : "none";
-      }
-
-      if (essayBody) {
-        const essayHTML = getEssayHTML(img);
-        essayBody.innerHTML = essayHTML;
-
-        if (essayPanel) {
-          essayPanel.style.display = essayHTML ? "block" : "none";
-        }
-      }
-    }
-
-    function next() { show(index + 1); }
-    function prev() { show(index - 1); }
-
-    nextBtn && nextBtn.addEventListener("click", next);
-    prevBtn && prevBtn.addEventListener("click", prev);
-
-    document.addEventListener("keydown", (e) => {
-      const tag = (document.activeElement?.tagName || "").toLowerCase();
-      if (["input", "textarea", "select"].includes(tag)) return;
-      if (e.key === "ArrowRight") next();
-      if (e.key === "ArrowLeft") prev();
+    // Build dots
+    const dots = slides.map((_, i) => {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "img-carousel__dot" + (i === index ? " is-active" : "");
+      b.ariaLabel = `Go to image ${i + 1}`;
+      b.addEventListener("click", () => go(i));
+      dotsWrap.appendChild(b);
+      return b;
     });
 
-    show(index);
-  }
+    function go(next) {
+      slides[index].classList.remove("is-active");
+      dots[index]?.classList.remove("is-active");
 
-  document.addEventListener("DOMContentLoaded", init);
+      index = (next + slides.length) % slides.length;
+
+      slides[index].classList.add("is-active");
+      dots[index]?.classList.add("is-active");
+    }
+
+    prevBtn?.addEventListener("click", () => go(index - 1));
+    nextBtn?.addEventListener("click", () => go(index + 1));
+
+    // Keyboard (optional)
+    root.tabIndex = 0;
+    root.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowLeft") go(index - 1);
+      if (e.key === "ArrowRight") go(index + 1);
+    });
+  });
 })();
