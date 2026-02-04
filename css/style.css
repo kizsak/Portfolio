@@ -774,13 +774,13 @@ body {
 
 /* Show MORE of the TOP of the image (tune these numbers) */
 .dp-shift-horse .card__background {
-  background-position: center 10%;
+  background-position: center 12%;
 }
 
 .dp-shift-human .card__background {
-  background-position: center 10%;
+  background-position: center 12%;
 }
 
 .dp-shift-stilllife .card__background {
-  background-position: center 15%;
+  background-position: center 12%;
 }
