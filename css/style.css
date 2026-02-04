@@ -766,3 +766,21 @@ body {
   z-index: -1;
 }
 
+/* Defaults */
+.card__background {
+  background-size: cover;
+  background-position: center center;
+}
+
+/* Show MORE of the TOP of the image (tune these numbers) */
+.dp-shift-horse .card__background {
+  background-position: center 10%;
+}
+
+.dp-shift-human .card__background {
+  background-position: center 10%;
+}
+
+.dp-shift-stilllife .card__background {
+  background-position: center 15%;
+}
