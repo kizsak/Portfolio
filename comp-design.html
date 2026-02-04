@@ -1,94 +1,45 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <title>Kate Izsak — Digital Painting</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<section class="img-carousel" aria-label="Artwork carousel">
+  <button class="img-carousel__arrow" type="button" data-dir="prev" aria-label="Previous image">‹</button>
+  <button class="img-carousel__arrow" type="button" data-dir="next" aria-label="Next image">›</button>
 
-  <!-- MAIN STYLESHEET -->
-  <link rel="stylesheet" href="css/style.css">
-</head>
+  <div class="img-carousel__viewport">
+    <!-- SLIDE 1 -->
+    <figure class="img-slide is-active">
+      <!-- ✅ IMAGE URL GOES HERE (src) -->
+      <img
+        src="https://github.com/kizsak/Portfolio/raw/main/BeeOrchidPolaroid.png"
+        alt="A simulated, aged Polaroid of flowers""
+        loading="lazy"
+      />
 
-<body class="page-comp-design">
+      <div class="img-slide__meta">
+        <!-- ✅ TITLE GOES HERE -->
+        <h3 class="img-slide__title">Simulated Polaroid, digital image, 2025</h3>
 
-  <!-- PAGE HEADER -->
-  <header class="page-header">
-    <h2 class="neon-soft">Computational Image Design</h2>
+        <!-- ✅ CAPTION / PROCESS NOTES GO HERE (can be LONG) -->
+        <figcaption class="img-slide__caption">
+          I used Midjourney to create a synthetic photograph of an <em>Ophrys apifera</em> (Bee Orchid) in bloom.  I then processed the image using a Python script <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target='_blank' rel='noopener noreferrer'>(download)</a> that converts the photograph to grayscale, reshapes its tonal curve, and maps it onto a simulated silver plate surface. The script introduces a series of degradations, including metallic color shifts, directional sheen, vignette falloff, and tarnish artifacts. Finally, it precisely fits the image into an aged and worn digital daguerreotype frame I created in Photoshop, with softened edges and inner shadow to simulate depth and mounting.
+        </figcaption>
+      </div>
+    </figure>
 
-    <!-- NAVIGATION -->
-    <nav class="nav-bar" aria-label="Site navigation">
-      <a href="index.html" class="nav-btn">Home</a>
-      <a href="digital-painting.html" class="nav-btn is-active">Digital Painting</a>
-      <a href="comp-design.html" class="nav-btn">Computational Image Design</a>
-      <a href="if.html" class="nav-btn">Interactive Fiction</a>
-      <a href="graphic-design.html" class="nav-btn">Graphic Design</a>
-      <a href="about-me.html" class="nav-btn">About Me</a>
-    </nav>
-  </header>
+    <!-- SLIDE 2 -->
+    <figure class="img-slide">
+      <img
+        src="images/digital-painting/animals/bird.jpg"
+        alt="Digital painting of a bird"
+        loading="lazy"
+      />
+      <div class="img-slide__meta">
+        <h3 class="img-slide__title">Bird Portrait</h3>
+        <figcaption class="img-slide__caption">
+          Longer caption goes here. This can be multiple sentences or even multiple short paragraphs.
+        </figcaption>
+      </div>
+    </figure>
 
-  <!-- MAIN CONTENT -->
-  <main>
-<section class="grid-gallery" aria-label="Gallery">
-  <figure class="g-item tall">
-    <a class="g-link zoom" href="https://github.com/kizsak/Portfolio/raw/main/BeeOrchidPolaroid.png" data-full="https://github.com/kizsak/Portfolio/raw/main/BeeOrchidPolaroid.png">
-      <img class="g-img" src="https://github.com/kizsak/Portfolio/raw/main/BeeOrchidPolaroid.png" alt="A digitally aged Polaroid-style bee orchid image." loading="lazy">
-      <span class="g-overlay">Aged Polaroid</span>
-    </a>
-    <figcaption class="g-cap">
-      <h3>Aged Polaroid, digital image, 2025</h3>
-      <strong>Tools:</strong>
-        <ul class="tools-list">
-          <li><strong>Python</strong>
-            <ul>
-              <li><strong>Pillow</strong> (image compositing, resizing, masking, blend operations)</li>
-              <li><strong>argparse</strong> (command-line parameter control)</li>
-              <li><strong>pathlib</strong> (file and folder management)</li>
-              <li><strong>random</strong> (controlled variation in frame and overlay selection)</li>
-            </ul>
-          </li>
-          <li><strong>Midjourney</strong></li>
-          <li><strong>Photoshop</strong></li>
-        </ul>
-      <p> Process Notes: I created a synthetic photograph of an <em>Ophrys apifera</em> (Bee Orchid) in bloom using Midjourney (prompt: A photograph of the botanical specimen, bee orchid, photographed in the field in the style of 1980s field botany documentation, soft natural light, shallow depth of field, Kodachrome 64 film look, muted warm tones, subtle film grain, macro detail, slight fading and color shift.). Then, I created a worn Polaroid frame in Photoshop by layering texture overlays to suggest an aged and worn feel. Next, I wrote a Python script
-          <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target="_blank" rel="noopener noreferrer">(download)</a>. This script treats the image not as a static photograph but as a material object subject to wear, exposure, and chemical instability. Starting from a clean digital input, the script introduces a series of degradations—edge softening, tonal flattening, color drift, and localized light leaks—that echo the visual artifacts of aging instant film. Rather than applying a single filter, the process unfolds in stages, allowing each transformation to subtly interfere with the last.
-        </p>
-    </figcaption>
-  </figure>
+    <!-- Add more <figure class="img-slide"> ... </figure> as needed -->
+  </div>
 
-<figure class="g-item tall">
-    <a class="g-link zoom" href="https://github.com/kizsak/Portfolio/raw/main/Daguerreotype.jpg" data-full="https://github.com/kizsak/Portfolio/raw/main/Daguerreotype.jpg">    
-    <img class="g-img" src="https://github.com/kizsak/Portfolio/raw/main/Daguerreotype.jpg" data-full=https://github.com/kizsak/Portfolio/raw/main/          
-    <span class="g-overlay">Simulated Dagerreotype/span>
-    </a>
-    <figcaption class="g-cap">
-      <h3>Simulated Daguerreotype, digital image, 2025</h3>
-          <li><strong>Tools:</strong>
-            <ul>
-              <li><strong>Python
-                  <li>NumPy</strong> (pixel-level tonal remapping, metallic color mapping, vignette math)</li>
-              <   li>Pillow (PIL)</strong> (grayscale conversion, compositing, filters, alpha masks)</li>
-                  <li>math (directional sheen and radial calculations)</li>
-          <li>Photoshop<</li>
-          <li>Midjourney</li>
-        </ul>
-        <p>Process Notes: I used Midjourney to create a synthetic photograph of an <em>Helena autumnale</em> (Sneezeweed) in bloom (prompt: A photograph of the botanical specimen, sneezeweed, photographed in the field in the style of 1980s field botany documentation, soft natural light, shallow depth of field, Kodachrome 64 film look, muted warm tones, subtle film grain, macro detail, slight fading and color shift. The photograph should show the sculptural details of the petals well.). I then processed the image using a Python script
-          <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target="_blank" rel="noopener noreferrer">(download)</a> that converts the photograph to grayscale, reshapes its tonal curve, and maps it onto a simulated silver plate surface. The script introduces metallic color shifts, directional sheen, vignette falloff, and tarnish artifacts. Finally, it precisely fits the image into an aged and worn digital daguerreotype frame I created in Photoshop, with softened edges and inner shadow to simulate depth and mounting.
-        </p>
-  </figure>
+  <div class="img-carousel__dots" aria-label="Slide navigation"></div>
 </section>
-
-  </main>
-
-</body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
