@@ -910,3 +910,46 @@ body {
 <div class="center-enter" id="centerEnter" aria-hidden="true">
   <a class="enter-hero" href="index.html" id="centerEnterLink">Enter Portfolio</a>
 </div>
+
+/* Center button container */
+.center-enter {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+}
+
+.center-enter[aria-hidden="true"] {
+  opacity: 0;
+  transform: scale(.98);
+}
+
+.center-enter[aria-hidden="false"] {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity .35s ease, transform .35s ease;
+  pointer-events: auto;
+}
+
+/* The big button */
+.enter-hero {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 22px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 16px;
+  letter-spacing: .06em;
+  border: 1px solid rgba(0,0,0,.18);
+  background: rgba(255,255,255,.75);
+  color: rgba(10,10,10,.9);
+  box-shadow: 0 16px 40px rgba(0,0,0,.12);
+}
+
+/* Fade out the video when done */
+.intro-video.is-finished {
+  opacity: 0;
+  transition: opacity .6s ease;
+}
