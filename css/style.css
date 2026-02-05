@@ -905,3 +905,8 @@ body {
   filter: saturate(1.15) contrast(1.05);
 }
 }
+
+<!-- Center “Enter” button that appears after video ends -->
+<div class="center-enter" id="centerEnter" aria-hidden="true">
+  <a class="enter-hero" href="index.html" id="centerEnterLink">Enter Portfolio</a>
+</div>
