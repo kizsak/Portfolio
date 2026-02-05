@@ -975,3 +975,7 @@ body {
   position: relative;
   z-index: 1;         /* pull image above */
 }
+
+.dp-caption {
+  background: rgba(0,0,0,0.35);
+}
