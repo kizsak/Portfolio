@@ -900,4 +900,8 @@ body {
     background: linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,.68));
   }
   .img-slide__caption{ max-height: 160px; }
+
+   .dp-card img {
+  filter: saturate(1.15) contrast(1.05);
+}
 }
