@@ -959,3 +959,19 @@ body {
   padding-top: 4rem;
   border-top: 1px solid rgba(255,255,255,0.08);
 }
+
+.dp-card { position: relative; }
+
+.dp-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.18);
+  z-index: 0;         /* push overlay behind */
+  pointer-events: none;
+}
+
+.dp-card img {
+  position: relative;
+  z-index: 1;         /* pull image above */
+}
