@@ -181,47 +181,63 @@
     </section>
   </main>
 
-  <script>
-    (function () {
-      const video = document.getElementById("introVideo");
-      const skipBtn = document.getElementById("skipBtn");
-      const enterBtn = document.getElementById("enterBtn");
-      const statusText = document.getElementById("statusText");
-      const tapToPlay = document.getElementById("tapToPlay");
+ <script>
+(function () {
+  const video = document.getElementById("introVideo");
+  const skipBtn = document.getElementById("skipBtn");
+  const enterBtn = document.getElementById("enterBtn");
+  const statusText = document.getElementById("statusText");
+  const tapToPlay = document.getElementById("tapToPlay");
 
-      // Change this if your main portfolio page is different
-      const PORTFOLIO_URL = "navigation.html";
+  const centerEnter = document.getElementById("centerEnter");
+  const centerEnterLink = document.getElementById("centerEnterLink");
 
-      // If you want auto-enter after the video ends, set true:
-      const AUTO_REDIRECT_ON_END = false;
+  // FINAL portfolio destination
+  const PORTFOLIO_URL = "https://kizsak.github.io/Portfolio/index.html";
+  centerEnterLink.href = PORTFOLIO_URL;
 
-      function revealEnter() {
-        enterBtn.setAttribute("aria-hidden", "false");
-        statusText.textContent = "Intro finished.";
-      }
+  function revealEnter() {
+    // Show buttons
+    enterBtn.setAttribute("aria-hidden", "false");
+    centerEnter.setAttribute("aria-hidden", "false");
 
-      function goEnter() {
-        window.location.href = PORTFOLIO_URL;
-      }
+    // Fade out video
+    video.classList.add("is-finished");
 
-      // Skip button: reveal Enter + optionally jump
-      skipBtn.addEventListener("click", () => {
-        // Optionally stop the video
-        try { video.pause(); } catch (e) {}
-        revealEnter();
-        // If you want skipping to immediately enter, uncomment:
-        // goEnter();
-      });
+    statusText.textContent = "Intro finished.";
+  }
 
-      // When video ends
-      video.addEventListener("ended", () => {
-        revealEnter();
-        if (AUTO_REDIRECT_ON_END) goEnter();
-      });
+  // When video finishes naturally
+  video.addEventListener("ended", revealEnter);
 
-      // Autoplay fallback: if play() fails, show a tap-to-play button
-      // (autoplay is often blocked if NOT muted; we are muted, but some browsers still block)
-      const tryPlay = video.play();
+  // Skip intro button
+  skipBtn.addEventListener("click", () => {
+    try { video.pause(); } catch (e) {}
+    revealEnter();
+  });
+
+  // Autoplay fallback (browser blocks autoplay)
+  const tryPlay = video.play();
+  if (tryPlay && typeof tryPlay.then === "function") {
+    tryPlay.catch(() => {
+      tapToPlay.style.display = "inline-flex";
+      statusText.textContent = "Tap to play the intro.";
+    });
+  }
+
+  tapToPlay.addEventListener("click", async () => {
+    tapToPlay.style.display = "none";
+    statusText.textContent = "Intro playing…";
+    try {
+      await video.play();
+    } catch (e) {
+      revealEnter();
+    }
+  });
+
+})();
+</script>
+
       if (tryPlay && typeof tryPlay.then === "function") {
         tryPlay.catch(() => {
           tapToPlay.style.display = "inline-flex";
