@@ -22,6 +22,17 @@
       return b;
     });
 
+     const video = document.getElementById("introVideo");
+const skipBtn = document.getElementById("skipBtn");
+const enterBtn = document.getElementById("enterBtn");
+const statusText = document.getElementById("statusText");
+const tapToPlay = document.getElementById("tapToPlay");
+
+/* ADD THESE */
+const centerEnter = document.getElementById("centerEnter");
+const centerEnterLink = document.getElementById("centerEnterLink");
+
+    
     function go(next) {
       slides[index].classList.remove("is-active");
       dots[index]?.classList.remove("is-active");
