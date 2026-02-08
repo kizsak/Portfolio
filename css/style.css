@@ -252,3 +252,90 @@ body.intro-finished .overlay{
   background-repeat: no-repeat;
   min-height: 170px;
 }
+
+/* =========================================================
+   NAVIGATION CARD FIX (background-image cards)
+   Paste at END of style.css
+   ========================================================= */
+
+.page-home .card-grid{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 2rem;
+}
+
+/* Responsive: 2 columns then 1 */
+@media (max-width: 1100px){
+  .page-home .card-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px){
+  .page-home .card-grid{ grid-template-columns: 1fr; }
+}
+
+.page-home .card{
+  margin: 0;
+}
+
+.page-home .card__link{
+  position: relative;
+  display: block;
+  height: 170px;                /* controls card height */
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(0,0,0,.35);
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.06),
+    0 0 22px rgba(0,0,0,.45);
+  text-decoration: none;
+}
+
+/* THIS is the missing piece: give the background div size and placement */
+.page-home .card__background{
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: scale(1.02);
+  filter: saturate(1.05) contrast(1.05);
+}
+
+/* Subtle darken so purple text reads */
+.page-home .card__background::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: rgba(0,0,0,.35);
+}
+
+/* Heading layer above background */
+.page-home .card__content{
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  padding: 18px 18px;
+}
+
+.page-home .card__heading{
+  margin: 0;
+  font-family: "Audiowide", sans-serif;
+  font-size: 1.35rem;
+  line-height: 1.05;
+  text-shadow: 0 0 10px rgba(0,0,0,.65);
+}
+
+/* Hover: brighten image slightly */
+.page-home .card__link:hover .card__background{
+  filter: saturate(1.2) contrast(1.1);
+}
+
+/* If your purple link color is coming from defaults, force it */
+.page-home .card__heading{
+  color: #b78cff;
+}
