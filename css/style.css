@@ -608,3 +608,74 @@ body:not(.landing)::before{
   height: 100%;
   object-fit: cover;
 }
+
+/* ===============================
+   BACKGROUND: Texture5.jpg (repo root)
+   =============================== */
+body.page-home,
+body:not(.landing){
+  background-image: url("../Texture5.jpg"); /* style.css is in /css/ */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+}
+
+/* readable veil */
+body.page-home::before,
+body:not(.landing)::before{
+  content:"";
+  position: fixed;
+   /* ===============================
+   PAGE HEADER (matches your HTML)
+   =============================== */
+.page-header{
+  width: min(1100px, 92vw);
+  margin: 24px auto 18px;
+}
+
+.page-header .neon-soft{
+  font-family: "Audiowide", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: rgba(255,255,255,0.92);
+  text-shadow:
+    0 0 10px rgba(0,0,0,0.75),
+    0 0 18px rgba(255,110,120,0.20);
+}
+
+.page-header h1.neon-soft{
+  font-size: clamp(2.4rem, 4vw, 3.4rem);
+  margin: 0 0 10px;
+}
+
+.page-header h2.neon-soft{
+  font-size: clamp(1.4rem, 2.2vw, 2.1rem);
+  margin: 10px 0 0;
+  opacity: 0.95;
+}
+
+/* nav row under the name */
+.page-header .nav-bar{
+  margin: 8px 0 8px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+/* make “About Me” button pop (more contrast) */
+.page-header .nav-btn{
+  background: rgba(0,0,0,0.60);
+  border-color: rgba(255,214,217,0.55);
+}
+.page-header .nav-btn:hover{
+  background: rgba(0,0,0,0.72);
+  border-color: rgba(255,214,217,0.70);
+}
+
+  inset: 0;
+  background: rgba(0,0,0,0.62);
+  pointer-events: none;
+  z-index: -1;
+}
