@@ -374,3 +374,8 @@ body:not(.landing)::before{
   pointer-events: none;
   z-index: -1;
 }
+
+.intro-video{
+  mix-blend-mode: screen;
+  opacity: 0.92;
+}
