@@ -339,3 +339,13 @@ body.intro-finished .overlay{
 .page-home .card__heading{
   color: #b78cff;
 }
+
+
+/* Landing: single centered Enter button */
+body.landing .landing-enter{
+  position: absolute;
+  left: 50%;
+  bottom: 8vh;
+  transform: translateX(-50%);
+  z-index: 10;
+}
