@@ -598,3 +598,13 @@ body:not(.landing)::before{
   padding: 10px 12px 12px;
   opacity: .92;
 }
+
+/* Digital painting cards: prevent collapse */
+.dp-card{
+  height: 220px; /* adjust */
+}
+.dp-card img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
