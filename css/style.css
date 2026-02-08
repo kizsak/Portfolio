@@ -356,7 +356,7 @@ body.landing .landing-enter{
    =============================== */
 
 body:not(.landing){
-  background-image: url("../assets/textures/Texture5.jpg");
+  background-image: url("https://github.com/kizsak/Portfolio/raw/main/Texture5.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
