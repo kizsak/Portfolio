@@ -349,3 +349,28 @@ body.landing .landing-enter{
   transform: translateX(-50%);
   z-index: 10;
 }
+
+
+/* ===============================
+   GLOBAL TEXTURE BACKGROUND
+   =============================== */
+
+body:not(.landing){
+  background-image: url("../assets/textures/Texture5.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  /* soft dark wash so text reads */
+  position: relative;
+}
+
+body:not(.landing)::before{
+  content:"";
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  pointer-events: none;
+  z-index: -1;
+}
