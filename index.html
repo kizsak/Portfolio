@@ -1,20 +1,6 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <title>Kate Izsak — Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Portfolio landing page" />
-
-  <!-- Global CSS -->
-  <link rel="stylesheet" href="css/style.css" />
-
-</head>
-
 <body class="landing">
   <main class="landing-wrap" role="main" aria-label="Portfolio intro">
 
-    <!-- Fullscreen intro video -->
     <video
       id="introVideo"
       class="intro-video"
@@ -24,27 +10,19 @@
       preload="auto"
       aria-label="Intro video"
     >
-      <!-- Update this path to your actual file -->
-      <source src="assets/ExplodingFlowerProject.mp4" />
+      <source src="assets/ExplodingFlowerProject.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
 
-    <nav class="nav-bar">
-    <a href="navigation.html" class="nav-btn">Enter Portfolio</a>
-   </nav>
-    
-    <!-- Tap-to-play fallback (shown only if autoplay fails) -->
+    <!-- Centered neon button under the video -->
+    <a class="enter-hero landing-enter" href="navigation.html">Enter Portfolio</a>
+
+    <!-- Tap-to-play fallback -->
     <div class="tap-to-play" aria-hidden="true">
       <button class="btn tap-pill" id="tapToPlay" type="button">Tap to play</button>
     </div>
-     
-      <div class="btnrow">
-      <a class="enter-hero" id="centerEnterLink" href="#">Enter Portfolio</a>
-    </div>  
-      </div>
-    </section>
 
   </main>
-</body>
-</html>
 
+  <script src="js/carousel-lightbox.js"></script>
+</body>
