@@ -1,7 +1,6 @@
 /* =========================================================
-   site.js — shared JS for all pages (landing + carousel)
+   carousel-lightbox.js — landing intro + simple carousel
    ========================================================= */
-
 (() => {
   "use strict";
 
@@ -15,30 +14,25 @@
   // ---------------------------
   function initLandingIntro() {
     const video = document.getElementById("introVideo");
-    if (!video) return; // not the landing page
+    if (!video) return;
 
     const skipBtn = document.getElementById("skipBtn");
     const enterBtn = document.getElementById("enterBtn");
     const statusText = document.getElementById("statusText");
     const tapToPlay = document.getElementById("tapToPlay");
 
-    // Optional centered button (safe if missing)
     const centerEnter = document.getElementById("centerEnter");
     const centerEnterLink = document.getElementById("centerEnterLink");
 
-    // Destination
     const PORTFOLIO_URL = "https://kizsak.github.io/Portfolio/navigation.html";
 
-    // Wire links safely
     if (enterBtn) enterBtn.href = PORTFOLIO_URL;
     if (centerEnterLink) centerEnterLink.href = PORTFOLIO_URL;
 
     const revealEnter = () => {
       document.body.classList.add("intro-finished");
-
       if (enterBtn) enterBtn.setAttribute("aria-hidden", "false");
       if (centerEnter) centerEnter.setAttribute("aria-hidden", "false");
-
       if (statusText) statusText.textContent = "Intro finished.";
     };
 
@@ -51,10 +45,10 @@
       });
     }
 
-    // Autoplay fallback
-    const tryPlay = video.play();
-    if (tryPlay && typeof tryPlay.then === "function") {
-      tryPlay.catch(() => {
+    // Attempt autoplay; if blocked, show tap-to-play pill
+    const attempt = video.play();
+    if (attempt && typeof attempt.then === "function") {
+      attempt.catch(() => {
         if (tapToPlay) tapToPlay.style.display = "inline-flex";
         if (statusText) statusText.textContent = "Tap to play the intro.";
       });
@@ -74,7 +68,7 @@
   }
 
   // ---------------------------
-  // Image carousel logic
+  // Simple carousel logic (optional)
   // ---------------------------
   function initImageCarousels() {
     const carousels = document.querySelectorAll(".img-carousel");
@@ -91,7 +85,6 @@
       let index = slides.findIndex((s) => s.classList.contains("is-active"));
       if (index < 0) index = 0;
 
-      // Build dots (if container exists)
       let dots = [];
       if (dotsWrap) {
         dotsWrap.innerHTML = "";
@@ -105,3 +98,22 @@
           return b;
         });
       }
+
+      function go(next) {
+        slides[index].classList.remove("is-active");
+        if (dots[index]) dots[index].classList.remove("is-active");
+
+        index = (next + slides.length) % slides.length;
+
+        slides[index].classList.add("is-active");
+        if (dots[index]) dots[index].classList.add("is-active");
+      }
+
+      prevBtn?.addEventListener("click", () => go(index - 1));
+      nextBtn?.addEventListener("click", () => go(index + 1));
+
+      // Make sure one slide is active
+      slides.forEach((s, i) => s.classList.toggle("is-active", i === index));
+    });
+  }
+})();
