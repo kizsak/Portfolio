@@ -244,3 +244,11 @@ body.intro-finished .overlay{
 .img-carousel__dot.is-active{
   background: rgba(255,255,255,.6);
 }
+
+/* --- FIX: make background-image based cards render properly --- */
+:where(.card, .dp-card, .nav-card, .portfolio-card, .gallery-card) {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 170px;
+}
