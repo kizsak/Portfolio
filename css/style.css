@@ -709,3 +709,14 @@ body:not(.landing) > *{
   position: relative;
   z-index: 1;
 }
+
+/* Force Texture5 from site root (GitHub Pages safe) */
+html{
+  background: url("/Portfolio/Texture5.jpg") center / cover no-repeat fixed;
+  background-color: #05060a;
+}
+
+body:not(.landing){
+  background: transparent !important;
+}
+
