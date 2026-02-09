@@ -880,3 +880,14 @@ body:not(.landing){
   letter-spacing: .04em;
   opacity: .95;
 }
+
+/* ===============================
+   MAKE CARD IMAGES MUCH LIGHTER
+   =============================== */
+
+.card__background{
+  filter:
+    brightness(1.25)
+    saturate(1.45)
+    contrast(1.15);
+}
