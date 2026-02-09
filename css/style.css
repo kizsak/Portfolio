@@ -945,3 +945,16 @@ body:not(.landing){
 .page-home .card__link{
   background: rgba(0,0,0,0.18);
 }
+
+/* Enter Portfolio button – hidden until video ends */
+#enter-portfolio{
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.8s ease;
+}
+
+/* Visible state */
+#enter-portfolio.is-visible{
+  opacity: 1;
+  pointer-events: auto;
+}
