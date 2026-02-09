@@ -1105,3 +1105,9 @@ body.home {
   font-family: "Tilt Prism", cursive;
   color: #FCBBCC;
 }
+
+.landing-enter {
+  display: inline-block;
+  box-sizing: border-box;
+  transform: translateZ(0);
+}
