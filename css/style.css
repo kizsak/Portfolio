@@ -720,3 +720,15 @@ body:not(.landing){
   background: transparent !important;
 }
 
+/* ===============================
+   FORCE BACKGROUND TEXTURE (PNG)
+   =============================== */
+
+html{
+  background: url("/Portfolio/Texture5.png") center / cover no-repeat fixed;
+  background-color: #05060a;
+}
+
+body:not(.landing){
+  background: transparent !important;
+}
