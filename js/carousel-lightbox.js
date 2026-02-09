@@ -156,3 +156,17 @@ document.addEventListener("DOMContentLoaded", () => {
     button.classList.add("is-visible");
   });
 });
+
+/* Neon titles that match the button vibe */
+.neon-title {
+  font-family: "Oxanium", system-ui, sans-serif; /* or whatever you're using */
+  color: #ff5bd6;                /* hot pink neon */
+  text-shadow:
+    0 0 6px rgba(255, 91, 214, 0.75),
+    0 0 18px rgba(255, 91, 214, 0.55),
+    0 0 36px rgba(255, 91, 214, 0.35);
+  letter-spacing: 0.02em;
+  text-align: center;
+  width: 100%;
+  margin: 0.25rem 0 1rem;
+}
