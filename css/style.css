@@ -1,3 +1,5 @@
+
+
 /* =========================================================
    GLOBAL FOUNDATION
    ========================================================= */
@@ -424,12 +426,12 @@ body.landing{
 }
 
 /* =========================================================
-   GLOBAL BACKGROUND = Texture5.jpg (all non-landing pages)
+   GLOBAL BACKGROUND = Texture5.png (all non-landing pages)
    ========================================================= */
 
 /* CHANGE THIS PATH if needed */
 :root{
-  --texture5: url("../assets/textures/Texture5.jpg");
+  --texture5: url("../assets/textures/Texture5.png");
 }
 
 body:not(.landing){
@@ -610,11 +612,11 @@ body:not(.landing)::before{
 }
 
 /* ===============================
-   BACKGROUND: Texture5.jpg (repo root)
+   BACKGROUND: Texture5.pngg (repo root)
    =============================== */
 body.page-home,
 body:not(.landing){
-  background-image: url("../Texture5.jpg"); /* style.css is in /css/ */
+  background-image: url("../Texture5.png"); /* style.css is in /css/ */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -686,7 +688,7 @@ body:not(.landing)::before{
 
 /* Put texture on html so it always covers the viewport */
 html{
-  background: url("../Texture5.jpg") center / cover no-repeat fixed;
+  background: url("../Texture5.png") center / cover no-repeat fixed;
 }
 
 /* Keep your page readable but DO NOT replace the background */
@@ -712,7 +714,7 @@ body:not(.landing) > *{
 
 /* Force Texture5 from site root (GitHub Pages safe) */
 html{
-  background: url("/Portfolio/Texture5.jpg") center / cover no-repeat fixed;
+  background: url("/Portfolio/Texture5.png") center / cover no-repeat fixed;
   background-color: #05060a;
 }
 
