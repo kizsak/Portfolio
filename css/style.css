@@ -1,5 +1,3 @@
-
-
 /* =========================================================
    GLOBAL FOUNDATION
    ========================================================= */
@@ -1127,4 +1125,12 @@ body.home .landing-wrap {
 html, body {
   font-family: "Oxanium", system-ui, sans-serif;
   color: #ffba7d;
+}
+
+/* Index background should stay smoky purple, even after JS adds .intro-finished */
+body.home,
+body.home .landing-wrap,
+body.home.intro-finished,
+body.home.intro-finished .landing-wrap {
+  background-color: #a591aa !important;
 }
