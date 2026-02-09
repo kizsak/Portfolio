@@ -1123,3 +1123,8 @@ body.home .landing-wrap {
   letter-spacing: 0.06em;   /* Audiowide likes breathing room */
   line-height: 1.15;
 }
+
+html, body {
+  font-family: "Oxanium", system-ui, sans-serif;
+  color: #ffba7d;
+}
