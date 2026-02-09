@@ -117,3 +117,28 @@
     });
   }
 })();
+
+document.addEventListener("DOMContentLoaded", () => {
+  const video = document.getElementById("landing-video");
+  const button = document.getElementById("enter-portfolio");
+
+  if (!video || !button) return;
+
+  // Safety: hide button on load
+  button.classList.remove("is-visible");
+  button.setAttribute("aria-hidden", "true");
+
+  // Show button when video finishes
+  video.addEventListener("ended", () => {
+    button.classList.add("is-visible");
+    button.setAttribute("aria-hidden", "false");
+  });
+
+  // Fallback: if autoplay fails or video is very short
+  setTimeout(() => {
+    if (video.paused || video.ended) {
+      button.classList.add("is-visible");
+      button.setAttribute("aria-hidden", "false");
+    }
+  }, 8000); // adjust to your video length if needed
+});
