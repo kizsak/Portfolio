@@ -679,3 +679,33 @@ body:not(.landing)::before{
   pointer-events: none;
   z-index: -1;
 }
+
+/* ===============================
+   FORCE Texture5 BACKGROUND (non-landing pages)
+   =============================== */
+
+/* Put texture on html so it always covers the viewport */
+html{
+  background: url("../Texture5.jpg") center / cover no-repeat fixed;
+}
+
+/* Keep your page readable but DO NOT replace the background */
+body:not(.landing){
+  background: transparent !important; /* critical: prevents overwriting html bg */
+}
+
+/* Optional: readable dark veil ABOVE texture but BELOW content */
+body:not(.landing)::before{
+  content:"";
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Ensure page content sits above the veil */
+body:not(.landing) > *{
+  position: relative;
+  z-index: 1;
+}
