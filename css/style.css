@@ -993,3 +993,26 @@ body:not(.landing){
   border-radius: 18px;
   padding-left: 18px;
 }
+
+#enter-portfolio{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+
+#enter-portfolio.is-visible{
+  animation: glowIn 1.2s ease forwards;
+}
+
+@keyframes glowIn{
+  from{
+    opacity: 0;
+    filter: blur(4px);
+  }
+  to{
+    opacity: 1;
+    filter: blur(0);
+  }
+}
