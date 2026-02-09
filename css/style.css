@@ -6,6 +6,10 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Audiowide&display=swap");
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tilt+Prism&display=swap" rel="stylesheet">
+
 
 :root{
   --bg: #05060a;
@@ -1046,5 +1050,10 @@ body:not(.landing){
 .hero-header,
 .header-wrap {
   text-align: center;
+}
+
+.header-tiltprism-pink {
+  color: #FCBBCC;
+  font-family: "Tilt Prism", system-ui, sans-serif;
 }
 
