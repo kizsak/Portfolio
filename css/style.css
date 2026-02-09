@@ -916,3 +916,32 @@ body:not(.landing){
     saturate(1.6)
     contrast(1.18);
 }
+
+/* =========================================
+   NAV STRIP VIBRANCE BOOST (long cards)
+   ========================================= */
+
+/* 1) Boost image vibrance */
+.page-home .card__background{
+  filter: saturate(1.55) contrast(1.22) brightness(1.10);
+}
+
+/* 2) Reduce the dark overlay that sits on top of the image */
+.page-home .card__background::after{
+  background: linear-gradient(
+    to right,
+    rgba(0,0,0,0.02) 0%,
+    rgba(0,0,0,0.18) 55%,
+    rgba(0,0,0,0.30) 100%
+  ) !important;
+}
+
+/* 3) Optional: make hover even punchier */
+.page-home .card__link:hover .card__background{
+  filter: saturate(1.75) contrast(1.25) brightness(1.12);
+}
+
+/* 4) Optional: slightly lighten the glass frame behind the image */
+.page-home .card__link{
+  background: rgba(0,0,0,0.18);
+}
