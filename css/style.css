@@ -891,3 +891,28 @@ body:not(.landing){
     saturate(1.45)
     contrast(1.15);
 }
+
+.card__background::after{
+  background: linear-gradient(
+    to right,
+    rgba(0,0,0,0.03),
+    rgba(0,0,0,0.12)
+  );
+}
+
+.card__content{
+  background: linear-gradient(
+    to right,
+    rgba(0,0,0,0.35),
+    rgba(0,0,0,0)
+  );
+  padding-left: 20px;
+  border-radius: 18px;
+}
+
+.card__link:hover .card__background{
+  filter:
+    brightness(1.35)
+    saturate(1.6)
+    contrast(1.18);
+}
