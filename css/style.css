@@ -1016,3 +1016,14 @@ body:not(.landing){
     filter: blur(0);
   }
 }
+
+#view-portfolio-btn {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.8s ease;
+}
+
+#view-portfolio-btn.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
