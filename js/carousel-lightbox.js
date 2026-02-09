@@ -142,3 +142,17 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }, 8000); // adjust to your video length if needed
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const video = document.getElementById("landing-video");
+  const button = document.getElementById("view-portfolio-btn");
+
+  if (!video || !button) return;
+
+  // Safety: keep button hidden on load
+  button.classList.remove("is-visible");
+
+  video.addEventListener("ended", () => {
+    button.classList.add("is-visible");
+  });
+});
