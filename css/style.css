@@ -1111,3 +1111,8 @@ body.home {
   box-sizing: border-box;
   transform: translateZ(0);
 }
+
+body.home .landing-wrap {
+  background-color: #a591aa;
+  min-height: 100vh;
+}
