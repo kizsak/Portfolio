@@ -1135,3 +1135,5 @@ body.home.intro-finished .landing-wrap {
   background-color: #a591aa !important;
 }
 
+body.home { background: #a591aa !important; }
+body.home .landing-wrap { background: #a591aa !important; }
