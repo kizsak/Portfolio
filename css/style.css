@@ -1116,3 +1116,10 @@ body.home .landing-wrap {
   background-color: #a591aa;
   min-height: 100vh;
 }
+
+.header-audiowide-pink {
+  font-family: "Audiowide", system-ui, sans-serif;
+  color: #FCBBCC;
+  letter-spacing: 0.06em;   /* Audiowide likes breathing room */
+  line-height: 1.15;
+}
