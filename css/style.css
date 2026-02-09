@@ -1070,3 +1070,8 @@ body:not(.landing){
     0 0 6px rgba(252, 187, 204, 0.5),
     0 0 14px rgba(252, 187, 204, 0.35);
 }
+
+
+body.home {
+  background-color: #a591aa;
+}
