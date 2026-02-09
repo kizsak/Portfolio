@@ -1198,8 +1198,34 @@ body:not(.landing):not(.home) > * {
   position: relative;
   z-index: 1;
 }
+/* =========================================================
+   CARD TEXT: Oxanium + Dusty Orange
+   ========================================================= */
 
-/* 4) INDEX "VIEW PORTFOLIO" BUTTON
-      Your index button is: <a class="enter-hero landing-enter" ...> :contentReference[oaicite:2]{index=2}
+/* Headings inside cards */
+.card__heading,
+.card h3,
+.card h4 {
+  font-family: "Oxanium", system-ui, sans-serif !important;
+  color: #ffba7d !important;
+  letter-spacing: 0.04em;
+  text-shadow:
+    0 0 6px rgba(0, 0, 0, 0.75);
+}
 
-      IMPORTANT: .enter-hero:hover currently sets transform: translateY(
+/* Paragraph / metadata text inside cards */
+.card p,
+.card__content p,
+.featured__kicker,
+.featured__desc,
+.fp__caption {
+  font-family: "Oxanium", system-ui, sans-serif;
+  color: #ffba7d;
+  opacity: 0.9;
+}
+
+/* Navigation long cards (page-home) */
+.page-home .card__heading {
+  color: #ffba7d !important;
+  font-family: "Oxanium", system-ui, sans-serif !important;
+}
