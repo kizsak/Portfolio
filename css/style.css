@@ -1100,3 +1100,8 @@ body.home {
 body.home {
   background: #a591aa !important;
 }
+
+.header-tiltprism-pink {
+  font-family: "Tilt Prism", cursive;
+  color: #FCBBCC;
+}
