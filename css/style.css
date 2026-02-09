@@ -734,3 +734,23 @@ html{
 body:not(.landing){
   background: transparent !important;
 }
+
+/* More vibrant strip images */
+.page-home .card__background{
+  filter: saturate(1.35) contrast(1.15) brightness(1.05);
+}
+
+/* If your overlay is dulling them too much, lighten it */
+.page-home .card__background::after{
+  background: linear-gradient(
+    to right,
+    rgba(0,0,0,0.06) 0%,
+    rgba(0,0,0,0.38) 70%,
+    rgba(0,0,0,0.55) 100%
+  );
+}
+
+/* Optional: extra pop on hover */
+.page-home .card__link:hover .card__background{
+  filter: saturate(1.55) contrast(1.20) brightness(1.08);
+}
