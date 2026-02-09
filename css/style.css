@@ -1080,3 +1080,19 @@ body.home {
   font-family: "Tilt Prism", cursive;
   color: #FCBBCC;
 }
+
+.view-portfolio-btn {
+  display: inline-block;
+  box-sizing: border-box;
+  border: 2px solid transparent;   /* reserve space so hover border doesn't shift */
+  padding: 12px 18px;
+  line-height: 1;
+  text-decoration: none;
+  will-change: transform;
+  transform: translateZ(0);         /* helps prevent jitter on some GPUs */
+}
+
+.view-portfolio-btn:hover,
+.view-portfolio-btn:focus-visible {
+  transform: translateY(-2px);      /* only transform, no size changes */
+}
