@@ -1238,3 +1238,76 @@ body:not(.landing):not(.home) > * {
     rgba(0,0,0,0)
   );
 }
+
+/* =========================================================
+   INDEX / LANDING STATE — FINAL AUTHORITY
+   ========================================================= */
+
+/* INDEX BACKGROUND (smoky purple) */
+body.landing.home {
+  background: #a591aa !important;
+}
+
+/* The visible surface is landing-wrap */
+body.landing.home .landing-wrap {
+  background: #a591aa !important;
+  min-height: 100vh;
+}
+
+/* DO NOT apply texture to landing page */
+body.landing {
+  background-image: none !important;
+}
+
+/* Texture only on non-landing pages */
+body:not(.landing) {
+  background-image: url("/Portfolio/Texture5.png") !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+}
+
+/* Readability veil only on textured pages */
+body:not(.landing)::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  pointer-events: none;
+  z-index: 0;
+}
+
+body:not(.landing) > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* =========================================================
+   ENTER PORTFOLIO BUTTON — HIDDEN UNTIL INTRO FINISHES
+   ========================================================= */
+
+body.landing .landing-enter {
+  position: absolute;
+  left: 50%;
+  bottom: 8vh;
+  transform: translateX(-50%);
+  z-index: 10;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.8s ease;
+}
+
+/* JS adds .intro-finished — THIS is when it appears */
+body.landing.intro-finished .landing-enter {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Fix hover jitter (preserve centering) */
+body.landing .landing-enter:hover,
+body.landing .landing-enter:focus-visible {
+  transform: translateX(-50%) translateY(-1px);
+}
+
