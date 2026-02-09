@@ -1096,3 +1096,7 @@ body.home {
 .view-portfolio-btn:focus-visible {
   transform: translateY(-2px);      /* only transform, no size changes */
 }
+
+body.home {
+  background: #a591aa !important;
+}
