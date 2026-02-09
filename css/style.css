@@ -1057,3 +1057,9 @@ body:not(.landing){
   font-family: "Tilt Prism", system-ui, sans-serif;
 }
 
+.header-tiltprism {
+  font-family: "Tilt Prism", cursive !important;
+  color: #FCBBCC;
+  letter-spacing: 0.04em;
+}
+
