@@ -875,3 +875,15 @@ body:not(.landing) > * {
 .page-home .card__background {
   background-position: center 35%;
 }
+
+.digital-painting .card-grid {
+  grid-template-columns: repeat(5, 1fr);
+  max-width: 1800px;
+  margin: 0 auto;
+}
+
+.digital-painting .card-grid {
+  grid-template-columns: repeat(5, 1fr);
+  max-width: 1800px;
+  margin: 0 auto;
+}
