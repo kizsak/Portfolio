@@ -1059,3 +1059,25 @@ body.lightbox-open { overflow: hidden; } /* optional if you toggle it in JS */
   font-weight: 700;
   font-family: "Anta", system-ui, sans-serif;
 }
+
+/* =========================
+   ARTWORK IMAGE FIX
+   ========================= */
+
+.artwork-figure {
+  margin: 0;
+}
+
+.artwork-image-link {
+  display: block;
+}
+
+/* CRITICAL: prevent cropping */
+.artwork-figure img {
+  width: 100%;
+  height: auto;           /* <-- do NOT force height */
+  max-height: none;
+  object-fit: contain;    /* <-- prevents weird crop */
+  display: block;
+  border-radius: 18px;
+}
