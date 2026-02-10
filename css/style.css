@@ -1089,3 +1089,27 @@ body.lightbox-open { overflow: hidden; } /* optional if you toggle it in JS */
 .tools-list li {
   margin-bottom: 0.3rem;
 }
+
+/* =========================
+   INTRO VIDEO — HARD FIX
+   ========================= */
+
+.intro-video {
+  display: block !important;
+  width: 100%;
+  height: auto !important;
+  max-height: none !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  z-index: 1;
+}
+
+/* Make sure the wrapper actually has height */
+.hero,
+.intro-wrap,
+.landing-hero,
+.video-wrap {
+  position: relative;
+  min-height: 60vh;
+  overflow: visible;
+}
