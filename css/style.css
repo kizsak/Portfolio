@@ -1128,3 +1128,16 @@ body.lightbox-open { overflow: hidden; } /* optional if you toggle it in JS */
   pointer-events: auto;
 }
 
+.tap-to-play {
+  position: absolute;
+  inset: 0;
+  display: none;            /* JS will toggle */
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;     /* IMPORTANT */
+  z-index: 3;
+}
+
+.tap-to-play .tap-pill {
+  pointer-events: auto;
+}
