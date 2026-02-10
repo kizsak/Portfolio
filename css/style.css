@@ -934,3 +934,33 @@ body:not(.landing) > * {
 /* Prevent ancestors from clipping the overlay */
 body { overflow-x: hidden; }
 body.lightbox-open { overflow: hidden; } /* optional if you toggle it in JS */
+
+.lightbox{
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  z-index: 9999;
+  background: rgba(0,0,0,0.75);
+}
+
+.lightbox.is-open{ display: flex; }
+
+.lightbox__img{
+  max-width: min(1200px, 92vw);
+  max-height: 88vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.lightbox__close{
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 10000;
+}
+
