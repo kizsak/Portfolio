@@ -980,3 +980,14 @@ body.lightbox-open { overflow: hidden; } /* optional if you toggle it in JS */
   align-items: center;
   justify-content: center;
 }
+
+/* Make Anta neon headers bigger */
+.header-anta-neon {
+  font-size: 1.5em;   /* 1.5x */
+  line-height: 1.1;
+}
+
+.header-anta-neon{
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1.1;
+}
