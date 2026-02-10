@@ -991,3 +991,8 @@ body.lightbox-open { overflow: hidden; } /* optional if you toggle it in JS */
   font-size: clamp(2rem, 4vw, 3.5rem);
   line-height: 1.1;
 }
+
+.header-anta-neon {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1.1;
+}
