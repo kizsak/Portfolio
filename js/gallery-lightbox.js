@@ -55,3 +55,48 @@
     }
   });
 })();
+
+(() => {
+  const lightbox = document.getElementById("lightbox");
+  if (!lightbox) return;
+
+  const imgEl = lightbox.querySelector(".lightbox__img");
+  const closeBtn = lightbox.querySelector(".lightbox__close");
+
+  function open(src, alt = "") {
+    imgEl.src = src;
+    imgEl.alt = alt;
+    lightbox.classList.add("is-open");
+    lightbox.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+  }
+
+  function close() {
+    lightbox.classList.remove("is-open");
+    lightbox.setAttribute("aria-hidden", "true");
+    imgEl.src = "";
+    document.body.style.overflow = "";
+  }
+
+  // Click any image with data-zoom (or class "zoomable")
+  document.addEventListener("click", (e) => {
+    const t = e.target.closest("[data-zoom], img.zoomable");
+    if (!t) return;
+
+    // If it's an <a>, prevent navigation
+    if (t.tagName === "A") e.preventDefault();
+
+    const src = t.dataset.zoom || t.src;
+    const alt = t.alt || t.getAttribute("aria-label") || "";
+    if (src) open(src, alt);
+  });
+
+  closeBtn?.addEventListener("click", close);
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) close();
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") close();
+  });
+})();
