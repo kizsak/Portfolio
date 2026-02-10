@@ -964,3 +964,19 @@ body.lightbox-open { overflow: hidden; } /* optional if you toggle it in JS */
   z-index: 10000;
 }
 
+.lightbox[aria-hidden="true"] {
+  display: none;
+}
+
+.lightbox[aria-hidden="false"] {
+  display: flex;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0,0,0,0.75);
+  align-items: center;
+  justify-content: center;
+}
