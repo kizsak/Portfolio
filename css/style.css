@@ -661,3 +661,58 @@ body:not(.landing)::before {
   background: rgba(0, 0, 0, 0.70); /* increase from ~0.55 to 0.70 */
 }
 
+/* =========================================================
+   ABSOLUTE FINAL BACKGROUND LOCK
+   This overrides ALL earlier background rules.
+   ========================================================= */
+
+/* 1) NEVER let <html> paint a background */
+html {
+  background: #05060a !important;
+}
+
+/* 2) INDEX / LANDING PAGE — FORCE OPAQUE PURPLE */
+body.landing.home {
+  background-color: #a591aa !important;
+  background-image: none !important;
+}
+
+/* The visible surface on index */
+body.landing.home .landing-wrap {
+  background-color: #a591aa !important;
+  background-image: none !important;
+  min-height: 100vh;
+}
+
+/* 3) PREVENT ANY OVERLAY OR VEIL ON INDEX */
+body.landing.home::before,
+body.landing.home::after {
+  content: none !important;
+}
+
+/* 4) NON-LANDING PAGES ONLY: texture + dark veil */
+body:not(.landing) {
+  background-image: url("/Portfolio/Texture5.png") !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+  background-color: #05060a !important;
+  position: relative;
+}
+
+/* Dark overlay ONLY on non-landing pages */
+body:not(.landing)::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.70);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Keep page content above overlay */
+body:not(.landing) > * {
+  position: relative;
+  z-index: 1;
+}
