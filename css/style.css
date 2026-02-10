@@ -1081,3 +1081,11 @@ body.lightbox-open { overflow: hidden; } /* optional if you toggle it in JS */
   display: block;
   border-radius: 18px;
 }
+
+.tools-list {
+  margin-left: 1.2rem;
+}
+
+.tools-list li {
+  margin-bottom: 0.3rem;
+}
