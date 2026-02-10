@@ -23,22 +23,33 @@
     <section class="gallery-grid" aria-label="Gallery">
 
       <!-- CARD 1 -->
-      <article class="gallery-card">
-        <button
-          class="gallery-thumb"
-          type="button"
-          data-full="https://github.com/kizsak/Portfolio/raw/main/BeeOrchidPolaroid.png"
-          data-title="Anatomy of a Flare"
-          data-meta="Digital acrylics, 2024"
-          >
-          <img src="https://github.com/kizsak/Portfolio/raw/main/BeeOrchidPolaroid.png" alt="Digital acrylic painting of the eye of a tired person" loading="lazy">
-        </button>
+<article class="gallery-card">
+  <!-- 1) Click image to open full-res in a new tab -->
+  <a
+    class="gallery-thumb"
+    href="https://raw.githubusercontent.com/kizsak/Portfolio/main/BeeOrchidPolaroid.png"
+    target="_blank"
+    rel="noopener"
+    aria-label="Open full image: Simulated Polaroid"
+  >
+    <img
+      src="https://raw.githubusercontent.com/kizsak/Portfolio/main/BeeOrchidPolaroid.png"
+      alt="A digital image showing a simulated, aged and worn Polaroid of a botanical subject"
+      loading="lazy"
+    >
+  </a>
 
-        <div class="gallery-info">
-          <h3>Anatomy of a Flare</h3>
-          <p class="meta">Digital acrylics, 2024</p>
-        </div>
-      </article>
+  <div class="gallery-info">
+    <h3>Simulated Polaroid</h3>
+    <p class="meta">Digital image, 2026</p>
+
+    <!-- 2) Click to read process notes -->
+    <p class="links">
+      <a class="notes-link" href="work/anatomy-of-a-flare.html">Process Notes</a>
+    </p>
+  </div>
+</article>
+
 
       <!-- CARD 2 (no notes example) -->
       <article class="gallery-card">
