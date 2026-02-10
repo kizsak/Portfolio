@@ -2,9 +2,8 @@
    GLOBAL FOUNDATION (CLEAN, SINGLE SOURCE OF TRUTH)
    ========================================================= */
 
-/* Fonts: keep only what you use */
 @import url("https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;600&display=swap");
-/* If you still want Audiowide for buttons only, keep it: */
+@import url("https://fonts.googleapis.com/css2?family=Anta&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Audiowide&display=swap");
 
 :root{
@@ -637,4 +636,18 @@ body.landing .landing-enter:focus-visible{
 .lightbox__text .notes{
   border-top: 1px solid rgba(255,255,255,.12);
   padding-top: 12px;
+}
+
+.header-anta-neon {
+  font-family: "Anta", "Oxanium", system-ui, sans-serif;
+  color: #a86a91;
+  letter-spacing: 0.06em;
+  line-height: 1.05;
+
+  /* neon glow */
+  text-shadow:
+    0 0 4px rgba(168, 106, 145, 0.80),
+    0 0 10px rgba(168, 106, 145, 0.55),
+    0 0 22px rgba(168, 106, 145, 0.40),
+    0 0 44px rgba(168, 106, 145, 0.25);
 }
