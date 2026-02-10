@@ -735,3 +735,94 @@ body:not(.landing) > * {
     0 0 22px rgba(168, 106, 145, 0.5),
     0 0 42px rgba(168, 106, 145, 0.35);
 }
+
+/* =========================================================
+   NAVIGATION: RETURN TO VERTICAL CARDS (override horizontal)
+   ========================================================= */
+
+/* Back to a multi-column grid */
+.page-home .card-grid{
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 2rem;
+  margin: 24px auto 0;
+  padding: 0;
+  list-style: none;
+  width: min(1100px, 92vw);
+}
+
+/* Responsive: 2 columns then 1 */
+@media (max-width: 1100px){
+  .page-home .card-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px){
+  .page-home .card-grid{ grid-template-columns: 1fr; }
+}
+
+/* Make each card a vertical tile again */
+.page-home .card__link{
+  position: relative;
+  display: block;              /* overrides flex */
+  height: 200px;               /* vertical tile height (tweak this) */
+  border-radius: 22px;
+  overflow: hidden;
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(0,0,0,.25);
+  box-shadow: 0 12px 40px rgba(0,0,0,.40);
+}
+
+/* Background image fills the card */
+.page-home .card__background{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  flex: none;                  /* disables the old 46% split */
+  transform: scale(1.02);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: saturate(1.35) contrast(1.12) brightness(1.05);
+}
+
+/* Gentle dark overlay so text reads */
+.page-home .card__background::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.10) 0%,
+    rgba(0,0,0,0.55) 100%
+  );
+}
+
+/* Text sits on top of the image */
+.page-home .card__content{
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  padding: 16px 16px;
+  background: none;            /* removes the horizontal text panel */
+}
+
+/* Card title styling */
+.page-home .card__heading{
+  margin: 0;
+  font-family: "Oxanium", system-ui, sans-serif;
+  color: #ffba7d;
+  letter-spacing: 0.04em;
+  font-size: 1.35rem;
+  line-height: 1.05;
+  text-shadow: 0 0 10px rgba(0,0,0,0.75);
+}
+
+/* Hover: subtle zoom + pop */
+.page-home .card__link:hover .card__background{
+  transform: scale(1.05);
+  filter: saturate(1.55) contrast(1.18) brightness(1.08);
+}
+
