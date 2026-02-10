@@ -651,3 +651,13 @@ body.landing .landing-enter:focus-visible{
     0 0 22px rgba(168, 106, 145, 0.40),
     0 0 44px rgba(168, 106, 145, 0.25);
 }
+
+/* =========================================================
+   DARKER BACKGROUND OVERLAY (ALL PAGES EXCEPT INDEX)
+   ========================================================= */
+
+/* Darken the texture overlay on non-landing pages */
+body:not(.landing)::before {
+  background: rgba(0, 0, 0, 0.70); /* increase from ~0.55 to 0.70 */
+}
+
