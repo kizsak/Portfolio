@@ -156,4 +156,34 @@ document.addEventListener("DOMContentLoaded", () => {
     button.classList.add("is-visible");
   });
 });
+document.addEventListener("DOMContentLoaded", function() {
+
+  const modal = document.getElementById("process-modal");
+  const modalBody = document.getElementById("process-body");
+  const closeBtn = document.querySelector(".process-close");
+
+  document.querySelectorAll(".process-btn").forEach(btn => {
+    btn.addEventListener("click", function() {
+      const targetId = this.getAttribute("data-process");
+      const content = document.getElementById(targetId);
+
+      if (content) {
+        modalBody.innerHTML = content.innerHTML;
+        modal.classList.add("active");
+      }
+    });
+  });
+
+  closeBtn.addEventListener("click", function() {
+    modal.classList.remove("active");
+  });
+
+  modal.addEventListener("click", function(e) {
+    if (e.target === modal) {
+      modal.classList.remove("active");
+    }
+  });
+
+});
+
 
