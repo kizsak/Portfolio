@@ -1198,3 +1198,21 @@ body.lightbox-open { overflow: hidden; } /* optional if you toggle it in JS */
   overflow: visible;
 }
 
+/* Thumbnail image should show entire image */
+.gallery-grid img,
+.gallery-thumb img,
+.thumb img {
+  width: 100%;
+  height: auto;
+  object-fit: contain; /* key */
+  display: block;
+}
+
+/* If a wrapper is forcing a fixed height + clipping, remove/override it */
+.gallery-thumb,
+.thumb,
+.thumb-wrap,
+.image-frame {
+  height: auto;
+  overflow: visible;
+}
