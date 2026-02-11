@@ -1,31 +1,23 @@
 <link rel="stylesheet" href="css/style.css">
 
 <body class="landing home">
-  <main class="landing-wrap" role="main" aria-label="Portfolio intro">
+<section class="intro-wrapper">
 
-    <video
-      id="introVideo"
-      class="intro-video"
-      autoplay
-      muted
-      playsinline
-      preload="auto"
-      aria-label="Intro video"
-    >
-      <source src="https://github.com/kizsak/Portfolio/raw/main/PortfolioIntroVid.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
+  <video 
+    id="introVideo"
+    playsinline
+    preload="auto"
+    muted
+  >
+    <source src="https://github.com/kizsak/Portfolio/raw/main/PortfolioIntroVid.mp4" type="video/mp4">
+  </video>
 
-    <!-- Centered neon button under the video -->
-    <a class="enter-hero landing-enter" href="navigation.html">View Portfolio</a>
+  <a href="navigation.html" class="enter-btn" id="enterBtn">
+    Enter Portfolio
+  </a>
 
-    <!-- Tap-to-play fallback -->
-    <div class="tap-to-play" aria-hidden="true">
-      <button class="btn tap-pill" id="tapToPlay" type="button">Tap to play</button>
-    </div>
-
+</section>
   </main>
-<script src="js/intro-video.js"></script>
-
+  <script src="js/intro-video.js"></script>
   <script src="js/carousel-lightbox.js"></script>
 </body>
