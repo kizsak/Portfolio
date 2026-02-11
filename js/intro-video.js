@@ -28,3 +28,10 @@
   // If the user clicks the video itself, play
   video.addEventListener("click", () => playVideo("video click"));
 })();
+
+const video = document.getElementById("introVideo");
+const enterBtn = document.getElementById("enterBtn");
+
+video.addEventListener("ended", () => {
+  enterBtn.classList.add("show");
+});
