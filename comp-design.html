@@ -84,19 +84,35 @@
 </div>
 
 <!-- PROCESS CONTENT BLOCKS (hidden) -->
-<div class="process-data" id="process-polaroid">
+<div class="process-data" id="process-polaroid" hidden>
   <h2>Simulated Polaroid — Process Notes</h2>
-  <p>I created a synthetic photograph of an <em>Ophrys apifera</em> (Bee Orchid) in bloom using Midjourney (prompt: A photograph of the botanical specimen, bee orchid, photographed in the field in the style of 1980s field botany documentation, soft natural light, shallow depth of field, Kodachrome 64 film look, muted warm tones, subtle film grain, macro detail, slight fading and color shift.). Then, I created a worn Polaroid frame in Photoshop by layering texture overlays to suggest an aged and worn feel. Next, I wrote a Python script
-          <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target="_blank" rel="noopener noreferrer">(download)</a>. This script treats the image not as a static photograph but as a material object subject to wear, exposure, and chemical instability. Starting from a clean digital input, the script introduces a series of degradations—edge softening, tonal flattening, color drift, and localized light leaks—that echo the visual artifacts of aging instant film. Rather than applying a single filter, the process unfolds in stages, allowing each transformation to subtly interfere with the last.
-<li><strong>Python</strong>
-            <ul>
-              <li><strong>Pillow (PIL)</strong> (layout construction, texture layering, compositing)</li>
-              <li><strong>random</strong> (stochastic variation)</li>
-              <li><strong>argparse</strong> (parameterized output)</li>
-            </ul>
-          </li>
-          <li><strong>Photoshop</strong></li>
-          <li><strong>Midjourney</strong></li>
+
+  <p>
+    I created a synthetic photograph of an <em>Ophrys apifera</em> (Bee Orchid) in bloom using Midjourney
+    (prompt: A photograph of the botanical specimen, bee orchid, photographed in the field in the style of 1980s field
+    botany documentation, soft natural light, shallow depth of field, Kodachrome 64 film look, muted warm tones,
+    subtle film grain, macro detail, slight fading and color shift.). Then, I created a worn Polaroid frame in Photoshop by layering texture overlays to suggest an aged and worn feel.
+    Next, I wrote a Python script
+    <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target="_blank" rel="noopener noreferrer">
+      (download)
+    </a> to treat the image not as a static photograph but as a material object subject to wear, exposure, and
+    chemical instability...
+  </p>
+
+  <h3>Tools</h3>
+  <ul>
+    <li><strong>Python</strong>
+      <ul>
+        <li><strong>Pillow (PIL)</strong> (layout construction, texture layering, compositing)</li>
+        <li><strong>random</strong> (stochastic variation)</li>
+        <li><strong>argparse</strong> (parameterized output)</li>
+      </ul>
+    </li>
+    <li><strong>Photoshop</strong></li>
+    <li><strong>Midjourney</strong></li>
+  </ul>
+</div>
+
 
     <script src="js/process-modal.js"></script>
 
