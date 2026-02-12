@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Kate Izsak — Digital Painting</title>
+  <title>Kate Izsak — Computational Image Design</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="css/style.css?v=1" />
 </head>
@@ -90,41 +90,7 @@
     <li><strong>Midjourney</strong></li>
   </ul>
 </div>
-
-
     <script src="js/process-modal.js"></script>
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  console.log("✅ inline modal test script running");
-
-  const modal = document.getElementById("process-modal");
-  const bodyEl = document.getElementById("process-body");
-  const buttons = document.querySelectorAll(".process-btn[data-process]");
-
-  console.log("modal?", !!modal, "body?", !!bodyEl, "buttons:", buttons.length);
-
-  buttons.forEach(btn => {
-    btn.addEventListener("click", () => {
-      console.log("🟣 clicked", btn.dataset.process);
-
-      if (!modal || !bodyEl) {
-        alert("Modal elements not found: check #process-modal and #process-body IDs");
-        return;
-      }
-
-      const src = document.getElementById(btn.dataset.process);
-      console.log("source?", !!src);
-
-      bodyEl.innerHTML = src ? src.innerHTML : "<p><em>No process notes found.</em></p>";
-      modal.classList.add("is-open");
-
-      // TEMP: force visible even if CSS is fighting you
-      modal.style.display = "block";
-    });
-  });
-});
-</script>
-
 </body>
 </html>
 
