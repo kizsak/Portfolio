@@ -1268,3 +1268,22 @@ body.lightbox-open { overflow: hidden; } /* optional if you toggle it in JS */
   background: #a86a91;
   color: #05060a;
 }
+
+<!-- =========================
+     PROCESS NOTES MODAL (ONE PER PAGE)
+     Put this near the bottom of <body>, before </body>
+========================= -->
+<div class="modal-overlay" id="processModal" aria-hidden="true">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="processModalTitle">
+    <button class="modal-close" type="button" id="processModalClose" aria-label="Close process notes">
+      ✕
+    </button>
+
+    <h3 class="modal-title" id="processModalTitle">Process notes</h3>
+
+    <div class="modal-body" id="processModalBody">
+      <!-- JS will inject the correct process notes here -->
+    </div>
+  </div>
+</div>
+
