@@ -151,7 +151,61 @@
   </ul>
 </div>
   
-  
+  <div class="process-modal" id="process-modal">
+  <div class="process-content">
+    <span class="process-close">&times;</span>
+    <div id="process-body"></div>
+  </div>
+</div>
+
+<!-- PROCESS CONTENT BLOCKS (hidden) -->
+<div class="process-data" id="process-polaroid" hidden>
+  <h2>Simulated Polaroid — Process Notes</h2>
+    <h3>Tools</h3>
+  <ul>
+    <li><strong>Python</strong>
+      <ul>
+        <li><strong>Pillow (PIL)</strong> (layout construction, texture layering, compositing)</li>
+        <li><strong>random</strong> (stochastic variation)</li>
+        <li><strong>argparse</strong> (parameterized output)</li>
+      </ul>
+    </li>
+    <li><strong>Photoshop</strong></li>
+    <li><strong>Midjourney</strong></li>
+  </ul>
+</div>
+
+  <p>
+    I created a synthetic photograph of an <em>Ophrys apifera</em> (Bee Orchid) in bloom using Midjourney
+    (prompt: A photograph of the botanical specimen, bee orchid, photographed in the field in the style of 1980s field
+    botany documentation, soft natural light, shallow depth of field, Kodachrome 64 film look, muted warm tones,
+    subtle film grain, macro detail, slight fading and color shift.). Then, I created a worn Polaroid frame in Photoshop by layering texture overlays to suggest an aged and worn feel.
+    Next, I wrote a Python script
+    <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target="_blank" rel="noopener noreferrer">
+      (download)
+    </a> to treat the image not as a static photograph but as a material object subject to wear, exposure, and
+    chemical instability.
+  </p>
+
+  <div class="process-data" id="process-daguerreotype" hidden>
+  <h2>Simulated Daguerreotype — Process Notes</h2>
+     <ul class="tools-list">
+          <li><strong>Python</strong>
+            <ul>
+              <li><strong>NumPy</strong> (pixel-level tonal remapping, metallic color mapping, vignette math)</li>
+              <li><strong>Pillow (PIL)</strong> (grayscale conversion, compositing, filters, alpha masks)</li>
+              <li><strong>math</strong> (directional sheen and radial calculations)</li>
+            </ul>
+          </li>
+          <li><strong>Photoshop</strong></li>
+          <li><strong>Midjourney</strong></li>
+        </ul>
+  <p>
+    I used Midjourney to create a synthetic photograph of a <em>Helenium Autumnale</em> (Sneezeweed) in bloom, using Midjourney.  I then processed the image using a Python script <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target='_blank' rel='noopener noreferrer'>(download)</a> that converts the photograph to grayscale, reshapes its tonal curve, and maps it onto a simulated silver plate surface. The script introduces a series of degradations, including metallic color shifts, directional sheen, vignette falloff, and tarnish artifacts. Finally, it precisely fits the image into an aged and worn digital daguerreotype frame I created in Photoshop, with softened edges and inner shadow to simulate depth and mounting.
+ </p>
+
+  </p> 
+</div>
   
   
   <script src="js/process-modal.js"></script>
