@@ -39,8 +39,9 @@
 
         <div class="gallery-info">
           <h3>Simulated Polaroid</h3>
-          <p class="meta">Digital image, 2026<br>I generated a synthetic photograph of an <em>Ophrys apifera</em> (Bee Orchid) using Midjourney and composited it into a Polaroid frame constructed in Photoshop. I then wrote a Python script
-<a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target="_blank" rel="noopener noreferrer">(download)</a>
+          <p class="meta">Digital image, 2026<br>I generated a synthetic photograph of an <em>Ophrys apifera</em> (Bee Orchid) using 
+            Midjourney and composited it into a Polaroid frame constructed in Photoshop. I then wrote a Python script
+            <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target="_blank" rel="noopener noreferrer">(download)</a>
 that algorithmically simulates material decay by introducing staged degradations—edge diffusion, tonal compression, color drift, and localized light artifacts. Rather than applying a single filter, the script executes these transformations sequentially, allowing each computational layer to interfere with and modify the previous one.</div>
       </article>
 
@@ -122,52 +123,68 @@ that algorithmically simulates material decay by introducing staged degradations
 
         <div class="gallery-info">
           <h3><strong>Sometimes I Fall Apart I</strong></h3>
-          <p class="meta"><em>Digital image, 2025</em><br>Process notes: I began with a photographic self-portrait and 
-            increased tonal contrast to exaggerate facial planes and shadows. Using Posterize and Gradient Map adjustment 
-            layers in Photoshop, I reduced the image to discrete tonal bands and remapped those values to a high-contrast 
-            palette of red, yellow, black, and cyan to create a heat-map effect. Additional contrast and edge emphasis 
-            intensified the graphic separation between tonal zones. The animated GIF was created in Photoshop’s Timeline 
-            panel by subtly shifting tonal thresholds and color mappings across frames, producing a flickering instability 
-            that reflects the episodic quality of the work.</p>
+          <p class="meta"><em>Digital image, 2025</em><br>Process notes: I began with a photographic self-portrait and increased 
+            tonal contrast to emphasize facial structure. Using Posterize and Gradient Map layers in Photoshop, I reduced the image 
+            to discrete tonal bands and remapped them to a high-contrast red, yellow, black, and cyan palette. The animated GIF was 
+            created in Photoshop’s Timeline by shifting tonal thresholds across frames, producing a flickering instability that 
+            reflects the work’s episodic theme.</p>
         </div>
       </article>
           
-        <!-- CARD 6 -->   
-       <article class="gallery-card">
-        <a class="gallery-thumb"
-           href="https://github.com/kizsak/Portfolio/raw/main/CollageSelfPortrait.png"
-           target="_blank" rel="noopener"
-           aria-label="Open full image: Sunset">    
-     
-          <img
-            src="https://github.com/kizsak/Portfolio/raw/main/CollageSelfPortrait.png"
-            alt="An image of a woman rendered in purple, orange, and yellow"
-            loading="lazy">
-        </a> 
-
-
+      
          <!--CARD 7 --!>
-         <article class="gallery-card">
+        
+<article class="gallery-card">
         <a class="gallery-thumb"
-           href="https://github.com/kizsak/Portfolio/raw/main/CollageSelfPortrait.png"
+           href="https://github.com/kizsak/Portfolio/raw/main/ChemicalBathReveal.gif"
            target="_blank" rel="noopener"
-           aria-label="Open full image: Sunset">    
+           aria-label="Open full image: Glitch Photo">
+          
+          <img
+            src="https://github.com/kizsak/Portfolio/raw/main/ChemicalBathReveal.gif"
+            alt="Abstract digital composition resembling a sunset over water, built from dense overlapping scribbles and gestural 
+            marks in purple, pink, orange, yellow, and deep blue."
+            loading="lazy">
+        </a>
 
         <div class="gallery-info">
           <h3><strong>Graffiti Sunset</strong></h3>
-          <p class="meta"><em>Digital image, 2025</em></p>em><br>Process note: I began with a photographic self-portrait, then sampled the colors to record their hex codes and create a personal color palette. Next, I used Midjourney to create more than 700 synthetic botanical photographs in the hues from my personal palette. I then processed those images using a Python script
+          <p class="meta"><em>Digital image, 2025<br></em><p>I used Midjourney to create a synthetic photographic image of a field of 
+      <em>Rudbeckia hirta</em> (Black-Eyed Susans). I then processed the image with a Python script
+          <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target="_blank" rel="noopener noreferrer">(download)
+          </a>that animates the gradual emergence of the image using layered noise fields, threshold masks, bloom effects, and 
+         evolving color casts that simulate photographic development in a chemical bath. Each frame reveals additional image detail 
+         until the photograph fully resolves.
+</p>
+        </div>
+
+      <article class="gallery-card">
+        <a class="gallery-thumb"
+           href="https://github.com/kizsak/Portfolio/raw/main/ChemicalBathReveal"
+           target="_blank" rel="noopener"
+           aria-label="Open full image: Chemical Bath">
+          
+          <img
+            src="https://github.com/kizsak/Portfolio/raw/main/ChemicalBathReveal"
+            alt="An animated reveal like photographic development in a chemical bath."
+            loading="lazy">
+        </a>
+
+        <div class="gallery-info">
+          <h3><strong>In the Developer Fluid</strong></h3>
+          <p class="meta"><em>Digital image, 2025<br></em><p>I used Midjourney to create a synthetic photographic image of a field of <em>Rudbeckia hirta</em> (Black-Eyed Susans). I then processed the image with a Python script
           <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target="_blank" rel="noopener noreferrer">(download)</a>
-          to extract floral forms from the images and export them as transparent PNG assets. I then manually layered those elements to construct a digital self-portrait collage.<div>
-      </article>
+          that animates the gradual emergence of the image using layered noise fields, threshold masks, bloom effects, and evolving color casts that simulate photographic development in a chemical bath. Each frame reveals additional image detail until the photograph fully resolves.</p>
+        </div>
 
       
 
 
+      
     </section>
   </main>
 
  
-  <!-- Guaranteed-working JS -->
   <script>
     (() => {
       const overlay = document.getElementById("processOverlay");
