@@ -4,16 +4,85 @@
   <meta charset="utf-8" />
   <title>Kate Izsak — Computational Image Design</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="css/style.css?v=1" />
+
+  <!-- Your main stylesheet -->
+  <link rel="stylesheet" href="css/style.css?v=20260215" />
+
+  <!-- Minimal, guaranteed modal styling (your palette) -->
+  <style>
+    /* ===== Process popup (overlay + panel) ===== */
+    .process-overlay{
+      position: fixed;
+      inset: 0;
+      background: rgba(8, 0, 20, 0.72);
+      backdrop-filter: blur(6px);
+      z-index: 9998;
+      display: none;
+    }
+    .process-popup{
+      position: fixed;
+      z-index: 9999;
+      top: 140px;
+      right: 48px;
+      width: min(560px, calc(100vw - 96px));
+      max-height: calc(100vh - 200px);
+      overflow: auto;
+      border-radius: 22px;
+      padding: 18px 18px 16px;
+      background: rgba(5, 6, 10, 0.88);
+      border: 1px solid rgba(168, 106, 145, 0.45); /* #a86a91 */
+      box-shadow:
+        0 24px 80px rgba(0,0,0,.60),
+        0 0 28px rgba(255, 214, 217, .22); /* #ffd6d9 glow */
+      color: rgba(255,255,255,.92);
+      display: none;
+    }
+    .process-popup__title{
+      margin: 0 40px 12px 0;
+      color: #ffd6d9;
+      text-shadow: 0 0 10px rgba(255, 214, 217, .28);
+      font-size: 1.2rem;
+    }
+    .process-popup__body{
+      line-height: 1.55;
+      font-size: 0.98rem;
+    }
+    .process-popup__body p{ margin: 0 0 12px; }
+    .process-popup__body a{ color: #ffd6d9; }
+    .process-popup__close{
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 38px;
+      height: 38px;
+      border-radius: 999px;
+      border: 1px solid rgba(168, 106, 145, 0.55);
+      background: rgba(0,0,0,.35);
+      color: #ffd6d9;
+      cursor: pointer;
+      box-shadow: 0 0 16px rgba(168,106,145,.25);
+    }
+    @media (max-width: 900px){
+      .process-popup{
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+        top: 90px;
+        width: min(620px, calc(100vw - 32px));
+        max-height: calc(100vh - 140px);
+      }
+    }
+  </style>
 </head>
 
 <body class="page-gallery">
+
   <header class="page-header">
- <h1 class="header-anta-neon">Computational Image Design</h1>
-    <nav class="nav-bar">
+    <h1 class="header-anta-neon">Computational Image Design</h1>
+    <nav class="nav-bar" aria-label="Site navigation">
       <a href="index.html" class="nav-btn">Home</a>
       <a href="digital-painting.html" class="nav-btn">Digital Painting</a>
-      <a href="comp-design.html" class="nav-btn">Computational Image Design</a>
+      <a href="comp-design.html" class="nav-btn is-active">Computational Image Design</a>
       <a href="graphic-design.html" class="nav-btn">Graphic Design</a>
       <a href="about-me.html" class="nav-btn">About Me</a>
     </nav>
@@ -23,301 +92,198 @@
     <section class="gallery-grid" aria-label="Gallery">
 
       <!-- CARD 1 -->
-<article class="gallery-card">
+      <article class="gallery-card">
+        <a class="gallery-thumb"
+           href="https://raw.githubusercontent.com/kizsak/Portfolio/main/BeeOrchidPolaroid.png"
+           target="_blank" rel="noopener"
+           aria-label="Open full image: Simulated Polaroid">
+          <img
+            src="https://raw.githubusercontent.com/kizsak/Portfolio/main/BeeOrchidPolaroid.png"
+            alt="A digital image showing a simulated, aged and worn Polaroid of a botanical subject"
+            loading="lazy">
+        </a>
 
-  <a
-    class="gallery-thumb"
-    href="https://raw.githubusercontent.com/kizsak/Portfolio/main/BeeOrchidPolaroid.png"
-    target="_blank"
-    rel="noopener"
-    aria-label="Open full image: Simulated Polaroid"
-  >
-    <img
-      src="https://raw.githubusercontent.com/kizsak/Portfolio/main/BeeOrchidPolaroid.png"
-      alt="A digital image showing a simulated, aged and worn Polaroid of a botanical subject"
-      loading="lazy"
-    >
-  </a>
+        <div class="gallery-info">
+          <h3>Simulated Polaroid</h3>
+          <p class="meta">Digital image, 2026</p>
+        </div>
 
-  <div class="gallery-info">
-    <h3>Simulated Polaroid</h3>
-    <p class="meta">Digital image, 2026</p>
-  </div>
-<div class="process-data" style="display:none;">
-  <p><strong>Prompt:</strong> A photograph of an Ophrys apifera…</p>
-  <p>Then I created a worn Polaroid frame in Photoshop…</p>
-</div>
+        <button class="process-btn" type="button" data-process="process-polaroid">
+          View Process
+        </button>
+      </article>
 
-  <button class="process-btn" type="button" data-process="process-polaroid">
-    View Process
-  </button>
-</article>
+      <!-- CARD 2 -->
+      <article class="gallery-card">
+        <a class="gallery-thumb"
+           href="https://raw.githubusercontent.com/kizsak/Portfolio/main/Daguerreotype.jpg"
+           target="_blank" rel="noopener"
+           aria-label="Open full image: Simulated Daguerreotype">
+          <img
+            src="https://raw.githubusercontent.com/kizsak/Portfolio/main/Daguerreotype.jpg"
+            alt="A digital image showing a simulated, aged and worn daguerreotype of a botanical subject"
+            loading="lazy">
+        </a>
 
-  <!-- CARD 2 -->
-<article class="gallery-card">
+        <div class="gallery-info">
+          <h3>Simulated Daguerreotype</h3>
+          <p class="meta">Digital image, 2025</p>
+        </div>
 
-  <a
-    class="gallery-thumb"
-    href="https://github.com/kizsak/Portfolio/raw/main/Daguerreotype.jpg"
-    target="_blank"
-    rel="noopener"
-    aria-label="Open full image: Simulated Daguerreotype"
-  >
-    <img
-      src="https://github.com/kizsak/Portfolio/raw/main/Daguerreotype.jpg"
-      alt="A digital image showing a simulated, aged and worn Daguerreotype of a 
-      botanical subject"
-      loading="lazy"
-    >
-  </a>
+        <button class="process-btn" type="button" data-process="process-daguerreotype">
+          View Process
+        </button>
+      </article>
 
-  <div class="gallery-info">
-    <h3>Simulated Daguerreotype</h3>
-    <p class="meta">Digital image, 2025</p>
-  </div>
+      <!-- CARD 3 -->
+      <article class="gallery-card">
+        <a class="gallery-thumb"
+           href="https://raw.githubusercontent.com/kizsak/Portfolio/main/HeatMapSelfie2.jpg"
+           target="_blank" rel="noopener"
+           aria-label="Open full image: Heat Map Self Portrait">
+          <img
+            src="https://raw.githubusercontent.com/kizsak/Portfolio/main/HeatMapSelfie2.jpg"
+            alt="An image of a woman rendered in purple, orange, and yellow"
+            loading="lazy">
+        </a>
 
-  <button class="process-btn" type="button" data-process="process-heat">
-    View Process
-  </button>
-</article>
-      
-    <!-- CARD 3 -->
-<article class="gallery-card">
+        <div class="gallery-info">
+          <h3>Simulated Heat Map Self Portrait</h3>
+          <p class="meta">Digital image, 2025</p>
+        </div>
 
-  <a
-    class="gallery-thumb"
-    href="https://github.com/kizsak/Portfolio/raw/main/HeatMapSelfie2.jpg"
-    target="_blank"
-    rel="noopener"
-    aria-label="Open full image: Heat Map Polaroid"
-  >
-    <img
-      src="https://github.com/kizsak/Portfolio/raw/main/HeatMapSelfie2.jpg"
-      alt="An image of a woman rendered in purple, orange, and yellow"
-      loading="lazy"
-    >
-  </a>
-
-  <div class="gallery-info">
-    <h3>Simulated Heat Map Self Portrait</h3>
-    <p class="meta">Digital image, 2025</p>
-  </div>
-
-  <button class="process-btn" type="button" data-process="process-heatmap">
-    View Process
-  </button>
-</article>    
-      
-      
-      
-      
-      <!-- Add more cards... -->
+        <button class="process-btn" type="button" data-process="process-heatmap">
+          View Process
+        </button>
+      </article>
 
     </section>
   </main>
 
-  <!-- PROCESS MODAL -->
-<div class="process-modal" id="process-modal">
-  <div class="process-content">
-    <span class="process-close">&times;</span>
-    <div id="process-body"></div>
-  </div>
-</div>
+  <!-- ONE overlay + ONE popup (only once) -->
+  <div id="processOverlay" class="process-overlay" aria-hidden="true"></div>
 
-<!-- PROCESS CONTENT BLOCKS (hidden) -->
-<div class="process-data" id="process-polaroid" hidden>
-  <h2>Simulated Polaroid — Process Notes</h2>
-<h3>Tools</h3>
-  <ul>
-    <li><strong>Python</strong>
-      <ul>
-        <li><strong>Pillow (PIL)</strong> (layout construction, texture layering, compositing)</li>
-        <li><strong>random</strong> (stochastic variation)</li>
-        <li><strong>argparse</strong> (parameterized output)</li>
-      </ul>
-    </li>
-    <li><strong>Photoshop</strong></li>
-    <li><strong>Midjourney</strong></li>
-  </ul>
-  <p>
-    I created a synthetic photograph of an <em>Ophrys apifera</em> (Bee Orchid) in bloom using Midjourney
-    (prompt: A photograph of the botanical specimen, bee orchid, photographed in the field in the style of 1980s field
-    botany documentation, soft natural light, shallow depth of field, Kodachrome 64 film look, muted warm tones,
-    subtle film grain, macro detail, slight fading and color shift.). Then, I created a worn Polaroid frame in Photoshop by layering texture overlays to suggest an aged and worn feel.
-    Next, I wrote a Python script
-    <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target="_blank" rel="noopener noreferrer">
-      (download)
-    </a> to treat the image not as a static photograph but as a material object subject to wear, exposure, and
-    chemical instability.
-  </p>
-</div>
+  <aside id="processPopup" class="process-popup" aria-live="polite" aria-hidden="true">
+    <button class="process-popup__close" type="button" aria-label="Close">✕</button>
+    <h3 class="process-popup__title">Process Notes</h3>
+    <div id="processPopupBody" class="process-popup__body"></div>
+  </aside>
 
-  <div class="process-data" id="process-polaroid" hidden>
-  <h2>Simulated Polaroid — Process Notes</h2>
-</div>
-  
-  <div class="process-modal" id="process-modal">
-  <div class="process-content">
-    <span class="process-close">&times;</span>
-    <div id="process-body"></div>
-  </div>
-</div>
-
-<div class="process-data" id="process-polaroid" hidden>
-  <h2>Simulated Polaroid — Process Notes</h2>
+  <!-- Hidden process notes: each ID is UNIQUE (only once) -->
+  <div id="process-polaroid" hidden>
+    <h2>Simulated Polaroid — Process Notes</h2>
     <h3>Tools</h3>
-  <ul>
-    <li><strong>Python</strong>
-      <ul>
-        <li><strong>Pillow (PIL)</strong> (layout construction, texture layering, compositing)</li>
-        <li><strong>random</strong> (stochastic variation)</li>
-        <li><strong>argparse</strong> (parameterized output)</li>
-      </ul>
-    </li>
-    <li><strong>Photoshop</strong></li>
-    <li><strong>Midjourney</strong></li>
-  </ul>
-</div>
-
-  <p>
-    I created a synthetic photograph of an <em>Ophrys apifera</em> (Bee Orchid) in bloom using Midjourney
-    (prompt: A photograph of the botanical specimen, bee orchid, photographed in the field in the style of 1980s field
-    botany documentation, soft natural light, shallow depth of field, Kodachrome 64 film look, muted warm tones,
-    subtle film grain, macro detail, slight fading and color shift.). Then, I created a worn Polaroid frame in Photoshop by layering texture overlays to suggest an aged and worn feel.
-    Next, I wrote a Python script
-    <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target="_blank" rel="noopener noreferrer">
-      (download)
-    </a> to treat the image not as a static photograph but as a material object subject to wear, exposure, and
-    chemical instability.
-  </p>
-
-  <div class="process-data" id="process-daguerreotype" hidden>
-  <h2>Simulated Daguerreotype — Process Notes</h2>
-     <ul class="tools-list">
-          <li><strong>Python</strong>
-            <ul>
-              <li><strong>NumPy</strong> (pixel-level tonal remapping, metallic color mapping, vignette math)</li>
-              <li><strong>Pillow (PIL)</strong> (grayscale conversion, compositing, filters, alpha masks)</li>
-              <li><strong>math</strong> (directional sheen and radial calculations)</li>
-            </ul>
-          </li>
-          <li><strong>Photoshop</strong></li>
-          <li><strong>Midjourney</strong></li>
+    <ul>
+      <li><strong>Python</strong>
+        <ul>
+          <li><strong>Pillow (PIL)</strong> (layout construction, texture layering, compositing)</li>
+          <li><strong>random</strong> (stochastic variation)</li>
+          <li><strong>argparse</strong> (parameterized output)</li>
         </ul>
-  <p>
-    I used Midjourney to create a synthetic photograph of an <em>Helenium 
-      Autumnale</em> (Sneezeweed) in bloom.  I then processed 
-    the image using a Python script 
-    <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target='_blank' rel='noopener noreferrer'>(download)</a> 
-    that converts the photograph to grayscale, reshapes its tonal curve, and maps 
-    it onto a simulated silver plate surface. The script introduces a series of 
-    degradations, including metallic color shifts, directional sheen, vignette 
-    falloff, and tarnish artifacts. Finally, it precisely fits the image into an 
-    aged and worn digital daguerreotype frame I created in Photoshop, with 
-    softened edges and inner shadow to simulate depth and mounting.
- </p>
-</div>
+      </li>
+      <li><strong>Photoshop</strong></li>
+      <li><strong>Midjourney</strong></li>
+    </ul>
+    <p>
+      I created a synthetic photograph of an <em>Ophrys apifera</em> (Bee Orchid) in bloom using Midjourney.
+      Then, I created a worn Polaroid frame in Photoshop by layering texture overlays.
+      Next, I wrote a Python script
+      <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target="_blank" rel="noopener noreferrer">(download)</a>
+      to treat the image as a material object subject to wear, exposure, and chemical instability.
+    </p>
+  </div>
 
-  <div class="process-data" id="process-heatmap" hidden>
-  <h2>Simulated Heat Map Self Portrait — Process Notes</h2>
-     <ul class="tools-list">
-          <li><strong>Python</strong>
-           <li><strong>Python</strong>
-            <ul>
-              <li><strong>NumPy</strong> (depth-to-color mapping, numeric normalization)</li>
-              <li><strong>Pillow (PIL)</strong> (image I/O and format conversion)</li>
-            </ul>
-          </li>
-          <li><strong>Photoshop</strong></li>
-          <li><strong>Midjourney</strong></li>
-        </ul></template>
-      <template id="desc-slide">
-         <strong>Tools:</strong>
-        <ul class="tools-list">
-          <li><strong>Python</strong>
-            <ul>
-              <li><strong>Pillow (PIL)</strong> (layout construction, texture layering, compositing)</li>
-              <li><strong>random</strong> (stochastic variation)</li>
-              <li><strong>argparse</strong> (parameterized output)</li>
-            </ul>
-          </li>
-          <li><strong>Photoshop</strong></li>
-          <li><strong>Midjourney</strong></li>
-
+  <div id="process-daguerreotype" hidden>
+    <h2>Simulated Daguerreotype — Process Notes</h2>
+    <h3>Tools</h3>
+    <ul>
+      <li><strong>Python</strong>
+        <ul>
+          <li><strong>NumPy</strong> (pixel-level tonal remapping, metallic color mapping, vignette math)</li>
+          <li><strong>Pillow (PIL)</strong> (grayscale conversion, compositing, filters, alpha masks)</li>
+          <li><strong>math</strong> (directional sheen and radial calculations)</li>
         </ul>
-  <p>
-          I began with a photographic self-portrait. I used Photoshop to construct a depth map of the image by manually segmenting the image into spatial regions using selection tools and tonal adjustments. I then processed this depth map with a Python script <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target='_blank' rel='noopener noreferrer'>(download)</a> that reads pixel-level depth values and remaps them to a false-color heat visualization. 
-</p>
+      </li>
+      <li><strong>Photoshop</strong></li>
+      <li><strong>Midjourney</strong></li>
+    </ul>
+    <p>
+      I used Midjourney to create a synthetic photograph of an <em>Helenium autumnale</em> (Sneezeweed) in bloom.
+      I then processed the image using a Python script that converts the photograph to grayscale, reshapes its tonal curve,
+      and maps it onto a simulated silver plate surface with sheen, vignette falloff, and tarnish artifacts.
+    </p>
+  </div>
 
-  <!-- Process Notes Popup -->
-<div id="processOverlay" class="process-overlay" hidden></div>
+  <div id="process-heatmap" hidden>
+    <h2>Simulated Heat Map Self Portrait — Process Notes</h2>
+    <h3>Tools</h3>
+    <ul>
+      <li><strong>Python</strong>
+        <ul>
+          <li><strong>NumPy</strong> (depth-to-color mapping, numeric normalization)</li>
+          <li><strong>Pillow (PIL)</strong> (image I/O and format conversion)</li>
+        </ul>
+      </li>
+      <li><strong>Photoshop</strong></li>
+    </ul>
+    <p>
+      I began with a photographic self-portrait and constructed a depth map in Photoshop by segmenting the image into spatial regions.
+      I then processed this depth map with a Python script that reads pixel-level depth values and remaps them to a false-color heat visualization.
+    </p>
+  </div>
 
-<aside id="processPopup" class="process-popup" hidden aria-live="polite">
-  <button class="process-popup__close" type="button" aria-label="Close">✕</button>
-  <h3 class="process-popup__title">Process Notes</h3>
-  <div id="processPopupBody" class="process-popup__body"></div>
-</aside>
+  <!-- Guaranteed-working JS -->
+  <script>
+    (() => {
+      const overlay = document.getElementById("processOverlay");
+      const popup   = document.getElementById("processPopup");
+      const body    = document.getElementById("processPopupBody");
+      const closeBtn = popup.querySelector(".process-popup__close");
 
-        <script>
-(() => {
-  const overlay = document.getElementById("processOverlay");
-  const popup   = document.getElementById("processPopup");
-  const body    = document.getElementById("processPopupBody");
-  const closeBtn = popup.querySelector(".process-popup__close");
+      function openWith(html) {
+        body.innerHTML = html;
+        overlay.style.display = "block";
+        popup.style.display = "block";
+        overlay.setAttribute("aria-hidden", "false");
+        popup.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+      }
 
-  function openWith(html) {
-    body.innerHTML = html;
-    overlay.hidden = false;
-    popup.hidden = false;
-    document.body.style.overflow = "hidden";
-  }
+      function close() {
+        overlay.style.display = "none";
+        popup.style.display = "none";
+        overlay.setAttribute("aria-hidden", "true");
+        popup.setAttribute("aria-hidden", "true");
+        body.innerHTML = "";
+        document.body.style.overflow = "";
+      }
 
-  function close() {
-    overlay.hidden = true;
-    popup.hidden = true;
-    body.innerHTML = "";
-    document.body.style.overflow = "";
-  }
+      document.addEventListener("click", (e) => {
+        const btn = e.target.closest(".process-btn");
+        if (!btn) return;
 
-  // Open
-  document.addEventListener("click", (e) => {
-    const btn = e.target.closest(".process-open");
-    if (!btn) return;
+        // prevent weird behavior if the button sits near/inside other click areas
+        e.preventDefault();
+        e.stopPropagation();
 
-    // If button is accidentally inside a link, stop navigation
-    e.preventDefault();
-    e.stopPropagation();
+        const id = btn.getAttribute("data-process");
+        const notes = document.getElementById(id);
 
-    const card = btn.closest(".card") || btn.parentElement;
-    const notes = card.querySelector(".process-notes");
-    if (!notes) {
-      body.innerHTML = "<p><em>No process notes found in this card.</em></p>";
-      overlay.hidden = false;
-      popup.hidden = false;
-      return;
-    }
+        if (!notes) {
+          openWith("<p><em>Process notes not found for this piece.</em></p>");
+          return;
+        }
 
-    openWith(notes.innerHTML);
-  });
+        openWith(notes.innerHTML);
+      });
 
-  // Close: overlay click, close button, ESC
-  overlay.addEventListener("click", close);
-  closeBtn.addEventListener("click", close);
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && !popup.hidden) close();
-  });
-})();
-</script>  
-  <script src="js/process-modal.js"></script>
+      overlay.addEventListener("click", close);
+      closeBtn.addEventListener("click", close);
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && popup.style.display === "block") close();
+      });
+    })();
+  </script>
+
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
