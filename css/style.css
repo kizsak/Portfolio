@@ -1425,3 +1425,81 @@ body.lightbox-open { overflow: hidden; } /* optional if you toggle it in JS */
     width: min(560px, calc(100vw - 40px));
   }
 }
+
+/* =========================================================
+   PROCESS POPUP (CodePen-style overlay + fixed panel)
+   ========================================================= */
+
+.process-overlay{
+  position: fixed;
+  inset: 0;
+  background: rgba(8, 0, 20, 0.72); /* deep purple veil */
+  backdrop-filter: blur(6px);
+  z-index: 9998;
+}
+
+.process-popup{
+  position: fixed;
+  z-index: 9999;
+
+  /* “next to the image” default: right side */
+  top: 140px;
+  right: 48px;
+
+  width: min(560px, calc(100vw - 96px));
+  max-height: calc(100vh - 200px);
+  overflow: auto;
+
+  border-radius: 22px;
+  padding: 18px 18px 16px;
+
+  background: rgba(5, 6, 10, 0.88);
+  border: 1px solid rgba(168, 106, 145, 0.45); /* #a86a91 glow edge */
+  box-shadow:
+    0 24px 80px rgba(0,0,0,.60),
+    0 0 28px rgba(255, 214, 217, .22); /* soft pink glow */
+
+  color: rgba(255,255,255,.92);
+}
+
+.process-popup__title{
+  margin: 0 40px 12px 0;
+  color: #ffd6d9; /* soft neon pink */
+  text-shadow: 0 0 10px rgba(255, 214, 217, .28);
+}
+
+.process-popup__body{
+  line-height: 1.55;
+  font-size: 0.98rem;
+}
+
+.process-popup__body p{ margin: 0 0 12px; }
+.process-popup__body a{ color: #ffd6d9; }
+
+.process-popup__close{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+
+  border: 1px solid rgba(168, 106, 145, 0.55);
+  background: rgba(0,0,0,.35);
+  color: #ffd6d9;
+  cursor: pointer;
+  box-shadow: 0 0 16px rgba(168,106,145,.25);
+}
+
+/* Mobile: center it */
+@media (max-width: 900px){
+  .process-popup{
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    top: 90px;
+    width: min(620px, calc(100vw - 32px));
+    max-height: calc(100vh - 140px);
+  }
+}
