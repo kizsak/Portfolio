@@ -39,9 +39,9 @@
 
         <div class="gallery-info">
           <h3>Simulated Polaroid</h3>
-          <p class="meta">Digital image, 2026<br>Process notes: I created a synthetic photograph of an <em>Ophrys apifera</em> (Bee Orchid) in bloom using Midjourney (prompt: A photograph of the botanical specimen, bee orchid, photographed in the field in the style of 1980s field botany documentation, soft natural light, shallow depth of field, Kodachrome 64 film look, muted warm tones, subtle film grain, macro detail, slight fading and color shift.). Then, I created a worn Polaroid frame in Photoshop by layering texture overlays to suggest an aged and worn feel. Next, I wrote a Python script
-          <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target="_blank" rel="noopener noreferrer">(download)</a>. This script treats the image not as a static photograph but as a material object subject to wear, exposure, and chemical instability. Starting from a clean digital input, the script introduces a series of degradations—edge softening, tonal flattening, color drift, and localized light leaks—that echo the visual artifacts of aging instant film. Rather than applying a single filter, the process unfolds in stages, allowing each transformation to subtly interfere with the last.
-        </div>
+          <p class="meta">Digital image, 2026<br>I generated a synthetic photograph of an <em>Ophrys apifera</em> (Bee Orchid) using Midjourney and composited it into a Polaroid frame constructed in Photoshop. I then wrote a Python script
+<a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target="_blank" rel="noopener noreferrer">(download)</a>
+that algorithmically simulates material decay by introducing staged degradations—edge diffusion, tonal compression, color drift, and localized light artifacts. Rather than applying a single filter, the script executes these transformations sequentially, allowing each computational layer to interfere with and modify the previous one.</div>
       </article>
 
       <!-- CARD 2 -->
@@ -57,8 +57,8 @@
         </a>
 
         <div class="gallery-info">
-          <h3>Simulated Daguerreotype</h3>
-          <p class="meta">Digital image, 2025<br>Process notes: I used Midjourney to create a synthetic photograph of an <em>Helenium autumnale</em> (Sneezeweed) in bloom.
+          <h3><strong>Simulated Daguerreotype</strong></h3>
+          <p class="meta"><em>Digital image, 2025</em><br>Process notes: I used Midjourney to create a synthetic photograph of an <em>Helenium autumnale</em> (Sneezeweed) in bloom.
       I then processed the image using a Python script that converts the photograph to grayscale, reshapes its tonal curve, and maps it onto a simulated silver plate surface with sheen, vignette falloff, and tarnish artifacts.</p>
         </div>
       </article>
@@ -87,15 +87,21 @@
            href="https://github.com/kizsak/Portfolio/raw/main/35mmslide.jpg"
            target="_blank" rel="noopener"
            aria-label="Open full image: Simulated 35mm Slide">
+          
           <img
             src="https://github.com/kizsak/Portfolio/raw/main/35mmslide.jpg"
-            alt="An image of a woman rendered in purple, orange, and yellow"
+            alt="An image of a 35mm slide showing a photograph of a field of black-eyed Susans"
             loading="lazy">
         </a>
 
         <div class="gallery-info">
-          <h3>Simulated Heat Map Self Portrait</h3>
-          <p class="meta">Digital image, 2025<br>Process notes: I began with a photographic self-portrait. I used Photoshop to construct a depth map of the image by manually segmenting the image into spatial regions using selection tools and tonal adjustments. I then processed this depth map with a Python script <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target='_blank' rel='noopener noreferrer'>(download)</a> that reads pixel-level depth values and remaps them to a false-color heat visualization.</p></p>
+          <h3><strong>Simulated 35mm Slide</strong></h3>
+          <p class="meta"><em>Digital image, 2025<br><em>Process notes:  I used Midjourney to create a synthetic photographic image 
+            of a field of <em>Rudbeckia hirta</em> (Black-Eyed Susans). I then processed the image with a Python script
+          <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target="_blank" rel="noopener noreferrer">(download)</a>
+          that animates the gradual emergence of the image using layered noise fields, threshold masks, bloom effects, and evolving color casts 
+            that simulate photographic development in a chemical bath. Each frame reveals additional image detail until the photograph fully 
+            resolves.
         </div>
       </article>
 
@@ -104,8 +110,7 @@
         <a class="gallery-thumb"
            href="https://github.com/kizsak/Portfolio/raw/main/EpisodicDisability.gif"
            target="_blank" rel="noopener"
-           aria-label="Open full image: Depth Map">
-          
+           aria-label="Open full image: Episodic">
           
           <img
             src="https://github.com/kizsak/Portfolio/raw/main/35mmslide.jpg"
@@ -115,27 +120,60 @@
 
         <div class="gallery-info">
           <h3><strong>Sometimes I Fall Apart I</strong></h3>
-          <p class="meta"><em>Digital image, 2025</em></p>em><br>Process notes: I began with a photographic self-portrait and increased tonal contrast to exaggerate facial planes and shadows. Using Posterize and Gradient Map adjustment layers in Photoshop, I reduced the image to discrete tonal bands and remapped those values to a high-contrast palette of red, yellow, black, and cyan to create a heat-map effect. Additional contrast and edge emphasis intensified the graphic separation between tonal zones. The animated GIF was created in Photoshop’s Timeline panel by subtly shifting tonal thresholds and color mappings across frames, producing a flickering instability that reflects the episodic quality of the work.</p>
+          <p class="meta"><em>Digital image, 2025</em><br>Process notes: I began with a photographic self-portrait and 
+            increased tonal contrast to exaggerate facial planes and shadows. Using Posterize and Gradient Map adjustment 
+            layers in Photoshop, I reduced the image to discrete tonal bands and remapped those values to a high-contrast 
+            palette of red, yellow, black, and cyan to create a heat-map effect. Additional contrast and edge emphasis 
+            intensified the graphic separation between tonal zones. The animated GIF was created in Photoshop’s Timeline 
+            panel by subtly shifting tonal thresholds and color mappings across frames, producing a flickering instability 
+            that reflects the episodic quality of the work.</p>
         </div>
       </article>
-
-       <!-- CARD 5 -->
-      <article class="gallery-card">
-        <a class="gallery-thumb"
-           href="https://github.com/kizsak/Portfolio/raw/main/EpisodicDisability.gif"
-           target="_blank" rel="noopener"
-           aria-label="Open full image: Depth Map">
           
         <!-- CARD 6 -->   
           <img
-            src="https://github.com/kizsak/Portfolio/raw/main/35mmslide.jpg"
+            src="https://github.com/kizsak/Portfolio/raw/main/CollageSelfPortrait.png"
             alt="An image of a woman rendered in purple, orange, and yellow"
             loading="lazy">
         </a>
 
         <div class="gallery-info">
-          <h3><strong>Sometimes I Fall Apart I</strong></h3>
-          <p class="meta"><em>Digital image, 2025</em></p>em><br>Process notes: I began with a photographic self-portrait and increased tonal contrast to exaggerate facial planes and shadows. Using Posterize and Gradient Map adjustment layers in Photoshop, I reduced the image to discrete tonal bands and remapped those values to a high-contrast palette of red, yellow, black, and cyan to create a heat-map effect. Additional contrast and edge emphasis intensified the graphic separation between tonal zones. The animated GIF was created in Photoshop’s Timeline panel by subtly shifting tonal thresholds and color mappings across frames, producing a flickering instability that reflects the episodic quality of the work.        </div>
+          <h3><strong>Sometimes I Fall Apart II</strong></h3>
+          <p class="meta"><em>Digital image, 2025</em></p>em><br>Process note: I began with a photographic self-portrait, then sampled the colors to record their hex codes and create a personal color palette. Next, I used Midjourney to create more than 700 synthetic botanical photographs in the hues from my personal palette. I then processed those images using a Python script
+          <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target="_blank" rel="noopener noreferrer">(download)</a>
+          to extract floral forms from the images and export them as transparent PNG assets. I then manually layered those elements to construct a digital self-portrait collage.<div>
+      </article>
+
+            <!-- CARD 5 -->   
+          <img
+            src="https://github.com/kizsak/Portfolio/raw/main/CollageSelfPortrait.png"
+            alt="An image of a woman rendered in purple, orange, and yellow"
+            loading="lazy">
+        </a>
+
+        <div class="gallery-info">
+          <h3><strong>Sometimes I Fall Apart II</strong></h3>
+          <p class="meta"><em>Digital image, 2025</em></p>em><br>Process note: I began with a photographic self-portrait, then sampled the 
+          colors to record their hex codes and create a personal color palette. Next, I used Midjourney to create more than 700 synthetic 
+          botanical photographs in the hues from my personal palette. I then processed those images using a Python script
+          <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target="_blank" rel="noopener noreferrer">(download)</a>
+          to extract floral forms from the images and export them as transparent PNG assets. I then manually layered those elements to 
+          construct a digital self-portrait collage.<div>
+      </article>
+
+                        <!-- CARD 6 -->   
+
+            
+        </a>
+            <img
+            src="https://github.com/kizsak/Portfolio/raw/main/SunsetCollage.png"
+            alt="Abstract sunset landscape composed of layered digital scribbles and looping marks; warm bands of orange, pink, and yellow suggest a horizon, while cool purples and blues accumulate above and below like sky and water."
+            loading="lazy">
+        </a>
+
+        <div class="gallery-info">
+          <h3><strong>Sometimes the World Falls Apart</strong></h3>
+          <p class="meta"><em>Digital image, 2025</em><br>Process note: This piece began as a simplified sunset color gradient divided into horizontal tonal bands. Rather than painting directly, I constructed the image through iterative accumulation of gestural marks—loops, grids, cross-hatching, and scribbled lines—layered systematically across discrete color zones. Each region was treated as a constraint field, with specific mark densities and directional tendencies assigned to sky, horizon, and water. The final composition emerges from the interference of repeated strokes, producing texture through excess and saturation rather than blending.</div>
       </article>
 
 
