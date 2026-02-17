@@ -2,110 +2,125 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Kate Izsak — Digital and Computational Arts</title>
+  <title>Kate Izsak — Computational Image Design</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Main site stylesheet -->
-  <link rel="stylesheet" href="css/style.css">
-  <script src="js/carousel-lightbox.js" defer></script>
+  <!-- Your main stylesheet -->
+  <link rel="stylesheet" href="css/style.css?v=20260215" />
 </head>
 
-<body class="page-if">
+<body class="page-gallery">
 
-  <!-- Top Neon Title -->
   <header class="page-header">
-  <h1 class="header-anta-neon">Interactive Fiction</h1>
-    <nav class="nav-bar">
+    <h1 class="header-anta-neon">Immersive Media</h1>
+    <nav class="nav-bar" aria-label="Site navigation">
       <a href="index.html" class="nav-btn">Home</a>
       <a href="digital-painting.html" class="nav-btn">Digital Painting</a>
-      <a href="comp-design.html" class="nav-btn">Computational Image Design</a>
+      <a href="comp-design.html" class="nav-btn is-active">Computational Image Design</a>
       <a href="graphic-design.html" class="nav-btn">Graphic Design</a>
       <a href="about-me.html" class="nav-btn">About Me</a>
     </nav>
   </header>
 
-  <main class="gallery-layout">
-    <!-- LEFT: title + caption + description (filled by JS) -->
-    <section class="gallery-info">
-      <h2 id="image-caption" class="neon-soft"></h2>
-      <p id="image-description" class="piece-description"></p>
-    </section>
+  <main class="gallery-wrap">
+    <section class="gallery-grid" aria-label="Gallery">
 
-    <!-- RIGHT: image carousel -->
-    <section class="gallery-carousel">
-      <div class="carousel-window">
+      <!-- CARD 1 -->
+      <article class="gallery-card">
+        <a class="gallery-thumb"
+           href="https://github.com/kizsak/Portfolio/raw/main/VaultLastTry.gif"
+           target="_blank" rel="noopener"
+           aria-label="Open full image: Vault">
+          <img
+            src="https://github.com/kizsak/Portfolio/raw/main/VaultLastTry.gif"
+            alt="A gif showing a short period of play in the interactive fiction game, <em>The Vault of Stories</em>."
+            loading="lazy">
+        </a>
 
-        <img
-          src="https://github.com/kizsak/Portfolio/raw/main/VaultLastTry.gif"
-          data-full="https://github.com/kizsak/Portfolio/raw/main/VaultLastTry.gif"
-          alt="GIF showing a portion of play in the Vault of Stories"
-          class="carousel-image"
-          data-caption="<em>The Vault of Stories</em>"
-          data-description="Development Platform: Twine<br>IFID: 57BE9A54-292C-4F19-8886-01D06D5420BD<br>TUID: 8das9n6egfckcwln"
-          data-essay="essay-vault"
-          />
+        <div class="gallery-info">
+          <h3><strong>The Vault of Stories</strong></h3>
+          <p class="meta"><em>Twine Game, 2026</em><br>IFID: 57BE9A54-292C-4F19-8886-01D06D5420BD<br>
+            TUID: 8das9n6egfckcwln<br>In a distant future, you enter the crumbling remains of the Vault of Stories—a vast digital 
+            archive built to preserve humanity’s interactive fictions. The archive is fractured, its files corrupted, and its 
+            history contested. As you explore its broken passages, you must uncover hidden documents, decode glitching 
+            terminals, and confront the archivists who once maintained it. It explores themes of memory, preservation, 
+            and the fragile boundary between human and machine creativity. In addition to its replayable, branching narrative, 
+            The Vault of Stories is designed as a primer on interactive fiction generally, and Twine narratives specifically. 
+            An entire undergraduate course exists within it (INST388T Interactive Fiction, College of Information, University 
+            of Maryland).</p>
+      </article>
 
-        <img
-          src="https://github.com/kizsak/Portfolio/raw/main/Texture.gif"
-          data-full="https://github.com/kizsak/Portfolio/raw/main/Texture.gif"
-          alt="GIF showing a portion of play in the Grief Gardens"
-          class="carousel-image"
-          data-caption="<em>The Grief Gardens</em>"
-          data-description="Development Platform: Texture<br>IFID: E2A5066D-E0EB-49B2-9117-AAB738F36452<br>TUID: c43ilw3epi791tya"
-          data-essay="essay-grief"
-          />
+      <!-- CARD 2 -->
+      <article class="gallery-card">
+        <a class="gallery-thumb"
+           href="https://github.com/kizsak/Portfolio/raw/main/Texture.gif"
+           target="_blank" rel="noopener"
+           aria-label="Open full image: Vault">
+          <img
+            src="https://github.com/kizsak/Portfolio/raw/main/Texture.gif"
+            alt="A gif showing a short period of play in the interactive fiction game, <em>The Grief Gardens</em>."
+            loading="lazy">
+        </a>
 
-        <img
-          src="https://github.com/kizsak/Portfolio/raw/main/Parser.gif"
-          data-full="https://github.com/kizsak/Portfolio/raw/main/Parser.gif"
-          alt="GIF showing a portion of play in The Archivist's Vault"
-          class="carousel-image"
-          data-caption="<em>The Archivist's Vault</em>"
-          data-description="Development Platform: Inform<br>IFID: D1B48BCF-0741-4D41-B7BB-EB304674AD45<br>TUID: 74ufidb7o5fwgraw"
-          data-essay="essay-parser"
-          />
-      </div>
+        <div class="gallery-info">
+          <h3><strong>The Grief Gardens</strong></h3>
+          <p class="meta"><em>Texture Game, 2026</em><br>IFID: 57BE9A54-292C-4F19-8886-01D06D5420BD<br>
+            TUID: 8das9n6egfckcwln<br>The Grief Gardens is an interactive fiction piece built in Texture that explores mourning as a 
+            spatial and procedural experience. Through constrained navigation, conditional states, and environmental transformation, 
+            the work frames grief not as a narrative arc but as a system of tending, returning, and gradual change. Players move 
+            through a garden that responds to their choices not with dramatic plot turns, but with subtle shifts in atmosphere, 
+            language, and texture. Paths reopen or close based on accumulated interactions; fragments of memory surface conditionally; 
+            certain spaces require revisitation rather than progression. Growth is slow, cyclical, and sometimes imperceptible. </p>
+      </article>
 
-      <div class="carousel-controls">
-        <button class="carousel-btn prev" type="button">‹</button>
-        <button class="carousel-btn next" type="button">›</button>
-      </div>
-    </section>
-  </main>
+            <!-- CARD 3 -->
+      <article class="gallery-card">
+        <a class="gallery-thumb"
+           href="https://github.com/kizsak/Portfolio/raw/main/Parser.gif"
+           target="_blank" rel="noopener"
+           aria-label="Open full image: Vault">
+          <img
+            src="https://github.com/kizsak/Portfolio/raw/main/Parser.gif"
+            alt="A gif showing a short period of play in the interactive fiction game, <em>The Archivist's Vault</em>."
+            loading="lazy">
+        </a>
 
-<!-- ESSAY TEMPLATES -->
-<template id="essay-vault">
-  <p>In a distant future, you enter the crumbling remains of the Vault of Stories—a vast digital archive built to preserve humanity’s interactive fictions. The archive is fractured, its files corrupted, and its history contested. As you explore its broken passages, you must uncover hidden documents, decode glitching terminals, and confront the archivists who once maintained it. It explores themes of memory, preservation, and the fragile boundary between human and machine creativity. In addition to its replayable, branching narrative, The Vault of Stories is designed as a primer on interactive fiction generally, and Twine narratives specifically. An entire undergraduate course exists within it (INST388T Interactive Fiction, College of Information, University of Maryland).
+        <div class="gallery-info">
+          <h3><strong>The Archivist's Vault</strong></h3>
+          <p class="meta"><em>Parser Game, 2026</em><br>Development Platform: Inform7<br>IFID: 57BE9A54-292C-4F19-8886-01D06D5420BD<br>
+            TUID: 8das9n6egfckcwln<br>You play as someone working within an archival system dedicated to preserving interactive narratives. The archive is suffering from 
+      corruption: some stories are incomplete, glitched, or fragmented. Your task is to explore the damaged archive, piece together 
+      lost or broken story segments, and repair the narrative integrity of the collection. As you work, you confront both technical 
+      obstacles (data corruption, missing files) and emotional or thematic ones—loss, memory, and fragility. The story combines 
+      speculative elements (the archive as a semi-magical or futuristic space) with metafictional ones (stories about stories, archives, 
+      preservation).
 </p>
-</template>
+      </article>
 
-<template id="essay-grief">
-  <p>In The Grief Gardens, you play as someone working within an archival system dedicated to preserving interactive narratives...</p>
-</template>
+                  <!-- CARD 4 -->
+      <article class="gallery-card">
+        <a class="gallery-thumb"
+           href="https://github.com/kizsak/Portfolio/raw/main/Parser.gif"
+           target="_blank" rel="noopener"
+           aria-label="Open full image: Vault">
+          <img
+            src="https://github.com/kizsak/Portfolio/raw/main/Parser.gif"
+            alt="A gif showing a short period of play in the interactive fiction game, <em>The Archivist's Vault</em>."
+            loading="lazy">
+        </a>
 
-<template id="essay-parser">
-  <p>In The Grief Gardens, you play as someone working within an archival system dedicated to preserving interactive narratives. The archive is suffering from corruption: some stories are incomplete, glitched, or fragmented. Your task is to explore the damaged archive, piece together lost or broken story segments, and repair the narrative integrity of the collection. As you work, you confront both technical obstacles (data corruption, missing files) and emotional or thematic ones—loss, memory, and fragility. The story combines speculative elements (the archive as a semi-magical or futuristic space) with metafictional ones (stories about stories, archives, preservation).
+        <div class="gallery-info">
+          <h3><strong>Florioselanami</strong></h3>
+          <p class="meta"><em>Visual Model, 2026</em><br>To scope out an assignment for a class (INST732 Entertainment Theory, College of 
+            Information, University of Maryland), I trained my own visual model. I created a dataset of the many “flower languages”--from 
+            England, Japan, China, and North and Central American indigenous nations. Many flowers have very distinct and specific 
+            meanings, so I hand-coded the meanings into 15 buckets, which transferred over to the model’s classes. I then generated over 
+            500 botanical photographs on Midjourney, and I fed these into the model with their associated classes. In the final product, 
+            you can upload a flower image to the model, and the model will tell you what the "likely" meaning of the flower is--just in 
+            fun, of course. You can try the model <a href="https://teachablemachine.withgoogle.com/models/2sA0XuVA5/">here</a> or you can 
+            watch the gif I made about it above. 
 </p>
-</template>
-
-  
-<!-- Essay panel (one per page; JS swaps content per piece) -->
-<section class="essay-panel" aria-label="Process notes">
-  <h2 class="essay-title">Process Notes</h2>
-  <div id="essay-body" class="essay-body"></div>
-</section>
-  
-<!-- Lightbox overlay (place once per page, right before </body>) -->
-<div id="lightbox" class="lightbox" aria-hidden="true">
-  <button class="lightbox-close" type="button" aria-label="Close">&times;</button>
-
-  <div class="lightbox-stage">
-    <img id="lightbox-img" alt="">
-    <div id="lightbox-caption" class="lightbox-caption"></div>
-  </div>
-</div
-
-  <script src="js/process-modal.js"></script> 
-
+      </article>
 </body>
+<script src="js/process-modal.js"></script> 
 </html>
