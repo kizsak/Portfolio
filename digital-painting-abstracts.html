@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Kate Izsak — Graphic Design</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Your main stylesheet -->
+  <link rel="stylesheet" href="css/style.css?v=20260215" />
+</head>
+
+<body class="page-gallery">
+
+  <header class="page-header">
+    <h1 class="header-anta-neon">Graphic Design</h1>
+    <nav class="nav-bar" aria-label="Site navigation">
+      <a href="index.html" class="nav-btn">Home</a>
+      <a href="digital-painting.html" class="nav-btn">Digital Painting</a>
+      <a href="if.html" class="nav-btn is-active">Immersive Media</a>
+      <a href="graphic-design.html" class="nav-btn">Graphic Design</a>
+      <a href="about-me.html" class="nav-btn">About Me</a>
+    </nav>
+  </header>
+
+  <main class="gallery-wrap">
+    <section class="gallery-grid" aria-label="Gallery">
+
+      <!-- CARD -->
+      <article class="gallery-card">
+        <a class="gallery-thumb"
+           href="https://github.com/kizsak/Portfolio/raw/main/AbstractCircles.png"
+           target="_blank" rel="noopener"
+           aria-label="Open full image: Abstract Circles">
+          <img
+            src="https://github.com/kizsak/Portfolio/raw/main/AbstractCircles.png"
+            alt="Digital pastel painting of abstract circles in yellows and purples"
+            loading="lazy">
+        </a>
+
+        <div class="gallery-info">
+          <h3>Abstract Circles</h3>
+          <p class="meta">Digital pastels, 2026</p></article>
+
+            <!-- CARD -->
+      <article class="gallery-card">
+        <a class="gallery-thumb"
+           href="https://github.com/kizsak/Portfolio/raw/main/AbstractLotus.jpg"
+           target="_blank" rel="noopener"
+           aria-label="Open full image: Abstract Lotus">
+          <img
+            src="https://github.com/kizsak/Portfolio/raw/main/AbstractLotus.jpg"
+            alt="Digital acrylic painting of an abstract lotus flower in neon colors"
+            loading="lazy">
+        </a>
+
+        <div class="gallery-info">
+          <h3>Abstract Lotus/h3>
+          <p class="meta">Digital acrylics, 2026</p></article>
+
+          <!-- CARD -->
+      <article class="gallery-card">
+        <a class="gallery-thumb"
+           href="https://github.com/kizsak/Portfolio/raw/main/TrianglesAbstract.png"
+           target="_blank" rel="noopener"
+           aria-label="Open full image: Abstract Triangles">
+          <img
+            src="https://github.com/kizsak/Portfolio/raw/main/TrianglesAbstract.png"
+            alt="An abstract, digital pastel painting in yellows, greens, and blues"
+            loading="lazy">
+        </a>
+        <div class="gallery-info">
+          <h3>Abstract Triangles</h3>
+          <p class="meta">Digital pastels, 2026</p></article>
+
+              <!-- CARD -->
+      <article class="gallery-card">
+        <a class="gallery-thumb"
+           href="https://github.com/kizsak/Portfolio/raw/main/Abstract1Acrylics.jpg"
+           target="_blank" rel="noopener"
+           aria-label="Open full image: Goblin Sticker">
+          <img
+            src="https://github.com/kizsak/Portfolio/raw/main/Abstract1Acrylics.jpg"
+            alt="Abstract digital painting on a soft beige background featuring layered, irregular shapes in bright purple, yellow, teal, orange, and green. Black contour-like lines ripple around and through the central mass, which combines translucent color washes, dotted textures, scribbled marks, and thick painterly strokes, creating a dynamic, organic composition that feels both topographic and gestural"
+            loading="lazy">
+        </a>
+
+        <div class="gallery-info">
+          <h3>Abstract Ponies</h3>
+          <p class="meta">Digital pastels, 2024</p></article>
+
+         <!-- CARD -->
+      <article class="gallery-card">
+        <a class="gallery-thumb"
+           href="https://github.com/kizsak/Portfolio/raw/main/OpusSticker.png"
+           target="_blank" rel="noopener"
+           aria-label="Open full image: Simulated Polaroid">
+          <img
+            src="https://github.com/kizsak/Portfolio/raw/main/OpusSticker.png"
+            alt="A circular, digitally airbrushed sticker showing a black horse in the sunset"
+            loading="lazy">
+        </a>
+
+        <div class="gallery-info">
+          <h3><strong>Sticker: Opus</strong></h3>
+          <p class="meta">Digital airbrush, 2025</p></article>
+
+                        <!-- CARD -->
+      <article class="gallery-card">
+        <a class="gallery-thumb"
+           href="https://github.com/kizsak/Portfolio/raw/main/Butterflysticker.png"
+           target="_blank" rel="noopener"
+           aria-label="Open full image: Simulated Polaroid">
+          <img
+            src="https://github.com/kizsak/Portfolio/raw/main/Butterflysticker.png"
+            alt=""
+            loading="lazy">
+        </a>
+
+        <div class="gallery-info">
+          <h3><strong>Sticker: Red-Spotted Purple</strong></h3>
+          <p class="meta">Digital pastels, 2025</p></article>
+
+                        <!-- CARD -->
+      <article class="gallery-card">
+        <a class="gallery-thumb"
+           href="https://github.com/kizsak/Portfolio/raw/main/cosmos.png"
+           target="_blank" rel="noopener"
+           aria-label="Open full image: Simulated Polaroid">
+          <img
+            src="https://github.com/kizsak/Portfolio/raw/main/cosmos.png"
+            alt="a digitally airbrushed sticker showing a pink cosmos flower"
+            loading="lazy">
+        </a>
+
+        <div class="gallery-info">
+          <h3><strong>Sticker: Cosmos</strong></h3>
+          <p class="meta">Digital pastels, 2024</p></article>
+      </div>
+    </section>
+  </main>
+
+ 
+  <script>
+    (() => {
+      const overlay = document.getElementById("processOverlay");
+      const popup   = document.getElementById("processPopup");
+      const body    = document.getElementById("processPopupBody");
+      const closeBtn = popup.querySelector(".process-popup__close");
+
+      function openWith(html) {
+        body.innerHTML = html;
+        overlay.style.display = "block";
+        popup.style.display = "block";
+        overlay.setAttribute("aria-hidden", "false");
+        popup.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+      }
+
+      function close() {
+        overlay.style.display = "none";
+        popup.style.display = "none";
+        overlay.setAttribute("aria-hidden", "true");
+        popup.setAttribute("aria-hidden", "true");
+        body.innerHTML = "";
+        document.body.style.overflow = "";
+      }
+
+      document.addEventListener("click", (e) => {
+        const btn = e.target.closest(".process-btn");
+        if (!btn) return;
+
+        // prevent weird behavior if the button sits near/inside other click areas
+        e.preventDefault();
+        e.stopPropagation();
+
+        const id = btn.getAttribute("data-process");
+        const notes = document.getElementById(id);
+
+        if (!notes) {
+          openWith("<p><em>Process notes not found for this piece.</em></p>");
+          return;
+        }
+
+        openWith(notes.innerHTML);
+      });
+
+      overlay.addEventListener("click", close);
+      closeBtn.addEventListener("click", close);
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && popup.style.display === "block") close();
+      });
+    })();
+  </script>
+
+</body>
+</html>
