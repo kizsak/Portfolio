@@ -2,65 +2,327 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Kate Izsak — Land- and City-Scapes</title>
+  <title>Kate Izsak — Graphic Design</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Main site stylesheet -->
-  <link rel="stylesheet" href="css/style.css">
-  <script src="js/carousel-lightbox.js" defer></script>
+  <!-- Your main stylesheet -->
+  <link rel="stylesheet" href="css/style.css?v=20260215" />
 </head>
 
-<body class="page-digital-painting-scapes">
+<body class="page-gallery">
 
-  <!-- Top Neon Title -->
   <header class="page-header">
- <h1 class="header-anta-neon">Land- and City-Scapes</h1>
-    <nav class="nav-bar">
+    <h1 class="header-anta-neon">Graphic Design</h1>
+    <nav class="nav-bar" aria-label="Site navigation">
       <a href="index.html" class="nav-btn">Home</a>
       <a href="digital-painting.html" class="nav-btn">Digital Painting</a>
-      <a href="comp-design.html" class="nav-btn">Computational Image Design</a>
+      <a href="if.html" class="nav-btn is-active">Immersive Media</a>
       <a href="graphic-design.html" class="nav-btn">Graphic Design</a>
       <a href="about-me.html" class="nav-btn">About Me</a>
     </nav>
   </header>
 
-    
-    <h1 class="neon">Land- and City-Scapes</h1>
-    <nav class="nav-bar">
-      <a href="index.html" class="nav-btn">Home</a>
-      <a href="digital-painting.html" class="nav-btn">Digital Painting</a>
-      <a href="comp-design.html" class="nav-btn">Computational Image Design</a>
-      <a href="if.html" class="nav-btn">Interactive Fiction</a>
-      <a href="graphic-design.html" class="nav-btn">Graphic Design</a>
-      <a href="about-me.html" class="nav-btn">About Me</a>
-    </nav>
-  </header>
+  <main class="gallery-wrap">
+    <section class="gallery-grid" aria-label="Gallery">
 
-  <main class="gallery-layout">
-    <!-- LEFT: title + caption + description (filled by JS) -->
-    <section class="gallery-info">
-      <h2 id="image-caption" class="neon-soft"></h2>
-      <p id="image-description" class="piece-description"></p>
-    </section>
+      <!-- CARD -->
+      <article class="gallery-card">
+        <a class="gallery-thumb"
+           href="https://github.com/kizsak/Portfolio/raw/main/AsakusaPastels.png"
+           target="_blank" rel="noopener"
+           aria-label="Open full image: Asakusa">
+          <img
+            src="https://github.com/kizsak/Portfolio/raw/main/AsakusaPastels.png"
+            alt="Pastel-style painting of a Tokyo street scene with pink cherry blossoms lining the buildings. In the foreground, a 
+            traditional lantern sign with Japanese characters hangs above a storefront, while modern buildings rise in the background. 
+            A small sign reading “Asahi” appears on a nearby structure, blending contemporary city elements with historic architecture."
+            loading="lazy">
+        </a>
 
-    <!-- RIGHT: image carousel -->
-    <section class="gallery-carousel">
-      <div class="carousel-window">
-        <img
-          src="https://github.com/kizsak/Portfolio/raw/main/AsakusaPastels.png"
-          alt="Digital pastel painting of the Asakusa Market"
-          class="carousel-image active"
-          data-caption="<em>Asakusa</em>"
-          data-description="Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
-        >
+        <div class="gallery-info">
+          <h3>Asakusa</h3>
+          <p class="meta">Digital pastels, 2025</p></article>
 
-        <img
-          src="https://github.com/kizsak/Portfolio/raw/main/AssateaguePastels.jpg"
-          alt="Digital pastel painting of a marsh in Assateague"
-          class="carousel-image"
-          data-caption="<em>Assateague Island</em>"
-          data-description="Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
-        >
+      <!-- CARD -->
+      <article class="gallery-card">
+        <a class="gallery-thumb"
+           href="https://github.com/kizsak/Portfolio/raw/main/IcelandPastels.png"
+           target="_blank" rel="noopener"
+           aria-label="Open full image: Iceland">
+          <img
+            src="https://github.com/kizsak/Portfolio/raw/main/IcelandPastels.png"
+            alt="Pastel-style painting of a small corrugated metal house built into a rocky hillside. The house has white-framed windows 
+            and a wooden door, surrounded by stones and bright green grass under a blue sky."
+            loading="lazy">
+        </a>
+
+        <div class="gallery-info">
+          <h3>Thingvellir</h3>
+          <p class="meta">Digital pastels, 2025</p></article>
+
+      <!-- CARD -->
+      <article class="gallery-card">
+        <a class="gallery-thumb"
+           href="https://github.com/kizsak/Portfolio/raw/main/BrusselsCityscapePastels.png"
+           target="_blank" rel="noopener"
+           aria-label="Open full image: Brussels I">
+          <img
+            src="https://github.com/kizsak/Portfolio/raw/main/BrusselsCityscapePastels.png"
+            alt="Upward-looking painting of ornate historic building façades against a clear blue sky. Decorative columns, carved 
+            details, and warm-toned stonework are highlighted by soft, glowing light."
+            loading="lazy">
+        </a>
+
+        <div class="gallery-info">
+          <h3>Brussels I</h3>
+          <p class="meta">Digital pastels, 2025</p></article>
+
+      <!-- CARD -->
+      <article class="gallery-card">
+        <a class="gallery-thumb"
+           href="https://github.com/kizsak/Portfolio/raw/main/BrusselsPastels2.png"
+           target="_blank" rel="noopener"
+           aria-label="Open full image: Brussels I">
+          <img
+            src="https://github.com/kizsak/Portfolio/raw/main/BrusselsPastels2.png"
+            alt="Painting of a festive city street at night with glowing storefronts and hanging lights. A red vertical sign reading 
+            “LEON” stands out on a corner building decorated with holiday garlands."
+            loading="lazy">
+        </a>
+
+        <div class="gallery-info">
+          <h3>Brussels II</h3>
+          <p class="meta">Digital pastels, 2025</p></article>
+
+      <!-- CARD -->
+      <article class="gallery-card">
+        <a class="gallery-thumb"
+           href="https://github.com/kizsak/Portfolio/raw/main/StockholmCityscapePastels.png"
+           target="_blank" rel="noopener"
+           aria-label="Open full image: Stockholm">
+          <img
+            src="https://github.com/kizsak/Portfolio/raw/main/StockholmCityscapePastels.png"
+            alt="Painterly scene set inside a subway station, framed by a large rainbow-colored arch painted across a gray wall. The 
+            platform stretches into the distance with green barrier panels and a row of bright overhead lights. A small figure stands 
+            at the far left, and the glossy floor reflects the station lighting and colors."
+            loading="lazy">
+        </a>
+
+        <div class="gallery-info">
+          <h3>Stockholm</h3>
+          <p class="meta">Digital pastels, 2025</p></article>
+
+      <!-- CARD -->
+      <article class="gallery-card">
+        <a class="gallery-thumb"
+           href="https://github.com/kizsak/Portfolio/raw/main/SingaporePastels.png"
+           target="_blank" rel="noopener"
+           aria-label="Open full image: Singapore">
+          <img
+            src="https://github.com/kizsak/Portfolio/raw/main/SingaporePastels.png"
+            alt="Pastel-style painting of a large golden dome topped with a crescent finial against a clear blue sky. Smaller domes and 
+            slender spires surround the central dome, suggesting ornate mosque architecture. The warm gold tones contrast with dark 
+            decorative trim and pale structural columns below."
+            loading="lazy">
+        </a>
+
+        <div class="gallery-info">
+          <h3>Singapore</h3>
+          <p class="meta">Digital pastels, 2025</p></article>
+
+
+            <!-- CARD -->
+      <article class="gallery-card">
+        <a class="gallery-thumb"
+           href="https://github.com/kizsak/Portfolio/raw/main/Tokyo.png"
+           target="_blank" rel="noopener"
+           aria-label="Open full image: Tokyo">
+          <img
+            src="https://github.com/kizsak/Portfolio/raw/main/Tokyo.png"
+            alt="Night painting of a brightly lit city skyline with a tall orange tower resembling Tokyo Tower at the center. Neon 
+            lights and colorful windows glow against a dark sky, with water and reflections in the foreground."
+            loading="lazy">
+        </a>
+
+        <div class="gallery-info">
+          <h3>Singapore</h3>
+          <p class="meta">Digital pastels, 2025</p></article>
+      
+     <!-- CARD -->
+      <article class="gallery-card">
+        <a class="gallery-thumb"
+           href="https://github.com/kizsak/Portfolio/raw/main/OKCInk.jpg"
+           target="_blank" rel="noopener"
+           aria-label="Open full image: OKC">
+          <img
+            src="https://github.com/kizsak/Portfolio/raw/main/OKCInk.jpg"
+            alt="Stylized nighttime painting of a tall, dark building with glowing golden vertical lines and illuminated edges. Near 
+            the top, the numbers “9:03” appear in white. A tall rectangular opening in the center glows warmly with light, contrasting 
+            against the deep blue evening sky."
+            loading="lazy">
+        </a>
+
+        <div class="gallery-info">
+          <h3>Oklahoma City</h3>
+          <p class="meta">Digital pen and ink, 2025</p></article>
+
+     <!-- CARD -->
+      <article class="gallery-card">
+        <a class="gallery-thumb"
+           href="https://github.com/kizsak/Portfolio/raw/main/AssateaguePastels.jpg"
+           target="_blank" rel="noopener"
+           aria-label="Open full image: OKC">
+          <img
+            src="https://github.com/kizsak/Portfolio/raw/main/AssateaguePastels.jpg"
+            alt="Pastel-style landscape of marshlands under a pink and lavender sky. Winding waterways cut through golden grasses, 
+            with green shrubs and foliage in the foreground."
+            loading="lazy">
+        </a>
+
+        <div class="gallery-info">
+          <h3>Assateague</h3>
+          <p class="meta">Digital pastels, 2024</p></article>
+
+       <!-- CARD -->
+      <article class="gallery-card">
+        <a class="gallery-thumb"
+           href="https://github.com/kizsak/Portfolio/raw/main/MinnesotaLandscapePastels.png"
+           target="_blank" rel="noopener"
+           aria-label="Open full image: Minnesota">
+          <img
+            src="https://github.com/kizsak/Portfolio/raw/main/MinnesotaLandscapePastels.png"
+            alt="Landscape painting of slender tree branches silhouetted against a warm peach and orange sky at sunset. Dark 
+            shrubbery frames the foreground, and a pale path or waterway curves through the scene."
+            loading="lazy">
+        </a>
+
+        <div class="gallery-info">
+          <h3>Minnesota</h3>
+          <p class="meta">Digital pastels, 2024</p></article>
+
+             <!-- CARD -->
+      <article class="gallery-card">
+        <a class="gallery-thumb"
+           href="https://github.com/kizsak/Portfolio/raw/main/ConnecticutLandscape.png"
+           target="_blank" rel="noopener"
+           aria-label="Open full image: Connecticut">
+          <img
+            src="https://github.com/kizsak/Portfolio/raw/main/ConnecticutLandscape.png"
+            alt="Landscape painting of a calm waterfront at sunset with silhouetted dock posts rising from reflective water. The sky 
+            glows in soft orange and pink tones fading into deeper blue above."
+            loading="lazy">
+        </a>
+
+        <div class="gallery-info">
+          <h3>Connecticut</h3>
+          <p class="meta">Digital pastels, 2024</p></article>
+
+       <!-- CARD -->
+      <article class="gallery-card">
+        <a class="gallery-thumb"
+           href="https://github.com/kizsak/Portfolio/raw/main/Sunrise.gif"
+           target="_blank" rel="noopener"
+           aria-label="Open full image: Connecticut">
+          <img
+            src="https://github.com/kizsak/Portfolio/raw/main/Sunrise.gif"
+            alt="Soft, painterly animation of a sunrise sky with swirling clouds in pale blue, lavender, and warm yellow tones. Light 
+            gradually blends across the sky in a smooth, atmospheric gradient."
+            loading="lazy">
+        </a>
+
+        <div class="gallery-info">
+          <h3>Sunrise</h3>
+          <p class="meta">Digital pastels, 2024</p></article>
+
+       <!-- CARD -->
+      <article class="gallery-card">
+        <a class="gallery-thumb"
+           href="https://github.com/kizsak/Portfolio/raw/main/LilyPastels.png"
+           target="_blank" rel="noopener"
+           aria-label="Open full image: Waterlily I">
+          <img
+            src="https://github.com/kizsak/Portfolio/raw/main/LilyPastels.png"
+            alt="Close-up pastel painting of a vivid pink water lily floating on dark water, its layered petals radiating around a 
+            bright yellow center. Soft green lily pads and speckled reflections shimmer in the background."
+            loading="lazy">
+        </a>
+
+        <div class="gallery-info">
+          <h3>Waterlily I</h3>
+          <p class="meta">Digital pastels, 2024</p></article>
+      
+       <!-- CARD -->
+      <article class="gallery-card">
+        <a class="gallery-thumb"
+           href="https://github.com/kizsak/Portfolio/raw/main/WaterlilyPastels1.png"
+           target="_blank" rel="noopener"
+           aria-label="Open full image: Waterlily I">
+          <img
+            src="https://github.com/kizsak/Portfolio/raw/main/WaterlilyPastels1.png"
+            alt="astel painting of a single pink water lily rising on a slender stem above calm gray water, surrounded by muted green 
+            and mauve lily pads. The flower’s dark reflection forms a star-like shape on the water’s surface."
+            loading="lazy">
+        </a>
+
+        <div class="gallery-info">
+          <h3>Waterlily II</h3>
+          <p class="meta">Digital pastels, 2024</p></article>
+      
+  <script>
+    (() => {
+      const overlay = document.getElementById("processOverlay");
+      const popup   = document.getElementById("processPopup");
+      const body    = document.getElementById("processPopupBody");
+      const closeBtn = popup.querySelector(".process-popup__close");
+
+      function openWith(html) {
+        body.innerHTML = html;
+        overlay.style.display = "block";
+        popup.style.display = "block";
+        overlay.setAttribute("aria-hidden", "false");
+        popup.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+      }
+
+      function close() {
+        overlay.style.display = "none";
+        popup.style.display = "none";
+        overlay.setAttribute("aria-hidden", "true");
+        popup.setAttribute("aria-hidden", "true");
+        body.innerHTML = "";
+        document.body.style.overflow = "";
+      }
+
+      document.addEventListener("click", (e) => {
+        const btn = e.target.closest(".process-btn");
+        if (!btn) return;
+
+        // prevent weird behavior if the button sits near/inside other click areas
+        e.preventDefault();
+        e.stopPropagation();
+
+        const id = btn.getAttribute("data-process");
+        const notes = document.getElementById(id);
+
+        if (!notes) {
+          openWith("<p><em>Process notes not found for this piece.</em></p>");
+          return;
+        }
+
+        openWith(notes.innerHTML);
+      });
+
+      overlay.addEventListener("click", close);
+      closeBtn.addEventListener("click", close);
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && popup.style.display === "block") close();
+      });
+    })();
+  </script>
+
+</body>
+</html>
+
 
         <img
           src="https://github.com/kizsak/Portfolio/raw/main/LilyPastels.png"
@@ -77,132 +339,4 @@
           data-caption="<em>Waterlily II</em>"
           data-description="Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
         >
-
-        <img
-          src="https://github.com/kizsak/Portfolio/raw/main/BrusselsCityscapePastels.png"
-          alt="Digital pastel painting of a street in Brussels lit up with Christmas lights"
-          class="carousel-image"
-          data-caption="<em>Brussels I</em>"
-          data-description="Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
-        >
-
-        <img
-          src="https://github.com/kizsak/Portfolio/raw/main/BrusselsPastels2.png"
-          alt="Digital pastel painting of a street in Brussels lit up with Christmas lights"
-          class="carousel-image"
-          data-caption="<em>Brussels II</em>"
-          data-description="Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
-        >
-
-        <img
-          src="https://github.com/kizsak/Portfolio/raw/main/SingaporePastels.png"
-          alt="Digital pastel painting of a mosque in Singapore"
-          class="carousel-image"
-          data-caption="<em>Singapore Mosque</em>"
-          data-description="Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
-        >
-
-         <img
-          src="https://github.com/kizsak/Portfolio/raw/main//DahliaBlooming.gif"
-          alt="Digital animated pastel painting of a dahlia blooming"
-          class="carousel-image"
-          data-caption="<em>Dahlia</em>"
-          data-description="Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br><br>Animated in PhotoshopSamsung Galaxy S9+, S-Pen Creator Edition"
-        >
-         <img
-          src="https://github.com/kizsak/Portfolio/raw/main/IcelandPastels.png"
-          alt="Digital pastel painting of a home built into a cave in Reykjavik"
-          class="carousel-image"
-          data-caption="<em>Reykjavik</em>"
-          data-description="Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
-        >
-         <img
-          src="https://github.com/kizsak/Portfolio/raw/main/LotusPastels.png"
-          alt="Digital pastel painting of a pink lotus bloom"
-          class="carousel-image"
-          data-caption="<em>Lotus</em>"
-          data-description="Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
-        >
-
-                 <img
-          src="https://github.com/kizsak/Portfolio/raw/main/MinnesotaLandscapePastels.png"
-          alt="Digital pastel painting of a hoarfrost in Minnesota"
-          class="carousel-image"
-          data-caption="<em>Minnesota Hoarfrost</em>"
-          data-description="Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
-        >
-
-               <img
-          src="https://github.com/kizsak/Portfolio/raw/main/Tokyo.png"
-          alt="Digital pastel painting of an aerial view of Tokyo"
-          class="carousel-image"
-          data-caption="<em>Tokyo I</em>"
-          data-description="Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
-        >
-
-           <img
-          src="https://github.com/kizsak/Portfolio/raw/main/NoVacancyInk.jpg"
-          alt="Digital pen and ink drawing of neon signs in Tokyo"
-          class="carousel-image"
-          data-caption="<em>Tokyo II</em>"
-          data-description="Digital pen and ink<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
-        >
-
-            <img
-          src="https://github.com/kizsak/Portfolio/raw/main/OKCInk.jpg"
-          alt="Digital pen and ink drawing of Oklahoma City bombing memorial"
-          class="carousel-image"
-          data-caption="<em>Oklahoma City</em>"
-          data-description="Digital pen and ink<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
-        >
-        
-            <img
-          src="https://github.com/kizsak/Portfolio/raw/main/RoselleFlowerOils.jpg"
-          alt="Digital oil painting of a roselle bloom"
-          class="carousel-image"
-          data-caption="<em>Roselle</em>"
-          data-description="Digital oils<br>2024<br>ArtRage Vitae<br>Samsung Galaxy S9+, S-Pen Creator Edition"
-        >
-
-        <img
-          src="https://github.com/kizsak/Portfolio/raw/main/StockholmCityscapePastels.png"
-          alt="Digital pastel painting of a subway station in Stockholm"
-          class="carousel-image"
-          data-caption="<em>Stockholm</em>"
-          data-description="Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
-        >
-        
-        <img
-          src="https://github.com/kizsak/Portfolio/raw/main/Sunrise.gif"
-          alt="Digital animated pastel painting of a sunrise"
-          class="carousel-image"
-          data-caption="<em>Sunrise</em>"
-          data-description="Digital pastels, animated<br>Autodesk Sketchpad Pro<br>Animated in Photoshop<br>Samsung Galaxy S9+, S-Pen Creator Edition"
-        >
-
-        <img
-          src="https://github.com/kizsak/Portfolio/raw/main/TohokuPastels.png"
-          alt="Digital pastel painting of a port in Tohoku, Japan"
-          class="carousel-image"
-          data-caption="<em>Tohoku</em>"
-          data-description="Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
-        >
-      </div>
-
-      <div class="carousel-controls">
-        <button class="carousel-btn prev" type="button">‹</button>
-        <button class="carousel-btn next" type="button">›</button>
-      </div>
-    </section>
-  </main>
-
-<!-- Lightbox overlay -->
-<div id="lightbox" class="lightbox" aria-hidden="true">
-  <button class="lightbox-close" type="button" aria-label="Close">&times;</button>
-  <img id="lightbox-img" alt="">
-</div>
-
-  <script src="js/process-modal.js"></script>
-
-</body>
-</html>
+      
