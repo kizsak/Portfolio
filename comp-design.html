@@ -59,8 +59,10 @@
 
         <div class="gallery-info">
           <h3><strong>Simulated Daguerreotype</strong></h3>
-          <p class="meta"><em>Digital image, 2025</em><br>Process notes: I used Midjourney to create a synthetic photograph of an <em>Helenium autumnale</em> (Sneezeweed) 
-            in bloom. I then processed the image using a Python script that converts the photograph to grayscale, reshapes its tonal curve, and maps it onto a simulated 
+          <p class="meta"><em>Digital image, 2025</em><br>Process notes: I used Midjourney to create a synthetic photograph of an 
+            <em>Helenium autumnale</em> (Sneezeweed) 
+            in bloom. I then processed the image using a Python script that converts the photograph to grayscale, reshapes its 
+            tonal curve, and maps it onto a simulated 
             silver plate surface with sheen, vignette falloff, and tarnish artifacts.</p>
         </div>
       </article>
@@ -172,10 +174,12 @@
         </a>
 
           <div class="gallery-info">
-          <h3>Simulated Heat Map Self Portrait</h3>
-          <p class="meta">Digital image, 2025<br>Process notes: I began with a photographic self-portrait. I used Photoshop to construct a depth map of the image by manually 
-            segmenting the image into spatial regions using selection tools and tonal adjustments. I then processed this depth map with a Python script 
-            <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target='_blank' rel='noopener noreferrer'>(download)</a> that reads pixel-level depth values 
+          <h3>Sometimes I Burn</h3>
+          <p class="meta">Digital image, 2025<br>Process notes: I began with a photographic self-portrait. I used Photoshop to 
+            construct a depth map of the image by manually segmenting the image into spatial regions using selection tools and tonal
+            adjustments. I then processed this depth map 
+            with a Python script <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target='_blank' rel='noopener 
+                                   noreferrer'>(download)</a> that reads pixel-level depth values 
             and remaps them to a false-color heat visualization.</p></p>
         </div>
       </article>
@@ -221,19 +225,15 @@
 
         <div class="gallery-info">
           <h3>Sometimes I Fall Apart II</h3>
-          <p class="meta">Digital image, 2025<br>Process notes: I began with a photographic portrait. I then created 700+ botanical 
-            images on solid color backgrounds, using Midjourney. I then processed them using a Python photomosaic script <a href="">
+          <p class="meta">Digital image, 2025<br>Process notes: I began with a photographic self portrait. I then created 700+ botanical 
+            images on solid color backgrounds, using Midjourney. I processed them using a Python photomosaic script <a href="">
               (download)</a>, to divide the image into a fine grid. The script then algorithmically replaced each square, with an 
             appropriately colored image from the image dataset. The script analyzed average RGB values of each tile in the base image 
             and matched them to the closest corresponding image tile from the dataset, constructing the portrait as a composite of 
             hundreds of micro-images. The result is a dual-resolution system: from a distance, the image resolves into a coherent 
-            face; up close, it fractures into a dense archive of individual pictures. The computational structure becomes visible as 
-            a patterned lattice across the skin, foregrounding the underlying grid logic rather than concealing it. After generating 
-            the mosaic output, I digitally painted over portions of the image to reintroduce gestural brushwork—particularly in the 
-            hair—creating tension between algorithmic assembly and painterly intervention. This layering emphasizes the dialogue 
-            between procedural construction (script-driven tile replacement) and expressive manual mark-making. The work explores how 
-            identity can be rendered as a dataset: constructed from fragments, aggregated through rules, and perceptually unified 
-            through scale.
+            face; up close, it fractures into a dense archive of individual pictures. After generating 
+            the mosaic output, I digitally painted over portions of the image to reintroduce gestural brush strokes, creating tension between algorithmic assembly and painterly intervention. This layering emphasizes the dialogue 
+            between procedural construction (script-driven tile replacement) and expressive manual mark-making. 
 </p>
         </div>
       </article>
@@ -262,7 +262,7 @@
             the file readable), I introduced structural corruption into the image format itself. When reopened as an image, these 
             disruptions manifested as horizontal banding, color channel shifts, and strip-based misalignment. The repeating green and 
             purple bars are not painted overlays but artifacts of file-level intervention — the visual trace of altered compression or 
-            encoding instructions. The accident of one band spelling out "A Lot of Pizza" makes the image like it has something 
+            encoding instructions. The accident of one band spelling out "A Lot of Pizza" makes the image feel like it has something 
             compelling to say about human life.
 </p>
         </div>
