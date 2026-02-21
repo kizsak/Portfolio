@@ -5,158 +5,214 @@
   <title>Kate Izsak — Still Life</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Main site stylesheet -->
-  <link rel="stylesheet" href="css/style.css" />
-  <script src="js/carousel-lightbox.js" defer></script>
+  <!-- Your main stylesheet -->
+  <link rel="stylesheet" href="css/style.css?v=20260215" />
 </head>
 
-<body class="page-digital-painting-stilllife">
+<body class="page-gallery">
 
-  <!-- Top Neon Title -->
   <header class="page-header">
-  <h1 class="header-anta-neon">Still Life</h1>
-    <nav class="nav-bar">
+    <h1 class="header-anta-neon">Digital Painting - Still Life</h1>
+    <nav class="nav-bar" aria-label="Site navigation">
       <a href="index.html" class="nav-btn">Home</a>
       <a href="digital-painting.html" class="nav-btn">Digital Painting</a>
       <a href="comp-design.html" class="nav-btn">Computational Image Design</a>
+      <a href="if.html" class="nav-btn is-active">Immersive Media</a>
       <a href="graphic-design.html" class="nav-btn">Graphic Design</a>
       <a href="about-me.html" class="nav-btn">About Me</a>
     </nav>
   </header>
-  
-  <header class="page-header">
-    <h1 class="neon">Still Life</h1>
 
-    <nav class="nav-bar" aria-label="Primary navigation">
-      <a href="index.html" class="nav-btn">Home</a>
-      <a href="digital-painting.html" class="nav-btn">Digital Painting</a>
-      <a href="comp-design.html" class="nav-btn">Computational Image Design</a>
-      <a href="if.html" class="nav-btn">Interactive Fiction</a>
-      <a href="graphic-design.html" class="nav-btn">Graphic Design</a>
-    </nav>
-  </header>
+  <main class="gallery-wrap">
+    <section class="gallery-grid" aria-label="Gallery">
 
-  <main class="gallery-layout">
-    <!-- LEFT: title + caption + description (filled by JS) -->
-    <section class="gallery-info" aria-live="polite">
-      <h2 id="image-caption" class="neon-soft"></h2>
-      <p id="image-description" class="piece-description"></p>
-    </section>
+      <!-- CARD -->
+      <article class="gallery-card">
+        <a class="gallery-thumb"
+           href="https://github.com/kizsak/Portfolio/raw/main/OrigamiStillLife2Pastels.png"
+           target="_blank" rel="noopener"
+           aria-label="Open full image: Origami I">
+          <img
+            src="https://github.com/kizsak/Portfolio/raw/main/OrigamiStillLife2Pastels.png"
+            alt="Pastel still life of two stylized origami animals composed of brightly colored geometric patterns. One larger figure 
+            faces right while a smaller figure stands nearby, both rendered in patchwork-like squares and triangles."
+            loading="lazy">
+        </a>        
+        <div class="gallery-info">
+          <h3><strong>Origami Still Life I</strong></h3>
+          <p class="meta">Digital pastels, 2024</p></article>
 
-    <!-- RIGHT: image carousel -->
-    <section class="gallery-carousel" aria-label="Artwork carousel">
-      <div class="carousel-window" data-carousel-window>
+        <!-- CARD -->
+      <article class="gallery-card">
+        <a class="gallery-thumb"
+           href="https://github.com/kizsak/Portfolio/raw/main/OrigamiStillLife3Pastels.png"
+           target="_blank" rel="noopener"
+           aria-label="Open full image: Origami II">
+          <img
+            src="https://github.com/kizsak/Portfolio/raw/main/OrigamiStillLife3Pastels.png"
+            alt="Digital airbrush design of a cake with birthday candles that says "INFO @ 60"
+            loading="lazy">
+        </a>        
+        <div class="gallery-info">
+          <h3><strong>Origami Still Life II</strong></h3>
+          <p class="meta">Digital pastels, 2024</p></article>
 
-        <!-- Example 1 -->
-        <img
-          src="https://github.com/kizsak/Portfolio/raw/main/BonsaiPastels.png"
-          data-full="https://github.com/kizsak/Portfolio/raw/main/BonsaiPastels.png"
-          alt="Digital pastel still life of a bonsai tree with stylized color and texture"
-          class="carousel-image"
-          data-caption="Bonsai"
-          data-description="Digital pastels<br>2025<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
-        />
+              <!-- CARD -->
+      <article class="gallery-card">
+        <a class="gallery-thumb"
+           href="https://github.com/kizsak/Portfolio/raw/main/OrigamiFoxes.png"
+           target="_blank" rel="noopener"
+           aria-label="Open full image: Origami III">
+          <img
+            src="https://github.com/kizsak/Portfolio/raw/main/OrigamiFoxes.png"
+            alt="Pastel painting of three origami fox figures made from patterned paper, arranged on a white surface with soft shadows. 
+            Each fox features different floral and geometric designs in muted greens, reds, and creams."
+            loading="lazy">
+        </a>        
+        <div class="gallery-info">
+          <h3><strong>Origami Still Life III</strong></h3>
+          <p class="meta">Digital pastels, 2024</p></article>
 
-              <img
-          src="https://github.com/kizsak/Portfolio/raw/main/BrushesPastels.png"
-          alt="Digital pastel painting of a collection of synthetic paint brushes"
-          class="carousel-image"
-          data-caption="<em>Brushes</em>"
-          data-description="Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
-        >
+              <!-- CARD -->
+      <article class="gallery-card">
+        <a class="gallery-thumb"
+           href="https://github.com/kizsak/Portfolio/raw/main/BraceletInk.png"
+           target="_blank" rel="noopener"
+           aria-label="Open full image: Chain Maille">
+          <img
+            src="https://github.com/kizsak/Portfolio/raw/main/BraceletInk.png"
+            alt="High-contrast black ink drawing of a wide bracelet with intricate floral and crosshatched patterns, set diagonally 
+            against a textured background of dense line work."
+            loading="lazy">
+        </a>        
+        <div class="gallery-info">
+          <h3><strong>Chain Maille Still Life</strong></h3>
+          <p class="meta">Digital pen and ink, 2025</p></article>
 
-        <img
-          src="https://github.com/kizsak/Portfolio/raw/main/MacramaStillLifeInk.jpg"
-          alt="Digital pen and ink drawing of a piece of macrame"
-          class="carousel-image"
-          data-caption="<em>Macrame</em>"
-          data-description="Digital pen and ink<br>2025<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
-        >
+                    <!-- CARD -->
+      <article class="gallery-card">
+        <a class="gallery-thumb"
+           href="https://github.com/kizsak/Portfolio/raw/main/MacrameInk.png"
+           target="_blank" rel="noopener"
+           aria-label="Open full image: Chain Maille">
+          <img
+            src="https://github.com/kizsak/Portfolio/raw/main/MacrameInk.png"
+            alt="Close-up ink drawing of an elaborate macramé necklace featuring braided cords, bead-like forms, and layered 
+            tassels surrounding a dark circular centerpiece."
+            loading="lazy">
+        </a>        
+        <div class="gallery-info">
+          <h3><strong>Macrame Still Life</strong></h3>
+          <p class="meta">Digital pen and ink, 2025</p></article>
 
-        <img
-          src="https://github.com/kizsak/Portfolio/raw/main/OrigamiStillLife2Pastels.png"
-          alt="Digital pastel painting of an origami parrot sitting on the edge of a glass"
-          class="carousel-image"
-          data-caption="<em>Origami I</em>"
-          data-description="Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
-        >
+            <!-- CARD -->
+      <article class="gallery-card">
+        <a class="gallery-thumb"
+           href="https://github.com/kizsak/Portfolio/raw/main/BlunderInk.png"
+           target="_blank" rel="noopener"
+           aria-label="Open full image: InkBottle">
+          <img
+            src="https://github.com/kizsak/Portfolio/raw/main/BlunderInk.png"     
+            alt="Pastel still life of two stylized origami animals composed of brightly colored geometric patterns. One larger figure 
+            faces right while a smaller figure stands nearby, both rendered in patchwork-like squares and triangles."
+            loading="lazy">
+        </a>        
+        <div class="gallery-info">
+          <h3><strong>Ink Bottle Still Life</strong></h3>
+          <p class="meta">Digital pastels, 2024</p></article>
+"
+            alt="Pastel still life of two stylized origami animals composed of brightly colored geometric patterns. One larger figure 
+            faces right while a smaller figure stands nearby, both rendered in patchwork-like squares and triangles."
+            loading="lazy">
+        </a>        
+        <div class="gallery-info">
+          <h3><strong>Ink Bottle Still Life I</strong></h3>
+          <p class="meta">Digital pastels, 2024</p></article>
 
-        <img
-          src="https://github.com/kizsak/Portfolio/raw/main/OrigamiStillLife3Pastels.png"
-          alt="Digital pastel painting of an adult and juvenile elephant"
-          class="carousel-image"
-          data-caption="<em>Origami II</em>"
-          data-description="Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
-        >
+     <!-- CARD -->
+      <article class="gallery-card">
+        <a class="gallery-thumb"
+           href="https://github.com/kizsak/Portfolio/raw/main/PaintTubesPastels.png"
+           target="_blank" rel="noopener"
+           aria-label="Open full image: Paint Tubes">
+          <img
+            src="https://github.com/kizsak/Portfolio/raw/main/PaintTubesPastels.png"
+            alt="Pastel illustration of squeezed paint tubes arranged in a rainbow arc on a pink background, with thick streams 
+            of yellow, orange, red, green, blue, and purple paint spilling from the openings.@ 60"
+            loading="lazy">
+        </a>        
+        <div class="gallery-info">
+          <h3><strong>Acrylic Paint Still Life</strong></h3>
+          <p class="meta">Digital pastels, 2025</p></article>
 
-        <img
-          src="https://github.com/kizsak/Portfolio/raw/main/OrigamiStillLife4Pastels.png"
-          alt="Digital pastel painting of an origami adult and juvenile crane"
-          class="carousel-image"
-          data-caption="<em>Origami III</em>"
-          data-description="Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
-        >
+     <!-- CARD -->
+      <article class="gallery-card">
+        <a class="gallery-thumb"
+           href="https://github.com/kizsak/Portfolio/raw/main/WatercolorPalettePastels.png"
+           target="_blank" rel="noopener"
+           aria-label="Open full image: Palette">
+          <img
+            src="https://github.com/kizsak/Portfolio/raw/main/WatercolorPalettePastels.png"
+            alt="Close-up pastel painting of a watercolor palette with circular pans of vibrant colors—blue, green, red, pink, purple, 
+            and orange—set against a soft pink background."
+            loading="lazy">
+        </a>        
+        <div class="gallery-info">
+          <h3><strong>Watercolor Palette Still Life</strong></h3>
+          <p class="meta">Digital pastels, 2025</p></article>
+      
+  <script>
+    (() => {
+      const overlay = document.getElementById("processOverlay");
+      const popup   = document.getElementById("processPopup");
+      const body    = document.getElementById("processPopupBody");
+      const closeBtn = popup.querySelector(".process-popup__close");
 
-        <img
-          src="https://github.com/kizsak/Portfolio/raw/main/PaintTubesPastels.png"
-          alt="Digital pastel painting of oil paint tubes"
-          class="carousel-image"
-          data-caption="<em>Oil Paints</em>"
-          data-description="Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
-        >
+      function openWith(html) {
+        body.innerHTML = html;
+        overlay.style.display = "block";
+        popup.style.display = "block";
+        overlay.setAttribute("aria-hidden", "false");
+        popup.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+      }
 
-         <img
-          src="https://github.com/kizsak/Portfolio/raw/main/WatercolorPalettePastels.png"
-          alt="Digital pastel painting of a watercolor palette"
-          class="carousel-image"
-          data-caption="<em>Watercolor Palette</em>"
-          data-description="Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
-        >
+      function close() {
+        overlay.style.display = "none";
+        popup.style.display = "none";
+        overlay.setAttribute("aria-hidden", "true");
+        popup.setAttribute("aria-hidden", "true");
+        body.innerHTML = "";
+        document.body.style.overflow = "";
+      }
 
-         <img
-          src="https://github.com/kizsak/Portfolio/raw/main/WatercolorPalettePastels.png"
-          alt="Digital pastel painting of a watercolor palette"
-          class="carousel-image"
-          data-caption="<em>Watercolor Palette</em>"
-          data-description="Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
-        >
+      document.addEventListener("click", (e) => {
+        const btn = e.target.closest(".process-btn");
+        if (!btn) return;
 
-       <img
-          src="https://github.com/kizsak/Portfolio/raw/main/BraceletInk.png"
-          alt="Digital pen and ink drawing of a chain maille bracelet"
-          class="carousel-image"
-          data-caption="<em>Watercolor Palette</em>"
-          data-description="Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
-        >
+        // prevent weird behavior if the button sits near/inside other click areas
+        e.preventDefault();
+        e.stopPropagation();
 
-       <img
-          src="https://github.com/kizsak/Portfolio/raw/main/BraceletInk.png"
-          alt="Digital pen and ink drawing of a chain maille bracelet"
-          class="carousel-image"
-          data-caption="<em>Watercolor Palette</em>"
-          data-description="Digital pastels<br>2024<br>Autodesk Sketchpad Pro<br>Samsung Galaxy S9+, S-Pen Creator Edition"
-        >
+        const id = btn.getAttribute("data-process");
+        const notes = document.getElementById(id);
 
+        if (!notes) {
+          openWith("<p><em>Process notes not found for this piece.</em></p>");
+          return;
+        }
 
-      </div>
+        openWith(notes.innerHTML);
+      });
 
-      <div class="carousel-controls" aria-label="Carousel controls">
-        <button class="carousel-btn prev" type="button" aria-label="Previous image">‹</button>
-        <button class="carousel-btn next" type="button" aria-label="Next image">›</button>
-      </div>
-    </section>
-
-    <!-- Lightbox overlay (place once per page, right before </body>) -->
-    <div id="lightbox" class="lightbox" aria-hidden="true">
-      <button class="lightbox-close" type="button" aria-label="Close">&times;</button>
-
-      <div class="lightbox-stage">
-        <img id="lightbox-img" alt="" />
-        <div id="lightbox-caption" class="lightbox-caption"></div>
-      </div>
-    </div>
-  </main>
-<script src="js/process-modal.js"></script>
+      overlay.addEventListener("click", close);
+      closeBtn.addEventListener("click", close);
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && popup.style.display === "block") close();
+      });
+    })();
+  </script>
 
 </body>
 </html>
+
