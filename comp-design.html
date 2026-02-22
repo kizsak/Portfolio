@@ -228,13 +228,12 @@
           <h3>Sometimes I Fall Apart II</h3>
           <p class="meta">Digital image, 2025<br>Process notes: I began with a photographic self portrait. I then created 700+ botanical 
             images on solid color backgrounds, using Midjourney. I processed them using a Python photomosaic script <a href="">
-              (download)</a>, to divide the image into a fine grid. The script then algorithmically replaced each square, with an 
-            appropriately colored image from the image dataset. The script analyzed average RGB values of each tile in the base image 
-            and matched them to the closest corresponding image tile from the dataset, constructing the portrait as a composite of 
+              (download)</a>, which divides the image into a fine grid, and analyzes average RGB values of each tile in the base image,  
+            before finding the closest corresponding image tile from the dataset for that portion of the portrait, constructing the portrait as a composite of 
             hundreds of micro-images. The result is a dual-resolution system: from a distance, the image resolves into a coherent 
             face; up close, it fractures into a dense archive of individual pictures. After generating 
-            the mosaic output, I digitally painted over portions of the image to reintroduce gestural brush strokes, creating tension between algorithmic assembly and painterly intervention. This layering emphasizes the dialogue 
-            between procedural construction (script-driven tile replacement) and expressive manual mark-making. 
+            the mosaic output, I digitally painted over portions of the image to reintroduce gestural brush strokes, creating tension 
+            between algorithmic assembly and painterly intervention. 
 </p>
         </div>
       </article>
@@ -258,7 +257,7 @@
           <h3>Sometimes I Fall Apart III</h3>
           <p class="meta">Digital image, 2025<br>Process notes: I began with a photograph of myself and my husband at an installation 
             at <a href="https://www.colorfactory.co/locations/new-york-city">Color Factory NYC</a>. I then utilized HxD--a hexadecimal 
-            editor--to break down the image into raw binary data and manually modify portions of its underlying byte structure. I 
+            editor--to break the image down into raw binary data and manually modify portions of its underlying byte structure. I 
             selectively changed, overwrote, and inserted data in the file’s hex code (while preserving enough of the header to keep 
             the file readable), I introduced structural corruption into the image format itself. When reopened as an image, these 
             disruptions manifested as horizontal banding, color channel shifts, and strip-based misalignment. The repeating green and 
