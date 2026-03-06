@@ -1503,3 +1503,8 @@ body.lightbox-open { overflow: hidden; } /* optional if you toggle it in JS */
     max-height: calc(100vh - 140px);
   }
 }
+
+/* Patch: allow navigation bar to wrap on smaller screens */
+.nav-bar {
+  flex-wrap: wrap;
+}
