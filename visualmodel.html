@@ -3,11 +3,14 @@
 <head>
   <meta charset="utf-8" />
   <title>Floriselanami</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" 
-    <head/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Main site stylesheet -->
   <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="visual-model-page">
+    <h1>Floriselanami</h1>
+    <p>This interactive visual model was created with Google Teachable Machine.</p>
 
     <button type="button" onclick="init()">Start</button>
 
@@ -21,40 +24,54 @@
   <script>
     const URL = "https://teachablemachine.withgoogle.com/models/2sA0XuVA5/";
 
-    let model, webcam, labelContainer, maxPredictions;
+    let model, webcam, labelContainer, maxPredictions, isRunning = false;
 
     async function init() {
-      const modelURL = URL + "model.json";
-      const metadataURL = URL + "metadata.json";
+      if (isRunning) return;
+      isRunning = true;
 
-      model = await tmImage.load(modelURL, metadataURL);
-      maxPredictions = model.getTotalClasses();
+      try {
+        const modelURL = URL + "model.json";
+        const metadataURL = URL + "metadata.json";
 
-      const flip = true;
-      webcam = new tmImage.Webcam(200, 200, flip);
+        model = await tmImage.load(modelURL, metadataURL);
+        maxPredictions = model.getTotalClasses();
 
-      await webcam.setup();
-      await webcam.play();
-      window.requestAnimationFrame(loop);
+        const flip = true;
+        webcam = new tmImage.Webcam(200, 200, flip);
 
-      const webcamContainer = document.getElementById("webcam-container");
-      webcamContainer.innerHTML = "";
-      webcamContainer.appendChild(webcam.canvas);
+        await webcam.setup();
+        await webcam.play();
 
-      labelContainer = document.getElementById("label-container");
-      labelContainer.innerHTML = "";
-      for (let i = 0; i < maxPredictions; i++) {
-        labelContainer.appendChild(document.createElement("div"));
+        const webcamContainer = document.getElementById("webcam-container");
+        webcamContainer.innerHTML = "";
+        webcamContainer.appendChild(webcam.canvas);
+
+        labelContainer = document.getElementById("label-container");
+        labelContainer.innerHTML = "";
+        for (let i = 0; i < maxPredictions; i++) {
+          labelContainer.appendChild(document.createElement("div"));
+        }
+
+        window.requestAnimationFrame(loop);
+      } catch (error) {
+        console.error(error);
+        document.getElementById("label-container").innerHTML =
+          "<p>Sorry, the model could not start. Check browser camera permissions and console errors.</p>";
+        isRunning = false;
       }
     }
 
     async function loop() {
+      if (!webcam) return;
       webcam.update();
       await predict();
       window.requestAnimationFrame(loop);
     }
 
     async function predict() {
+      if (!model || !webcam || !labelContainer) return;
+
       const prediction = await model.predict(webcam.canvas);
       for (let i = 0; i < maxPredictions; i++) {
         const classPrediction =
