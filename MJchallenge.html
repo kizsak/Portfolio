@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Kate Izsak — Midjourney Challenges</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="stylesheet" href="css/style.css?v=20260215" />
+</head>
+  
+<body class="page-gallery">
+  <header class="page-header">
+    <h1 class="header-anta-neon">Midjourney Challenges</h1>
+  </header>
+
+  <main class="gallery-wrap">
+    <section class="gallery-grid" aria-label="Gallery">
+
+      <!-- CARD -->
+      <article class="gallery-card">
+        <a class="gallery-thumb"
+           href="https://github.com/kizsak/Portfolio/raw/main/MJElephant.png"
+           target="_blank" rel="noopener"
+           aria-label="Open full image: Arctic">
+          <img
+            src="https://github.com/kizsak/Portfolio/raw/main/MJElephant.png"
+            alt="REPLACE"
+            loading="lazy">
+        </a>
+
+        <div class="gallery-info">
+          <h3><strong>#openmidjourney_elephant</strong></h3>
+          <p class="meta">Generative image, 2026
+         A detailed black and white image of an elephant drawn in the primary pattern in the 
+          reference image. The elephant should be in front of a background that looks like the 
+          background of the reference photo. --ar 1:1
+</p></article>
+
+<!-- CARD -->
+      <article class="gallery-card">
+        <a class="gallery-thumb"
+           href="https://github.com/kizsak/Portfolio/raw/main/MJInkwash.png"
+           target="_blank" rel="noopener"
+           aria-label="Open full image: Arctic">
+          <img
+            src="https://github.com/kizsak/Portfolio/raw/main/MJInkwash.png"
+            alt="REPLACE"
+            loading="lazy">
+        </a>
+
+        <div class="gallery-info">
+          <h3><strong>#openmidjourney_inkwash</strong></h3>
+          <p class="meta">Generative image, 2026<br>
+          A sumi-e inspired portrait of the woman in the attached image. The painting style should 
+capture the woman rendered in layered ink washes, visible paper texture beneath translucent ink, 
+the figure partially dissolving as her hair transitions into cherry blossoms, petals emerging from 
+brushstrokes and dispersing into surrounding space, interplay of control and fluidity, negative 
+space as structure, quiet, contemplative, wabi-sabi, imperfect edges, ink bleed and diffusion 
+emphasized --chaos 20 --ar 4:3 --oref https://s.mj.run/pCBYIvvSVgw --stylize 200
+</p></article>
+
+<!-- CARD -->
+      <article class="gallery-card">
+        <a class="gallery-thumb"
+           href="https://github.com/kizsak/Portfolio/raw/main/MJEmoji.png"
+           target="_blank" rel="noopener"
+           aria-label="Open full image: Arctic">
+          <img
+            src="https://github.com/kizsak/Portfolio/raw/main/MJEmoji.png"
+            alt="REPLACE"
+            loading="lazy">
+        </a>
+
+        <div class="gallery-info">
+          <h3><strong>#openmidjourney_emoji</strong></h3>
+          <p class="meta">Generative image, 2026<br>
+          🎪🎡🎠🎢👻💀⚠️🔮🌆dreamlike scene, retro orange-purple color palette --chaos 20 
+          --ar 4:3 --stylize 200
+</p></article>
+
+ </main> 
+
+  <script>
+    (() => {
+      const overlay = document.getElementById("processOverlay");
+      const popup   = document.getElementById("processPopup");
+      const body    = document.getElementById("processPopupBody");
+      const closeBtn = popup.querySelector(".process-popup__close");
+
+      function openWith(html) {
+        body.innerHTML = html;
+        overlay.style.display = "block";
+        popup.style.display = "block";
+        overlay.setAttribute("aria-hidden", "false");
+        popup.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+      }
+
+      function close() {
+        overlay.style.display = "none";
+        popup.style.display = "none";
+        overlay.setAttribute("aria-hidden", "true");
+        popup.setAttribute("aria-hidden", "true");
+        body.innerHTML = "";
+        document.body.style.overflow = "";
+      }
+
+      document.addEventListener("click", (e) => {
+        const btn = e.target.closest(".process-btn");
+        if (!btn) return;
+
+        // prevent weird behavior if the button sits near/inside other click areas
+        e.preventDefault();
+        e.stopPropagation();
+
+        const id = btn.getAttribute("data-process");
+        const notes = document.getElementById(id);
+
+        if (!notes) {
+          openWith("<p><em>Process notes not found for this piece.</em></p>");
+          return;
+        }
+
+        openWith(notes.innerHTML);
+      });
+
+      overlay.addEventListener("click", close);
+      closeBtn.addEventListener("click", close);
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && popup.style.display === "block") close();
+      });
+    })();
+  </script>
+
+</body>
+</html>
+
+
+c
