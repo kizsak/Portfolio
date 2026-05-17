@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Kate Izsak — Digital Collage</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Your main stylesheet -->
+  <link rel="stylesheet" href="css/style.css?v=20260215" />
+</head>
+
+<body class="page-gallery">
+
+  <header class="page-header">
+    <h1 class="header-anta-neon">Post Photography</h1>
+    <nav class="nav-bar" aria-label="Site navigation">
+      <a href="index.html" class="nav-btn">Home</a>
+      <a href="digital-painting.html" class="nav-btn">Digital Painting</a>
+      <a href="comp-media-landing.html" class="nav-btn">Computational Media</a>
+      <a href="about-me.html" class="nav-btn">About Me</a>
+    </nav>
+  </header>
+
+  <main class="gallery-wrap">
+  <section class="gallery-grid" aria-label="Gallery">
+
+      <article class="gallery-card">
+        <a class="gallery-thumb"
+           href="https://raw.githubusercontent.com/kizsak/Portfolio/main/HorseSunsetPixelSort.png"
+           target="_blank" rel="noopener"
+           aria-label="Open full image: Pixel Horses">
+          <img
+            src="https://raw.githubusercontent.com/kizsak/Portfolio/main/HorseSunsetPixelSort.png"
+            alt="placeholder"
+            loading="lazy">
+        </a>
+
+        <div class="gallery-info">
+          <h3>Pixel Horses</h3>
+          <p class="meta">Digital image, 2026</p>
+</p>
+        </div>
+      </article>
+    
+ <header class="page-header">
+    <h1 class="header-anta-neon">The 100 Day Project</h1>
+ </header>
+    <p>I am using the 2026 100 Day Project to work through a particular haze of grief. I live with a cocktail of ailments that have culminated 
+      in a debilitating case of long COVID.  When COVID disabled me, I suffered a particular trauma at the hands of the people I loved most in 
+      the world, who stopped speaking to me--in unison--in 2023. I have written about this experience elsewhere–I describe the experience of 
+      watching long-standing friendships become brittle, develop cracks, then eventually implode. What remained after this moment were hundreds 
+      of photographs. They are casual photos, images documenting ordinary moments of friendship: shared meals, trips, celebrations, casual 
+      afternoons. The people who gave those moments meaning are still present in the photographs, but the relationships themselves no longer 
+      exist. In an effort to reclaim 20 years of memory, I am removing those friends from the photographs. Using digital and computational 
+      editing techniques—cloning, reconstruction, and other forms of image manipulation— I gradually erase their figures from the images. The 
+      environments remain: a room, a street, a table, a landscape. The architecture of the memory persists, but the people who once defined it 
+      disappear. The goal is not to pretend these friendships never existed. Instead, the process is about reclaiming the memories themselves. 
+      By editing the images, I create a new relationship to them—one that allows me to approach the places, moments, and fragments of those 
+      years without being overwhelmed by the loss embedded in the original photographs.</p>
+    
+   <article class="gallery-card">
+        <a class="gallery-thumb"
+           href="https://raw.githubusercontent.com/kizsak/Portfolio/main/100day.png"
+           target="_blank" rel="noopener"
+           aria-label="Open full image: Day 53">
+          <img
+            src="https://raw.githubusercontent.com/kizsak/Portfolio/main/100day.png"
+            alt="placeholder"
+            loading="lazy">
+        </a>
+
+        <div class="gallery-info">
+          <h3><strong>Day 53</strong></h3>
+          <p class="meta">Digital image, 2025</p>
+        </div>
+      </article>
+
+ <header class="page-header">
+    <h1 class="header-anta-neon">Glitchtober 2025</h1>
+ </header>
+    <p></p>
+    
+     <article class="gallery-card">
+        <a class="gallery-thumb"
+           href="https://raw.githubusercontent.com/kizsak/Portfolio/main/SWOLLEN.png"
+           target="_blank" rel="noopener"
+           aria-label="Open full image: Selfie Collage">
+          <img
+            src="https://raw.githubusercontent.com/kizsak/Portfolio/main/SWOLLEN.png"
+            alt="An abstract digital collage depicting a woman's face"
+            loading="lazy">
+        </a>
+
+        <div class="gallery-info">
+          <h3><strong>Sometimes I Bloat</strong></h3>
+          <p class="meta">Digital image, 2025</p></div>
+      </article>
+          </main> 
+  <script>
+    (() => {
+      const overlay = document.getElementById("processOverlay");
+      const popup   = document.getElementById("processPopup");
+      const body    = document.getElementById("processPopupBody");
+      const closeBtn = popup.querySelector(".process-popup__close");
+
+      function openWith(html) {
+        body.innerHTML = html;
+        overlay.style.display = "block";
+        popup.style.display = "block";
+        overlay.setAttribute("aria-hidden", "false");
+        popup.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+      }
+
+      function close() {
+        overlay.style.display = "none";
+        popup.style.display = "none";
+        overlay.setAttribute("aria-hidden", "true");
+        popup.setAttribute("aria-hidden", "true");
+        body.innerHTML = "";
+        document.body.style.overflow = "";
+      }
+
+      document.addEventListener("click", (e) => {
+        const btn = e.target.closest(".process-btn");
+        if (!btn) return;
+
+        // prevent weird behavior if the button sits near/inside other click areas
+        e.preventDefault();
+        e.stopPropagation();
+
+        const id = btn.getAttribute("data-process");
+        const notes = document.getElementById(id);
+
+        if (!notes) {
+          openWith("<p><em>Process notes not found for this piece.</em></p>");
+          return;
+        }
+
+        openWith(notes.innerHTML);
+      });
+
+      overlay.addEventListener("click", close);
+      closeBtn.addEventListener("click", close);
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && popup.style.display === "block") close();
+      });
+    })();
+  </script>
+
+</body>
+</html>
