@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Kate Izsak — Creative Coding Experiments</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Your main stylesheet -->
+  <link rel="stylesheet" href="css/style.css?v=20260215" />
+</head>
+
+<body class="page-gallery">
+
+  <header class="page-header">
+    <h1 class="header-anta-neon">Creative Coding Experiments</h1>
+    <nav class="nav-bar" aria-label="Site navigation">
+      <a href="index.html" class="nav-btn">Home</a>
+      <a href="digital-painting.html" class="nav-btn">Digital Painting</a>
+      <a href="comp-media-landing.html" class="nav-btn is-active">Computational Media</a>
+      <a href="about-me.html" class="nav-btn">About Me</a>
+    </nav>
+  </header>
+
+  <main class="gallery-wrap">
+    <section class="gallery-grid" aria-label="Gallery">
+
+      <!-- CARD -->
+      <article class="gallery-card">
+        <a class="gallery-thumb"
+           href="https://raw.githubusercontent.com/kizsak/Portfolio/main/PolaroidFlowers.png"
+           target="_blank" rel="noopener"
+           aria-label="Open full image: Simulated Polaroid">
+          <img
+            src="https://raw.githubusercontent.com/kizsak/Portfolio/main/PolaroidFlowers.png"
+            alt="A digital image showing a simulated, aged and worn Polaroid of a botanical subject"
+            loading="lazy">
+        </a>
+
+        <div class="gallery-info">
+          <h3>Simulated Polaroid</h3>
+          <p class="meta">Digital image, 2026<br>I began with a synthetic photograph of black-eyed susans, 
+            made in Midjourney. I then wrote a Python script
+            <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target="_blank" rel="noopener noreferrer">
+              (download)</a>
+            that algorithmically simulates material decay by introducing staged degradations—edge diffusion, tonal 
+            compression, color drift, and localized light artifacts. Rather than applying a single filter, the script executes 
+            these transformations sequentially, allowing each computational layer to interfere with and modify the previous one.</div>
+      </article>
+
+      <!-- CARD -->
+      <article class="gallery-card">
+        <a class="gallery-thumb"
+           href="https://raw.githubusercontent.com/kizsak/Portfolio/main/DaguerreotypeFlowers.png"
+           target="_blank" rel="noopener"
+           aria-label="Open full image: Simulated Daguerreotype">
+          <img
+            src="https://raw.githubusercontent.com/kizsak/Portfolio/main/DaguerreotypeFlowers.png"
+            alt="A digital image showing a simulated, aged and worn daguerreotype of a botanical subject"
+            loading="lazy">
+        </a>
+
+        <div class="gallery-info">
+          <h3><strong>Simulated Daguerreotype</strong></h3>
+          <p class="meta"><em>Digital image, 2025</em><br>Process notes: I began with a synthetic photograph of black-eyed susans, 
+            made in Midjourney. I then processed the image using a Python script <a href="https://github.com/kizsak/ImageGenerationManipulationClass/raw/main/Python%20Scripts/DaguerreotypeCode" target="_blank" rel="noopener noreferrer">
+              (download)</a> that converts the photograph to grayscale, reshapes its 
+            tonal curve, and maps it onto a simulated silver plate surface with sheen, vignette falloff, and tarnish artifacts.</p>
+        </div>
+      </article>
+
+      <!-- CARD -->
+      <article class="gallery-card">
+        <a class="gallery-thumb"
+           href="https://github.com/kizsak/Portfolio/raw/main/35mmslide.jpg"
+           target="_blank" rel="noopener"
+           aria-label="Open full image: Simulated 35mm Slide">
+          
+          <img
+            src="https://github.com/kizsak/Portfolio/raw/main/35mmslide.jpg"
+            alt="An image of a 35mm slide showing a photograph of a field of black-eyed Susans"
+            loading="lazy">
+        </a>
+
+        <div class="gallery-info">
+          <h3><strong>Simulated 35mm Slide</strong></h3>
+          <p class="meta"><em>Digital image, 2025<br></em>Process notes:  I began with a synthetic photograph of black-eyed susans, 
+            made in Midjourney. I then processed the image with a Python script 
+            <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target='_blank' rel='noopener noreferrer'>
+              (download)</a> that introduced film grain, vignetting, and color bias inspired by 35mm slide photography. Finally, 
+            the script precisely plays the image inside a digital slide mount I created in Photoshop, layering texture and border 
+            elements.
+        </div>
+      </article>
+
+      <article class="gallery-card">
+        <a class="gallery-thumb"
+           href="https://github.com/kizsak/Portfolio/raw/main/ChemicalBathReveal.gif"
+           target="_blank" rel="noopener"
+           aria-label="Open full image: Chemical Bath">
+
+          <img
+            src="https://github.com/kizsak/Portfolio/raw/main/ChemicalBathReveal.gif"
+            alt="An animated reveal like photographic development in a chemical bath."
+            loading="lazy">
+        </a>
+
+        <div class="gallery-info">
+          <h3><strong>In the Developer Fluid</strong></h3>
+          <p class="meta"><em>Digital image, 2025<br></em><p>I began with a synthetic photograph of black-eyed susans, 
+            made in Midjourney. I then processed the image with a Python script
+          <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target="_blank" rel="noopener noreferrer">
+            (download)</a> that animates the gradual emergence of the image using layered noise fields, threshold masks, bloom 
+            effects, and evolving color casts that simulate photographic development in a chemical bath. Each frame reveals additional 
+            image detail until the photograph fully resolves.</p>
+        </div>
+</div></article>
+
+      <!-- CARD -->
+      <article class="gallery-card">
+        <a class="gallery-thumb"
+           href="https://raw.githubusercontent.com/kizsak/Portfolio/main/GlitchReveal.gif"
+           target="_blank" rel="noopener"
+           aria-label="Open full image: Glitch Reveal">
+          <img
+            src="https://raw.githubusercontent.com/kizsak/Portfolio/main/GlitchReveal.gif"
+            alt="A video of a botanical specimen photograph materializing through electronic glitches"
+            loading="lazy">
+        </a>
+
+        <div class="gallery-info">
+          <h3><strong>Glitch Reveal</strong></h3>
+          <p class="meta">Digital image, 2025<br> I began with a synthetic photograph of black-eyed susans, 
+            made in Midjourney. I then processed the image with a Python script 
+            <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target='_blank' rel='noopener noreferrer'>
+              (download)</a> to deliberately corrupt the image using channel misalignment, scanlines, noise-driven tearing, and 
+            glitch artifacts before gradually stabilizing the image over time. A simulated boot-up overlay reinforces the metaphor 
+            of digital recovery.</p></div>
+      </article>
+
+
+
+    <!-- CARD -->
+      <article class="gallery-card">
+        <a class="gallery-thumb"
+           href="https://raw.githubusercontent.com/kizsak/Portfolio/main/HeatMapSelfie1.jpg"
+           target="_blank" rel="noopener"
+           aria-label="Open full image: Heat Map Self Portrait">
+          <img
+            src="https://raw.githubusercontent.com/kizsak/Portfolio/main/HeatMapSelfie1.jpg"
+            alt="An image of a woman rendered in purple, orange, and yellow"
+            loading="lazy">
+        </a>
+
+          <div class="gallery-info">
+          <h3>Sometimes I Burn</h3>
+          <p class="meta">Digital image, 2025<br>Process notes: I began with a photographic self-portrait. I used Photoshop to 
+            construct a depth map of the image by manually segmenting the image into spatial regions using selection tools and tonal
+            adjustments. I then processed this depth map 
+            with a Python script <a href="https://github.com/kizsak/ImageGenMan/raw/main/PolaroidPython" target='_blank' rel='noopener 
+                                   noreferrer'>(download)</a> that reads pixel-level depth values 
+            and remaps them to a false-color heat visualization.</p></p>
+        </div>
+      </article>
+    </section>
+  </main>
+
+ 
+  <script>
+    (() => {
+      const overlay = document.getElementById("processOverlay");
+      const popup   = document.getElementById("processPopup");
+      const body    = document.getElementById("processPopupBody");
+      const closeBtn = popup.querySelector(".process-popup__close");
+
+      function openWith(html) {
+        body.innerHTML = html;
+        overlay.style.display = "block";
+        popup.style.display = "block";
+        overlay.setAttribute("aria-hidden", "false");
+        popup.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+      }
+
+      function close() {
+        overlay.style.display = "none";
+        popup.style.display = "none";
+        overlay.setAttribute("aria-hidden", "true");
+        popup.setAttribute("aria-hidden", "true");
+        body.innerHTML = "";
+        document.body.style.overflow = "";
+      }
+
+      document.addEventListener("click", (e) => {
+        const btn = e.target.closest(".process-btn");
+        if (!btn) return;
+
+        // prevent weird behavior if the button sits near/inside other click areas
+        e.preventDefault();
+        e.stopPropagation();
+
+        const id = btn.getAttribute("data-process");
+        const notes = document.getElementById(id);
+
+        if (!notes) {
+          openWith("<p><em>Process notes not found for this piece.</em></p>");
+          return;
+        }
+
+        openWith(notes.innerHTML);
+      });
+
+      overlay.addEventListener("click", close);
+      closeBtn.addEventListener("click", close);
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && popup.style.display === "block") close();
+      });
+    })();
+  </script>
+
+</body>
+</html>
