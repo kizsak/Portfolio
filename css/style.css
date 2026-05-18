@@ -1561,3 +1561,74 @@ body.lightbox-open { overflow: hidden; } /* optional if you toggle it in JS */
   max-width: 1200px;
   margin: 3rem auto;
 }
+
+/* HOME PAGE LAYOUT FIX */
+
+.page-home main {
+  display: block;
+  width: 100%;
+}
+
+.page-home .hero-section {
+  width: 100%;
+  display: block;
+  margin: 2rem auto 3rem auto;
+}
+
+.page-home .card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 170px);
+  justify-content: center;
+  gap: 2rem;
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+.page-home .card {
+  width: 170px;
+  height: 245px;
+}
+
+.page-home .card__link {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.page-home .card__background {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.page-home .featured {
+  display: block;
+  width: min(1200px, calc(100% - 3rem));
+  margin: 3rem auto;
+  clear: both;
+}
+
+.page-home .featured__panel {
+  width: 100%;
+}
+
+.page-home .header-anta-neon {
+  text-align: center;
+  font-size: clamp(2.5rem, 6vw, 5.5rem);
+  line-height: 1.05;
+  margin: 1rem auto 2rem auto;
+}
+
+.page-home .card-grid {
+  grid-template-columns: repeat(2, 220px);
+  max-width: 500px;
+}
+
+.page-home .card {
+  width: 220px;
+  height: 245px;
+}
