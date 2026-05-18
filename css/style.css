@@ -1655,3 +1655,39 @@ body.lightbox-open { overflow: hidden; } /* optional if you toggle it in JS */
     height: 420px;
   }
 }
+
+/* Force larger home-page cards */
+
+body.page-home .hero-section .card-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, 340px) !important;
+  justify-content: center !important;
+  gap: 3.5rem !important;
+  max-width: 780px !important;
+  width: 100% !important;
+  margin: 2rem auto 4rem auto !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+body.page-home .hero-section .card {
+  width: 340px !important;
+  height: 430px !important;
+  max-width: none !important;
+  min-height: 0 !important;
+}
+
+body.page-home .hero-section .card__link {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+body.page-home .hero-section .card__background {
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  aspect-ratio: auto !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
