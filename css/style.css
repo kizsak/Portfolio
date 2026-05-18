@@ -1632,3 +1632,26 @@ body.lightbox-open { overflow: hidden; } /* optional if you toggle it in JS */
   width: 220px;
   height: 245px;
 }
+
+.page-home .card-grid {
+  grid-template-columns: repeat(2, 330px);
+  max-width: 740px;
+  gap: 3rem;
+}
+
+.page-home .card {
+  width: 330px;
+  height: 420px;
+}
+
+@media (max-width: 760px) {
+  .page-home .card-grid {
+    grid-template-columns: 1fr;
+    max-width: 330px;
+  }
+
+  .page-home .card {
+    width: 100%;
+    height: 420px;
+  }
+}
