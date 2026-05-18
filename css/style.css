@@ -1706,3 +1706,21 @@ body.page-home .header-anta-neon {
     0 0 28px rgba(255, 90, 200, 0.65),
     0 0 48px rgba(255, 70, 190, 0.45) !important;
 }
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 28px;
+
+  width: 100%;
+  max-width: 1000px;
+  margin: 30px auto 0 auto;
+}
+
+.card {
+  width: 145px;
+  height: 185px;
+  flex: 0 0 auto;
+}
