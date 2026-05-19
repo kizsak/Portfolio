@@ -9,45 +9,66 @@
  <link rel="stylesheet" href="css/style.css?v=20260217">
   
 <style>
-  .page-home main,
-  .page-home .hero-section {
-    width: 100%;
+<style>
+  body.page-home .hero-section {
+    width: 100vw !important;
     max-width: none !important;
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
+    overflow-x: auto !important;
   }
 
-  .page-home .card-grid {
-    list-style: none !important;
+  body.page-home .card-grid {
     display: flex !important;
     flex-direction: row !important;
     flex-wrap: nowrap !important;
     justify-content: center !important;
     align-items: stretch !important;
-    gap: 1.25rem !important;
+    gap: 18px !important;
+
+    list-style: none !important;
+    padding: 0 24px !important;
+    margin: 0 auto !important;
 
     width: max-content !important;
     max-width: none !important;
-    margin: 0 auto !important;
-    padding: 0 !important;
   }
 
-  .page-home .card {
-    flex: 0 0 180px !important;
-    width: 180px !important;
-    height: 300px !important;
+  body.page-home .card {
+    flex: 0 0 150px !important;
+    width: 150px !important;
+    min-width: 150px !important;
+    height: 260px !important;
+    margin: 0 !important;
   }
 
-  .page-home .card__link {
+  body.page-home .card__link {
     display: block !important;
     width: 100% !important;
     height: 100% !important;
     position: relative !important;
+    overflow: hidden !important;
   }
 
-  .page-home .card__background {
+  body.page-home .card__background {
+    position: absolute !important;
+    inset: 0 !important;
     width: 100% !important;
     height: 100% !important;
     background-size: cover !important;
     background-position: center !important;
+  }
+
+  body.page-home .card__content {
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: 2 !important;
+  }
+
+  @media (max-width: 1000px) {
+    body.page-home .card-grid {
+      justify-content: flex-start !important;
+    }
   }
 </style>
 </head>
