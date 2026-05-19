@@ -1797,3 +1797,39 @@ html body.page-home header.home-header h1.header-anta-neon {
   margin: 0;
   color: white;
 }
+
+.page-home .card-grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(5, 180px);
+  gap: 1.25rem;
+  justify-content: center;
+  align-items: stretch;
+  padding: 0;
+  margin: 0 auto;
+  max-width: none;
+}
+
+.page-home .card {
+  width: 180px;
+  height: 300px;
+}
+
+.page-home .card__link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.page-home .card__background {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.page-home .card__content {
+  position: absolute;
+  inset: 0;
+}
